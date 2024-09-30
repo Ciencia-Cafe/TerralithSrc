@@ -20,7 +20,7 @@
     {"name":"Cave","order":1,"path":"sprites/Cave/Cave.yy",},
     {"name":"Blocks","order":1,"path":"tilesets/Blocks/Blocks.yy",},
     {"name":"Sprite3","order":2,"path":"sprites/Sprite3/Sprite3.yy",},
-    {"name":"Coei25","order":3,"path":"sprites/Coei25/Coei25.yy",},
+    {"name":"FarmerStop","order":3,"path":"sprites/FarmerStop/FarmerStop.yy",},
     {"name":"TesteDeObjDoGio","order":1,"path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},
   ],
 }

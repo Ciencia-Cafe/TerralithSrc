@@ -34,8 +34,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "Coei25",
-    "path": "sprites/Coei25/Coei25.yy",
+    "name": "FarmerStop",
+    "path": "sprites/FarmerStop/FarmerStop.yy",
   },
   "spriteMaskId": null,
   "visible": true,
