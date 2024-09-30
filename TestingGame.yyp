@@ -36,6 +36,7 @@
   "resources": [
     {"id":{"name":"Playeraaa","path":"objects/Playeraaa/Playeraaa.yy",},},
     {"id":{"name":"Cave","path":"sprites/Cave/Cave.yy",},},
+    {"id":{"name":"Coei","path":"sprites/Coei/Coei.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],

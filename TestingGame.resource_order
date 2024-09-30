@@ -18,5 +18,6 @@
   ],
   "ResourceOrderSettings": [
     {"name":"Cave","order":1,"path":"sprites/Cave/Cave.yy",},
+    {"name":"Coei","order":2,"path":"sprites/Coei/Coei.yy",},
   ],
 }
