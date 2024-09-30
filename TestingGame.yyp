@@ -36,6 +36,8 @@
   "resources": [
     {"id":{"name":"Playeraaa","path":"objects/Playeraaa/Playeraaa.yy",},},
     {"id":{"name":"Cave","path":"sprites/Cave/Cave.yy",},},
+    {"id":{"name":"Blocks","path":"tilesets/Blocks/Blocks.yy",},},
+    {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
     {"id":{"name":"TesteDeObjDoGio","path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
