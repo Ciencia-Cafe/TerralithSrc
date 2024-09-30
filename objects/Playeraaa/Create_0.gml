@@ -12,6 +12,8 @@ dir_x = 0;
 
 double_jump = false;
 
+ps = part_system_create_layer("Effects", false);
+
 function on_floor() {
 	return place_meeting(x, y + 2.0, tilemap);
 }
@@ -29,6 +31,7 @@ function jump() {
 		if (double_jump) {
 			move_y -= 5;
 			double_jump = false;
+			part_particles_burst(ps, x, y, JumpParticle);
 		}
 	}
 }

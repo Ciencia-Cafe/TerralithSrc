@@ -23,10 +23,10 @@ if (on_ceiling() && move_y < 0.0) {
 }
 
 if (dir_x < 0) {
-	image_xscale = -2;
+	image_xscale = -1;
 }
 else if (dir_x > 0) {
-	image_xscale = 2;
+	image_xscale = 1;
 }
 
 move_and_collide(move_x, move_y, tilemap);
