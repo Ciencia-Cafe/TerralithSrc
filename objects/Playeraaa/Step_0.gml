@@ -3,6 +3,7 @@ move_x = acc;
 
 acc = lerp(acc, dir_x * move_speed, dragging);
 
+
 if (on_floor()) {
 	move_y = 0.0;
 	dragging = 1.0;

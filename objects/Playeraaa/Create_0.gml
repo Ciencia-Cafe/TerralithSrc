@@ -14,6 +14,8 @@ double_jump = false;
 
 ps = part_system_create_layer("Effects", false);
 
+image_speed = 1;
+
 function on_floor() {
 	return place_meeting(x, y + 2.0, tilemap);
 }
