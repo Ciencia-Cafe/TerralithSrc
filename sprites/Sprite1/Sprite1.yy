@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "Sprite1",
   "bbox_bottom": 48,
-  "bbox_left": 18,
+  "bbox_left": 20,
   "bbox_right": 36,
   "bbox_top": 22,
   "bboxMode": 0,
