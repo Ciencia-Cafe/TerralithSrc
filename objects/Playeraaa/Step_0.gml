@@ -1,12 +1,12 @@
 dir_x = keyboard_check(vk_right) - keyboard_check(vk_left);
-move_x = acc;
-
 acc = lerp(acc, dir_x * move_speed, dragging);
+move_x = acc;
 
 
 if (on_floor()) {
 	move_y = 0.0;
 	dragging = 1.0;
+	double_jump = false;
 }
 else {
 	dragging = 0.1;

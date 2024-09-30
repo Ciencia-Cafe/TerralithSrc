@@ -26,11 +26,13 @@ function on_ceiling() {
 
 function jump() {
 	if (on_floor()) {
+		move_y = 0;
 		move_y -= 5;
 		double_jump = true;
 	}
 	else {
 		if (double_jump) {
+			move_y = 0;
 			move_y -= 5;
 			double_jump = false;
 			part_particles_burst(ps, x, y, JumpParticle);
