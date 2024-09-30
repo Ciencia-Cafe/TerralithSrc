@@ -2,7 +2,7 @@ tilemap = layer_tilemap_get_id("Tiles_1");
 move_x = 0.0;
 move_y = 0.0;
 
-move_speed = 5.0;
+move_speed = 2.0;
 gravity_speed = 8;
 
 dragging = 1.0;
