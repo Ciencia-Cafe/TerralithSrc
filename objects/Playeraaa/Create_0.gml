@@ -3,7 +3,7 @@ move_x = 0.0;
 move_y = 0.0;
 
 move_speed = 2.0;
-gravity_speed = 8;
+gravity_speed = 16;
 
 dragging = 1.0;
 
