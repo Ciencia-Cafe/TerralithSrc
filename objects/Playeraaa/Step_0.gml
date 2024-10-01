@@ -1,10 +1,8 @@
 dir_x = keyboard_check(vk_right) - keyboard_check(vk_left);
-acc = lerp(acc, dir_x * move_speed, dragging);
-move_x = acc;
 
+move_x = lerp(move_x, dir_x * move_speed, dragging);
 
 if (on_floor()) {
-	move_y = 0.0;
 	dragging = 1.0;
 	double_jump = false;
 }
@@ -19,6 +17,10 @@ if (keyboard_check_pressed(vk_up)) {
 	jump();
 }
 
+if (on_floor() && move_y > 0.0) {
+	move_y = 0.0;
+}
+
 if (on_ceiling() && move_y < 0.0) {
 	move_y = 0.0;
 }
@@ -29,5 +31,7 @@ if (dir_x < 0) {
 else if (dir_x > 0) {
 	image_xscale = 1;
 }
+
+if (y > 620) kill_self();
 
 move_and_collide(move_x, move_y, tilemap);
