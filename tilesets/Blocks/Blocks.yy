@@ -14,8 +14,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Blocks",
+    "path": "folders/Tile Sets/Blocks.yy",
   },
   "spriteId": {
     "name": "Sprite3",
