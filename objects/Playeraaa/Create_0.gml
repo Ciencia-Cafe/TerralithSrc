@@ -54,3 +54,15 @@ function kill_self() {
         instance_destroy(); // 'self' é o padrão, não precisa passar nada
     }
 }
+
+function key_left() {
+	return keyboard_check(vk_left) || keyboard_check(ord("A"));
+}
+
+function key_right() {
+	return keyboard_check(vk_right) || keyboard_check(ord("D"));
+}
+
+function key_up() {
+	return keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+}
