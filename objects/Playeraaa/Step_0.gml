@@ -1,4 +1,4 @@
-dir_x = keyboard_check(vk_right) - keyboard_check(vk_left);
+dir_x = key_right() - key_left();
 
 move_x = lerp(move_x, dir_x * move_speed, dragging);
 
@@ -13,7 +13,7 @@ else {
 	}
 }
 
-if (keyboard_check_pressed(vk_up)) {
+if (key_up()) {
 	jump();
 }
 
