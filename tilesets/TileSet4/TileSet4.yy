@@ -1,14 +1,12 @@
 {
   "resourceType": "GMTileSet",
   "resourceVersion": "1.0",
-  "name": "Blocks",
+  "name": "TileSet4",
   "autoTileSets": [],
   "macroPageTiles": {
-    "SerialiseHeight": 1,
-    "SerialiseWidth": 1,
-    "TileSerialiseData": [
-      0,
-    ],
+    "SerialiseHeight": 0,
+    "SerialiseWidth": 0,
+    "TileSerialiseData": [],
   },
   "out_columns": 4,
   "out_tilehborder": 2,
@@ -18,8 +16,8 @@
     "path": "folders/Tile Sets/Blocks.yy",
   },
   "spriteId": {
-    "name": "Sprite3",
-    "path": "sprites/Sprite3/Sprite3.yy",
+    "name": "Sprite14",
+    "path": "sprites/Sprite14/Sprite14.yy",
   },
   "spriteNoExport": false,
   "textureGroupId": {
