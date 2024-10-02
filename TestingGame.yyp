@@ -42,6 +42,7 @@
     {"id":{"name":"Dirt_02","path":"sounds/Dirt_02/Dirt_02.yy",},},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
     {"id":{"name":"Sprite11","path":"sprites/Sprite11/Sprite11.yy",},},
+    {"id":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
     {"id":{"name":"Playeraaa","path":"objects/Playeraaa/Playeraaa.yy",},},
     {"id":{"name":"wind","path":"sounds/wind/wind.yy",},},
     {"id":{"name":"Cave","path":"sprites/Cave/Cave.yy",},},
@@ -81,6 +82,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
