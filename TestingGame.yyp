@@ -62,6 +62,7 @@
     {"id":{"name":"obj_lampada","path":"objects/obj_lampada/obj_lampada.yy",},},
     {"id":{"name":"FarmerIdle","path":"sprites/FarmerIdle/FarmerIdle.yy",},},
     {"id":{"name":"VentoSpr","path":"sprites/VentoSpr/VentoSpr.yy",},},
+    {"id":{"name":"World","path":"objects/World/World.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
     {"id":{"name":"Vara","path":"sprites/Vara/Vara.yy",},},
     {"id":{"name":"Dirt_Jump","path":"sounds/Dirt_Jump/Dirt_Jump.yy",},},
