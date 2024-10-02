@@ -54,7 +54,7 @@ else if (dir_x > 0) {
 if (y > 620) kill_self();
 
 if (just_landed && on_floor()) {
-	audio_play_sound(footstep_sounds[number], 10, false);
+	audio_play_sound(Dirt_Fall, 10, false);
 	just_landed = false;
 }
 

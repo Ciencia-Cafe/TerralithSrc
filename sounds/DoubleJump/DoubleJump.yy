@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSound",
   "resourceVersion": "1.0",
-  "name": "Dirt_01",
+  "name": "DoubleJump",
   "audioGroupId": {
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 0.731429,
+  "duration": 0.456009,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "Dirt_01.WAV",
+  "soundFile": "DoubleJump.WAV",
   "type": 0,
-  "volume": 0.59,
+  "volume": 1.0,
 }
