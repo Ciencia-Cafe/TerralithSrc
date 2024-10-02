@@ -1,11 +1,21 @@
 dir_x = key_right() - key_left();
 
-if (dir_x != 0) {
-	sprite_index = FarmerRun;
-}
+if (on_floor()) {
+	if (dir_x != 0) {
+		sprite_index = FarmerRun;
+	}
 
+	else {
+		sprite_index = FarmerIdle;
+	}
+}
 else {
-	sprite_index = FarmerIdle;
+	if (move_y > 0) {
+		sprite_index = FarmerFall;
+	}
+	else {
+		sprite_index = FarmerJump;
+	}
 }
 
 move_x = lerp(move_x, dir_x * move_speed, dragging);

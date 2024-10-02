@@ -1,4 +1,5 @@
 tilemap = layer_tilemap_get_id("Tiles_1");
+tilemap2 = layer_tilemap_get_id("Tiles_3");
 move_x = 0.0;
 move_y = 0.0;
 
