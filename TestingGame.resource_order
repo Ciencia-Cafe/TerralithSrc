@@ -41,6 +41,7 @@
     {"name":"obj_lampada","order":10,"path":"objects/obj_lampada/obj_lampada.yy",},
     {"name":"FarmerIdle","order":1,"path":"sprites/FarmerIdle/FarmerIdle.yy",},
     {"name":"VentoSpr","order":19,"path":"sprites/VentoSpr/VentoSpr.yy",},
+    {"name":"World","order":12,"path":"objects/World/World.yy",},
     {"name":"Sprite7","order":4,"path":"sprites/Sprite7/Sprite7.yy",},
     {"name":"Vara","order":6,"path":"sprites/Vara/Vara.yy",},
     {"name":"Dirt_Jump","order":3,"path":"sounds/Dirt_Jump/Dirt_Jump.yy",},
