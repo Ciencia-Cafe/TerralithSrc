@@ -35,8 +35,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "FarmerStop",
-    "path": "sprites/FarmerStop/FarmerStop.yy",
+    "name": "FarmerIdle",
+    "path": "sprites/FarmerIdle/FarmerIdle.yy",
   },
   "spriteMaskId": null,
   "visible": true,
