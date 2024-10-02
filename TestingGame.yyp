@@ -84,8 +84,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
