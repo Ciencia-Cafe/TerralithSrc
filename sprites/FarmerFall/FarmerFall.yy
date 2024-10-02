@@ -13,7 +13,6 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"69a2269e-fdc3-4a5b-b24c-6f5628e9ae7e",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cb502d27-c0e3-42a2-b99a-c29c37476b3d",},
   ],
   "gridX": 0,
@@ -67,7 +66,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 2.0,
+    "length": 1.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -78,8 +77,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"69a2269e-fdc3-4a5b-b24c-6f5628e9ae7e","path":"sprites/FarmerFall/FarmerFall.yy",},},},"Disabled":false,"id":"9af152f0-9d45-45ff-9331-e99cf4567e66","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cb502d27-c0e3-42a2-b99a-c29c37476b3d","path":"sprites/FarmerFall/FarmerFall.yy",},},},"Disabled":false,"id":"d48be6d6-b728-45a4-ba78-78976d09f568","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cb502d27-c0e3-42a2-b99a-c29c37476b3d","path":"sprites/FarmerFall/FarmerFall.yy",},},},"Disabled":false,"id":"d48be6d6-b728-45a4-ba78-78976d09f568","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
