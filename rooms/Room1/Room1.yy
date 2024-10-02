@@ -12,6 +12,8 @@
     {"name":"inst_18F9E94F","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_6E38CF6C","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_428E9A79","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_1048247A","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_4ECE71F8","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -22,6 +24,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_18F9E94F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"Corvu","path":"objects/Corvu/Corvu.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":512.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6E38CF6C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"Jeffersonpicanha","path":"objects/Jeffersonpicanha/Jeffersonpicanha.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":512.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_428E9A79","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_lampada","path":"objects/obj_lampada/obj_lampada.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":529.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1048247A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"VentoObj","path":"objects/VentoObj/VentoObj.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":448.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4ECE71F8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"VentoObj","path":"objects/VentoObj/VentoObj.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":256.0,"y":448.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":98,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":48,"SerialiseWidth":86,"TileCompressedData":[
 -2173,-2147483648,-6,14,-81,-2147483648,4,15,14,14,15,-90,-2147483648,2,5,14,-84,-2147483648,2,15,14,-158,-2147483648,-3,14,1,40,-4,41,3,42,0,0,-76,-2147483648,3,6,15,59,-4,60,3,61,0,0,-85,-2147483648,5,40,41,41,42,0,-81,-2147483648,4,51,49,49,53,-4,14,-10,-2147483648,1,0,-54,-2147483648,5,19,20,20,41,42,-7,-2147483648,7,7,51,49,49,53,15,6,-65,-2147483648,
