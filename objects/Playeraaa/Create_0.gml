@@ -35,7 +35,7 @@ function jump() {
 		move_y = 0;
 		move_y -= 5;
 		double_jump = true;
-		audio_play_sound(footstep_sounds[number], 10, false);
+		audio_play_sound(Dirt_Jump, 10, false);
 	}
 	else {
 		if (double_jump) {
@@ -43,6 +43,7 @@ function jump() {
 			move_y -= 5;
 			double_jump = false;
 			part_particles_burst(ps, x, y, JumpParticle);
+			audio_play_sound(DoubleJump, 10, false);
 		}
 	}
 }
