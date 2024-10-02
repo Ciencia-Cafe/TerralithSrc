@@ -51,7 +51,7 @@ else if (dir_x > 0) {
 	image_xscale = 1;
 }
 
-if (y > 620) kill_self();
+if (y > 2000) kill_self();
 
 if (just_landed && on_floor()) {
 	audio_play_sound(Dirt_Fall, 10, false);
