@@ -1,5 +1,10 @@
 var map = array_create(100);
 
+var blocks = ds_map_create();
+
+ds_map_add(blocks, "ar", 0); // air
+ds_map_add(blocks, "grama", 5); // grass
+
 // Inicializar cada linha com uma array de 100 elementos
 for (var i = 0; i < 100; i++) {
     map[i] = array_create(20);
@@ -17,7 +22,7 @@ function remove_block(x_pos, y_pos) {
 
 for (var i = 0; i < 100; i++) {
 	for (var i2 = 0; i2 < 20; i2++) {
-		map[i][i2] = irandom_range(0, 20);
+		map[i][i2] = ds_map_find_value(blocks, irandom_range(0, 1));
 	}
 }
 
