@@ -5,14 +5,12 @@ move_y = 0.0;
 
 move_speed = 2.0;
 gravity_speed = 16;
-
 dragging = 1.0;
-
 dir_x = 0;
-
 double_jump = false;
-
 is_dead = false;
+on_floor_hm = false;
+just_landed = false;
 
 ps = part_system_create_layer("Effects", false);
 image_speed = 1;
@@ -20,8 +18,11 @@ image_speed = 1;
 spawn_point = instance_find(SpawnPoint, 0);
 
 footstep_sounds = [Dirt_01, Dirt_02];
+number = 0;
 
 function on_floor() {
+	if (on_floor_hm == false) just_landed = true;
+	on_floor_hm = true;
 	return place_meeting(x, y + 2.0, tilemap);
 }
 
@@ -34,6 +35,7 @@ function jump() {
 		move_y = 0;
 		move_y -= 5;
 		double_jump = true;
+		audio_play_sound(footstep_sounds[number], 10, false);
 	}
 	else {
 		if (double_jump) {

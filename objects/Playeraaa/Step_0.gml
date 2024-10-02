@@ -29,6 +29,7 @@ else {
 	if (move_y < 10.0) {
 		move_y += gravity_speed * delta_time / 1000000;
 	}
+	on_floor_hm = false;
 }
 
 if (key_up()) {
@@ -51,5 +52,10 @@ else if (dir_x > 0) {
 }
 
 if (y > 620) kill_self();
+
+if (just_landed && on_floor()) {
+	audio_play_sound(footstep_sounds[number], 10, false);
+	just_landed = false;
+}
 
 move_and_collide(move_x, move_y, tilemap);
