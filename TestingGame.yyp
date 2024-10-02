@@ -39,6 +39,7 @@
   },
   "resources": [
     {"id":{"name":"TileSet2","path":"tilesets/TileSet2/TileSet2.yy",},},
+    {"id":{"name":"Dirt_02","path":"sounds/Dirt_02/Dirt_02.yy",},},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
     {"id":{"name":"Sprite11","path":"sprites/Sprite11/Sprite11.yy",},},
     {"id":{"name":"Playeraaa","path":"objects/Playeraaa/Playeraaa.yy",},},
@@ -47,6 +48,7 @@
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
     {"id":{"name":"SpawnPoint","path":"objects/SpawnPoint/SpawnPoint.yy",},},
     {"id":{"name":"Sprite10","path":"sprites/Sprite10/Sprite10.yy",},},
+    {"id":{"name":"Dirt_01","path":"sounds/Dirt_01/Dirt_01.yy",},},
     {"id":{"name":"FarmerRun","path":"sprites/FarmerRun/FarmerRun.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
     {"id":{"name":"Corvu","path":"objects/Corvu/Corvu.yy",},},

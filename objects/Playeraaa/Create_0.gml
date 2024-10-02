@@ -19,6 +19,8 @@ image_speed = 1;
 
 spawn_point = instance_find(SpawnPoint, 0);
 
+footstep_sounds = [Dirt_01, Dirt_02];
+
 function on_floor() {
 	return place_meeting(x, y + 2.0, tilemap);
 }
