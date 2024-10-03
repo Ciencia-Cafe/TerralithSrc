@@ -58,4 +58,12 @@ if (just_landed && on_floor()) {
 	just_landed = false;
 }
 
+if (elapsed_time >= rand_time) {
+	play_music();
+	elapsed_time = 0;
+	rand_time = random_range(30, 100);
+}
+
+elapsed_time += delta_time / 1000000;
+
 move_and_collide(move_x, move_y, tilemap);

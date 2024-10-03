@@ -12,6 +12,8 @@ is_dead = false;
 on_floor_hm = false;
 just_landed = false;
 
+elapsed_time = 0.0;
+
 ps = part_system_create_layer("Effects", false);
 image_speed = 1;
 
@@ -19,6 +21,8 @@ spawn_point = instance_find(SpawnPoint, 0);
 
 footstep_sounds = [Dirt_01, Dirt_02];
 number = 0;
+
+rand_time = random_range(30, 100);
 
 function on_floor() {
 	if (on_floor_hm == false) just_landed = true;
@@ -71,4 +75,12 @@ function key_right() {
 
 function key_up() {
 	return keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+}
+
+randomize();
+
+musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
+
+function play_music() {
+	audio_play_sound(musicas[irandom_range(0, 4)], 0, false);
 }
