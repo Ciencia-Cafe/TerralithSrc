@@ -6,11 +6,17 @@ var dec = array_create(world_size);
 var blocks = ds_map_create();
 
 ds_map_add(blocks, "ar", 0); // air
+
+// bioma floresta
 ds_map_add(blocks, "grama_left", 40); // grass
 ds_map_add(blocks, "grama_mid", 41); // grass
 ds_map_add(blocks, "grama_right", 42); // grass
 ds_map_add(blocks, "terra", 52); // dirt
 ds_map_add(blocks, "terra_escura", 49); // dark dirt
+ds_map_add(blocks, "terra_mais_escura", 8); // dark dirt
+
+// bioma deserto
+
 
 randomize();
 
@@ -53,6 +59,7 @@ for (var i = 0; i < world_size; i++) {
 	var air_block = ds_map_find_value(blocks, "ar");
 	var dirt_block = ds_map_find_value(blocks, "terra");
 	var dark_dirt_block = ds_map_find_value(blocks, "terra_escura");
+	var dark_dark_dirt_block = ds_map_find_value(blocks, "terra_mais_escura");
 	
 	current_height = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
 	decoration_has = map_value(perlin_noise(decoration_perlin_noise), -1, 1, 24, 64);
@@ -60,11 +67,14 @@ for (var i = 0; i < world_size; i++) {
 	blocks_perlin_noise += inc;
 	decoration_perlin_noise += inc;
 	for (var i2 = 0; i2 < 20; i2++) {
-		if (i2 == current_height - 1 || i2 == current_height) {
+		if (i2 >= current_height - 1 && i2 <= current_height + 1) {
 			map[i][i2] = dirt_block;
 		}
-		else if (i2 > current_height) {
+		else if (i2 > current_height + 1 && i2 <= current_height + 2) {
 			map[i][i2] = dark_dirt_block;
+		}
+		else if (i2 > current_height + 2) {
+			map[i][i2] = dark_dark_dirt_block;
 		}
 		else map[i][i2] = air_block;
 	}
@@ -82,7 +92,7 @@ for (var i = 0; i < world_size; i++) {
 for (var i = 0; i < world_size; i++) {
 	for (var i2 = 0; i2 < 20; i2++) {
 		add_block(i, i2 + (450 div 16), map[i][i2]);
-		if (map[i][i2] != air_block && (map[i][i2] != dirt_block && map[i][i2] != dark_dirt_block)) {
+		if (map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) {
 			if (dec[i] > 50) add_galinha(i, (i2) + (450 div 16));
 			add_decoration(i, (i2-1) + (450 div 16), dec[i]);
 		}
