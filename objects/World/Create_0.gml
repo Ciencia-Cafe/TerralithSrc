@@ -144,8 +144,8 @@ for (var i = 0; i < world_sizex; i++) {
 		if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right)) {
 			if (dec[i] > 50) add_galinha(i, (i2) + (16 div 16));
 		}
-		if (i2 > world_sizey * 0.6 && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 7);
-		else if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && (i2 < world_sizey * 0.6)) {
+		if (i2 > world_sizey * 0.275 && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 7);
+		else if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && (i2 < world_sizey * 0.275)) {
 			add_decoration(i, (i2 - 1) + (16 div 16), dec[i]);
 		}
 	}
