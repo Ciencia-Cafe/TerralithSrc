@@ -134,6 +134,6 @@ for (var i = 0; i < world_sizex; i++) {
 			if (dec[i] > 50) add_galinha(i, (i2) + (450 div 16));
 			add_decoration(i, (i2-1) + (450 div 16), dec[i]);
 		}
-		if (i2 > world_sizey * 0.75 && map[i][i2] == air_block) add_decoration(i, i2 + (450 div 16), 7);
+		if (i2 > world_sizey * 0.6 && map[i][i2] == air_block) add_decoration(i, i2 + (450 div 16), 7);
 	}
 }

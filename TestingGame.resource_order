@@ -16,12 +16,12 @@
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Bioma de areia","order":27,"path":"folders/Sprites/Bioma de areia.yy",},
     {"name":"Bioma de terra spr","order":25,"path":"folders/Sprites/Bioma de terra spr.yy",},
     {"name":"Ferramentas spr","order":26,"path":"folders/Sprites/Ferramentas spr.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Blocks","order":1,"path":"folders/Tile Sets/Blocks.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Bioma de areia","order":27,"path":"folders/Sprites/Bioma de areia.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"BlockShadown","order":1,"path":"tilesets/BlockShadown/BlockShadown.yy",},
