@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite15",
-    "path": "sprites/Sprite15/Sprite15.yy",
+    "name": "Lamparina",
+    "path": "sprites/Lamparina/Lamparina.yy",
   },
   "spriteMaskId": null,
   "visible": true,

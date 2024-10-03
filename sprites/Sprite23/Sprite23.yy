@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Arvore basica",
-    "path": "folders/Sprites/Arvore basica.yy",
+    "name": "Arvore basica Spr",
+    "path": "folders/Sprites/Arvore basica Spr.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
