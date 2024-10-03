@@ -27,7 +27,7 @@ if (contador_disparos >= tempo_entre_disparos) {
         var ovo = instance_create_layer(x, y, layer, obj_ovo);
 
         // Definir a velocidade do ovo na direção do Playeraaa
-        ovo.direction = direcao;  // Define a direção do ovo para o Playeraaa
-        ovo.speed = velocidade_ovo;  // Define a velocidade do ovo
+		ovo.direction = direcao;
+		ovo.speed = velocidade_ovo;
     }
 }
