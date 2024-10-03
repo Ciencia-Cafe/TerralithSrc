@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Arvore basica Spr",
-    "path": "folders/Sprites/Arvore basica Spr.yy",
+    "name": "Bioma de terra spr",
+    "path": "folders/Sprites/Bioma de terra spr.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

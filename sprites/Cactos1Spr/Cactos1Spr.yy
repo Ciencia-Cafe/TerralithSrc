@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "Sprite24",
-  "bbox_bottom": 9,
-  "bbox_left": 0,
-  "bbox_right": 16,
+  "name": "Cactos1Spr",
+  "bbox_bottom": 31,
+  "bbox_left": 1,
+  "bbox_right": 22,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,26 +13,26 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"01e1491c-c6c5-4011-a9fd-3e3a493008ea",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a88ce140-574c-46b8-bc04-39d116456b40",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 10,
+  "height": 32,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"152af19d-3103-4907-aac8-158fac2be2b4","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bc825e12-869f-45c0-a8b5-2a4cd0fc222d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Bioma de terra spr",
-    "path": "folders/Sprites/Bioma de terra spr.yy",
+    "name": "Bioma de areia",
+    "path": "folders/Sprites/Bioma de areia.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "Sprite24",
+    "name": "Cactos1Spr",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"01e1491c-c6c5-4011-a9fd-3e3a493008ea","path":"sprites/Sprite24/Sprite24.yy",},},},"Disabled":false,"id":"cd9a8e30-67b2-412c-bab8-f5e240a8e8e9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a88ce140-574c-46b8-bc04-39d116456b40","path":"sprites/Cactos1Spr/Cactos1Spr.yy",},},},"Disabled":false,"id":"e7905a29-5309-4203-9c3c-6fc06ced5032","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 17,
+  "width": 24,
 }
