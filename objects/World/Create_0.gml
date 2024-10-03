@@ -54,24 +54,32 @@ blocks_perlin_noise = random(3000);
 decoration_perlin_noise = random(3000);
 inc = 0.1;
 
+var air_block = ds_map_find_value(blocks, "ar");
+	
+var grass_block_left = ds_map_find_value(blocks, "grama_left");
+var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
+var grass_block_right = ds_map_find_value(blocks, "grama_right");
+	
+var dirt_block = ds_map_find_value(blocks, "terra");
+var dark_dirt_block = ds_map_find_value(blocks, "terra_escura");
+var dark_dark_dirt_block = ds_map_find_value(blocks, "terra_mais_escura");
+	
+var sand_block_left = ds_map_find_value(blocks, "areia_left");
+var sand_block_mid = ds_map_find_value(blocks, "areia_mid");
+var sand_block_right = ds_map_find_value(blocks, "areia_right");
+	
+var dark_sand_block = ds_map_find_value(blocks, "areia_escura");
+var dark_dark_sand_block = ds_map_find_value(blocks, "areia_mais_escura");
+
 // Gerando o mundo
 for (var i = 0; i < world_size; i++) {
-	var grass_block_left = ds_map_find_value(blocks, "grama_left");
-	var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
-	var grass_block_right = ds_map_find_value(blocks, "grama_right");
-	
-	var air_block = ds_map_find_value(blocks, "ar");
-	var dirt_block = ds_map_find_value(blocks, "terra");
-	var dark_dirt_block = ds_map_find_value(blocks, "terra_escura");
-	var dark_dark_dirt_block = ds_map_find_value(blocks, "terra_mais_escura");
-	
 	current_height = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
 	decoration_has = map_value(perlin_noise(decoration_perlin_noise), -1, 1, 24, 64);
 	
 	blocks_perlin_noise += inc;
 	decoration_perlin_noise += inc;
 	
-	if (current_height < 15) {
+	if (current_height < 12) {
 		for (var i2 = 0; i2 < 20; i2++) {
 			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
 				map[i][i2] = dirt_block;
@@ -93,21 +101,18 @@ for (var i = 0; i < world_size; i++) {
 	else {
 		for (var i2 = 0; i2 < 20; i2++) {
 			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
-				map[i][i2] = dirt_block;
+				map[i][i2] = dark_sand_block;
 			}
-			else if (i2 > current_height + 1 && i2 <= current_height + 2) {
-				map[i][i2] = dark_dirt_block;
-			}
-			else if (i2 > current_height + 2) {
-				map[i][i2] = dark_dark_dirt_block;
+			else if (i2 > current_height + 1) {
+				map[i][i2] = dark_dark_sand_block;
 			}
 			else map[i][i2] = air_block;
 		}
 	
-		if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
-		else map[i][current_height] = grass_block_mid;
+		if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = sand_block_left;
+		else map[i][current_height] = sand_block_mid;
 	
-		if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
+		if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = sand_block_right;
 	}
 	
 	last_height = current_height;
@@ -118,9 +123,10 @@ for (var i = 0; i < world_size; i++) {
 for (var i = 0; i < world_size; i++) {
 	for (var i2 = 0; i2 < 20; i2++) {
 		add_block(i, i2 + (450 div 16), map[i][i2]);
-		if (map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) {
+		if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right)) {
 			if (dec[i] > 50) add_galinha(i, (i2) + (450 div 16));
 			add_decoration(i, (i2-1) + (450 div 16), dec[i]);
 		}
+		if (i2 > 12 && map[i][i2] == air_block) add_decoration(i, i2 + (450 div 16), 6);
 	}
 }
