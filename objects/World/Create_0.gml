@@ -16,7 +16,11 @@ ds_map_add(blocks, "terra_escura", 49); // dark dirt
 ds_map_add(blocks, "terra_mais_escura", 8); // dark dirt
 
 // bioma deserto
-
+ds_map_add(blocks, "areia_left", 19); // grass
+ds_map_add(blocks, "areia_mid", 20); // grass
+ds_map_add(blocks, "areia_right", 21); // grass
+ds_map_add(blocks, "areia_escura", 28); // dirt
+ds_map_add(blocks, "areia_mais_escura", 34); // dark dirt
 
 randomize();
 
@@ -66,23 +70,45 @@ for (var i = 0; i < world_size; i++) {
 	
 	blocks_perlin_noise += inc;
 	decoration_perlin_noise += inc;
-	for (var i2 = 0; i2 < 20; i2++) {
-		if (i2 >= current_height - 1 && i2 <= current_height + 1) {
-			map[i][i2] = dirt_block;
+	
+	if (current_height < 15) {
+		for (var i2 = 0; i2 < 20; i2++) {
+			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
+				map[i][i2] = dirt_block;
+			}
+			else if (i2 > current_height + 1 && i2 <= current_height + 2) {
+				map[i][i2] = dark_dirt_block;
+			}
+			else if (i2 > current_height + 2) {
+				map[i][i2] = dark_dark_dirt_block;
+			}
+			else map[i][i2] = air_block;
 		}
-		else if (i2 > current_height + 1 && i2 <= current_height + 2) {
-			map[i][i2] = dark_dirt_block;
-		}
-		else if (i2 > current_height + 2) {
-			map[i][i2] = dark_dark_dirt_block;
-		}
-		else map[i][i2] = air_block;
+	
+		if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
+		else map[i][current_height] = grass_block_mid;
+	
+		if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
 	}
+	else {
+		for (var i2 = 0; i2 < 20; i2++) {
+			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
+				map[i][i2] = dirt_block;
+			}
+			else if (i2 > current_height + 1 && i2 <= current_height + 2) {
+				map[i][i2] = dark_dirt_block;
+			}
+			else if (i2 > current_height + 2) {
+				map[i][i2] = dark_dark_dirt_block;
+			}
+			else map[i][i2] = air_block;
+		}
 	
-	if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
-	else map[i][current_height] = grass_block_mid;
+		if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
+		else map[i][current_height] = grass_block_mid;
 	
-	if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
+		if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
+	}
 	
 	last_height = current_height;
 	
