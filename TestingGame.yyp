@@ -27,11 +27,11 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shaders","folderPath":"folders/Shaders.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sounds","folderPath":"folders/Sounds.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Arvore basica Spr","folderPath":"folders/Sprites/Arvore basica Spr.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ferramentas spr","folderPath":"folders/Sprites/Ferramentas spr.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Blocks","folderPath":"folders/Tile Sets/Blocks.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Arvore basica Spr","folderPath":"folders/Sprites/Arvore basica Spr.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ferramentas spr","folderPath":"folders/Sprites/Ferramentas spr.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
@@ -94,8 +94,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
