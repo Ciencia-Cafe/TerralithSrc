@@ -3,8 +3,10 @@ var map = array_create(100);
 var blocks = ds_map_create();
 
 ds_map_add(blocks, "ar", 0); // air
-ds_map_add(blocks, "grama", 5); // grass
-ds_map_add(blocks, "terra", 22); // dirt
+ds_map_add(blocks, "grama_left", 40); // grass
+ds_map_add(blocks, "grama_mid", 41); // grass
+ds_map_add(blocks, "grama_right", 42); // grass
+ds_map_add(blocks, "terra", 52); // dirt
 
 // Inicializar cada linha com uma array de 100 elementos
 for (var i = 0; i < 100; i++) {
@@ -22,17 +24,34 @@ function remove_block(x_pos, y_pos) {
 }
 
 current_height = 0.0;
+last_height = 0.0;
 N = random(3000);
 inc = 0.1;
 
 for (var i = 0; i < 100; i++) {
+	var grass_block_left = ds_map_find_value(blocks, "grama_left");
+	var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
+	var grass_block_right = ds_map_find_value(blocks, "grama_right");
+	
+	var air_block = ds_map_find_value(blocks, "ar");
+	var dirt_block = ds_map_find_value(blocks, "terra");
+	
 	current_height = map_value(perlin_noise(N), -1, 1, 0, 20);
 	N += inc;
 	for (var i2 = 0; i2 < 20; i2++) {
-		if (i2 > current_height) map[i][i2] = ds_map_find_value(blocks, "terra");
-		else map[i][i2] = ds_map_find_value(blocks, "ar");
+		if (i2 > current_height - 1) {
+			map[i][i2] = dirt_block;
+		}
+		else map[i][i2] = air_block;
 	}
-	map[i][current_height] = ds_map_find_value(blocks, "grama");
+	
+	
+	if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
+	else map[i][current_height] = grass_block_mid;
+	
+	if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
+	
+	last_height = current_height;
 }
 
 for (var i = 0; i < 100; i++) {
