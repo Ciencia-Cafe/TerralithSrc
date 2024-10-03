@@ -1,5 +1,5 @@
-var world_sizex = 300;
-var world_sizey = 100;
+var world_sizex = 625;
+var world_sizey = 250;
 
 var map = array_create(world_sizex);
 var dec = array_create(world_sizex);
@@ -49,11 +49,16 @@ function remove_block(x_pos, y_pos) {
 	tilemap_set(tilemap, 0, x_pos, y_pos);
 }
 
-current_height = 0.0;
-last_height = 0.0;
+current_height = world_sizey * 0.5;
+last_height = world_sizey * 0.5;
+
 blocks_perlin_noise = random(3000);
 blocks_perlin_noise2 = random(3000);
 decoration_perlin_noise = random(3000);
+
+temperature_perlin_noise = random(3000);
+humidity_perlin_noise = random(3000);
+
 inc = 0.1;
 inc2 = 0.01;
 
@@ -77,16 +82,22 @@ var dark_dark_sand_block = ds_map_find_value(blocks, "areia_mais_escura");
 // Gerando o mundo
 for (var i = 0; i < world_sizex; i++) {
 	current_height_tmp = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
-	current_height_tmp2 = map_value(perlin_noise(blocks_perlin_noise2), -1, 1, 0, 100);
+	current_height_tmp2 = map_value(perlin_noise(blocks_perlin_noise2), -1, 1, 0, (world_sizey * 0.5) - 20);
 	decoration_has = map_value(perlin_noise(decoration_perlin_noise), -1, 1, 24, 64);
+	
+	humidity = map_value(perlin_noise(humidity_perlin_noise), -1, 1, 0, 100);
+	temperature = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 100);
 	
 	blocks_perlin_noise += inc;
 	blocks_perlin_noise2 += inc2;
 	decoration_perlin_noise += inc;
 	
+	humidity_perlin_noise += inc2;
+	temperature_perlin_noise += inc2;
+	
 	current_height = current_height_tmp + current_height_tmp2;
 	
-	if (current_height < world_sizey * 0.5) {
+	if (humidity > 50 || temperature > 50) {
 		for (var i2 = 0; i2 < world_sizey; i2++) {
 			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
 				map[i][i2] = dirt_block;
@@ -129,11 +140,13 @@ for (var i = 0; i < world_sizex; i++) {
 
 for (var i = 0; i < world_sizex; i++) {
 	for (var i2 = 0; i2 < world_sizey; i2++) {
-		add_block(i, i2 + (450 div 16), map[i][i2]);
+		add_block(i, i2 + (16 div 16), map[i][i2]);
 		if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right)) {
-			if (dec[i] > 50) add_galinha(i, (i2) + (450 div 16));
-			add_decoration(i, (i2-1) + (450 div 16), dec[i]);
+			if (dec[i] > 50) add_galinha(i, (i2) + (16 div 16));
 		}
-		if (i2 > world_sizey * 0.6 && map[i][i2] == air_block) add_decoration(i, i2 + (450 div 16), 7);
+		if (i2 > world_sizey * 0.6 && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 7);
+		else if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && (i2 < world_sizey * 0.6)) {
+			add_decoration(i, (i2 - 1) + (16 div 16), dec[i]);
+		}
 	}
 }
