@@ -16,7 +16,7 @@ if (contador_disparos >= tempo_entre_disparos) {
     contador_disparos = 0;
 
     // Verificar se o Playeraaa existe no jogo
-    if (instance_exists(Playeraaa)) {
+    if (instance_exists(Playeraaa) && distance_to_object(Playeraaa) < 200.0) {
 
         // Calcular a direção para o Playeraaa
         var dx = Playeraaa.x - x;  // Diferença na posição X

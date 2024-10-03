@@ -1,5 +1,7 @@
-var map = array_create(100);
-var dec = array_create(100);
+var world_size = 300;
+
+var map = array_create(world_size);
+var dec = array_create(world_size);
 
 var blocks = ds_map_create();
 
@@ -12,7 +14,7 @@ ds_map_add(blocks, "terra", 52); // dirt
 randomize();
 
 // Inicializar cada linha com uma array de 100 elementos
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < world_size; i++) {
     map[i] = array_create(20);
 }
 
@@ -27,6 +29,10 @@ function add_decoration(x_pos, y_pos, dec_ind) {
 	tilemap_set(dec_tilemap, dec_ind, x_pos, y_pos);
 }
 
+function add_galinha(x_pos, y_pos) {
+	galinha_object = instance_create_layer(x_pos * 16, (y_pos - 1) * 16, 0, Object9);
+}
+
 function remove_block(x_pos, y_pos) {
 	tilemap_set(tilemap, 0, x_pos, y_pos);
 }
@@ -37,7 +43,8 @@ blocks_perlin_noise = random(3000);
 decoration_perlin_noise = random(3000);
 inc = 0.1;
 
-for (var i = 0; i < 100; i++) {
+// Gerando o mundo
+for (var i = 0; i < world_size; i++) {
 	var grass_block_left = ds_map_find_value(blocks, "grama_left");
 	var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
 	var grass_block_right = ds_map_find_value(blocks, "grama_right");
@@ -67,9 +74,12 @@ for (var i = 0; i < 100; i++) {
 	dec[i] = decoration_has;
 }
 
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < world_size; i++) {
 	for (var i2 = 0; i2 < 20; i2++) {
 		add_block(i, i2 + (450 div 16), map[i][i2]);
-		if (map[i][i2] != air_block && map[i][i2] != dirt_block) add_decoration(i, (i2-1) + (450 div 16), dec[i]);
+		if (map[i][i2] != air_block && map[i][i2] != dirt_block) {
+			if (dec[i] > 50) add_galinha(i, (i2-1) + (450 div 16));
+			add_decoration(i, (i2-1) + (450 div 16), dec[i]);
+		}
 	}
 }
