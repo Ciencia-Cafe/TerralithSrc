@@ -19,6 +19,7 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Blocks","order":1,"path":"folders/Tile Sets/Blocks.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Arvore basica","order":25,"path":"folders/Sprites/Arvore basica.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"BlockShadown","order":1,"path":"tilesets/BlockShadown/BlockShadown.yy",},
@@ -41,6 +42,7 @@
     {"name":"obj_lampada","order":10,"path":"objects/obj_lampada/obj_lampada.yy",},
     {"name":"FarmerIdle","order":1,"path":"sprites/FarmerIdle/FarmerIdle.yy",},
     {"name":"VentoSpr","order":19,"path":"sprites/VentoSpr/VentoSpr.yy",},
+    {"name":"Sprite24","order":1,"path":"sprites/Sprite24/Sprite24.yy",},
     {"name":"World","order":12,"path":"objects/World/World.yy",},
     {"name":"Sprite7","order":4,"path":"sprites/Sprite7/Sprite7.yy",},
     {"name":"Vara","order":6,"path":"sprites/Vara/Vara.yy",},
@@ -49,6 +51,7 @@
     {"name":"Sprite21","order":21,"path":"sprites/Sprite21/Sprite21.yy",},
     {"name":"VentoObj","order":11,"path":"objects/VentoObj/VentoObj.yy",},
     {"name":"Decoration","order":2,"path":"tilesets/Decoration/Decoration.yy",},
+    {"name":"Object12","order":14,"path":"objects/Object12/Object12.yy",},
     {"name":"SpawnPointSpr","order":2,"path":"sprites/SpawnPointSpr/SpawnPointSpr.yy",},
     {"name":"Object9","order":12,"path":"objects/Object9/Object9.yy",},
     {"name":"Sprite15","order":14,"path":"sprites/Sprite15/Sprite15.yy",},
@@ -58,5 +61,6 @@
     {"name":"TesteDeObjDoGio","order":1,"path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},
     {"name":"vara_vinculada","order":11,"path":"sprites/vara_vinculada/vara_vinculada.yy",},
     {"name":"Jeffersonpicanha","order":9,"path":"objects/Jeffersonpicanha/Jeffersonpicanha.yy",},
+    {"name":"Sprite22","order":2,"path":"sprites/Sprite22/Sprite22.yy",},
   ],
 }
