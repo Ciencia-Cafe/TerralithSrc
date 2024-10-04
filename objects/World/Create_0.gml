@@ -126,7 +126,7 @@ for (var i = 0; i < world_sizex; i++) {
 }
 
 // Gerando o mundo
-for (var i = 0; i < world_sizex; i++) {
+/*for (var i = 0; i < world_sizex; i++) {
 	decoration_has = map_value(perlin_noise(decoration_perlin_noise), -1, 1, 24, 64);
 	
 	decoration_perlin_noise += inc;
@@ -174,7 +174,7 @@ for (var i = 0; i < world_sizex; i++) {
 	last_height = current_height;
 	
 	dec[i] = decoration_has;
-}
+}*/
 
 for (var i = 0; i < world_sizex; i++) {
 	// ventos
@@ -184,8 +184,13 @@ for (var i = 0; i < world_sizex; i++) {
 	
 	// blocos
 	for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
-		add_block(i, i2 + (16 div 16), map[i][i2]);
-		if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && i2 < world_sizey * 0.275) {
+		if (i2 == height_map[i]) add_block(i, i2 + (16 div 16), grass_block_mid);
+		else add_block(i, i2 + (16 div 16), dirt_block);
+		
+		if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 2)));
+		else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);
+		
+		/*if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && i2 < world_sizey * 0.275) {
 			if (dec[i] > 551) add_galinha(i, i2);
 		}
 		
@@ -197,6 +202,6 @@ for (var i = 0; i < world_sizex; i++) {
 		
 		if (i % 2 == 1 && trees[i * 0.5] == 1 && (map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && i2 < world_sizey * 0.275) {
 			add_arvore(i, i2);
-		}
+		}*/
 	}
 }
