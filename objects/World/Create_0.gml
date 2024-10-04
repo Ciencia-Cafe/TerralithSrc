@@ -60,6 +60,10 @@ function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(x_pos * 16, (y_pos - 1) * 16, 0, Object12);
 }
 
+function add_cactus(x_pos, y_pos) {
+	cactus_object = instance_create_layer(x_pos * 16, (y_pos - 1) * 16, 0, Object13);
+}
+
 function add_vento(x_pos, y_pos) {
 	vento_object = instance_create_layer(x_pos * 16, (y_pos - 1) * 16, 0, VentoObj);
 }
@@ -178,10 +182,35 @@ for (var i = 0; i < world_sizex; i++) {
 		add_vento(i, irandom_range(20, 60));
 	}
 	
+	var bioma = 0;
+	
+	// bioma floresta
+	if (height_map[i] < world_sizey * 0.275 && temperature_map[i] > 30 && temperature_map[i] < 60) {
+		bioma = 0;
+		if (i % 2 == 1 && humidity_map[i] > 60 && irandom_range(0, 3) == 2) {
+			add_arvore(i, height_map[i]);
+		}
+	}
+	else if (height_map[i] < world_sizey * 0.275 && temperature_map[i] > 60) {
+		bioma = 1;
+		if (i % 2 == 1 && humidity_map[i] < 40 && irandom_range(0, 3) == 2) {
+			add_cactus(i, height_map[i]);
+		}
+	}
+	// bioma oceano
+	else {
+		bioma = 1;
+	}
+	
 	// blocos
 	for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
-		if (i2 == height_map[i]) add_block(i, i2 + (16 div 16), grass_block_mid);
-		else add_block(i, i2 + (16 div 16), dirt_block);
+		if (bioma == 0) {
+			if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid);
+			else add_block(i, i2 + 1, dirt_block);
+		}
+		else if (bioma == 1) {
+			add_block(i, i2 + 1, sand_block_mid);
+		}
 		
 		if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
 		else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);
@@ -197,16 +226,6 @@ for (var i = 0; i < world_sizex; i++) {
 		if (i % 2 == 1 && trees[i * 0.5] == 1 && (map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && i2 < world_sizey * 0.275) {
 			add_arvore(i, i2);
 		}*/
-	}
-	
-	// bioma floresta
-	if (height_map[i] < world_sizey * 0.275) {
-		if (i % 2 == 1 && humidity_map[i] > 60 && temperature_map[i] > 30 && temperature_map[i] < 60 && irandom_range(0, 3) == 2) {
-			add_arvore(i, height_map[i]);
-		}
-	}
-	// bioma oceano
-	else {
 	}
 	
 	// agua

@@ -52,6 +52,7 @@
     {"id":{"name":"wind","path":"sounds/wind/wind.yy",},},
     {"id":{"name":"Musicar__2_","path":"sounds/Musicar__2_/Musicar__2_.yy",},},
     {"id":{"name":"Sprite23","path":"sprites/Sprite23/Sprite23.yy",},},
+    {"id":{"name":"Object13","path":"objects/Object13/Object13.yy",},},
     {"id":{"name":"Espada","path":"sprites/Espada/Espada.yy",},},
     {"id":{"name":"Cave","path":"sprites/Cave/Cave.yy",},},
     {"id":{"name":"Musicar","path":"sounds/Musicar/Musicar.yy",},},

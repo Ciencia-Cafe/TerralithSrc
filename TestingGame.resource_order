@@ -33,6 +33,7 @@
     {"name":"GioTest","order":1,"path":"rooms/GioTest/GioTest.yy",},
     {"name":"wind","order":5,"path":"sounds/wind/wind.yy",},
     {"name":"Musicar__2_","order":10,"path":"sounds/Musicar__2_/Musicar__2_.yy",},
+    {"name":"Object13","order":15,"path":"objects/Object13/Object13.yy",},
     {"name":"Espada","order":4,"path":"sprites/Espada/Espada.yy",},
     {"name":"Cave","order":8,"path":"sprites/Cave/Cave.yy",},
     {"name":"Musicar","order":7,"path":"sounds/Musicar/Musicar.yy",},
