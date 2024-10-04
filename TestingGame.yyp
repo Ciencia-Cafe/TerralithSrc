@@ -42,6 +42,7 @@
   },
   "resources": [
     {"id":{"name":"Musicar__1_","path":"sounds/Musicar__1_/Musicar__1_.yy",},},
+    {"id":{"name":"Sombras","path":"sprites/Sombras/Sombras.yy",},},
     {"id":{"name":"BlockShadown","path":"tilesets/BlockShadown/BlockShadown.yy",},},
     {"id":{"name":"Dirt_02","path":"sounds/Dirt_02/Dirt_02.yy",},},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
@@ -97,6 +98,7 @@
     {"id":{"name":"FarmerFall","path":"sprites/FarmerFall/FarmerFall.yy",},},
     {"id":{"name":"Dano","path":"sprites/Dano/Dano.yy",},},
     {"id":{"name":"perlin_noise","path":"scripts/perlin_noise/perlin_noise.yy",},},
+    {"id":{"name":"BlocksNiggaShadow","path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},},
     {"id":{"name":"TesteDeObjDoGio","path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},},
     {"id":{"name":"Jeffersonpicanha","path":"objects/Jeffersonpicanha/Jeffersonpicanha.yy",},},
     {"id":{"name":"Sprite22","path":"sprites/Sprite22/Sprite22.yy",},},

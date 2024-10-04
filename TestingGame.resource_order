@@ -25,6 +25,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"Musicar__1_","order":9,"path":"sounds/Musicar__1_/Musicar__1_.yy",},
+    {"name":"Sombras","order":28,"path":"sprites/Sombras/Sombras.yy",},
     {"name":"BlockShadown","order":1,"path":"tilesets/BlockShadown/BlockShadown.yy",},
     {"name":"Dirt_02","order":1,"path":"sounds/Dirt_02/Dirt_02.yy",},
     {"name":"Sprite8","order":5,"path":"sprites/Sprite8/Sprite8.yy",},
@@ -69,6 +70,7 @@
     {"name":"Dirt_Fall","order":2,"path":"sounds/Dirt_Fall/Dirt_Fall.yy",},
     {"name":"FarmerFall","order":16,"path":"sprites/FarmerFall/FarmerFall.yy",},
     {"name":"Dano","order":3,"path":"sprites/Dano/Dano.yy",},
+    {"name":"BlocksNiggaShadow","order":2,"path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},
     {"name":"TesteDeObjDoGio","order":1,"path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},
     {"name":"Jeffersonpicanha","order":9,"path":"objects/Jeffersonpicanha/Jeffersonpicanha.yy",},
     {"name":"Sprite22","order":2,"path":"sprites/Sprite22/Sprite22.yy",},
