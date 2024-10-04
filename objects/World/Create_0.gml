@@ -14,17 +14,15 @@ var blocks = ds_map_create();
 ds_map_add(blocks, "ar", 0); // air
 
 // bioma floresta
-ds_map_add(blocks, "grama_left", 40); // grass
 ds_map_add(blocks, "grama_mid", 41); // grass
-ds_map_add(blocks, "grama_right", 42); // grass
 ds_map_add(blocks, "terra", 52); // dirt
 
 // bioma deserto
-ds_map_add(blocks, "areia_left", 19); // grass
 ds_map_add(blocks, "areia_mid", 20); // grass
-ds_map_add(blocks, "areia_right", 21); // grass
+ds_map_add(blocks, "areia_dark", 13); // grass
 
 ds_map_add(blocks, "snow_mid", 2); // snow
+ds_map_add(blocks, "snow_dark", 25); // snow
 
 randomize();
 
@@ -89,17 +87,14 @@ inc2 = 0.01;
 
 var air_block = ds_map_find_value(blocks, "ar");
 	
-var grass_block_left = ds_map_find_value(blocks, "grama_left");
 var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
-var grass_block_right = ds_map_find_value(blocks, "grama_right");
-	
 var dirt_block = ds_map_find_value(blocks, "terra");
 	
-var sand_block_left = ds_map_find_value(blocks, "areia_left");
 var sand_block_mid = ds_map_find_value(blocks, "areia_mid");
-var sand_block_right = ds_map_find_value(blocks, "areia_right");
+var sand_block_dark = ds_map_find_value(blocks, "areia_dark");
 
 var snow_block_mid = ds_map_find_value(blocks, "snow_mid");
+var snow_block_dark = ds_map_find_value(blocks, "snow_dark");
 
 
 // Generating maps
@@ -152,7 +147,7 @@ for (var i = 0; i < world_sizex; i++) {
 	}
 	// bioma oceano
 	else {
-		bioma = 1;
+		bioma = 3;
 	}
 	
 	// blocos
@@ -162,10 +157,16 @@ for (var i = 0; i < world_sizex; i++) {
 			else add_block(i, i2 + 1, dirt_block);
 		}
 		else if (bioma == 1) {
-			add_block(i, i2 + 1, sand_block_mid);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid);
+			else add_block(i, i2 + 1, sand_block_dark);
 		}
 		else if (bioma == 2) {
-			add_block(i, i2 + 1, snow_block_mid);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid);
+			else add_block(i, i2 + 1, snow_block_dark);
+		}
+		else {
+			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid);
+			else add_block(i, i2 + 1, sand_block_dark);
 		}
 		
 		if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
