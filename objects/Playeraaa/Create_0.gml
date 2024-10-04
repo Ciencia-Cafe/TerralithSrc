@@ -84,3 +84,6 @@ musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
 function play_music() {
 	audio_play_sound(musicas[irandom_range(0, 4)], 0, false);
 }
+//Seta do mouse custom do vitom
+//Ocultado o sexo da seta
+window_set_cursor(cr_none)

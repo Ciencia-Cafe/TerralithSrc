@@ -78,6 +78,7 @@
     {"id":{"name":"Sprite24","path":"sprites/Sprite24/Sprite24.yy",},},
     {"id":{"name":"World","path":"objects/World/World.yy",},},
     {"id":{"name":"Cactos1Spr","path":"sprites/Cactos1Spr/Cactos1Spr.yy",},},
+    {"id":{"name":"Rato","path":"sprites/Rato/Rato.yy",},},
     {"id":{"name":"Garfo","path":"sprites/Garfo/Garfo.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
     {"id":{"name":"Vara","path":"sprites/Vara/Vara.yy",},},
@@ -105,8 +106,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

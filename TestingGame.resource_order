@@ -54,6 +54,7 @@
     {"name":"VentoSpr","order":19,"path":"sprites/VentoSpr/VentoSpr.yy",},
     {"name":"Sprite24","order":1,"path":"sprites/Sprite24/Sprite24.yy",},
     {"name":"World","order":12,"path":"objects/World/World.yy",},
+    {"name":"Rato","order":29,"path":"sprites/Rato/Rato.yy",},
     {"name":"Garfo","order":3,"path":"sprites/Garfo/Garfo.yy",},
     {"name":"Sprite7","order":4,"path":"sprites/Sprite7/Sprite7.yy",},
     {"name":"Musicartrister","order":6,"path":"sounds/Musicartrister/Musicartrister.yy",},
