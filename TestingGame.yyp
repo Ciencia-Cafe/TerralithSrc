@@ -88,6 +88,7 @@
     {"id":{"name":"VentoObj","path":"objects/VentoObj/VentoObj.yy",},},
     {"id":{"name":"Decoration","path":"tilesets/Decoration/Decoration.yy",},},
     {"id":{"name":"JumpParticle","path":"particles/JumpParticle/JumpParticle.yy",},},
+    {"id":{"name":"Sprite29","path":"sprites/Sprite29/Sprite29.yy",},},
     {"id":{"name":"Object12","path":"objects/Object12/Object12.yy",},},
     {"id":{"name":"SpawnPointSpr","path":"sprites/SpawnPointSpr/SpawnPointSpr.yy",},},
     {"id":{"name":"Object9","path":"objects/Object9/Object9.yy",},},

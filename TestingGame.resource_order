@@ -61,6 +61,7 @@
     {"name":"Sprite21","order":21,"path":"sprites/Sprite21/Sprite21.yy",},
     {"name":"VentoObj","order":11,"path":"objects/VentoObj/VentoObj.yy",},
     {"name":"Decoration","order":2,"path":"tilesets/Decoration/Decoration.yy",},
+    {"name":"Sprite29","order":16,"path":"sprites/Sprite29/Sprite29.yy",},
     {"name":"Object12","order":14,"path":"objects/Object12/Object12.yy",},
     {"name":"SpawnPointSpr","order":2,"path":"sprites/SpawnPointSpr/SpawnPointSpr.yy",},
     {"name":"Object9","order":12,"path":"objects/Object9/Object9.yy",},

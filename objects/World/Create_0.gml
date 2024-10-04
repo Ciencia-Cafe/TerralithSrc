@@ -3,6 +3,7 @@ var world_sizey = 250;
 
 var map = array_create(world_sizex);
 var dec = array_create(world_sizex);
+var trees = array_create(world_sizex * 0.5);
 
 var blocks = ds_map_create();
 
@@ -43,6 +44,10 @@ function add_decoration(x_pos, y_pos, dec_ind) {
 
 function add_galinha(x_pos, y_pos) {
 	galinha_object = instance_create_layer(x_pos * 16, (y_pos - 1) * 16, 0, Object9);
+}
+
+function add_arvore(x_pos, y_pos) {
+	arvore_object = instance_create_layer(x_pos * 16, (y_pos - 1) * 16, 0, Object12);
 }
 
 function remove_block(x_pos, y_pos) {
@@ -97,6 +102,8 @@ for (var i = 0; i < world_sizex; i++) {
 	
 	current_height = current_height_tmp + current_height_tmp2;
 	
+	if (humidity > 60 && temperature < 85 && temperature > 30) trees[i * 0.5] = 1;
+	
 	if (humidity > 50 || temperature > 50) {
 		for (var i2 = 0; i2 < world_sizey; i2++) {
 			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
@@ -141,12 +148,17 @@ for (var i = 0; i < world_sizex; i++) {
 for (var i = 0; i < world_sizex; i++) {
 	for (var i2 = 0; i2 < world_sizey; i2++) {
 		add_block(i, i2 + (16 div 16), map[i][i2]);
-		if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right)) {
-			if (dec[i] > 50) add_galinha(i, (i2) + (16 div 16));
+		if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && i2 < world_sizey * 0.275) {
+			if (dec[i] > 55) add_galinha(i, i2);
 		}
+		
 		if (i2 > world_sizey * 0.275 && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 7);
 		else if ((map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && (i2 < world_sizey * 0.275)) {
 			add_decoration(i, (i2 - 1) + (16 div 16), dec[i]);
+		}
+		
+		if (i % 2 == 1 && trees[i * 0.5] == 1 && (map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && i2 < world_sizey * 0.275) {
+			add_arvore(i, i2);
 		}
 	}
 }
