@@ -199,8 +199,19 @@ for (var i = 0; i < world_sizex; i++) {
 		}*/
 	}
 	
+	// bioma floresta
+	if (height_map[i] < world_sizey * 0.275) {
+		if (i % 2 == 1 && humidity_map[i] > 60 && temperature_map[i] > 30 && temperature_map[i] < 60 && irandom_range(0, 3) == 2) {
+			add_arvore(i, height_map[i]);
+		}
+	}
+	// bioma oceano
+	else {
+	}
+	
 	// agua
 	for (var i2 = world_sizey * 0.275; i2 < world_sizey && i2 < height_map[i]; i2++) {
-		add_decoration(i, i2 + 1, 7);
+		if (i2 == world_sizey * 0.275) add_decoration(i, i2 + 1, 7);
+		else add_decoration(i, i2 + 1, 15);
 	}
 }
