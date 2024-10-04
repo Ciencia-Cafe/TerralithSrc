@@ -121,11 +121,13 @@ for (var i = 0; i < world_sizex; i++) {
 			}
 			else map[i][i2] = air_block;
 		}
+		
+		if (current_height < world_sizey * 0.275) {
+			if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
+			else map[i][current_height] = grass_block_mid;
 	
-		if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
-		else map[i][current_height] = grass_block_mid;
-	
-		if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
+			if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
+		}
 	}
 	else {
 		for (var i2 = 0; i2 < world_sizey; i2++) {
@@ -159,7 +161,8 @@ for (var i = 0; i < world_sizex; i++) {
 			if (dec[i] > 551) add_galinha(i, i2);
 		}
 		
-		if (i2 > world_sizey * 0.275 && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 7);
+		if ((i2 > world_sizey * 0.275) && (i2 < world_sizey * 0.275 + 1) && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 7);
+		else if ((i2 > world_sizey * 0.275 + 1) && map[i][i2] == air_block) add_decoration(i, i2 + (16 div 16), 15);
 		else if (!(i % 2 == 1 && trees[i * 0.5] == 1) && (map[i][i2] >= grass_block_left && map[i][i2] <= grass_block_right) && (i2 < world_sizey * 0.275)) {
 			add_decoration(i, (i2 - 1) + (16 div 16), dec[i]);
 		}
