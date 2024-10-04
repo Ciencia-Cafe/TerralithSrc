@@ -24,6 +24,8 @@ ds_map_add(blocks, "areia_left", 19); // grass
 ds_map_add(blocks, "areia_mid", 20); // grass
 ds_map_add(blocks, "areia_right", 21); // grass
 
+ds_map_add(blocks, "snow_mid", 2); // snow
+
 randomize();
 
 // Inicializar cada linha com uma array de 100 elementos
@@ -92,15 +94,12 @@ var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
 var grass_block_right = ds_map_find_value(blocks, "grama_right");
 	
 var dirt_block = ds_map_find_value(blocks, "terra");
-var dark_dirt_block = ds_map_find_value(blocks, "terra_escura");
-var dark_dark_dirt_block = ds_map_find_value(blocks, "terra_mais_escura");
 	
 var sand_block_left = ds_map_find_value(blocks, "areia_left");
 var sand_block_mid = ds_map_find_value(blocks, "areia_mid");
 var sand_block_right = ds_map_find_value(blocks, "areia_right");
-	
-var dark_sand_block = ds_map_find_value(blocks, "areia_escura");
-var dark_dark_sand_block = ds_map_find_value(blocks, "areia_mais_escura");
+
+var snow_block_mid = ds_map_find_value(blocks, "snow_mid");
 
 
 // Generating maps
@@ -118,63 +117,14 @@ for (var i = 0; i < world_sizex; i++) {
 	current_humidity_tmp = map_value(perlin_noise(humidity_perlin_noise), -1, 1, 0, 100);
 	current_temperature_tmp = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 100);
 	
+	var temperature_height_influence = map_value(current_height, 0, world_sizey, 0, 30);
+	
 	humidity_map[i] = current_humidity_tmp;
-	temperature_map[i] = current_temperature_tmp;
+	temperature_map[i] = current_temperature_tmp - temperature_height_influence;
 	
 	humidity_perlin_noise += inc2;
 	temperature_perlin_noise += inc2;
 }
-
-// Gerando o mundo
-/*for (var i = 0; i < world_sizex; i++) {
-	decoration_has = map_value(perlin_noise(decoration_perlin_noise), -1, 1, 24, 64);
-	
-	decoration_perlin_noise += inc;
-	
-	if (humidity > 60 && temperature < 85 && temperature > 30) trees[i * 0.5] = 1;
-	
-	if (humidity > 50 || temperature > 50) {
-		for (var i2 = 0; i2 < world_sizey; i2++) {
-			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
-				map[i][i2] = dirt_block;
-			}
-			else if (i2 > current_height + 1 && i2 <= current_height + 2) {
-				map[i][i2] = dark_dirt_block;
-			}
-			else if (i2 > current_height + 2) {
-				map[i][i2] = dark_dark_dirt_block;
-			}
-			else map[i][i2] = air_block;
-		}
-		
-		if (current_height < world_sizey * 0.275) {
-			if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = grass_block_left;
-			else map[i][current_height] = grass_block_mid;
-	
-			if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = grass_block_right;
-		}
-	}
-	else {
-		for (var i2 = 0; i2 < world_sizey; i2++) {
-			if (i2 >= current_height - 1 && i2 <= current_height + 1) {
-				map[i][i2] = dark_sand_block;
-			}
-			else if (i2 > current_height + 1) {
-				map[i][i2] = dark_dark_sand_block;
-			}
-			else map[i][i2] = air_block;
-		}
-	
-		if (i > 0 && map[i-1][current_height] == air_block) map[i][current_height] = sand_block_left;
-		else map[i][current_height] = sand_block_mid;
-	
-		if (i > 0 && map[i][last_height] == air_block) map[i-1][last_height] = sand_block_right;
-	}
-	
-	last_height = current_height;
-	
-	dec[i] = decoration_has;
-}*/
 
 for (var i = 0; i < world_sizex; i++) {
 	// ventos
@@ -185,17 +135,20 @@ for (var i = 0; i < world_sizex; i++) {
 	var bioma = 0;
 	
 	// bioma floresta
-	if (height_map[i] < world_sizey * 0.275 && temperature_map[i] > 30 && temperature_map[i] < 60) {
+	if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 30 && temperature_map[i] < 60) {
 		bioma = 0;
-		if (i % 2 == 1 && humidity_map[i] > 60 && irandom_range(0, 3) == 2) {
+		if (i % 2 == 1 && humidity_map[i] > 60 && irandom_range(0, 2) == 1) {
 			add_arvore(i, height_map[i]);
 		}
 	}
-	else if (height_map[i] < world_sizey * 0.275 && temperature_map[i] > 60) {
+	else if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 60) {
 		bioma = 1;
-		if (i % 2 == 1 && humidity_map[i] < 40 && irandom_range(0, 3) == 2) {
+		if (i % 2 == 1 && humidity_map[i] < 40 && irandom_range(0, 2) == 1) {
 			add_cactus(i, height_map[i]);
 		}
+	}
+	else if (height_map[i] < world_sizey * 0.275 && (temperature_map[i] < 30 || height_map[i] < world_sizey * 0.1)) {
+		bioma = 2;
 	}
 	// bioma oceano
 	else {
@@ -210,6 +163,9 @@ for (var i = 0; i < world_sizex; i++) {
 		}
 		else if (bioma == 1) {
 			add_block(i, i2 + 1, sand_block_mid);
+		}
+		else if (bioma == 2) {
+			add_block(i, i2 + 1, snow_block_mid);
 		}
 		
 		if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
