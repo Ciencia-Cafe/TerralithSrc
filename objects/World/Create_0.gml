@@ -11,6 +11,9 @@ var trees = array_create(world_sizex * 0.5);
 
 var blocks = ds_map_create();
 
+block_mining_time = 15;
+elapsed_mining_time = 0.0;
+
 ds_map_add(blocks, "ar", 0); // air
 
 // bioma floresta
@@ -35,13 +38,19 @@ tilemap = layer_tilemap_get_id("Tiles_1");
 dec_tilemap = layer_tilemap_get_id("Tiles_2");
 shadow_tilemap = layer_tilemap_get_id("Tiles_3");
 
-function add_block(x_pos, y_pos, block_ind) {
-	if (block_ind == 49 || block_ind == 8) {
-		tilemap_set(tilemap, 52, x_pos, y_pos);
-	}
-	else {
-		tilemap_set(tilemap, block_ind, x_pos, y_pos);
-	}
+function get_block(x_pos, y_pos) {
+	return tilemap_get(tilemap, x_pos, y_pos);
+}
+
+function add_block(x_pos, y_pos, block_ind, down_block_ind) {
+	if (block_ind == 0) return;
+	var block = irandom_range(0, 2);
+	var past_block = get_block(x_pos-1, y_pos);
+	var next_block = get_block(x_pos+1, y_pos);
+	
+	if (past_block != block_ind && past_block != 0 && past_block != down_block_ind && block == 1) block_ind = get_block(x_pos-1, y_pos);
+	else if (next_block != block_ind && next_block != 0 && next_block != down_block_ind && block == 1) block_ind = get_block(x_pos+1, y_pos);
+	tilemap_set(tilemap, block_ind, x_pos, y_pos);
 }
 
 function add_shadow(x_pos, y_pos, shadow_ind) {
@@ -153,20 +162,20 @@ for (var i = 0; i < world_sizex; i++) {
 	// blocos
 	for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
 		if (bioma == 0) {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid);
-			else add_block(i, i2 + 1, dirt_block);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid, dirt_block);
+			else add_block(i, i2 + 1, dirt_block, grass_block_mid);
 		}
 		else if (bioma == 1) {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid);
-			else add_block(i, i2 + 1, sand_block_dark);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 		}
 		else if (bioma == 2) {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid);
-			else add_block(i, i2 + 1, snow_block_dark);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
+			else add_block(i, i2 + 1, snow_block_dark, snow_block_mid);
 		}
 		else {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid);
-			else add_block(i, i2 + 1, sand_block_dark);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 		}
 		
 		if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
