@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bc825e12-869f-45c0-a8b5-2a4cd0fc222d","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 6,
+  "origin": 9,
   "parent": {
     "name": "Bioma de areia",
     "path": "folders/Sprites/Bioma de areia.yy",
@@ -59,7 +59,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
+    "xorigin": 4,
     "yorigin": 32,
   },
   "swatchColours": null,
