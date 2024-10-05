@@ -149,19 +149,27 @@ for (var i = 0; i < world_sizex; i++) {
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 			dec[i] = 1;
 		}
+		else {
+			dec[i] = 3;
+		}
 	}
 	else if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 60) {
 		bioma = 1;
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 			dec[i] = 2;
 		}
+		else {
+			dec[i] = 4;
+		}
 	}
 	else if (height_map[i] < world_sizey * 0.275 && (temperature_map[i] < 30 || height_map[i] < world_sizey * 0.1)) {
 		bioma = 2;
+		dec[i] = 5;
 	}
 	// bioma oceano
 	else {
 		bioma = 3;
+		dec[i] = 6;
 	}
 	
 	// blocos
