@@ -1,4 +1,4 @@
-var world_sizex = 625;
+var world_sizex = 937;
 var world_sizey = 250;
 
 var height_map = array_create(world_sizex);
@@ -6,6 +6,7 @@ var humidity_map = array_create(world_sizex);
 var temperature_map = array_create(world_sizex);
 
 var map = array_create(world_sizex);
+var obj = array_create(world_sizex);
 var dec = array_create(world_sizex);
 
 var blocks = ds_map_create();
@@ -143,25 +144,32 @@ for (var i = 0; i < world_sizex; i++) {
 	var pbhm = i > 0 ? ceil(height_map[i-1]) : 0;
 	var nbhm = i < world_sizex-1 ? ceil(height_map[i+1]) : 0;
 	
-	// decorações
+	// objetos
 	if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 30 && temperature_map[i] < 60) {
 		bioma = 0;
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
-			dec[i] = 1;
+			obj[i] = 1;
 		}
 	}
 	else if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 60) {
 		bioma = 1;
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
-			dec[i] = 2;
+			obj[i] = 2;
 		}
 	}
 	else if (height_map[i] < world_sizey * 0.275 && (temperature_map[i] < 30 || height_map[i] < world_sizey * 0.1)) {
 		bioma = 2;
+		obj[i] = 5;
 	}
 	// bioma oceano
 	else {
 		bioma = 3;
+		obj[i] = 6;
+	}
+	
+	// decorações
+	if (bioma == 0 && dec[i] == 0) {
+		
 	}
 	
 	// blocos
