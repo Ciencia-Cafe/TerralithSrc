@@ -47,6 +47,7 @@
     {"id":{"name":"Dirt_02","path":"sounds/Dirt_02/Dirt_02.yy",},},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},
     {"id":{"name":"Sprite11","path":"sprites/Sprite11/Sprite11.yy",},},
+    {"id":{"name":"Back1","path":"sprites/Back1/Back1.yy",},},
     {"id":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
     {"id":{"name":"Playeraaa","path":"objects/Playeraaa/Playeraaa.yy",},},
     {"id":{"name":"wind","path":"sounds/wind/wind.yy",},},
@@ -76,6 +77,7 @@
     {"id":{"name":"FarmerIdle","path":"sprites/FarmerIdle/FarmerIdle.yy",},},
     {"id":{"name":"Cactos2Spr","path":"sprites/Cactos2Spr/Cactos2Spr.yy",},},
     {"id":{"name":"VentoSpr","path":"sprites/VentoSpr/VentoSpr.yy",},},
+    {"id":{"name":"Back3","path":"sprites/Back3/Back3.yy",},},
     {"id":{"name":"Sprite24","path":"sprites/Sprite24/Sprite24.yy",},},
     {"id":{"name":"World","path":"objects/World/World.yy",},},
     {"id":{"name":"BrocuQuebra","path":"objects/BrocuQuebra/BrocuQuebra.yy",},},
@@ -98,6 +100,7 @@
     {"id":{"name":"SpawnPointSpr","path":"sprites/SpawnPointSpr/SpawnPointSpr.yy",},},
     {"id":{"name":"Object9","path":"objects/Object9/Object9.yy",},},
     {"id":{"name":"Lamparina","path":"sprites/Lamparina/Lamparina.yy",},},
+    {"id":{"name":"Back2","path":"sprites/Back2/Back2.yy",},},
     {"id":{"name":"Dirt_Fall","path":"sounds/Dirt_Fall/Dirt_Fall.yy",},},
     {"id":{"name":"FarmerFall","path":"sprites/FarmerFall/FarmerFall.yy",},},
     {"id":{"name":"Dano","path":"sprites/Dano/Dano.yy",},},
@@ -110,8 +113,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
