@@ -14,6 +14,8 @@ var blocks = ds_map_create();
 block_mining_time = 15;
 elapsed_mining_time = 0.0;
 
+brocu_quebra_ins = instance_create_layer(0, 0, 0, BrocuQuebra);
+
 ds_map_add(blocks, "ar", 0); // air
 
 // bioma floresta
