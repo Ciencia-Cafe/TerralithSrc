@@ -1,12 +1,13 @@
 var div_delta_time = delta_time / 100000;
+var _cam_x = camera_get_view_x(view_camera[0]);
+
+layer_x("Backgrounds_1", _cam_x * 0.75);
+layer_x("Backgrounds_2", _cam_x * 0.5);
+layer_x("Backgrounds_3", _cam_x * 0.25);
 
 if (mouse_check_button_pressed(mb_right)) {
 	add_block(mouse_x div 16, mouse_y div 16, 5, 5);
 }
-
-/*if (mouse_check_button_pressed(mb_right)) {
-	remove_block(mouse_x div 16, mouse_y div 16);
-}*/
 
 if (mouse_check_button(mb_left) && tilemap_get(tilemap, mouse_x div 16, mouse_y div 16) != 0) {
 	brocu_quebra_ins.x = floor(mouse_x div 16) * 16;
