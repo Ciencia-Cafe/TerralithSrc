@@ -78,7 +78,7 @@
   "viewSettings": {
     "clearDisplayBuffer": true,
     "clearViewBackground": true,
-    "enableViews": false,
+    "enableViews": true,
     "inheritViewSettings": false,
   },
   "volume": 1.0,

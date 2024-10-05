@@ -150,6 +150,9 @@ for (var i = 0; i < world_sizex; i++) {
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 			obj[i] = 1;
 		}
+		else {
+			dec[i] = irandom_range(1, 3);
+		}
 	}
 	else if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 60) {
 		bioma = 1;
@@ -175,19 +178,19 @@ for (var i = 0; i < world_sizex; i++) {
 	// blocos
 	for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
 		if (bioma == 0) {
-			if (i2 == height_map[i] && dec[i] == 0) add_block(i, i2 + 1, grass_block_mid, dirt_block);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid, dirt_block);
 			else add_block(i, i2 + 1, dirt_block, grass_block_mid);
 		}
 		else if (bioma == 1) {
-			if (i2 == height_map[i] && dec[i] == 0) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
 			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 		}
 		else if (bioma == 2) {
-			if (i2 == height_map[i] && dec[i] == 0) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
 			else add_block(i, i2 + 1, snow_block_dark, snow_block_mid);
 		}
 		else {
-			if (i2 == height_map[i] && dec[i] == 0) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
 			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 		}
 		
@@ -199,8 +202,23 @@ for (var i = 0; i < world_sizex; i++) {
 	for (var i2 = world_sizey * 0.275; i2 < world_sizey && i2 < height_map[i]; i2++) {
 		if (i2 == world_sizey * 0.275) add_decoration(i, i2 + 1, 7);
 		else add_decoration(i, i2 + 1, 15);
+		
+		add_whole_block(i, i2 + 1, 1);
 	}
 	
-	if (dec[i] == 1) add_arvore(i, ceil(height_map[i]));
-	else if (dec[i] == 2) add_cactus(i, ceil(height_map[i]));
+	if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));
+	else if (obj[i] == 2) add_cactus(i, ceil(height_map[i]));
+	
+	// flores
+	if (dec[i] == 1) {
+		var dec2 = irandom_range(1, 4);
+		if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(48, 51));
+		else if (dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(56, 59));
+		else if (dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(40, 41));
+		else if (dec2 == 4) add_decoration(i, floor(height_map[i]), 43);
+	}
+	// matos
+	else if (dec[i] == 2) {
+		 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
+	}
 }
