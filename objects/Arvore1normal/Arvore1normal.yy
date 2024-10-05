@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Object12",
+  "name": "Arvore1normal",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bioma normal",
+    "path": "folders/Objects/Bioma normal.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ArvoreBiomaNEVE",
-    "path": "folders/Objects/ArvoreBiomaNEVE.yy",
+    "name": "Bioma neve",
+    "path": "folders/Objects/Bioma neve.yy",
   },
   "parentObjectId": null,
   "persistent": false,

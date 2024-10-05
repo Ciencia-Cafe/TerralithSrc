@@ -68,11 +68,11 @@ function add_galinha(x_pos, y_pos) {
 }
 
 function add_arvore(x_pos, y_pos) {
-	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Object12);
+	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Arvore1normal);
 }
 
 function add_cactus(x_pos, y_pos) {
-	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Object13);
+	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Cactos);
 }
 
 function add_vento(x_pos, y_pos) {

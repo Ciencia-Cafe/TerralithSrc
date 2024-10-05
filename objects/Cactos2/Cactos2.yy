@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Object13",
+  "name": "Cactos2",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "BiomaAreia",
+    "path": "folders/Objects/BiomaAreia.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Cactos2Spr",
-    "path": "sprites/Cactos2Spr/Cactos2Spr.yy",
+    "name": "Cactos1Spr",
+    "path": "sprites/Cactos1Spr/Cactos1Spr.yy",
   },
   "spriteMaskId": null,
   "visible": true,

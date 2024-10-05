@@ -1,13 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Arv2",
+  "name": "Cactos",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Bioma neve",
-    "path": "folders/Objects/Bioma neve.yy",
+    "name": "BiomaAreia",
+    "path": "folders/Objects/BiomaAreia.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "ArvoreDaNeve3",
-    "path": "sprites/ArvoreDaNeve3/ArvoreDaNeve3.yy",
+    "name": "Cactos2Spr",
+    "path": "sprites/Cactos2Spr/Cactos2Spr.yy",
   },
   "spriteMaskId": null,
   "visible": true,
