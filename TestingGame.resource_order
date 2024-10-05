@@ -72,6 +72,7 @@
     {"name":"Dirt_Fall","order":2,"path":"sounds/Dirt_Fall/Dirt_Fall.yy",},
     {"name":"FarmerFall","order":16,"path":"sprites/FarmerFall/FarmerFall.yy",},
     {"name":"Dano","order":3,"path":"sprites/Dano/Dano.yy",},
+    {"name":"Pa","order":5,"path":"sprites/Pa/Pa.yy",},
     {"name":"BlocksNiggaShadow","order":2,"path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},
     {"name":"TesteDeObjDoGio","order":1,"path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},
     {"name":"Jeffersonpicanha","order":9,"path":"objects/Jeffersonpicanha/Jeffersonpicanha.yy",},

@@ -100,6 +100,7 @@
     {"id":{"name":"FarmerFall","path":"sprites/FarmerFall/FarmerFall.yy",},},
     {"id":{"name":"Dano","path":"sprites/Dano/Dano.yy",},},
     {"id":{"name":"perlin_noise","path":"scripts/perlin_noise/perlin_noise.yy",},},
+    {"id":{"name":"Pa","path":"sprites/Pa/Pa.yy",},},
     {"id":{"name":"BlocksNiggaShadow","path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},},
     {"id":{"name":"TesteDeObjDoGio","path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},},
     {"id":{"name":"Jeffersonpicanha","path":"objects/Jeffersonpicanha/Jeffersonpicanha.yy",},},
