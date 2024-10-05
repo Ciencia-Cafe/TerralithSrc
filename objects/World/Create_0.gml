@@ -1,4 +1,4 @@
-var world_sizex = 625;
+var world_sizex = 937;
 var world_sizey = 250;
 
 var height_map = array_create(world_sizex);

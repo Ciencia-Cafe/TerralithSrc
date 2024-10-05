@@ -3,11 +3,12 @@ tilemap2 = layer_tilemap_get_id("Tiles_3");
 move_x = 0.0;
 move_y = 0.0;
 
-move_speed = 2.0;
+move_speed = 1.5;
 gravity_speed = 16;
 dragging = 1.0;
 dir_x = 0;
 double_jump = false;
+jump_height = 3;
 is_dead = false;
 on_floor_hm = false;
 just_landed = false;
@@ -37,14 +38,14 @@ function on_ceiling() {
 function jump() {
 	if (on_floor()) {
 		move_y = 0;
-		move_y -= 5;
+		move_y -= jump_height;
 		double_jump = true;
 		audio_play_sound(Dirt_Jump, 10, false);
 	}
 	else {
 		if (double_jump) {
 			move_y = 0;
-			move_y -= 5;
+			move_y -= jump_height;
 			double_jump = false;
 			part_particles_burst(ps, x, y, JumpParticle);
 			audio_play_sound(DoubleJump, 10, false);
