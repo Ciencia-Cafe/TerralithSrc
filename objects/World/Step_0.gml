@@ -1,9 +1,14 @@
 var div_delta_time = delta_time / 100000;
 var _cam_x = camera_get_view_x(view_camera[0]);
+var _cam_y = camera_get_view_y(view_camera[0]);
 
 layer_x("Backgrounds_1", _cam_x * 0.75);
 layer_x("Backgrounds_2", _cam_x * 0.5);
 layer_x("Backgrounds_3", _cam_x * 0.25);
+
+layer_y("Backgrounds_1", _cam_y * 0.75);
+layer_y("Backgrounds_2", _cam_y * 0.5);
+layer_y("Backgrounds_3", _cam_y * 0.25);
 
 if (mouse_check_button_pressed(mb_right)) {
 	add_block(mouse_x div 16, mouse_y div 16, 5, 5);
