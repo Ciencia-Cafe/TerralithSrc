@@ -83,7 +83,7 @@
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
     {"id":{"name":"Corvu","path":"objects/Corvu/Corvu.yy",},},
     {"id":{"name":"Machado","path":"sprites/Machado/Machado.yy",},},
-    {"id":{"name":"Galinhamorre","path":"sprites/Galinhamorre/Galinhamorre.yy",},},
+    {"id":{"name":"spr_galinha_morrendo","path":"sprites/spr_galinha_morrendo/spr_galinha_morrendo.yy",},},
     {"id":{"name":"Sprite14","path":"sprites/Sprite14/Sprite14.yy",},},
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
     {"id":{"name":"FarmerJump","path":"sprites/FarmerJump/FarmerJump.yy",},},
