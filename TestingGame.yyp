@@ -46,6 +46,7 @@
   },
   "resources": [
     {"id":{"name":"Arv2","path":"objects/Arv2/Arv2.yy",},},
+    {"id":{"name":"Sprite20Jump","path":"sprites/Sprite20Jump/Sprite20Jump.yy",},},
     {"id":{"name":"Musicar__1_","path":"sounds/Musicar__1_/Musicar__1_.yy",},},
     {"id":{"name":"Sombras","path":"sprites/Sombras/Sombras.yy",},},
     {"id":{"name":"BlockShadown","path":"tilesets/BlockShadown/BlockShadown.yy",},},

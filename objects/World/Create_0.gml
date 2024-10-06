@@ -237,6 +237,11 @@ for (var i = 0; i < world_sizex; i++) {
 		 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
 	}
 	
+	// animais
+	else if(dec[i] == 3) {
+		add_galinha(i, floor(height_map[i]) - 1);
+	}
+	
 	// desert
 	else if (dec[i] == 4) {
 		add_decoration(i, floor(height_map[i]), 32);
