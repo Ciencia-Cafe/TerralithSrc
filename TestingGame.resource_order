@@ -42,6 +42,7 @@
     {"name":"GioTest","order":1,"path":"rooms/GioTest/GioTest.yy",},
     {"name":"wind","order":5,"path":"sounds/wind/wind.yy",},
     {"name":"Musicar__2_","order":10,"path":"sounds/Musicar__2_/Musicar__2_.yy",},
+    {"name":"raycast","order":2,"path":"scripts/raycast/raycast.yy",},
     {"name":"Espada","order":4,"path":"sprites/Espada/Espada.yy",},
     {"name":"WaterBubbles","order":1,"path":"particles/WaterBubbles/WaterBubbles.yy",},
     {"name":"Cave","order":8,"path":"sprites/Cave/Cave.yy",},

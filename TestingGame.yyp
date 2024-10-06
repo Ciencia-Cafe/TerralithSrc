@@ -61,6 +61,7 @@
     {"id":{"name":"wind","path":"sounds/wind/wind.yy",},},
     {"id":{"name":"Musicar__2_","path":"sounds/Musicar__2_/Musicar__2_.yy",},},
     {"id":{"name":"Sprite23","path":"sprites/Sprite23/Sprite23.yy",},},
+    {"id":{"name":"raycast","path":"scripts/raycast/raycast.yy",},},
     {"id":{"name":"Cactos","path":"objects/Cactos/Cactos.yy",},},
     {"id":{"name":"Espada","path":"sprites/Espada/Espada.yy",},},
     {"id":{"name":"WaterBubbles","path":"particles/WaterBubbles/WaterBubbles.yy",},},
