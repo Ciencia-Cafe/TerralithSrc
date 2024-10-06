@@ -74,19 +74,19 @@ function add_ocean(x_pos, y_pos, dec_ind) {
 }
 
 function add_galinha(x_pos, y_pos) {
-	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Object9);
+	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Object9);
 }
 
 function add_arvore(x_pos, y_pos) {
-	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Arvore1normal);
+	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, Arvore1normal);
 }
 
 function add_cactus(x_pos, y_pos) {
-	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Cactos);
+	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, Cactos);
 }
 
 function add_vento(x_pos, y_pos) {
-	vento_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, VentoObj);
+	vento_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, VentoObj);
 }
 
 function remove_block(x_pos, y_pos) {
