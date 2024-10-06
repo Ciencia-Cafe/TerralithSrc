@@ -2,6 +2,8 @@ tilemap = layer_tilemap_get_id("Tiles_1");
 tilemap2 = layer_tilemap_get_id("Tiles_3");
 move_x = 0.0;
 move_y = 0.0;
+previous_x = 0.0;
+previous_y = 0.0;
 
 move_speed = 1.5;
 gravity_speed = 16;
@@ -14,7 +16,8 @@ is_dead = false;
 on_floor_hm = false;
 just_landed = false;
 
-is_flying = true;
+is_on_water = false;
+is_flying = false;
 
 elapsed_time = 0.0;
 

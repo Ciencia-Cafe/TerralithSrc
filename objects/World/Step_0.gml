@@ -41,6 +41,12 @@ else {
 var player_position_x = ceil((object_exists(Playeraaa) ? Playeraaa.x : 16) div 16);
 var player_position_y = ceil((object_exists(Playeraaa) ? Playeraaa.y : 16) div 16);
 
+var is_player_on_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 7;
 var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 15;
 
-if (object_exists(Playeraaa)) Playeraaa.is_flying = is_player_under_water;
+if (object_exists(Playeraaa)) {
+	Playeraaa.is_on_water = is_player_on_water;
+	Playeraaa.is_flying = is_player_under_water;
+	
+	if (is_player_on_water && Playeraaa.dir_y < 0) Playeraaa.move_y -= 5;
+}
