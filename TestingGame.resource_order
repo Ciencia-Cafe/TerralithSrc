@@ -30,6 +30,7 @@
   ],
   "ResourceOrderSettings": [
     {"name":"Arv2","order":1,"path":"objects/Arv2/Arv2.yy",},
+    {"name":"NpcPescadorJump","order":36,"path":"sprites/NpcPescadorJump/NpcPescadorJump.yy",},
     {"name":"Sprite20Jump","order":4,"path":"sprites/Sprite20Jump/Sprite20Jump.yy",},
     {"name":"Musicar__1_","order":9,"path":"sounds/Musicar__1_/Musicar__1_.yy",},
     {"name":"Sombras","order":28,"path":"sprites/Sombras/Sombras.yy",},
