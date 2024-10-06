@@ -10,6 +10,10 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 			if (number == 0) number = 1;
 			else number = 0;
         break;
+		
+		case "Respira":
+			if (is_flying) part_particles_burst(ps, x, y, WaterBubbles);
+		break;
 
         case "destroy":
             sequence_destroy(event_data[? "element_id"]);

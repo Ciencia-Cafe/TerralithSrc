@@ -5,9 +5,6 @@ if (is_flying) {
 	move_y = lerp(move_y, dir_y * move_speed, dragging);
 	move_x = lerp(move_x, dir_x * move_speed, dragging);
 	
-	if (image_index == 3) {
-	}
-	
 	look_at(move_x, move_y);
 }
 else {
