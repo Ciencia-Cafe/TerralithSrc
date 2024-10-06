@@ -7,13 +7,18 @@ move_speed = 1.5;
 gravity_speed = 16;
 dragging = 1.0;
 dir_x = 0;
+dir_y = 0;
 double_jump = false;
 jump_height = 3;
 is_dead = false;
 on_floor_hm = false;
 just_landed = false;
 
+is_flying = true;
+
 elapsed_time = 0.0;
+
+rotation = 0.0;
 
 ps = part_system_create_layer("Effects", false);
 image_speed = 1;
@@ -74,8 +79,24 @@ function key_right() {
 	return keyboard_check(vk_right) || keyboard_check(ord("D"));
 }
 
-function key_up() {
+function key_up_pressed() {
 	return keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
+}
+
+function key_up() {
+	return keyboard_check(vk_up) || keyboard_check(ord("W"));
+}
+
+function key_down() {
+	return keyboard_check(vk_down) || keyboard_check(ord("S"));
+}
+
+function look_at(target_x, target_y) {
+    // Calculate the direction angle to the target
+    var angle = point_direction(0, 0, target_x, target_y);
+    
+    // Set the player's rotation to face the target
+    image_angle = angle - 90;
 }
 
 randomize();

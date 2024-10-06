@@ -37,3 +37,8 @@ else {
 	brocu_quebra_ins.x = 0;
 	brocu_quebra_ins.y = 0;
 }
+
+var player_position_x = ceil((object_exists(Playeraaa) ? Playeraaa.x : 16) div 16);
+var player_position_y = ceil((object_exists(Playeraaa) ? Playeraaa.y : 16) div 16);
+
+var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 15;
