@@ -12,10 +12,10 @@ if (place_meeting(x + 2.0, y, floor_tilemap) && move_x != 0) {
 }
 
 if (on_floor()) {
-	sprite_index = Sprite20;
+	sprite_index = Sprite13;
 }
 else {
-	sprite_index = Sprite20Jump;
+	sprite_index = NpcPescadorJump;
 }
 
 if (dir_x < 0) {

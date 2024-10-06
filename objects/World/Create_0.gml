@@ -39,6 +39,8 @@ for (var i = 0; i < world_sizex; i++) {
 tilemap = layer_tilemap_get_id("Tiles_1");
 dec_tilemap = layer_tilemap_get_id("Tiles_2");
 shadow_tilemap = layer_tilemap_get_id("Tiles_3");
+shadown_tilemap = layer_tilemap_get_id("Tiles_4");
+water_tilemap = layer_tilemap_get_id("Tiles_5");
 
 function get_block(x_pos, y_pos) {
 	return tilemap_get(tilemap, x_pos, y_pos);
@@ -55,6 +57,10 @@ function add_block(x_pos, y_pos, block_ind, down_block_ind) {
 	tilemap_set(tilemap, block_ind, x_pos, y_pos);
 }
 
+function add_whole_block(x_pos, y_pos, block_ind) {
+	tilemap_set(shadown_tilemap, block_ind, x_pos, y_pos);
+}
+
 function add_shadow(x_pos, y_pos, shadow_ind) {
 	tilemap_set(shadow_tilemap, shadow_ind, x_pos, y_pos);
 }
@@ -63,10 +69,16 @@ function add_decoration(x_pos, y_pos, dec_ind) {
 	tilemap_set(dec_tilemap, dec_ind, x_pos, y_pos);
 }
 
+function add_ocean(x_pos, y_pos, dec_ind) {
+	tilemap_set(water_tilemap, dec_ind, x_pos, y_pos);
+}
+
 function add_galinha(x_pos, y_pos) {
 	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Object9);
 }
-
+function add_npc(x_pos, y_pos) {
+	Npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, NpcPescador);
+}
 function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Arvore1normal);
 }
@@ -159,6 +171,9 @@ for (var i = 0; i < world_sizex; i++) {
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 			obj[i] = 2;
 		}
+		else {
+			dec[i] = irandom_range(4, 5);
+		}
 	}
 	else if (height_map[i] < world_sizey * 0.275 && (temperature_map[i] < 30 || height_map[i] < world_sizey * 0.1)) {
 		bioma = 2;
@@ -168,6 +183,8 @@ for (var i = 0; i < world_sizex; i++) {
 	else {
 		bioma = 3;
 		obj[i] = 6;
+		
+		dec[i] = irandom_range(6, 7);
 	}
 	
 	// decorações
@@ -200,10 +217,10 @@ for (var i = 0; i < world_sizex; i++) {
 	
 	// agua
 	for (var i2 = world_sizey * 0.275; i2 < world_sizey && i2 < height_map[i]; i2++) {
-		if (i2 == world_sizey * 0.275) add_decoration(i, i2 + 1, 7);
-		else add_decoration(i, i2 + 1, 15);
+		if (i2 == world_sizey * 0.275) add_ocean(i, i2 + 1, 7);
+		else add_ocean(i, i2 + 1, 15);
 		
-		add_whole_block(i, i2 + 1, 1);
+		add_whole_block(i, i2 + 1, 57);
 	}
 	
 	if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));
@@ -220,5 +237,27 @@ for (var i = 0; i < world_sizex; i++) {
 	// matos
 	else if (dec[i] == 2) {
 		 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
+	}
+	
+	// animais
+	else if(dec[i] == 3) {
+		add_galinha(i, floor(height_map[i]) - 1);
+	}
+	
+	// desert
+	else if (dec[i] == 4) {
+		add_decoration(i, floor(height_map[i]), 32);
+	}
+	
+	// oceano
+	else if (dec[i] == 6) {
+		var dec2 = irandom_range(1, 3);
+		if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
+		else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
+		else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
+	}
+	// Npc 
+	else if(dec[i] == 3) {
+		add_npc(i, floor(height_map[i]) - 1);
 	}
 }
