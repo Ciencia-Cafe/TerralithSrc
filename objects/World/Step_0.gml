@@ -42,3 +42,5 @@ var player_position_x = ceil((object_exists(Playeraaa) ? Playeraaa.x : 16) div 1
 var player_position_y = ceil((object_exists(Playeraaa) ? Playeraaa.y : 16) div 16);
 
 var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 15;
+
+if (object_exists(Playeraaa)) Playeraaa.is_flying = is_player_under_water;
