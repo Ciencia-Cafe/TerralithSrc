@@ -41,6 +41,9 @@
     "name": "FarmerIdle",
     "path": "sprites/FarmerIdle/FarmerIdle.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "PlayerCol",
+    "path": "sprites/PlayerCol/PlayerCol.yy",
+  },
   "visible": true,
 }

@@ -67,6 +67,7 @@
     {"id":{"name":"Cave","path":"sprites/Cave/Cave.yy",},},
     {"id":{"name":"Musicar","path":"sounds/Musicar/Musicar.yy",},},
     {"id":{"name":"Arv1","path":"objects/Arv1/Arv1.yy",},},
+    {"id":{"name":"PlayerCol","path":"sprites/PlayerCol/PlayerCol.yy",},},
     {"id":{"name":"DoubleJump","path":"sounds/DoubleJump/DoubleJump.yy",},},
     {"id":{"name":"Blocks","path":"tilesets/Blocks/Blocks.yy",},},
     {"id":{"name":"Bloco1_Sombra","path":"sprites/Bloco1_Sombra/Bloco1_Sombra.yy",},},
