@@ -83,6 +83,7 @@
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
     {"id":{"name":"Corvu","path":"objects/Corvu/Corvu.yy",},},
     {"id":{"name":"Machado","path":"sprites/Machado/Machado.yy",},},
+    {"id":{"name":"Galinhamorre","path":"sprites/Galinhamorre/Galinhamorre.yy",},},
     {"id":{"name":"Sprite14","path":"sprites/Sprite14/Sprite14.yy",},},
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
     {"id":{"name":"FarmerJump","path":"sprites/FarmerJump/FarmerJump.yy",},},
@@ -131,8 +132,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"GioTest","path":"rooms/GioTest/GioTest.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [
