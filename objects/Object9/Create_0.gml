@@ -17,3 +17,10 @@ function jump() {
 	move_y = 0;
 	move_y -= 3;
 }
+// Create Event da galinha (Object9)
+
+// Definir tempo em segundos (120 segundos = 2 minutos)
+tempo_espera = 5 * room_speed;  // room_speed define o número de frames por segundo (fps)
+
+// Iniciar o contador de tempo
+contador_tempo = 0;
