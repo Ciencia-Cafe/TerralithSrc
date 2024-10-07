@@ -24,10 +24,10 @@
     {"name":"Bioma neve","order":34,"path":"folders/Sprites/Bioma neve.yy",},
     {"name":"Ferramentas spr","order":26,"path":"folders/Sprites/Ferramentas spr.yy",},
     {"name":"Oceano","order":35,"path":"folders/Sprites/Oceano.yy",},
+    {"name":"Player","order":38,"path":"folders/Sprites/Player.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Blocks","order":1,"path":"folders/Tile Sets/Blocks.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Player","order":38,"path":"folders/Sprites/Player.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Arv2","order":1,"path":"objects/Arv2/Arv2.yy",},

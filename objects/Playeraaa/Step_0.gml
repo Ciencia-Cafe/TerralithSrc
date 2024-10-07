@@ -8,7 +8,7 @@ if (is_flying) {
 		move_x = lerp(move_x, dir_x * move_speed, dragging);
 	
 		look_at(move_x, move_y);
-		sprite_index = FarmerIdle;
+		sprite_index = FarmerNadando;
 	}
 }
 else if (is_on_water) {
