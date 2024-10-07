@@ -1,11 +1,12 @@
-var world_sizex = 937;
-var world_sizey = 250;
+world_sizex = 937;
+world_sizey = 250;
 
-var height_map = array_create(world_sizex);
-var humidity_map = array_create(world_sizex);
-var temperature_map = array_create(world_sizex);
+height_map = array_create(world_sizex);
+humidity_map = array_create(world_sizex);
+temperature_map = array_create(world_sizex);
 
-var map = array_create(world_sizex);
+light_map = array_create(world_sizex);
+
 var obj = array_create(world_sizex);
 var dec = array_create(world_sizex);
 
@@ -31,9 +32,9 @@ ds_map_add(blocks, "snow_dark", 25); // snow
 
 randomize();
 
-// Inicializar cada linha com uma array de 100 elementos
+// Inicializar lightmap
 for (var i = 0; i < world_sizex; i++) {
-    map[i] = array_create(world_sizey);
+    light_map[i] = array_create(world_sizey);
 }
 
 tilemap = layer_tilemap_get_id("Tiles_1");
@@ -65,6 +66,10 @@ function add_shadow(x_pos, y_pos, shadow_ind) {
 	tilemap_set(shadow_tilemap, shadow_ind, x_pos, y_pos);
 }
 
+function remove_shadow(x_pos, y_pos) {
+	tilemap_set(shadow_tilemap, 0, x_pos, y_pos);
+}
+
 function add_decoration(x_pos, y_pos, dec_ind) {
 	tilemap_set(dec_tilemap, dec_ind, x_pos, y_pos);
 }
@@ -93,6 +98,26 @@ function add_vento(x_pos, y_pos) {
 
 function remove_block(x_pos, y_pos) {
 	tilemap_set(tilemap, 0, x_pos, y_pos);
+}
+
+current_x_height = 0;
+
+function update_lightmap() {
+	for (ix = 0; ix < world_sizex - 1; ix++) {
+		current_x_height = 0;
+		
+		for (iy = 0; iy < world_sizey - 1; iy++) {
+			var current_block = tilemap_get(tilemap, ix, iy);
+			
+			if (current_block != 0) {
+				if (current_x_height == 0) current_x_height = iy;
+				light_map[ix][iy] = 1;
+			}
+			else {
+				light_map[ix][iy] = 0;
+			}
+		}
+	}
 }
 
 current_height = world_sizey * 0.5;
@@ -211,8 +236,8 @@ for (var i = 0; i < world_sizex; i++) {
 			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 		}
 		
-		if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
-		else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);
+		/*if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
+		else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);*/
 	}
 	
 	// agua
@@ -261,3 +286,5 @@ for (var i = 0; i < world_sizex; i++) {
 		add_npc(i, floor(height_map[i]) - 1);
 	}
 }
+
+update_lightmap();

@@ -68,6 +68,7 @@ if (mouse_check_button(mb_left) && tilemap_get(tilemap, mouse_x div 16, mouse_y 
 	brocu_quebra_ins.image_speed = 1;
 	if (elapsed_mining_time >= block_mining_time) {
 		remove_block(mouse_x div 16, mouse_y div 16);
+		update_lightmap();
 		elapsed_mining_time = 0.0;
 		brocu_quebra_ins.image_speed = 0;
 		brocu_quebra_ins.image_index = 0;

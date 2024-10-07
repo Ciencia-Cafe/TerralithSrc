@@ -79,6 +79,7 @@
     {"name":"Musicartrister","order":6,"path":"sounds/Musicartrister/Musicartrister.yy",},
     {"name":"utility_functions","order":1,"path":"scripts/utility_functions/utility_functions.yy",},
     {"name":"Arv4","order":3,"path":"objects/Arv4/Arv4.yy",},
+    {"name":"WorldShadow","order":21,"path":"objects/WorldShadow/WorldShadow.yy",},
     {"name":"ArvoreDaNeve4","order":3,"path":"sprites/ArvoreDaNeve4/ArvoreDaNeve4.yy",},
     {"name":"Dirt_Jump","order":3,"path":"sounds/Dirt_Jump/Dirt_Jump.yy",},
     {"name":"Sprite21","order":21,"path":"sprites/Sprite21/Sprite21.yy",},
