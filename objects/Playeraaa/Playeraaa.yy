@@ -38,8 +38,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "FarmerIdle",
-    "path": "sprites/FarmerIdle/FarmerIdle.yy",
+    "name": "FarmerNadando",
+    "path": "sprites/FarmerNadando/FarmerNadando.yy",
   },
   "spriteMaskId": {
     "name": "PlayerCol",
