@@ -11,8 +11,56 @@ layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
 if (mouse_check_button_pressed(mb_right)) {
-	add_block(mouse_x div 16, mouse_y div 16, 5, 5);
+    var block_pos = raycast_tiles(Playeraaa.x, Playeraaa.y, mouse_x, mouse_y, tilemap);
+    
+    if (block_pos != noone) {
+        // Calculate tile coordinates of the collided tile
+        var tile_x = block_pos[0] div 16;
+        var tile_y = block_pos[1] div 16;
+
+        // Get the center of the collided tile
+        var tile_center_x = tile_x * 16 + 8; // Center X of the tile
+        var tile_center_y = tile_y * 16 + 8; // Center Y of the tile
+
+        // Determine the side of the collision
+        var offset_x = 0;
+        var offset_y = 0;
+
+        // Calculate distance from the center to the hit position
+        var dist_x = block_pos[0] - tile_center_x;
+        var dist_y = block_pos[1] - tile_center_y;
+
+        // Determine side based on smallest distance
+        if (abs(dist_x) > abs(dist_y)) {
+            // Horizontal hit
+            if (dist_x < 0) {
+                // Hit the left side
+                offset_x = -1; // Place the block to the left
+            } else {
+                // Hit the right side
+                offset_x = 1; // Place the block to the right
+            }
+            offset_y = 0; // No vertical offset
+        } else {
+            // Vertical hit
+            if (dist_y < 0) {
+                // Hit the top side
+                offset_y = -1; // Place the block above
+            } else {
+                // Hit the bottom side
+                offset_y = 1; // Place the block below
+            }
+            offset_x = 0; // No horizontal offset
+        }
+
+        // Add the block at the calculated position
+        add_block(tile_x + offset_x, tile_y + offset_y, 5, 5);
+    } else {
+        // If no collision, you can either ignore or place the block at the mouse position
+        add_block(0, 0, 5, 5); // Example default placement, change as needed
+    }
 }
+
 
 if (mouse_check_button(mb_left) && tilemap_get(tilemap, mouse_x div 16, mouse_y div 16) != 0) {
 	brocu_quebra_ins.x = floor(mouse_x div 16) * 16;
