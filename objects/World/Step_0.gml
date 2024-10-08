@@ -10,6 +10,9 @@ layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
+audio_listener_position(Playeraaa.x, Playeraaa.y, 0);
+audio_listener_orientation(0, 0, 1000, 0, -1, 0);
+
 if (mouse_check_button_pressed(mb_right)) {
     var block_pos = raycast_tiles(Playeraaa.x, Playeraaa.y, mouse_x, mouse_y, tilemap);
     
