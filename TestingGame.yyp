@@ -54,6 +54,7 @@
     {"id":{"name":"Sprite20Jump","path":"sprites/Sprite20Jump/Sprite20Jump.yy",},},
     {"id":{"name":"Musicar__1_","path":"sounds/Musicar__1_/Musicar__1_.yy",},},
     {"id":{"name":"Sombras","path":"sprites/Sombras/Sombras.yy",},},
+    {"id":{"name":"ObjNPC","path":"objects/ObjNPC/ObjNPC.yy",},},
     {"id":{"name":"BlockShadown","path":"tilesets/BlockShadown/BlockShadown.yy",},},
     {"id":{"name":"Dirt_02","path":"sounds/Dirt_02/Dirt_02.yy",},},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},},

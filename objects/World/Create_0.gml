@@ -83,7 +83,7 @@ function add_galinha(x_pos, y_pos) {
 	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Object9);
 }
 function add_npc(x_pos, y_pos) {
-	Npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, NpcPescador);
+	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, ObjNPC);
 }
 function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Arvore1normal);
@@ -269,6 +269,7 @@ for (var i = 0; i < world_sizex; i++) {
 	// animais
 	else if(dec[i] == 3) {
 		add_galinha(i, floor(height_map[i]) - 1);
+		add_npc(i, floor(height_map[i]) - 1);
 	}
 	
 	// desert
@@ -282,10 +283,6 @@ for (var i = 0; i < world_sizex; i++) {
 		if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
 		else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
 		else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
-	}
-	// Npc 
-	else if(dec[i] == 3) {
-		add_npc(i, floor(height_map[i]) - 1);
 	}
 }
 
