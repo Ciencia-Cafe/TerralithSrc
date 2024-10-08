@@ -18,6 +18,11 @@ elapsed_mining_time = 0.0;
 
 brocu_quebra_ins = instance_create_layer(0, 0, 0, BrocuQuebra);
 
+global.falloff_ref = 100;
+global.falloff_max = 300;
+
+audio_falloff_set_model(audio_falloff_linear_distance);
+
 ds_map_add(blocks, "ar", 0); // air
 
 // bioma floresta
@@ -249,9 +254,16 @@ for (var i = 0; i < world_sizex; i++) {
 	
 	// agua
 	for (var i2 = world_sizey * 0.275; i2 < world_sizey && i2 < height_map[i]; i2++) {
-		if (i2 == world_sizey * 0.275) add_ocean(i, i2 + 1, 7);
+		if (i2 == world_sizey * 0.275) {
+			add_ocean(i, i2 + 1, 7);
+			if (tilemap_get(tilemap, i-1, i2 + 1) != 0 || tilemap_get(tilemap, i+1, i2+1) != 0) {
+				audio_play_sound_at(river_sfx, i * 16, i2 * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+			}
+		}
 		else add_ocean(i, i2 + 1, 15);
 		add_whole_block(i, i2 + 1, 57);
+		
+		var distance = point_distance(Playeraaa.x / 16, Playeraaa.y / 16, i, i2);
 		
 		water_map[i] = world_sizey * 0.275;
 	}
