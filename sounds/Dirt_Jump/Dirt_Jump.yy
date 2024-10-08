@@ -12,8 +12,8 @@
   "conversionMode": 0,
   "duration": 0.6,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "Footsteps",
+    "path": "folders/Sounds/Footsteps.yy",
   },
   "preload": false,
   "sampleRate": 44100,
