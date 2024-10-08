@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Object20",
+  "name": "Thatanos_Peixe",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
