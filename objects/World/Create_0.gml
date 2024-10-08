@@ -85,6 +85,9 @@ function add_galinha(x_pos, y_pos) {
 function add_npc(x_pos, y_pos) {
 	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, ObjNPC);
 }
+function add_peixe(x_pos, y_pos) {
+	peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Thatanos_Peixe);
+}
 function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Arvore1normal);
 }
@@ -266,10 +269,12 @@ for (var i = 0; i < world_sizex; i++) {
 		 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
 	}
 	
-	// animais
+	// animais terrestres
 	else if(dec[i] == 3) {
-		add_galinha(i, floor(height_map[i]) - 1);
-		add_npc(i, floor(height_map[i]) - 1);
+		var animal = irandom_range(0, 5); // 5 variações
+		
+		if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
+		else if (animal == 2) add_npc(i, floor(height_map[i]) - 1);
 	}
 	
 	// desert
@@ -283,6 +288,9 @@ for (var i = 0; i < world_sizex; i++) {
 		if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
 		else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
 		else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
+		
+		var animal = irandom_range(0, 5); // 5 variações
+		if (animal == 1) add_peixe(i, floor(height_map[i]) - 1);
 	}
 }
 

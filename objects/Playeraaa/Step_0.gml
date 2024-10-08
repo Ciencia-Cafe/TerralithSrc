@@ -1,4 +1,4 @@
-Tdir_x = key_right() - key_left();
+dir_x = key_right() - key_left();
 dir_y = key_down() - key_up();
 
 if (is_flying) {
