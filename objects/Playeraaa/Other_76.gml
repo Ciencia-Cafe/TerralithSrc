@@ -6,6 +6,7 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
     switch (event_data[? "message"])
     {
         case "Step":
+			audio_sound_pitch(Dirt_Jump, random_range(0.75, 1.25));
             audio_play_sound(footstep_sounds[number], 10, false);
 			if (number == 0) number = 1;
 			else number = 0;

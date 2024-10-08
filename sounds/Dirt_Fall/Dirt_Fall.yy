@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "Dirt_Fall.WAV",
   "type": 0,
-  "volume": 1.0,
+  "volume": 0.56,
 }
