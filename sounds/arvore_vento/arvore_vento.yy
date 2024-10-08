@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "arvore_vento.wav",
   "type": 0,
-  "volume": 0.41,
+  "volume": 0.59,
 }
