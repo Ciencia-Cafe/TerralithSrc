@@ -6,6 +6,7 @@ humidity_map = array_create(world_sizex);
 temperature_map = array_create(world_sizex);
 
 light_map = array_create(world_sizex);
+water_map = array_create(world_sizex);
 
 var obj = array_create(world_sizex);
 var dec = array_create(world_sizex);
@@ -244,8 +245,9 @@ for (var i = 0; i < world_sizex; i++) {
 	for (var i2 = world_sizey * 0.275; i2 < world_sizey && i2 < height_map[i]; i2++) {
 		if (i2 == world_sizey * 0.275) add_ocean(i, i2 + 1, 7);
 		else add_ocean(i, i2 + 1, 15);
-		
 		add_whole_block(i, i2 + 1, 57);
+		
+		water_map[i] = world_sizey * 0.275;
 	}
 	
 	if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));

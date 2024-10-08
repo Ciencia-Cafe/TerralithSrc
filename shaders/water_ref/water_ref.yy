@@ -1,7 +1,7 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "sh_rectangle",
+  "name": "water_ref",
   "parent": {
     "name": "Shaders",
     "path": "folders/Shaders.yy",

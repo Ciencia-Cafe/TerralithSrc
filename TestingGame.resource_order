@@ -52,6 +52,7 @@
     {"name":"Musicar","order":7,"path":"sounds/Musicar/Musicar.yy",},
     {"name":"PlayerCol","order":36,"path":"sprites/PlayerCol/PlayerCol.yy",},
     {"name":"DoubleJump","order":4,"path":"sounds/DoubleJump/DoubleJump.yy",},
+    {"name":"water_ref","order":2,"path":"shaders/water_ref/water_ref.yy",},
     {"name":"Bloco1_Sombra","order":18,"path":"sprites/Bloco1_Sombra/Bloco1_Sombra.yy",},
     {"name":"Sprite3","order":7,"path":"sprites/Sprite3/Sprite3.yy",},
     {"name":"butt","order":8,"path":"sounds/butt/butt.yy",},
