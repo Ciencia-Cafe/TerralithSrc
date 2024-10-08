@@ -74,6 +74,7 @@ else {
 	}
 
 	if (just_landed && on_floor()) {
+		audio_sound_pitch(Dirt_Fall, random_range(0.5, 1.5));
 		audio_play_sound(Dirt_Fall, 10, false);
 		just_landed = false;
 	}
@@ -86,7 +87,7 @@ if (y > 5000) kill_self();
 if (elapsed_time >= rand_time) {
 	play_music();
 	elapsed_time = 0;
-	rand_time = random_range(30, 100);
+	rand_time = random_range(100, 200);
 }
 
 elapsed_time += delta_time / 1000000;

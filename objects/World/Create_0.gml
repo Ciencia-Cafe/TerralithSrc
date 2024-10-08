@@ -88,6 +88,9 @@ function add_npc(x_pos, y_pos) {
 function add_peixe(x_pos, y_pos) {
 	peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Thatanos_Peixe);
 }
+function add_corvu(x_pos, y_pos) {
+	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Corvu);
+}
 function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Arvore1normal);
 }
@@ -275,6 +278,7 @@ for (var i = 0; i < world_sizex; i++) {
 		
 		if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
 		else if (animal == 2) add_npc(i, floor(height_map[i]) - 1);
+		else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
 	}
 	
 	// desert

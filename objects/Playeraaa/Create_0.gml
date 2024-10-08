@@ -31,7 +31,7 @@ spawn_point = instance_find(SpawnPoint, 0);
 footstep_sounds = [Dirt_01, Dirt_02];
 number = 0;
 
-rand_time = random_range(30, 100);
+rand_time = 40;
 
 function on_floor() {
 	if (on_floor_hm == false) just_landed = true;
@@ -48,6 +48,7 @@ function jump() {
 		move_y = 0;
 		move_y -= jump_height;
 		double_jump = true;
+		audio_sound_pitch(Dirt_Jump, random_range(0.5, 1.5));
 		audio_play_sound(Dirt_Jump, 10, false);
 	}
 	else {
