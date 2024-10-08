@@ -92,7 +92,7 @@
     {"id":{"name":"Machado","path":"sprites/Machado/Machado.yy",},},
     {"id":{"name":"spr_galinha_morrendo","path":"sprites/spr_galinha_morrendo/spr_galinha_morrendo.yy",},},
     {"id":{"name":"Sprite14","path":"sprites/Sprite14/Sprite14.yy",},},
-    {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},},
+    {"id":{"name":"NpcPescadorIdle","path":"sprites/NpcPescadorIdle/NpcPescadorIdle.yy",},},
     {"id":{"name":"FarmerJump","path":"sprites/FarmerJump/FarmerJump.yy",},},
     {"id":{"name":"obj_lampada","path":"objects/obj_lampada/obj_lampada.yy",},},
     {"id":{"name":"FarmerIdle","path":"sprites/FarmerIdle/FarmerIdle.yy",},},
