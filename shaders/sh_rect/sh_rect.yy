@@ -1,7 +1,7 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "shadow_shader",
+  "name": "sh_rect",
   "parent": {
     "name": "Shaders",
     "path": "folders/Shaders.yy",
