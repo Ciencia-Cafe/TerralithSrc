@@ -124,6 +124,7 @@
     {"id":{"name":"BrocuQuebraBate","path":"sprites/BrocuQuebraBate/BrocuQuebraBate.yy",},},
     {"id":{"name":"SpawnPointSpr","path":"sprites/SpawnPointSpr/SpawnPointSpr.yy",},},
     {"id":{"name":"Object9","path":"objects/Object9/Object9.yy",},},
+    {"id":{"name":"waves_shader","path":"shaders/waves_shader/waves_shader.yy",},},
     {"id":{"name":"Lamparina","path":"sprites/Lamparina/Lamparina.yy",},},
     {"id":{"name":"Back2","path":"sprites/Back2/Back2.yy",},},
     {"id":{"name":"Dirt_Fall","path":"sounds/Dirt_Fall/Dirt_Fall.yy",},},

@@ -13,6 +13,8 @@ var end_tile_y = floor((_cam_y + _view_height) / 16);
 last_light = 0;
 top_pos = 0;
 
+elapsed_time += delta_time / 100000;
+
 // Loop through each tile in the visible area and draw a black rectangle
 for (var i = start_tile_x; i <= end_tile_x; i++) {
     for (var j = start_tile_y; j <= end_tile_y; j++) {
@@ -37,13 +39,28 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_reset();
 			}
 			
+			if (current_water != 0 && j > current_water && j < current_water + 1 && current_water2 != 0) {
+				shader_set(waves_shader);
+		        var tile_x = i * 16;  // Calculate the x position of the tile
+		        var tile_y = j * 16;  // Calculate the y position of the tile
+				
+				var u_pos = shader_get_uniform(waves_shader, "time");
+				//var m_pos = shader_get_uniform(sh_rect, "max_height");
+				
+				shader_set_uniform_f(u_pos, elapsed_time * 0.1);
+				//shader_set_uniform_f(m_pos, current_water);
+				
+		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 5.5, false); // Draw the rectangle
+				shader_reset();
+			}
+			
 			if (current_water != 0 && j > current_water && current_water2 != 0) {
 				shader_set(water_ref);
 		        var tile_x = i * 16;  // Calculate the x position of the tile
 		        var tile_y = j * 16;  // Calculate the y position of the tile
 				
-				var u_pos = shader_get_uniform(sh_rect, "start_position");
-				var m_pos = shader_get_uniform(sh_rect, "max_height");
+				var u_pos = shader_get_uniform(water_ref, "start_position");
+				var m_pos = shader_get_uniform(water_ref, "max_height");
 				
 				shader_set_uniform_f(u_pos, j);
 				shader_set_uniform_f(m_pos, current_water);

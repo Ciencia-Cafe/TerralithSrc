@@ -92,6 +92,7 @@
     {"name":"BrocuQuebraBate","order":30,"path":"sprites/BrocuQuebraBate/BrocuQuebraBate.yy",},
     {"name":"SpawnPointSpr","order":2,"path":"sprites/SpawnPointSpr/SpawnPointSpr.yy",},
     {"name":"Object9","order":12,"path":"objects/Object9/Object9.yy",},
+    {"name":"waves_shader","order":3,"path":"shaders/waves_shader/waves_shader.yy",},
     {"name":"Lamparina","order":1,"path":"sprites/Lamparina/Lamparina.yy",},
     {"name":"Back2","order":32,"path":"sprites/Back2/Back2.yy",},
     {"name":"Dirt_Fall","order":2,"path":"sounds/Dirt_Fall/Dirt_Fall.yy",},
