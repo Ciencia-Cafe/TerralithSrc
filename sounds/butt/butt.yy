@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "butt.mp3",
   "type": 0,
-  "volume": 0.39,
+  "volume": 0.71,
 }

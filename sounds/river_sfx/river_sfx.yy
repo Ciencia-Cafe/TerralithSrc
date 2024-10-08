@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "river_sfx.wav",
   "type": 0,
-  "volume": 0.56,
+  "volume": 0.17,
 }

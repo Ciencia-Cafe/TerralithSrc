@@ -181,6 +181,8 @@ for (var i = 0; i < world_sizex; i++) {
 	temperature_perlin_noise += inc2;
 }
 
+water_height = floor(world_sizey * 0.275);
+
 for (var i = 0; i < world_sizex; i++) {
 	// ventos
 	if (irandom_range(0, 20) == 4) {
@@ -253,19 +255,16 @@ for (var i = 0; i < world_sizex; i++) {
 	}
 	
 	// agua
-	for (var i2 = world_sizey * 0.275; i2 < world_sizey && i2 < height_map[i]; i2++) {
-		if (i2 == world_sizey * 0.275) {
+	for (var i2 = water_height; i2 < world_sizey && i2 < height_map[i]; i2++) {
+		if (i2 == water_height) {
 			add_ocean(i, i2 + 1, 7);
-			if (tilemap_get(tilemap, i-1, i2 + 1) != 0 || tilemap_get(tilemap, i+1, i2+1) != 0) {
-				audio_play_sound_at(river_sfx, i * 16, i2 * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
-			}
 		}
 		else add_ocean(i, i2 + 1, 15);
 		add_whole_block(i, i2 + 1, 57);
 		
 		var distance = point_distance(Playeraaa.x / 16, Playeraaa.y / 16, i, i2);
 		
-		water_map[i] = world_sizey * 0.275;
+		water_map[i] = water_height;
 	}
 	
 	if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));
@@ -307,6 +306,19 @@ for (var i = 0; i < world_sizex; i++) {
 		
 		var animal = irandom_range(0, 5); // 5 variações
 		if (animal == 1) add_peixe(i, floor(height_map[i]) - 1);
+	}
+}
+
+// sounds
+for (var i = 0; i < world_sizex; i++) {
+	if (tilemap_get(water_tilemap, i, water_height + 1) != 0) {
+		if (tilemap_get(tilemap, i+1, water_height) != 0) {
+			audio_play_sound_at(river_sfx, (i-1) * 16, water_height * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+		}
+			
+		if (tilemap_get(tilemap, i-1, water_height) != 0) {
+			audio_play_sound_at(river_sfx, (i-1) * 16, water_height * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+		}
 	}
 }
 
