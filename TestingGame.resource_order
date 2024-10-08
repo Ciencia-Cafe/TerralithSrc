@@ -28,6 +28,8 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Blocks","order":1,"path":"folders/Tile Sets/Blocks.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Animais quaticos","order":39,"path":"folders/Sprites/Animais quaticos.yy",},
+    {"name":"Bioma Oceano","order":22,"path":"folders/Objects/Bioma Oceano.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"Arv2","order":1,"path":"objects/Arv2/Arv2.yy",},
@@ -73,6 +75,7 @@
     {"name":"VentoSpr","order":19,"path":"sprites/VentoSpr/VentoSpr.yy",},
     {"name":"Back3","order":33,"path":"sprites/Back3/Back3.yy",},
     {"name":"Sprite24","order":1,"path":"sprites/Sprite24/Sprite24.yy",},
+    {"name":"Thatanos_Idle","order":1,"path":"sprites/Thatanos_Idle/Thatanos_Idle.yy",},
     {"name":"World","order":12,"path":"objects/World/World.yy",},
     {"name":"BrocuQuebra","order":16,"path":"objects/BrocuQuebra/BrocuQuebra.yy",},
     {"name":"Rato","order":29,"path":"sprites/Rato/Rato.yy",},
