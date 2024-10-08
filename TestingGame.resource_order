@@ -105,6 +105,7 @@
     {"name":"Pa","order":5,"path":"sprites/Pa/Pa.yy",},
     {"name":"BlocksNiggaShadow","order":2,"path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},
     {"name":"TesteDeObjDoGio","order":1,"path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},
+    {"name":"NpcPescador_Walk","order":40,"path":"sprites/NpcPescador_Walk/NpcPescador_Walk.yy",},
     {"name":"Sprite22","order":2,"path":"sprites/Sprite22/Sprite22.yy",},
   ],
 }

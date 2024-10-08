@@ -140,6 +140,7 @@
     {"id":{"name":"Pa","path":"sprites/Pa/Pa.yy",},},
     {"id":{"name":"BlocksNiggaShadow","path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},},
     {"id":{"name":"TesteDeObjDoGio","path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},},
+    {"id":{"name":"NpcPescador_Walk","path":"sprites/NpcPescador_Walk/NpcPescador_Walk.yy",},},
     {"id":{"name":"Thatanos_Peixe","path":"objects/Thatanos_Peixe/Thatanos_Peixe.yy",},},
     {"id":{"name":"Sprite22","path":"sprites/Sprite22/Sprite22.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
