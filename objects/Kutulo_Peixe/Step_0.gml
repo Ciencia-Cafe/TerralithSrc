@@ -10,7 +10,7 @@ if (move_and_collide(move_x, move_y, tilemap) != undefined) {
 	move_y += self_gravity;
 	
 	look_at(move_x, move_y);
-	sprite_index = Thatanos_Walk;
+	sprite_index = Kutulo_Walk;
 	
 	if (tilemap_get(water_tilemap, x / 16, y / 16) != 14 && tilemap_get(water_tilemap, x / 16, y / 16) != 15) {
 		self_gravity = 5.0;

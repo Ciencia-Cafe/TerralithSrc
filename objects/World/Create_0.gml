@@ -92,8 +92,11 @@ function add_galinha(x_pos, y_pos) {
 function add_npc(x_pos, y_pos) {
 	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, ObjNPC);
 }
-function add_peixe(x_pos, y_pos) {
-	peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Thatanos_Peixe);
+function add_peixe(x_pos, y_pos, index) {
+	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Kutulo_Peixe);
+	if (index == 1) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Redflin_Peixe);
+	if (index == 2) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Springuer_Peixe);
+	if (index == 3) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Thatanos_Peixe);
 }
 function add_corvu(x_pos, y_pos) {
 	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Corvu);
@@ -304,8 +307,8 @@ for (var i = 0; i < world_sizex; i++) {
 		else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
 		else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
 		
-		var animal = irandom_range(0, 5); // 5 variações
-		if (animal == 1) add_peixe(i, floor(height_map[i]) - 1);
+		var animal = irandom_range(0, 4); // 5 variações
+		add_peixe(i, floor(height_map[i]) - 1, animal);
 	}
 }
 
