@@ -103,6 +103,11 @@ function add_peixe(x_pos, y_pos, index) {
 function add_corvu(x_pos, y_pos) {
 	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Corvu);
 }
+
+function add_passarin(x_pos, y_pos) {
+	passarin_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, Pomkuku_Passarinho);
+}
+
 function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Arvore1normal);
 }
@@ -195,6 +200,10 @@ for (var i = 0; i < world_sizex; i++) {
 	// ventos
 	if (irandom_range(0, 20) == 4) {
 		add_vento(i, irandom_range(20, 60));
+	}
+	
+	if (irandom_range(0, 10) == 4) {
+		add_passarin(i, irandom_range(0, 20));
 	}
 	
 	var bioma = get_biome(height_map[i], world_sizey, temperature_map[i]);
