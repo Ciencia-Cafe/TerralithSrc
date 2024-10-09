@@ -147,6 +147,8 @@ decoration_perlin_noise = random(3000);
 temperature_perlin_noise = random(3000);
 humidity_perlin_noise = random(3000);
 
+ps = part_system_create_layer("Effects", false);
+
 inc = 0.075;
 inc2 = 0.015;
 
