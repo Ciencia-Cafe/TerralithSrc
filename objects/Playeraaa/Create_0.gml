@@ -29,6 +29,7 @@ image_speed = 1;
 spawn_point = instance_find(SpawnPoint, 0);
 
 footstep_sounds = [Dirt_01, Dirt_02];
+nadando_sounds = [Nadando1, Nadando2];
 number = 0;
 
 rand_time = 40;

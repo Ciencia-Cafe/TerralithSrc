@@ -73,7 +73,10 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[
         {"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"MessageEventKeyframe","resourceVersion":"1.0","Events":[
                 "Respira",
-              ],},},"Disabled":false,"id":"e738acc3-cfd1-4d81-825e-baf7986b6471","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+              ],},},"Disabled":false,"id":"bd1eaa53-620a-4e2c-8e21-42d36bf3dcb4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+        {"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"MessageEventKeyframe","resourceVersion":"1.0","Events":[
+                "Nadando",
+              ],},},"Disabled":false,"id":"6345923d-b6fb-45a1-9667-84fc443463ea","IsCreationKey":false,"Key":7.0,"Length":1.0,"Stretch":false,},
       ],},
     "eventStubScript": null,
     "eventToFunction": {},
