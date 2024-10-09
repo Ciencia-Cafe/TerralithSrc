@@ -104,6 +104,10 @@ function add_corvu(x_pos, y_pos) {
 	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Corvu);
 }
 
+function add_cuei(x_pos, y_pos) {
+	cuei_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Coelho_Animal);
+}
+
 function add_passarin(x_pos, y_pos) {
 	passarin_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, Pomkuku_Passarinho);
 }
@@ -301,6 +305,7 @@ for (var i = 0; i < world_sizex; i++) {
 		if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
 		else if (animal == 2) add_npc(i, floor(height_map[i]) - 1);
 		else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
+		else if (animal == 4) add_cuei(i, floor(height_map[i]) - 1);
 	}
 	
 	// desert
