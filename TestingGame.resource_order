@@ -41,6 +41,7 @@
     {"name":"NpcPescadorJump","order":36,"path":"sprites/NpcPescadorJump/NpcPescadorJump.yy",},
     {"name":"Sprite20Jump","order":4,"path":"sprites/Sprite20Jump/Sprite20Jump.yy",},
     {"name":"Musicar__1_","order":2,"path":"sounds/Musicar__1_/Musicar__1_.yy",},
+    {"name":"get_biome","order":3,"path":"scripts/get_biome/get_biome.yy",},
     {"name":"Sombras","order":28,"path":"sprites/Sombras/Sombras.yy",},
     {"name":"ObjNPC","order":22,"path":"objects/ObjNPC/ObjNPC.yy",},
     {"name":"BlockShadown","order":1,"path":"tilesets/BlockShadown/BlockShadown.yy",},

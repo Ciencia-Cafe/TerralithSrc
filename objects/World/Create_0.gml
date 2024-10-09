@@ -20,6 +20,8 @@ brocu_quebra_ins = instance_create_layer(0, 0, 0, BrocuQuebra);
 
 player_wasnt_on_water = false;
 
+current_biome = 0;
+
 global.falloff_ref = 100;
 global.falloff_max = 300;
 
@@ -163,7 +165,6 @@ var sand_block_dark = ds_map_find_value(blocks, "areia_dark");
 var snow_block_mid = ds_map_find_value(blocks, "snow_mid");
 var snow_block_dark = ds_map_find_value(blocks, "snow_dark");
 
-
 // Generating maps
 for (var i = 0; i < world_sizex; i++) {
 	current_height_tmp = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
@@ -196,15 +197,14 @@ for (var i = 0; i < world_sizex; i++) {
 		add_vento(i, irandom_range(20, 60));
 	}
 	
-	var bioma = 0;
+	var bioma = get_biome(height_map[i], world_sizey, temperature_map[i]);
 	
 	var chm = ceil(height_map[i]);
 	var pbhm = i > 0 ? ceil(height_map[i-1]) : 0;
 	var nbhm = i < world_sizex-1 ? ceil(height_map[i+1]) : 0;
 	
 	// objetos
-	if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 30 && temperature_map[i] < 60) {
-		bioma = 0;
+	if (bioma == 0) {
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 			obj[i] = 1;
 		}
@@ -212,8 +212,7 @@ for (var i = 0; i < world_sizex; i++) {
 			dec[i] = irandom_range(1, 3);
 		}
 	}
-	else if (height_map[i] < world_sizey * 0.275 && height_map[i] > world_sizey * 0.1 && temperature_map[i] > 60) {
-		bioma = 1;
+	else if (bioma == 1) {
 		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 			obj[i] = 2;
 		}
@@ -221,13 +220,11 @@ for (var i = 0; i < world_sizex; i++) {
 			dec[i] = irandom_range(4, 5);
 		}
 	}
-	else if (height_map[i] < world_sizey * 0.275 && (temperature_map[i] < 30 || height_map[i] < world_sizey * 0.1)) {
-		bioma = 2;
+	else if (bioma == 2) {
 		obj[i] = 5;
 	}
 	// bioma oceano
-	else {
-		bioma = 3;
+	else if(bioma == 3) {
 		obj[i] = 6;
 		
 		dec[i] = irandom_range(6, 7);
