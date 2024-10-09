@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "TerraBack3",
-  "bbox_bottom": 398,
+  "bbox_bottom": 399,
   "bbox_left": 65,
   "bbox_right": 768,
   "bbox_top": 0,
