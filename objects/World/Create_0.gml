@@ -18,6 +18,8 @@ elapsed_mining_time = 0.0;
 
 brocu_quebra_ins = instance_create_layer(0, 0, 0, BrocuQuebra);
 
+player_wasnt_on_water = false;
+
 global.falloff_ref = 100;
 global.falloff_max = 300;
 
@@ -261,8 +263,6 @@ for (var i = 0; i < world_sizex; i++) {
 		}
 		else add_ocean(i, i2 + 1, 15);
 		add_whole_block(i, i2 + 1, 57);
-		
-		var distance = point_distance(Playeraaa.x / 16, Playeraaa.y / 16, i, i2);
 		
 		water_map[i] = water_height;
 	}

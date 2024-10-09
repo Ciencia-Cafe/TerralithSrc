@@ -96,9 +96,27 @@ var player_position_y = ceil((object_exists(Playeraaa) ? Playeraaa.y : 16) div 1
 var is_player_on_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 7;
 var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 15;
 
+function tibum() {
+	var tibuns = [Tibum1, Tibum2];
+	var tibum_index = irandom_range(0, 1);
+	audio_play_sound_at(tibuns[tibum_index], Playeraaa.x, Playeraaa.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
+}
+
 if (object_exists(Playeraaa)) {
+	if (!Playeraaa.is_on_water && !Playeraaa.is_flying) {
+		player_wasnt_on_water = true;
+	}
+	else if (player_wasnt_on_water) {
+		tibum();
+		player_wasnt_on_water = false;
+	}
+	
+
 	Playeraaa.is_on_water = is_player_on_water;
 	Playeraaa.is_flying = is_player_under_water;
 	
-	if (is_player_on_water && Playeraaa.dir_y < 0) Playeraaa.move_y -= 5;
+	if (is_player_on_water && Playeraaa.dir_y < 0) {
+		Playeraaa.move_y -= 5;
+		audio_play_sound_at(Tibum3, Playeraaa.x, Playeraaa.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
+	}
 }
