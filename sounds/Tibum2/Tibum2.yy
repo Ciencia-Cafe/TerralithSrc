@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "Tibum2.wav",
   "type": 0,
-  "volume": 0.57,
+  "volume": 0.27,
 }

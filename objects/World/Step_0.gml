@@ -99,6 +99,8 @@ var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player
 function tibum() {
 	var tibuns = [Tibum1, Tibum2];
 	var tibum_index = irandom_range(0, 1);
+	audio_sound_pitch(Tibum1, random_range(0.75, 1.25));
+	audio_sound_pitch(Tibum2, random_range(0.75, 1.25));
 	audio_play_sound_at(tibuns[tibum_index], Playeraaa.x, Playeraaa.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
 }
 
@@ -117,6 +119,7 @@ if (object_exists(Playeraaa)) {
 	
 	if (is_player_on_water && Playeraaa.dir_y < 0) {
 		Playeraaa.move_y -= 5;
+		audio_sound_pitch(Tibum3, random_range(0.75, 1.25));
 		audio_play_sound_at(Tibum3, Playeraaa.x, Playeraaa.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
 	}
 }
