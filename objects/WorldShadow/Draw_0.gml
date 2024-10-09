@@ -39,7 +39,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_reset();
 			}
 			
-			if (current_water != 0 && j > current_water && j < current_water + 1 && current_water2 != 0) {
+			if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
 				shader_set(waves_shader);
 		        var tile_x = i * 16;  // Calculate the x position of the tile
 		        var tile_y = j * 16;  // Calculate the y position of the tile
@@ -50,7 +50,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_set_uniform_f(u_pos, elapsed_time * 0.1);
 				//shader_set_uniform_f(m_pos, current_water);
 				
-		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 5.5, false); // Draw the rectangle
+		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 3, false); // Draw the rectangle
 				shader_reset();
 			}
 			
