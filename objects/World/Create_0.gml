@@ -92,7 +92,7 @@ function add_galinha(x_pos, y_pos) {
 	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Object9);
 }
 function add_npc(x_pos, y_pos) {
-	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, ObjNPC);
+	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, ObjNPC);
 }
 function add_peixe(x_pos, y_pos, index) {
 	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Kutulo_Peixe);
@@ -101,11 +101,11 @@ function add_peixe(x_pos, y_pos, index) {
 	if (index == 3) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Thatanos_Peixe);
 }
 function add_corvu(x_pos, y_pos) {
-	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Corvu);
+	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, Corvu);
 }
 
 function add_cuei(x_pos, y_pos) {
-	cuei_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, Coelho_Animal);
+	cuei_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, Coelho_Animal);
 }
 
 function add_passarin(x_pos, y_pos) {
