@@ -11,6 +11,10 @@ water_map = array_create(world_sizex);
 var obj = array_create(world_sizex);
 var dec = array_create(world_sizex);
 
+background_1 = layer_background_get_id("Backgrounds_1");
+background_2 = layer_background_get_id("Backgrounds_2");
+background_3 = layer_background_get_id("Backgrounds_3");
+
 var blocks = ds_map_create();
 
 block_mining_time = 15;
