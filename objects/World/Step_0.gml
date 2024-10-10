@@ -10,11 +10,6 @@ layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
-// Obter o ID do layer de background
-var background_1 = layer_background_get_id("Backgrounds_1");
-var background_2 = layer_background_get_id("Backgrounds_2");
-var background_3 = layer_background_get_id("Backgrounds_3");
-
 current_biome = get_biome(height_map[floor(Playeraaa.x / 16)], world_sizey, temperature_map[floor(Playeraaa.y / 16)]);
 
 if (current_biome == 1 || current_biome == 3) {
