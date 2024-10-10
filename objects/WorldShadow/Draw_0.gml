@@ -62,6 +62,15 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_reset();
 			}
 			
+			if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
+				shader_set(reflection_shader);
+		        var tile_x = i * 16;
+		        var tile_y = j * 16;
+				
+		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
+				shader_reset();
+			}
+			
 			if (current_water != 0 && j > current_water && current_water2 != 0) {
 				shader_set(water_ref);
 		        var tile_x = i * 16;  // Calculate the x position of the tile
