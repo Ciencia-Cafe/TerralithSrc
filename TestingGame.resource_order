@@ -137,6 +137,7 @@
     {"name":"BlocksNiggaShadow","order":2,"path":"tilesets/BlocksNiggaShadow/BlocksNiggaShadow.yy",},
     {"name":"TesteDeObjDoGio","order":1,"path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},
     {"name":"NpcPescador_Walk","order":40,"path":"sprites/NpcPescador_Walk/NpcPescador_Walk.yy",},
+    {"name":"reflection_shader","order":4,"path":"shaders/reflection_shader/reflection_shader.yy",},
     {"name":"Sprite22","order":2,"path":"sprites/Sprite22/Sprite22.yy",},
   ],
 }
