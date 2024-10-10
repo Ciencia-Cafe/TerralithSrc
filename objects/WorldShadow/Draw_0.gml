@@ -28,7 +28,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 					if (next_top_pos != 0) top_pos = next_top_pos;
 					next_top_pos = j;
 				}
-		        var tile_x = i * 16;  // Calculate the x position of the tile
+		        var tile_x = (i - 1) * 16;  // Calculate the x position of the tile
 		        var tile_y = j * 16;  // Calculate the y position of the tile
 				
 				var c_pos = shader_get_uniform(sh_rect, "start_position");
@@ -41,7 +41,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_set_uniform_f(p_pos, prev_top_pos * 16);
 				shader_set_uniform_f(n_pos, next_top_pos * 16);
 				
-				shader_set_uniform_f(x_pos, i * 16);
+				shader_set_uniform_f(x_pos, (i - 1) * 16);
 				
 		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
 				shader_reset();

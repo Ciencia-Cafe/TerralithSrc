@@ -15,9 +15,19 @@ uniform float x_position;
 void main()
 {
 	float relative_px = abs((v_vPosition.x - x_position) / 16.0);
-	float position_y = mix(start_position, next_position, relative_px);
+	float position_y;
 	
-    float relative_y = ((v_vPosition.y - position_y) / 16.0) / 4.0;
+	float middle_prev_pos = (prev_position + start_position) * 0.5;
+	float middle_next_pos = (start_position + next_position) * 0.5;
+	
+	if (relative_px <= 0.5) {
+		position_y = mix(middle_prev_pos, start_position, relative_px * 2.0);
+	}
+	if (relative_px >= 0.5) {
+		position_y = mix(start_position, middle_next_pos, (relative_px - 0.5) * 2.0);
+	}
+	
+    float relative_y = ((v_vPosition.y - position_y) / 16.0) / 6.0;
 
     float gradient = clamp(relative_y, 0.0, 1.0);
 
