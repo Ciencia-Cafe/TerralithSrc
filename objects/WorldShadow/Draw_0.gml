@@ -1,14 +1,15 @@
 // Get the camera's position and view dimensions
 var _cam_x = camera_get_view_x(view_camera[0]);
 var _cam_y = camera_get_view_y(view_camera[0]);
+
 var _view_width = camera_get_view_width(view_camera[0]);
 var _view_height = camera_get_view_height(view_camera[0]);
 
 // Calculate the starting and ending tile indices based on the camera view
-var start_tile_x = floor(_cam_x / 16);
-var end_tile_x = floor((_cam_x + _view_width) / 16);
-var start_tile_y = floor(_cam_y / 16);
-var end_tile_y = floor((_cam_y + _view_height) / 16);
+var start_tile_x = floor(_cam_x / 16) - 5;
+var end_tile_x = floor((_cam_x + _view_width) / 16) + 5;
+var start_tile_y = floor(_cam_y / 16) - 20;
+var end_tile_y = floor((_cam_y + _view_height) / 16) + 5;
 
 elapsed_time += delta_time / 100000;
 
@@ -67,6 +68,12 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 		        var tile_x = i * 16;
 		        var tile_y = j * 16;
 				
+				var r_pos = shader_get_uniform(reflection_shader, "reflectionPos");
+				var r_size = shader_get_uniform(reflection_shader, "reflectionSize");
+				
+				shader_set_uniform_f(r_pos, tile_x, tile_y);
+				shader_set_uniform_f(r_size, 16, 16);
+				
 		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
 				shader_reset();
 			}
@@ -90,3 +97,4 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 		}
     }
 }
+
