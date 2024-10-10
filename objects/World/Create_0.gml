@@ -1,6 +1,8 @@
 world_sizex = 937;
 world_sizey = 250;
 
+ANIMALS_DISTANCE_TO_ACTIVE = 400.0;
+
 height_map = array_create(world_sizex);
 humidity_map = array_create(world_sizex);
 temperature_map = array_create(world_sizex);

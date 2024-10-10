@@ -1,3 +1,5 @@
 // Step Event
-y = start_y + sin(current_time * speed) * amplitude;
-x = start_x + sin(current_time * speed * 0.5) * amplitude;
+if (distance_to_object(Playeraaa) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
+	y = start_y + sin(current_time * speed) * amplitude;
+	x = start_x + sin(current_time * speed * 0.5) * amplitude;
+}
