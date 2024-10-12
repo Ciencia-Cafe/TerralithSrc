@@ -1,6 +1,9 @@
 world_sizex = 937;
 world_sizey = 250;
 
+block_put_x = 0;
+block_put_y = 0;
+
 ANIMALS_DISTANCE_TO_ACTIVE = 400.0;
 
 height_map = array_create(world_sizex);

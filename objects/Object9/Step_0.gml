@@ -70,7 +70,7 @@ if (distance_to_object(Playeraaa) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	// Step Event da galinha (Object9)
 
 	// Incrementa o contador a cada frame
-	contador_tempo += 1;
+	contador_tempo += 1 * (delta_time / 100000);
 
 	// Verifica se o tempo de espera foi atingido
 	if (contador_tempo >= tempo_espera) {
@@ -79,5 +79,12 @@ if (distance_to_object(Playeraaa) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
     
 	    // Reseta o contador para o próximo ovo
 	    contador_tempo = 0;
+	}
+	
+	if (contador_tempo >= canto) {
+		audio_play_sound_at(GalinhaSFX, x, y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
+		canto = random_range(70, 300);
+		
+		contador_tempo = 0;
 	}
 }

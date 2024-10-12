@@ -23,6 +23,7 @@ function jump() {
 
 // Definir tempo em segundos 
 tempo_espera = 180 * room_speed;  // room_speed define o número de frames por segundo (fps)
+canto = random_range(0, 200);
 
 // Iniciar o contador de tempo
 contador_tempo = 0;

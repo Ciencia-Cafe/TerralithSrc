@@ -28,8 +28,8 @@ else {
 audio_listener_position(Playeraaa.x, Playeraaa.y, 0);
 audio_listener_orientation(0, 0, 1000, 0, -1, 0);
 
-if (mouse_check_button_pressed(mb_right)) {
-    var block_pos = raycast_tiles(Playeraaa.x, Playeraaa.y, mouse_x, mouse_y, tilemap);
+function update_block_pos() {
+	var block_pos = raycast_tiles(Playeraaa.x, Playeraaa.y, mouse_x, mouse_y, tilemap);
     
     if (block_pos != noone) {
         // Calculate tile coordinates of the collided tile
@@ -72,11 +72,18 @@ if (mouse_check_button_pressed(mb_right)) {
         }
 
         // Add the block at the calculated position
-        add_block(tile_x + offset_x, tile_y + offset_y, 5, 5);
-    } else {
-        // If no collision, you can either ignore or place the block at the mouse position
-        add_block(0, 0, 5, 5); // Example default placement, change as needed
+		return [tile_x + offset_x, tile_y + offset_y];
     }
+	
+	return [0, 0];
+}
+
+block_put_x = update_block_pos()[0];
+block_put_y = update_block_pos()[1];
+
+if (mouse_check_button_pressed(mb_right)) {
+	var block_pos = update_block_pos();
+	add_block(block_pos[0], block_pos[1], 5, 5); 
 }
 
 
