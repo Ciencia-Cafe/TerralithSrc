@@ -1,79 +1,47 @@
-tilemap = layer_tilemap_get_id("Tiles_1");
-tilemap2 = layer_tilemap_get_id("Tiles_3");
-move_x = 0.0;
-move_y = 0.0;
-previous_x = 0.0;
-previous_y = 0.0;
+// Constants, sort of
+MOVE_SPEED = 1.5;
+GRAVITY_SPEED = 16.0;
+AIR_DRAGGING = 1.0; // Disabled when on floor
+JUMP_HEIGHT = 5;
 
-move_speed = 1.5;
-gravity_speed = 16;
-dragging = 1.0;
-dir_x = 0;
-dir_y = 0;
-double_jump = false;
-jump_height = 5;
-is_dead = false;
-on_floor_hm = false;
-just_landed = false;
+// Definitions
 
-is_on_water = false;
-is_flying = false;
-
-elapsed_time = 0.0;
-
-rotation = 0.0;
-
-ps = part_system_create_layer("Effects", false);
-image_speed = 1;
-
-spawn_point = instance_find(obj_SpawnPoint, 0);
-
+// SFX
 footstep_sounds = [Dirt_01, Dirt_02];
 nadando_sounds = [Nadando1, Nadando2];
-number = 0;
+musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
 
-rand_time = 40;
+// Sprites
+floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr];
+water_sprites = [FarmerNadando_spr];
 
-function on_floor() {
-	if (on_floor_hm == false) just_landed = true;
-	on_floor_hm = true;
-	return place_meeting(x, y + 2.0, tilemap);
-}
-
-function on_ceiling() {
-	return place_meeting(x, y - 2.0, tilemap);
-}
-
-function jump() {
-	if (on_floor()) {
-		move_y = 0;
-		move_y -= jump_height;
-		double_jump = true;
-		audio_sound_pitch(Dirt_Jump, random_range(0.5, 1.5));
-		audio_play_sound(Dirt_Jump, 10, false);
+// Helper functions
+function get_floor_layer() {
+	if (layer_exists("FloorTile")) {
+		return layer_tilemap_get_id("FloorTile");
 	}
 	else {
-		if (double_jump) {
-			move_y = 0;
-			move_y -= jump_height;
-			double_jump = false;
-			part_particles_burst(ps, x, y, JumpParticle);
-			audio_play_sound(DoubleJump, 10, false);
-		}
+		return layer_tilemap_get_id("Tiles_1");
 	}
 }
 
-function kill_self() {
-    // Verifica se a instância de spawn_point existe
-    if (spawn_point != noone) {
-        // Chama a função spawn_player no contexto de spawn_point
-        with (spawn_point) {
-            spawn_player();
-        }
-        
-        // Destrói a instância atual (o player) após o spawn
-        instance_destroy(); // 'self' é o padrão, não precisa passar nada
-    }
+function get_decoration_layer() {
+}
+
+function get_effects_layer() {
+	if (layer_exists("Effects")) {
+		return part_system_create_layer("Effects", false);
+	}
+	else {
+		return part_system_create_layer("Instances", false);
+	}
+}
+
+function get_spawn_point() {
+	if (instance_exists(obj_SpawnPoint)) {
+		return instance_find(obj_SpawnPoint, 0);
+	}
+	return noone;
 }
 
 function key_left() {
@@ -96,21 +64,111 @@ function key_down() {
 	return keyboard_check(vk_down) || keyboard_check(ord("S"));
 }
 
+function load_up_sprites(current_weapon) {
+	if (current_weapon == "None") {
+		floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr];
+	}
+	else if (current_weapon == "Axe") {
+		floor_sprites = [AxeFarmerIdle_spr, AxeFarmerRun_spr, AxeFarmerJump_spr, AxeFarmerFall_spr];
+	}
+	else if (current_weapon == "Sword") {
+		floor_sprites = [SwordFarmerIdle_spr, SwordFarmerRun_spr, SwordFarmerJump_spr, SwordFarmerFall_spr];
+	}
+	else if (current_weapon == "Shovel") {
+		floor_sprites = [ShovelFarmerIdle_spr, ShovelFarmerRun_spr, ShovelFarmerJump_spr, ShovelFarmerFall_spr];
+	}
+	else if (current_weapon == "Fork") {
+		floor_sprites = [ForkFarmerIdle_spr, ForkFarmerRun_spr, ForkFarmerJump_spr, ForkFarmerFall_spr];
+	}
+	else if (current_weapon == "Rod") {
+		floor_sprites = [RodFarmerIdle_spr, RodFarmerRun_spr, RodFarmerJump_spr, RodFarmerFall_spr];
+	}
+	else if (current_weapon == "Light") {
+		floor_sprites = [LightFarmerIdle_spr, LightFarmerRun_spr, LightFarmerJump_spr, LightFarmerFall_spr];
+	}
+}
+
+tilemap = get_floor_layer();
+tilemap2 = layer_tilemap_get_id("Tiles_3");
+ps = get_effects_layer();
+
+spawn_point = get_spawn_point();
+
+move_x = 0.0;
+move_y = 0.0;
+previous_x = 0.0;
+previous_y = 0.0;
+dir_x = 0;
+dir_y = 0;
+rotation = 0.0;
+
+// States
+can_double_jump = false;
+is_dead = false;
+on_floor_hm = false;
+just_landed = false;
+
+is_on_water = false;
+is_under_water = false;
+
+current_weapon = "Light";
+
+// Timing
+rand_time = 40;
+elapsed_time = 0.0;
+image_speed = 1;
+number = 0;
+
+function on_floor() {
+	if (on_floor_hm == false) just_landed = true;
+	on_floor_hm = true;
+	return place_meeting(x, y + 2.0, tilemap);
+}
+
+function on_ceiling() {
+	return place_meeting(x, y - 2.0, tilemap);
+}
+
+function jump() {
+	if (on_floor()) {
+		move_y = 0;
+		move_y -= JUMP_HEIGHT;
+		can_double_jump = true;
+		audio_sound_pitch(Dirt_Jump, random_range(0.5, 1.5));
+		audio_play_sound(Dirt_Jump, 10, false);
+	}
+	else {
+		if (can_double_jump) {
+			move_y = 0;
+			move_y -= JUMP_HEIGHT;
+			can_double_jump = false;
+			part_particles_burst(ps, x, y, JumpParticle);
+			audio_play_sound(DoubleJump, 10, false);
+		}
+	}
+}
+
+function kill_self() {
+    if (spawn_point != noone) {
+        with (spawn_point) {
+            spawn_player();
+        }
+        
+        instance_destroy();
+    }
+}
+
 function look_at(target_x, target_y) {
-    // Calculate the direction angle to the target
     var angle = point_direction(0, 0, target_x, target_y);
     
-    // Set the player's rotation to face the target
     image_angle = angle - 90;
 }
 
 randomize();
 
-musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
-
 function play_music() {
 	audio_play_sound(musicas[irandom_range(0, 4)], 0, false);
 }
-//Seta do mouse custom do vitom
-//Ocultado o sexo da seta
-window_set_cursor(cr_none)
+
+window_set_cursor(cr_none);
+load_up_sprites(current_weapon);
