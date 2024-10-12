@@ -1,5 +1,5 @@
 // Constants, sort of
-MOVE_SPEED = 1.5;
+MOVE_SPEED = 1.75;
 GRAVITY_SPEED = 16.0;
 AIR_DRAGGING = 1.0; // Disabled when on floor
 JUMP_HEIGHT = 5;

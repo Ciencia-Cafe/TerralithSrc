@@ -70,7 +70,7 @@ else {
 
 	if (on_floor()) {
 		AIR_DRAGGING = 1.0;
-		double_jump = false;
+		can_double_jump = false;
 	}
 	else {
 		AIR_DRAGGING = 0.1;

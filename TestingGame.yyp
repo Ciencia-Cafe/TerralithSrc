@@ -110,6 +110,7 @@
     {"id":{"name":"AxeFarmerFall_spr","path":"sprites/AxeFarmerFall_spr/AxeFarmerFall_spr.yy",},},
     {"id":{"name":"Cactos","path":"objects/Cactos/Cactos.yy",},},
     {"id":{"name":"ShovelFarmerNadando_spr","path":"sprites/ShovelFarmerNadando_spr/ShovelFarmerNadando_spr.yy",},},
+    {"id":{"name":"Swing","path":"sprites/Swing/Swing.yy",},},
     {"id":{"name":"sh_rect","path":"shaders/sh_rect/sh_rect.yy",},},
     {"id":{"name":"Espada_spr","path":"sprites/Espada_spr/Espada_spr.yy",},},
     {"id":{"name":"LightFarmerJump_spr","path":"sprites/LightFarmerJump_spr/LightFarmerJump_spr.yy",},},
