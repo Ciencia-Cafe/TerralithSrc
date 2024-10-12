@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Equipamentos basicos",
+    "path": "folders/Objects/Equipamentos basicos.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Lamparina",
-    "path": "sprites/Lamparina/Lamparina.yy",
+    "name": "Lamparina_spr",
+    "path": "sprites/Lamparina_spr/Lamparina_spr.yy",
   },
   "spriteMaskId": null,
   "visible": true,

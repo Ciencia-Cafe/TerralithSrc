@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Prompts do mundo",
+    "path": "folders/Objects/Prompts do mundo.yy",
   },
   "parentObjectId": null,
   "persistent": false,

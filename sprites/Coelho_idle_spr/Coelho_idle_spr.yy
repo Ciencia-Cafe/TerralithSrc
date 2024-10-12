@@ -39,8 +39,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Bioma de terra spr",
-    "path": "folders/Sprites/Bioma de terra spr.yy",
+    "name": "Animais da terra",
+    "path": "folders/Sprites/Animais da terra.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

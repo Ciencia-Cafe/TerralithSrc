@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Cactos1Spr",
-    "path": "sprites/Cactos1Spr/Cactos1Spr.yy",
+    "name": "Cactos1_spr",
+    "path": "sprites/Cactos1_spr/Cactos1_spr.yy",
   },
   "spriteMaskId": null,
   "visible": true,

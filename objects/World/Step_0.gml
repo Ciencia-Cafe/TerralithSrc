@@ -10,26 +10,26 @@ layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
-current_biome = get_biome(height_map[floor(Playeraaa.x / 16)], world_sizey, temperature_map[floor(Playeraaa.y / 16)]);
+current_biome = get_biome(height_map[floor(obj_Player.x / 16)], world_sizey, temperature_map[floor(obj_Player.y / 16)]);
 
 if (current_biome == 1 || current_biome == 3) {
 	// Trocar o sprite dos backgrounds
-	layer_background_sprite(background_1, AreiaBack3);
-	layer_background_sprite(background_2, AreiaBack2);
-	layer_background_sprite(background_3, AreiaBack1);
+	layer_background_sprite(background_1, AreiaBack3_spr);
+	layer_background_sprite(background_2, AreiaBack2_spr);
+	layer_background_sprite(background_3, AreiaBack1_spr);
 }
 else {
 	// Trocar o sprite dos backgrounds
-	layer_background_sprite(background_1, TerraBack3);
-	layer_background_sprite(background_2, TerraBack2);
-	layer_background_sprite(background_3, TerraBack1);
+	layer_background_sprite(background_1, TerraBack3_spr);
+	layer_background_sprite(background_2, TerraBack2_spr);
+	layer_background_sprite(background_3, TerraBack1_spr);
 }
 
-audio_listener_position(Playeraaa.x, Playeraaa.y, 0);
+audio_listener_position(obj_Player.x, obj_Player.y, 0);
 audio_listener_orientation(0, 0, 1000, 0, -1, 0);
 
 function update_block_pos() {
-	var block_pos = raycast_tiles(Playeraaa.x, Playeraaa.y, mouse_x, mouse_y, tilemap);
+	var block_pos = raycast_tiles(obj_Player.x, obj_Player.y, mouse_x, mouse_y, tilemap);
     
     if (block_pos != noone) {
         // Calculate tile coordinates of the collided tile
@@ -112,8 +112,8 @@ else {
 	brocu_quebra_ins.y = 0;
 }
 
-var player_position_x = ceil((object_exists(Playeraaa) ? Playeraaa.x : 16) div 16);
-var player_position_y = ceil((object_exists(Playeraaa) ? Playeraaa.y : 16) div 16);
+var player_position_x = ceil((object_exists(obj_Player) ? obj_Player.x : 16) div 16);
+var player_position_y = ceil((object_exists(obj_Player) ? obj_Player.y : 16) div 16);
 
 var is_player_on_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 7;
 var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player_position_y) == 15;
@@ -121,14 +121,14 @@ var is_player_under_water = tilemap_get(water_tilemap, player_position_x, player
 function tibum() {
 	var tibuns = [Tibum1, Tibum2];
 	var tibum_index = irandom_range(0, 1);
-	part_particles_burst(ps, Playeraaa.x, Playeraaa.y, TibumPart);
+	part_particles_burst(ps, obj_Player.x, obj_Player.y, TibumPart);
 	audio_sound_pitch(Tibum1, random_range(0.75, 1.25));
 	audio_sound_pitch(Tibum2, random_range(0.75, 1.25));
-	audio_play_sound_at(tibuns[tibum_index], Playeraaa.x, Playeraaa.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
+	audio_play_sound_at(tibuns[tibum_index], obj_Player.x, obj_Player.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
 }
 
-if (object_exists(Playeraaa)) {
-	if (!Playeraaa.is_on_water && !Playeraaa.is_flying) {
+if (object_exists(obj_Player)) {
+	if (!obj_Player.is_on_water && !obj_Player.is_flying) {
 		player_wasnt_on_water = true;
 	}
 	else if (player_wasnt_on_water) {
@@ -137,12 +137,12 @@ if (object_exists(Playeraaa)) {
 	}
 	
 
-	Playeraaa.is_on_water = is_player_on_water;
-	Playeraaa.is_flying = is_player_under_water;
+	obj_Player.is_on_water = is_player_on_water;
+	obj_Player.is_flying = is_player_under_water;
 	
-	if (is_player_on_water && Playeraaa.dir_y < 0) {
-		Playeraaa.move_y -= 5;
+	if (is_player_on_water && obj_Player.dir_y < 0) {
+		obj_Player.move_y -= 5;
 		audio_sound_pitch(Tibum3, random_range(0.75, 1.25));
-		audio_play_sound_at(Tibum3, Playeraaa.x, Playeraaa.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
+		audio_play_sound_at(Tibum3, obj_Player.x, obj_Player.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
 	}
 }

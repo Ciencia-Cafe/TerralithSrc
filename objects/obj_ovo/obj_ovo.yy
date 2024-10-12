@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Drops de animais",
+    "path": "folders/Objects/Drops de animais.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "Sprite21",
-    "path": "sprites/Sprite21/Sprite21.yy",
+    "name": "Ovo_spr",
+    "path": "sprites/Ovo_spr/Ovo_spr.yy",
   },
   "spriteMaskId": null,
   "visible": true,

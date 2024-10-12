@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Animais da terra",
+    "path": "folders/Sprites/Animais da terra.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

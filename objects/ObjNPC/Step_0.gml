@@ -1,4 +1,4 @@
-if (distance_to_object(Playeraaa) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
+if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	move_y = gravity_speed;
 
 	// Modifica o fator de interpolação para algo mais perceptível
@@ -10,10 +10,10 @@ if (distance_to_object(Playeraaa) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	}
 
 	if (on_floor()) {
-		sprite_index = NpcPescadorIdle;
+		sprite_index = NpcPescadorIdle_spr;
 	}
 	else {
-		sprite_index = NpcPescadorJump;
+		sprite_index = NpcPescadorJump_spr;
 	}
 
 	if (dir_x < 0) {
