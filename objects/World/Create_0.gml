@@ -9,6 +9,20 @@ zoom_level = 1;
 default_zoom_width = camera_get_view_width(view_camera[0]);
 default_zoom_height = camera_get_view_height(view_camera[0]);
 
+
+current_col = [0.33, 0.33, 0.9, 1.0];
+
+time = 0.0;
+
+function lerp_col(col1, col2, amount) {
+	var ret_col = [col1[0], col1[1], col1[2], 1.0];
+	ret_col[0] = lerp(col1[0], col2[0], amount);
+	ret_col[1] = lerp(col1[1], col2[1], amount);
+	ret_col[2] = lerp(col1[2], col2[2], amount);
+	
+	return ret_col;
+}
+
 ANIMALS_DISTANCE_TO_ACTIVE = 400.0;
 
 height_map = array_create(world_sizex);

@@ -13,6 +13,50 @@ layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
+var time_constant = 0.003;
+
+var almost_morning_col = [0.33, 0.33, 0.9, 1.0];
+var morning_col = [0.7, 0.9, 1.0, 1.0];
+var midday_col = [1.0, 1.0, 1.0, 1.0];
+var lateday_col = [1.0, 0.7, 0.6, 1.0];
+var almost_night_col = [0.7, 0.33, 0.33, 1.0];
+var night_col = [0.05, 0.03, 0.1, 1.0];
+var mid_night_col = [0.01, 0.01, 0.15, 1.0];
+
+// time of day thing
+if (time > 5 && time < 6) {
+	current_col = lerp_col(current_col, morning_col, time_constant * 3.0);
+}
+else if (time > 10 && time < 12) {
+	current_col = lerp_col(current_col, midday_col, time_constant * 1.5);
+}
+else if (time > 14 && time < 16) {
+	current_col = lerp_col(current_col, lateday_col, time_constant * 1.5);
+}
+else if (time > 17 && time < 18) {
+	current_col = lerp_col(current_col, almost_night_col, time_constant * 3.0);
+}
+else if (time > 18 && time < 20) {
+	current_col = lerp_col(current_col, night_col, time_constant * 1.5);
+}
+else if (time > 20 && time < 24) {
+	current_col = lerp_col(current_col, mid_night_col, time_constant);
+}
+else if (time > 4 && time < 5) {
+	current_col = lerp_col(current_col, almost_morning_col, time_constant * 3.0);
+}
+
+var _fx_struct = layer_get_fx("Effect_3");
+
+if (_fx_struct != -1)
+{
+    var _params = fx_get_parameters(_fx_struct);
+    var _osc = sin(current_time / 1000);
+    _params.g_TintCol = current_col;
+
+    fx_set_parameters(_fx_struct, _params);
+}
+
 zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
 
 var new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);
@@ -156,3 +200,8 @@ if (object_exists(obj_Player)) {
 		audio_play_sound_at(Tibum3, obj_Player.x, obj_Player.y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
 	}
 }
+
+if (time >= 24) {
+	time = 0;
+}
+time += delta_time / 3000000;
