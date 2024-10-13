@@ -232,8 +232,8 @@
     {"id":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
     {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
+    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
     {"roomId":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
   ],
   "templateType": "game",

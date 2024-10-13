@@ -4,6 +4,11 @@ world_sizey = 250;
 block_put_x = 0;
 block_put_y = 0;
 
+zoom_level = 1;
+
+default_zoom_width = camera_get_view_width(view_camera[0]);
+default_zoom_height = camera_get_view_height(view_camera[0]);
+
 ANIMALS_DISTANCE_TO_ACTIVE = 400.0;
 
 height_map = array_create(world_sizex);

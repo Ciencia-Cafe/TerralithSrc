@@ -2,6 +2,9 @@ var div_delta_time = delta_time / 100000;
 var _cam_x = camera_get_view_x(view_camera[0]);
 var _cam_y = camera_get_view_y(view_camera[0]);
 
+var view_w = camera_get_view_width(view_camera[0]);
+var view_h = camera_get_view_height(view_camera[0]);
+
 layer_x("Backgrounds_1", _cam_x * 0.75);
 layer_x("Backgrounds_2", _cam_x * 0.5);
 layer_x("Backgrounds_3", _cam_x * 0.25);
@@ -9,6 +12,13 @@ layer_x("Backgrounds_3", _cam_x * 0.25);
 layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
+
+zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
+
+var new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);
+var new_h = lerp(view_h, zoom_level * default_zoom_height, 0.2);
+
+camera_set_view_size(view_camera[0], new_w, new_h);
 
 current_biome = get_biome(height_map[floor(obj_Player.x / 16)], world_sizey, temperature_map[floor(obj_Player.y / 16)]);
 
@@ -128,7 +138,7 @@ function tibum() {
 }
 
 if (object_exists(obj_Player)) {
-	if (!obj_Player.is_on_water && !obj_Player.is_flying) {
+	if (!obj_Player.is_on_water && !obj_Player.is_under_water) {
 		player_wasnt_on_water = true;
 	}
 	else if (player_wasnt_on_water) {
@@ -138,7 +148,7 @@ if (object_exists(obj_Player)) {
 	
 
 	obj_Player.is_on_water = is_player_on_water;
-	obj_Player.is_flying = is_player_under_water;
+	obj_Player.is_under_water = is_player_under_water;
 	
 	if (is_player_on_water && obj_Player.dir_y < 0) {
 		obj_Player.move_y -= 5;
