@@ -13,7 +13,7 @@ layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
-var time_constant = 0.003 * time_multiplier;;
+var time_constant = 0.003 * time_multiplier;
 
 var almost_morning_col = [0.33, 0.33, 0.9, 1.0];
 var morning_col = [0.7, 0.9, 1.0, 1.0];
