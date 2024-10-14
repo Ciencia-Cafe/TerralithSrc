@@ -13,7 +13,7 @@ layer_y("Backgrounds_1", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
-var time_constant = 0.003;
+var time_constant = 0.003 * time_multiplier;
 
 var almost_morning_col = [0.33, 0.33, 0.9, 1.0];
 var morning_col = [0.7, 0.9, 1.0, 1.0];
@@ -64,7 +64,7 @@ var new_h = lerp(view_h, zoom_level * default_zoom_height, 0.2);
 
 camera_set_view_size(view_camera[0], new_w, new_h);
 
-current_biome = get_biome(height_map[floor(obj_Player.x / 16)], world_sizey, temperature_map[floor(obj_Player.y / 16)]);
+current_biome = get_biome(height_map[floor(obj_Player.x / 16)], world_sizey, temperature_map[floor(obj_Player.x / 16)]);
 
 if (current_biome == 1 || current_biome == 3) {
 	// Trocar o sprite dos backgrounds
@@ -204,4 +204,4 @@ if (object_exists(obj_Player)) {
 if (time >= 24) {
 	time = 0;
 }
-time += delta_time / 3000000;
+time += delta_time / 3000000 * time_multiplier;

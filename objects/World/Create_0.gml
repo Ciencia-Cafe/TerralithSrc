@@ -13,6 +13,7 @@ default_zoom_height = camera_get_view_height(view_camera[0]);
 current_col = [0.33, 0.33, 0.9, 1.0];
 
 time = 0.0;
+time_multiplier = 0.1;
 
 function lerp_col(col1, col2, amount) {
 	var ret_col = [col1[0], col1[1], col1[2], 1.0];
@@ -123,10 +124,10 @@ function add_npc(x_pos, y_pos) {
 	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, ObjNPC);
 }
 function add_peixe(x_pos, y_pos, index) {
-	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, obj_Kutulo_Peixe);
-	if (index == 1) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, obj_Redflin_Peixe);
-	if (index == 2) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, obj_Springuer_Peixe);
-	if (index == 3) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 0, obj_Thatanos_Peixe);
+	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Kutulo_Peixe);
+	if (index == 1) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Redflin_Peixe);
+	if (index == 2) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Springuer_Peixe);
+	if (index == 3) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Thatanos_Peixe);
 }
 function add_corvu(x_pos, y_pos) {
 	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, obj_Corvu);
