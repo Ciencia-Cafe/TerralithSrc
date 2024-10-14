@@ -5,4 +5,7 @@ speed = 0.005;    // A velocidade da flutuação
 start_y = y;     // Salva a posição inicial do item no eixo Y
 start_x = x;     // Salva a posição inicial do item no eixo X
 
-audio_play_sound_at(wind, x, y, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+global_falloff_ref = 200;
+global_falloff_max = 300;
+
+audio_play_sound_at(wind, x, y, 0, global_falloff_ref, global_falloff_max, 1, true, 0);

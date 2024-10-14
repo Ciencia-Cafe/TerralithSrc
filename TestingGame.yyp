@@ -234,9 +234,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
-    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
     {"roomId":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
+    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
+    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

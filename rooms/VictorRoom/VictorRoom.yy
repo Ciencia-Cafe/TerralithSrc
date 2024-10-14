@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"VictorRoom",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/VictorRoom/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -14,6 +14,7 @@
     {"name":"inst_3DBF7BF0","path":"rooms/VictorRoom/VictorRoom.yy",},
     {"name":"inst_15583479","path":"rooms/VictorRoom/VictorRoom.yy",},
     {"name":"inst_33858870","path":"rooms/VictorRoom/VictorRoom.yy",},
+    {"name":"inst_4021BD24","path":"rooms/VictorRoom/VictorRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -27,6 +28,7 @@
         {"$GMRInstance":"v1","%Name":"inst_3DBF7BF0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3DBF7BF0","objectId":{"name":"obj_lampada","path":"objects/obj_lampada/obj_lampada.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":480.0,},
         {"$GMRInstance":"v1","%Name":"inst_15583479","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15583479","objectId":{"name":"obj_Galinha","path":"objects/obj_Galinha/obj_Galinha.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":480.0,},
         {"$GMRInstance":"v1","%Name":"inst_33858870","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_33858870","objectId":{"name":"obj_Galinha","path":"objects/obj_Galinha/obj_Galinha.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":576.0,"y":480.0,},
+        {"$GMRInstance":"v1","%Name":"inst_4021BD24","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4021BD24","objectId":{"name":"World","path":"objects/World/World.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":480.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":98,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":48,"SerialiseWidth":86,"TileCompressedData":[
           -2004,-2147483648,1,0,-85,-2147483648,-2,0,-81,-2147483648,-6,0,1,-2147483648,-8,54,-72,-2147483648,

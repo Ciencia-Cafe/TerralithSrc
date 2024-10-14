@@ -1,3 +1,5 @@
+generate_world = true;
+
 world_sizex = 937;
 world_sizey = 250;
 
@@ -203,166 +205,168 @@ var sand_block_dark = ds_map_find_value(blocks, "areia_dark");
 var snow_block_mid = ds_map_find_value(blocks, "snow_mid");
 var snow_block_dark = ds_map_find_value(blocks, "snow_dark");
 
-// Generating maps
-for (var i = 0; i < world_sizex; i++) {
-	current_height_tmp = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
-	current_height_tmp2 = map_value(perlin_noise(blocks_perlin_noise2), -1, 1, 0, (world_sizey * 0.5) - 20);
+if (generate_world) {
+	// Generating maps
+	for (var i = 0; i < world_sizex; i++) {
+		current_height_tmp = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
+		current_height_tmp2 = map_value(perlin_noise(blocks_perlin_noise2), -1, 1, 0, (world_sizey * 0.5) - 20);
 	
-	current_height = current_height_tmp + current_height_tmp2;
+		current_height = current_height_tmp + current_height_tmp2;
 	
-	height_map[i] = current_height;
+		height_map[i] = current_height;
 	
-	blocks_perlin_noise += inc;
-	blocks_perlin_noise2 += inc2;
+		blocks_perlin_noise += inc;
+		blocks_perlin_noise2 += inc2;
 	
-	current_humidity_tmp = map_value(perlin_noise(humidity_perlin_noise), -1, 1, 0, 100);
-	current_temperature_tmp = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 100);
+		current_humidity_tmp = map_value(perlin_noise(humidity_perlin_noise), -1, 1, 0, 100);
+		current_temperature_tmp = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 100);
 	
-	var temperature_height_influence = map_value(current_height, 0, world_sizey, 0, 30);
+		var temperature_height_influence = map_value(current_height, 0, world_sizey, 0, 30);
 	
-	humidity_map[i] = current_humidity_tmp;
-	temperature_map[i] = current_temperature_tmp - temperature_height_influence;
+		humidity_map[i] = current_humidity_tmp;
+		temperature_map[i] = current_temperature_tmp - temperature_height_influence;
 	
-	humidity_perlin_noise += inc2;
-	temperature_perlin_noise += inc2;
-}
+		humidity_perlin_noise += inc2;
+		temperature_perlin_noise += inc2;
+	}
 
-water_height = floor(world_sizey * 0.275);
+	water_height = floor(world_sizey * 0.275);
 
-for (var i = 0; i < world_sizex; i++) {
-	// ventos
-	if (irandom_range(0, 20) == 4) {
-		add_vento(i, irandom_range(20, 60));
-	}
-	
-	if (irandom_range(0, 10) == 4) {
-		add_passarin(i, irandom_range(0, 20));
-	}
-	
-	var bioma = get_biome(height_map[i], world_sizey, temperature_map[i]);
-	
-	var chm = ceil(height_map[i]);
-	var pbhm = i > 0 ? ceil(height_map[i-1]) : 0;
-	var nbhm = i < world_sizex-1 ? ceil(height_map[i+1]) : 0;
-	
-	// objetos
-	if (bioma == 0) {
-		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
-			obj[i] = 1;
+	for (var i = 0; i < world_sizex; i++) {
+		// ventos
+		if (irandom_range(0, 20) == 4) {
+			add_vento(i, irandom_range(20, 60));
 		}
-		else {
-			dec[i] = irandom_range(1, 3);
-		}
-	}
-	else if (bioma == 1) {
-		if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
-			obj[i] = 2;
-		}
-		else {
-			dec[i] = irandom_range(4, 5);
-		}
-	}
-	else if (bioma == 2) {
-		obj[i] = 5;
-	}
-	// bioma oceano
-	else if(bioma == 3) {
-		obj[i] = 6;
-		
-		dec[i] = irandom_range(6, 7);
-	}
 	
-	// decorações
-	if (bioma == 0 && dec[i] == 0) {
-		
-	}
+		if (irandom_range(0, 10) == 4) {
+			add_passarin(i, irandom_range(0, 20));
+		}
 	
-	// blocos
-	for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
+		var bioma = get_biome(height_map[i], world_sizey, temperature_map[i]);
+	
+		var chm = ceil(height_map[i]);
+		var pbhm = i > 0 ? ceil(height_map[i-1]) : 0;
+		var nbhm = i < world_sizex-1 ? ceil(height_map[i+1]) : 0;
+	
+		// objetos
 		if (bioma == 0) {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid, dirt_block);
-			else add_block(i, i2 + 1, dirt_block, grass_block_mid);
+			if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
+				obj[i] = 1;
+			}
+			else {
+				dec[i] = irandom_range(1, 3);
+			}
 		}
 		else if (bioma == 1) {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
-			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
+			if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
+				obj[i] = 2;
+			}
+			else {
+				dec[i] = irandom_range(4, 5);
+			}
 		}
 		else if (bioma == 2) {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
-			else add_block(i, i2 + 1, snow_block_dark, snow_block_mid);
+			obj[i] = 5;
 		}
-		else {
-			if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
-			else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
+		// bioma oceano
+		else if(bioma == 3) {
+			obj[i] = 6;
+		
+			dec[i] = irandom_range(6, 7);
 		}
-		
-		/*if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
-		else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);*/
-	}
 	
-	// agua
-	for (var i2 = water_height; i2 < world_sizey && i2 < height_map[i]; i2++) {
-		if (i2 == water_height) {
-			add_ocean(i, i2 + 1, 7);
+		// decorações
+		if (bioma == 0 && dec[i] == 0) {
+		
 		}
-		else add_ocean(i, i2 + 1, 15);
-		add_whole_block(i, i2 + 1, 57);
+	
+		// blocos
+		for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
+			if (bioma == 0) {
+				if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid, dirt_block);
+				else add_block(i, i2 + 1, dirt_block, grass_block_mid);
+			}
+			else if (bioma == 1) {
+				if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+				else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
+			}
+			else if (bioma == 2) {
+				if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
+				else add_block(i, i2 + 1, snow_block_dark, snow_block_mid);
+			}
+			else {
+				if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+				else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
+			}
 		
-		water_map[i] = water_height;
-	}
+			/*if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
+			else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);*/
+		}
 	
-	if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));
-	else if (obj[i] == 2) add_cactus(i, ceil(height_map[i]));
-	
-	// flores
-	if (dec[i] == 1) {
-		var dec2 = irandom_range(1, 4);
-		if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(48, 51));
-		else if (dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(56, 59));
-		else if (dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(40, 41));
-		else if (dec2 == 4) add_decoration(i, floor(height_map[i]), 43);
-	}
-	// matos
-	else if (dec[i] == 2) {
-		 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
-	}
-	
-	// animais terrestres
-	else if(dec[i] == 3) {
-		var animal = irandom_range(0, 5); // 5 variações
+		// agua
+		for (var i2 = water_height; i2 < world_sizey && i2 < height_map[i]; i2++) {
+			if (i2 == water_height) {
+				add_ocean(i, i2 + 1, 7);
+			}
+			else add_ocean(i, i2 + 1, 15);
+			add_whole_block(i, i2 + 1, 57);
 		
-		if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
-		else if (animal == 2) add_npc(i, floor(height_map[i]) - 1);
-		else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
-		else if (animal == 4) add_cuei(i, floor(height_map[i]) - 1);
-	}
+			water_map[i] = water_height;
+		}
 	
-	// desert
-	else if (dec[i] == 4) {
-		add_decoration(i, floor(height_map[i]), 32);
-	}
+		if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));
+		else if (obj[i] == 2) add_cactus(i, ceil(height_map[i]));
 	
-	// oceano
-	else if (dec[i] == 6) {
-		var dec2 = irandom_range(1, 3);
-		if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
-		else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
-		else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
+		// flores
+		if (dec[i] == 1) {
+			var dec2 = irandom_range(1, 4);
+			if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(48, 51));
+			else if (dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(56, 59));
+			else if (dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(40, 41));
+			else if (dec2 == 4) add_decoration(i, floor(height_map[i]), 43);
+		}
+		// matos
+		else if (dec[i] == 2) {
+			 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
+		}
+	
+		// animais terrestres
+		else if(dec[i] == 3) {
+			var animal = irandom_range(0, 5); // 5 variações
 		
-		var animal = irandom_range(0, 4); // 5 variações
-		add_peixe(i, floor(height_map[i]) - 1, animal);
+			if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
+			else if (animal == 2) add_npc(i, floor(height_map[i]) - 1);
+			else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
+			else if (animal == 4) add_cuei(i, floor(height_map[i]) - 1);
+		}
+	
+		// desert
+		else if (dec[i] == 4) {
+			add_decoration(i, floor(height_map[i]), 32);
+		}
+	
+		// oceano
+		else if (dec[i] == 6) {
+			var dec2 = irandom_range(1, 3);
+			if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
+			else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
+			else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
+		
+			var animal = irandom_range(0, 4); // 5 variações
+			add_peixe(i, floor(height_map[i]) - 1, animal);
+		}
 	}
-}
 
-// sounds
-for (var i = 0; i < world_sizex; i++) {
-	if (tilemap_get(water_tilemap, i, water_height + 1) != 0) {
-		if (tilemap_get(tilemap, i+1, water_height) != 0) {
-			audio_play_sound_at(river_sfx, (i-1) * 16, water_height * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
-		}
+	// sounds
+	for (var i = 0; i < world_sizex; i++) {
+		if (tilemap_get(water_tilemap, i, water_height + 1) != 0) {
+			if (tilemap_get(tilemap, i+1, water_height) != 0) {
+				audio_play_sound_at(river_sfx, (i-1) * 16, water_height * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+			}
 			
-		if (tilemap_get(tilemap, i-1, water_height) != 0) {
-			audio_play_sound_at(river_sfx, (i-1) * 16, water_height * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+			if (tilemap_get(tilemap, i-1, water_height) != 0) {
+				audio_play_sound_at(river_sfx, (i-1) * 16, water_height * 16, 0, global.falloff_ref, global.falloff_max, 1, true, 0);
+			}
 		}
 	}
 }
