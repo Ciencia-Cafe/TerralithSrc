@@ -14,6 +14,7 @@ musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
 // Sprites
 floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr];
 water_sprites = [FarmerNadando_spr];
+attack_obj = instance_create_layer(x, y, 0, AttackObj);
 
 // Helper functions
 function get_floor_layer() {

@@ -72,6 +72,7 @@
   },
   "name":"TestingGame",
   "resources":[
+    {"id":{"name":"AttackObj","path":"objects/AttackObj/AttackObj.yy",},},
     {"id":{"name":"BrocuQuebra","path":"objects/BrocuQuebra/BrocuQuebra.yy",},},
     {"id":{"name":"Cactos","path":"objects/Cactos/Cactos.yy",},},
     {"id":{"name":"Cactos2","path":"objects/Cactos2/Cactos2.yy",},},
@@ -234,8 +235,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
     {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
+    {"roomId":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
     {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
   ],
   "templateType":"game",
