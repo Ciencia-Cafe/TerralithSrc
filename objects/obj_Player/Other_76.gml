@@ -23,6 +23,10 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 			else number = 0;
 		break;
 		
+		case "Attack":
+			sprite_index = floor_sprites[4];
+		break;
+		
 		case "StopAttack":
 			is_attacking = false;
 		break;

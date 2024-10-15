@@ -5,7 +5,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	move_x = lerp(move_x, dir_x, 0.1) * (room_speed / 60);  // Aqui aumentei o fator e o valor de interpolação
 
 	// Verifica colisão com o chão e executa pulo se estiver em movimento
-	if (place_meeting(x + 2.0, y, floor_tilemap) && move_x != 0) {
+	if (place_meeting(x + 2.0, y, floor_tilemap) && move_x != 0 || place_meeting(x - 2.0, y, floor_tilemap) && move_x != 0) {
 	    jump();
 	}
 

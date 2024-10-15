@@ -51,30 +51,29 @@ else if (is_on_water) {
 else {
 	
 	image_angle = 0;
+	
+	if (!is_attacking) {
+		if (on_floor()) {
+			if (dir_x != 0) {
+				sprite_index = floor_sprites[1];
+			}
 
-	if (on_floor()) {
-		if (dir_x != 0) {
-			sprite_index = floor_sprites[1];
-		}
-
-		else {
-			sprite_index = floor_sprites[0];
-		}
-	}
-	else {
-		if (move_y > 0) {
-			sprite_index = floor_sprites[3];
+			else {
+				sprite_index = floor_sprites[0];
+			}
 		}
 		else {
-			sprite_index = floor_sprites[2];
+			if (move_y > 0) {
+				sprite_index = floor_sprites[3];
+			}
+			else {
+				sprite_index = floor_sprites[2];
+			}
 		}
 	}
 	
 	if (!is_attacking) {
 		move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
-	}
-	else {
-		sprite_index = floor_sprites[4];
 	}
 
 	if (on_floor()) {
