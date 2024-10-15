@@ -73,6 +73,9 @@ else {
 	if (!is_attacking) {
 		move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
 	}
+	else {
+		sprite_index = floor_sprites[4];
+	}
 
 	if (on_floor()) {
 		AIR_DRAGGING = 1.0;

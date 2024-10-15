@@ -12,7 +12,7 @@ nadando_sounds = [Nadando1, Nadando2];
 musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
 
 // Sprites
-floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr];
+floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr, SwordFarmerAttack_spr];
 water_sprites = [FarmerNadando_spr];
 attack_obj = instance_create_layer(x, y, 0, AttackObj);
 
