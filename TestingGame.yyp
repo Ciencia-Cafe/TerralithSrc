@@ -212,6 +212,7 @@
     {"id":{"name":"Springuer_Walk_spr","path":"sprites/Springuer_Walk_spr/Springuer_Walk_spr.yy",},},
     {"id":{"name":"Sprite29","path":"sprites/Sprite29/Sprite29.yy",},},
     {"id":{"name":"Swing","path":"sprites/Swing/Swing.yy",},},
+    {"id":{"name":"SwordFarmerAttack_spr","path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},},
     {"id":{"name":"SwordFarmerFall_spr","path":"sprites/SwordFarmerFall_spr/SwordFarmerFall_spr.yy",},},
     {"id":{"name":"SwordFarmerIdle_spr","path":"sprites/SwordFarmerIdle_spr/SwordFarmerIdle_spr.yy",},},
     {"id":{"name":"SwordFarmerJump_spr","path":"sprites/SwordFarmerJump_spr/SwordFarmerJump_spr.yy",},},
@@ -236,9 +237,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
     {"roomId":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
-    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

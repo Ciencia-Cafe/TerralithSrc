@@ -158,6 +158,7 @@
     {"name":"Springuer_Walk_spr","order":4,"path":"sprites/Springuer_Walk_spr/Springuer_Walk_spr.yy",},
     {"name":"Sprite29","order":16,"path":"sprites/Sprite29/Sprite29.yy",},
     {"name":"Swing","order":8,"path":"sprites/Swing/Swing.yy",},
+    {"name":"SwordFarmerAttack_spr","order":5,"path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},
     {"name":"SwordFarmerIdle_spr","order":1,"path":"sprites/SwordFarmerIdle_spr/SwordFarmerIdle_spr.yy",},
     {"name":"SwordFarmerJump_spr","order":2,"path":"sprites/SwordFarmerJump_spr/SwordFarmerJump_spr.yy",},
     {"name":"SwordFarmerRun_spr","order":4,"path":"sprites/SwordFarmerRun_spr/SwordFarmerRun_spr.yy",},
