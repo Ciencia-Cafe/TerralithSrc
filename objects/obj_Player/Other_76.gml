@@ -22,6 +22,10 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 			if (number == 0) number = 1;
 			else number = 0;
 		break;
+		
+		case "StopAttack":
+			is_attacking = false;
+		break;
 
         case "destroy":
             sequence_destroy(event_data[? "element_id"]);
