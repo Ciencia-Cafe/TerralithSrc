@@ -24,6 +24,10 @@ else if (keyboard_check_pressed(ord("7"))) {
 	current_weapon = "None";
 }
 
+if (keyboard_check_pressed(ord("E"))) {
+	is_attacking = true;
+}
+
 load_up_sprites(current_weapon);
 
 if (is_under_water) {
@@ -47,26 +51,30 @@ else if (is_on_water) {
 else {
 	
 	image_angle = 0;
+	
+	if (!is_attacking) {
+		if (on_floor()) {
+			if (dir_x != 0) {
+				sprite_index = floor_sprites[1];
+			}
 
-	if (on_floor()) {
-		if (dir_x != 0) {
-			sprite_index = floor_sprites[1];
-		}
-
-		else {
-			sprite_index = floor_sprites[0];
-		}
-	}
-	else {
-		if (move_y > 0) {
-			sprite_index = floor_sprites[3];
+			else {
+				sprite_index = floor_sprites[0];
+			}
 		}
 		else {
-			sprite_index = floor_sprites[2];
+			if (move_y > 0) {
+				sprite_index = floor_sprites[3];
+			}
+			else {
+				sprite_index = floor_sprites[2];
+			}
 		}
 	}
-
-	move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
+	
+	if (!is_attacking) {
+		move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
+	}
 
 	if (on_floor()) {
 		AIR_DRAGGING = 1.0;
@@ -80,7 +88,7 @@ else {
 		on_floor_hm = false;
 	}
 
-	if (key_up_pressed()) {
+	if (key_up_pressed() && !is_attacking) {
 		jump();
 	}
 

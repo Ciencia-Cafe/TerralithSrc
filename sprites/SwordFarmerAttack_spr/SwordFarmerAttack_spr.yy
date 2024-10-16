@@ -27,7 +27,7 @@
   ],
   "name":"SwordFarmerAttack_spr",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"Espada",
     "path":"folders/Sprites/Player/Espada.yy",
@@ -47,7 +47,13 @@
     "backdropYOffset":0.0,
     "events":{
       "$KeyframeStore<MessageEventKeyframe>":"",
-      "Keyframes":[],
+      "Keyframes":[
+        {"$Keyframe<MessageEventKeyframe>":"","Channels":{
+            "0":{"$MessageEventKeyframe":"","Events":[
+                "SwordAttack",
+              ],"resourceType":"MessageEventKeyframe","resourceVersion":"2.0",},
+          },"Disabled":false,"id":"76862634-516b-4d52-9f3c-0013a9bee629","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
+      ],
       "resourceType":"KeyframeStore<MessageEventKeyframe>",
       "resourceVersion":"2.0",
     },
@@ -63,7 +69,7 @@
     },
     "name":"SwordFarmerAttack_spr",
     "playback":1,
-    "playbackSpeed":10.0,
+    "playbackSpeed":7.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -91,8 +97,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
-    "yorigin":0,
+    "xorigin":20,
+    "yorigin":19,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

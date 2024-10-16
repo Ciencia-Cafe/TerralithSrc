@@ -12,7 +12,7 @@ nadando_sounds = [Nadando1, Nadando2];
 musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
 
 // Sprites
-floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr];
+floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr, SwordFarmerAttack_spr];
 water_sprites = [FarmerNadando_spr];
 attack_obj = instance_create_layer(x, y, 0, AttackObj);
 
@@ -67,25 +67,25 @@ function key_down() {
 
 function load_up_sprites(current_weapon) {
 	if (current_weapon == "None") {
-		floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr];
+		floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Axe") {
-		floor_sprites = [AxeFarmerIdle_spr, AxeFarmerRun_spr, AxeFarmerJump_spr, AxeFarmerFall_spr];
+		floor_sprites = [AxeFarmerIdle_spr, AxeFarmerRun_spr, AxeFarmerJump_spr, AxeFarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Sword") {
-		floor_sprites = [SwordFarmerIdle_spr, SwordFarmerRun_spr, SwordFarmerJump_spr, SwordFarmerFall_spr];
+		floor_sprites = [SwordFarmerIdle_spr, SwordFarmerRun_spr, SwordFarmerJump_spr, SwordFarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Shovel") {
-		floor_sprites = [ShovelFarmerIdle_spr, ShovelFarmerRun_spr, ShovelFarmerJump_spr, ShovelFarmerFall_spr];
+		floor_sprites = [ShovelFarmerIdle_spr, ShovelFarmerRun_spr, ShovelFarmerJump_spr, ShovelFarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Fork") {
-		floor_sprites = [ForkFarmerIdle_spr, ForkFarmerRun_spr, ForkFarmerJump_spr, ForkFarmerFall_spr];
+		floor_sprites = [ForkFarmerIdle_spr, ForkFarmerRun_spr, ForkFarmerJump_spr, ForkFarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Rod") {
-		floor_sprites = [RodFarmerIdle_spr, RodFarmerRun_spr, RodFarmerJump_spr, RodFarmerFall_spr];
+		floor_sprites = [RodFarmerIdle_spr, RodFarmerRun_spr, RodFarmerJump_spr, RodFarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Light") {
-		floor_sprites = [LightFarmerIdle_spr, LightFarmerRun_spr, LightFarmerJump_spr, LightFarmerFall_spr];
+		floor_sprites = [LightFarmerIdle_spr, LightFarmerRun_spr, LightFarmerJump_spr, LightFarmerFall_spr, SwordFarmerAttack_spr];
 	}
 }
 
@@ -108,6 +108,7 @@ can_double_jump = false;
 is_dead = false;
 on_floor_hm = false;
 just_landed = false;
+is_attacking = false;
 
 is_on_water = false;
 is_under_water = false;

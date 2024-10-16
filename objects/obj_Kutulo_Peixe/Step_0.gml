@@ -13,8 +13,12 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 		look_at(move_x, move_y);
 		sprite_index = Kutulo_Walk_spr;
 	
+		if ((tilemap_get(water_tilemap, x / 16, y / 16) == 6 || tilemap_get(water_tilemap, x / 16, y / 16) == 7) && dir_y < 0) {
+			move_y -= 20;
+		}
+	
 		if (tilemap_get(water_tilemap, x / 16, y / 16) != 14 && tilemap_get(water_tilemap, x / 16, y / 16) != 15) {
-			self_gravity = 5.0;
+			self_gravity = 1.0;
 		}
 		else {
 			self_gravity = 0.0;

@@ -72,11 +72,17 @@ if (current_biome == 1 || current_biome == 3) {
 	layer_background_sprite(background_2, AreiaBack2_spr);
 	layer_background_sprite(background_3, AreiaBack1_spr);
 }
-else {
+else if (current_biome == 0) {
 	// Trocar o sprite dos backgrounds
 	layer_background_sprite(background_1, TerraBack3_spr);
 	layer_background_sprite(background_2, TerraBack2_spr);
 	layer_background_sprite(background_3, TerraBack1_spr);
+}
+else {
+	// Trocar o sprite dos backgrounds
+	layer_background_sprite(background_1, NeveBack1_spr);
+	layer_background_sprite(background_2, NeveBack2_spr);
+	layer_background_sprite(background_3, NeveBack3_spr);
 }
 
 audio_listener_position(obj_Player.x, obj_Player.y, 0);

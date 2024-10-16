@@ -147,6 +147,10 @@ function add_arvore(x_pos, y_pos) {
 	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Arvore1normal);
 }
 
+function add_neve_arvore(x_pos, y_pos) {
+	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Arvneve1);
+}
+
 function add_cactus(x_pos, y_pos) {
 	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, Cactos);
 }
@@ -266,7 +270,13 @@ if (generate_world) {
 			}
 		}
 		else if (bioma == 2) {
-			obj[i] = 5;
+			if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
+				obj[i] = 3;
+			}
+			else {
+				// colocar
+				//dec[i] = irandom_range(4, 5);
+			}
 		}
 		// bioma oceano
 		else if(bioma == 3) {
@@ -316,6 +326,7 @@ if (generate_world) {
 	
 		if (obj[i] == 1) add_arvore(i, ceil(height_map[i]));
 		else if (obj[i] == 2) add_cactus(i, ceil(height_map[i]));
+		else if (obj[i] == 3) add_neve_arvore(i, ceil(height_map[i]));
 	
 		// flores
 		if (dec[i] == 1) {

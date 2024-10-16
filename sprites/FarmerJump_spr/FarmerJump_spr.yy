@@ -44,8 +44,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Player.yy",
+    "name":"SemFerramentas",
+    "path":"folders/Sprites/Player/SemFerramentas.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
