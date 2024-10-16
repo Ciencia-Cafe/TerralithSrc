@@ -117,3 +117,4 @@ if (elapsed_time >= rand_time) {
 }
 
 elapsed_time += delta_time / 1000000;
+

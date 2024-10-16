@@ -173,3 +173,5 @@ function play_music() {
 
 window_set_cursor(cr_none);
 load_up_sprites(current_weapon);
+
+
