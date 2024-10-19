@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"TileSet5",
-  "out_columns":5,
+  "out_columns":8,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"TilePedratest_spr",
-    "path":"sprites/TilePedratest_spr/TilePedratest_spr.yy",
+    "name":"TilePedra_spr",
+    "path":"sprites/TilePedra_spr/TilePedra_spr.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":16,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":28,
+  "tile_count":64,
 }

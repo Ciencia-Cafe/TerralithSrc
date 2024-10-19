@@ -249,7 +249,7 @@
     {"id":{"name":"Thatanos_Walk_spr","path":"sprites/Thatanos_Walk_spr/Thatanos_Walk_spr.yy",},},
     {"id":{"name":"TibumSpr","path":"sprites/TibumSpr/TibumSpr.yy",},},
     {"id":{"name":"TileDesign_spr","path":"sprites/TileDesign_spr/TileDesign_spr.yy",},},
-    {"id":{"name":"TilePedratest_spr","path":"sprites/TilePedratest_spr/TilePedratest_spr.yy",},},
+    {"id":{"name":"TilePedra_spr","path":"sprites/TilePedra_spr/TilePedra_spr.yy",},},
     {"id":{"name":"TilesBlocos1Basicos_spr","path":"sprites/TilesBlocos1Basicos_spr/TilesBlocos1Basicos_spr.yy",},},
     {"id":{"name":"TilesBlocosMadeira_spr","path":"sprites/TilesBlocosMadeira_spr/TilesBlocosMadeira_spr.yy",},},
     {"id":{"name":"Vara_spr","path":"sprites/Vara_spr/Vara_spr.yy",},},
@@ -264,8 +264,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
-    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
     {"roomId":{"name":"VictorRoom","path":"rooms/VictorRoom/VictorRoom.yy",},},
+    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
