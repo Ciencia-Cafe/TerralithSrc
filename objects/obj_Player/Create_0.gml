@@ -4,6 +4,10 @@ GRAVITY_SPEED = 16.0;
 AIR_DRAGGING = 1.0; // Disabled when on floor
 JUMP_HEIGHT = 5;
 
+MAX_BAR_LEVEL = 100;
+OXIGEN_LEVEL = 100;
+HEALTH_LEVEL = 100;
+
 // Definitions
 
 // SFX
@@ -150,6 +154,36 @@ function jump() {
 			part_particles_burst(ps, x, y, JumpParticle);
 			audio_play_sound(DoubleJump, 10, false);
 		}
+	}
+}
+
+function die() {
+	kill_self();
+}
+
+function decrease_health(amount) {
+	if (HEALTH_LEVEL > 0) HEALTH_LEVEL -= amount;
+	else {
+		HEALTH_LEVEL = 0;
+		
+		die();
+	}
+	
+	if (HEALTH_LEVEL > MAX_BAR_LEVEL) {
+		HEALTH_LEVEL = MAX_BAR_LEVEL
+	}
+}
+
+function decrease_oxigen(amount) {
+	if (OXIGEN_LEVEL + amount >= 0) OXIGEN_LEVEL -= amount;
+	else {
+		OXIGEN_LEVEL = 0;
+		
+		decrease_health(10);
+	}
+	
+	if (OXIGEN_LEVEL > MAX_BAR_LEVEL) {
+		OXIGEN_LEVEL = MAX_BAR_LEVEL
 	}
 }
 
