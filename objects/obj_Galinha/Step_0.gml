@@ -1,8 +1,7 @@
 if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
-	move_y = gravity_speed;
 
 	// Modifica o fator de interpolação para algo mais perceptível
-	move_x = lerp(move_x, dir_x, 0.1) * (room_speed / 60);  // Aqui aumentei o fator e o valor de interpolação
+	move_x = lerp(move_x, dir_x * alerta * 0.1, 0.1) * (room_speed / 60);  // Aqui aumentei o fator e o valor de interpolação
 
 	// Verifica colisão com o chão e executa pulo se estiver em movimento
 	if (place_meeting(x + 2.0, y, floor_tilemap) && move_x != 0 || place_meeting(x - 2.0, y, floor_tilemap) && move_x != 0) {
@@ -11,9 +10,11 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 
 	if (on_floor()) {
 		sprite_index = Galinha__spr;
+		move_y = 0;
 	}
 	else {
 		sprite_index = Galinha_Jump_spr;
+		move_y = gravity_speed;
 	}
 
 	if (dir_x < 0) {
@@ -62,7 +63,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 		image_speed = 1;
 	}
 
-	move_perlin_noise += 0.01;
+	move_perlin_noise += 0.01 * vontade_de_explorar;
 
 	// Aplica o movimento e a colisão
 	move_and_collide(move_x, move_y, floor_tilemap);
@@ -87,4 +88,19 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 		
 		contador_tempo = 0;
 	}
+}
+
+fome = max(0, fome-1);
+alerta = min(100, alerta+1);
+
+if (alerta == 100) {
+	alerta = 0;
+}
+
+// coisas n dependentes do player:
+if (World.time > 18 && World.time < 24 || World.time > 0 && World.time < 5) {
+	sono = min(100, sono+1);
+}
+else {
+	sono = max(0, sono-1);
 }

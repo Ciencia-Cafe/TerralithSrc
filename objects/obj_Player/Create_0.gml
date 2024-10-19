@@ -119,7 +119,7 @@ player_inventory = ["None", "Axe", "Sword", "Fork", "Shovel", "Rod"];
 current_weapon = "None";
 
 // Timing
-rand_time = 40;
+rand_time = 0;
 elapsed_time = 0.0;
 image_speed = 1;
 number = 0;

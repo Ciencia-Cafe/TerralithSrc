@@ -120,7 +120,7 @@ if (y > 5000) kill_self();
 if (elapsed_time >= rand_time) {
 	play_music();
 	elapsed_time = 0;
-	rand_time = random_range(100, 200);
+	rand_time = random_range(150, 200);
 }
 
 elapsed_time += delta_time / 1000000;
