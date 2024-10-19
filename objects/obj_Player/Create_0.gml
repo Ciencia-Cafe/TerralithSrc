@@ -170,7 +170,7 @@ function decrease_health(amount) {
 	}
 	
 	if (HEALTH_LEVEL > MAX_BAR_LEVEL) {
-		HEALTH_LEVEL = MAX_BAR_LEVEL
+		HEALTH_LEVEL = MAX_BAR_LEVEL;
 	}
 }
 
