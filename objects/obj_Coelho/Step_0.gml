@@ -1,8 +1,6 @@
 if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
-	move_y = gravity_speed;
-
 	// Modifica o fator de interpolação para algo mais perceptível
-	move_x = lerp(move_x, dir_x, 0.1) * (room_speed / 60);  // Aqui aumentei o fator e o valor de interpolação
+	move_x = lerp(move_x, dir_x * move_speed, 0.1) * (room_speed / 60);  // Aqui aumentei o fator e o valor de interpolação
 
 	// Verifica colisão com o chão e executa pulo se estiver em movimento
 	if (place_meeting(x + 2.0, y, floor_tilemap) && move_x != 0 || place_meeting(x - 2.0, y, floor_tilemap) && move_x != 0) {
@@ -11,9 +9,11 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 
 	if (on_floor()) {
 		sprite_index = Coelho_idle_spr;
+		move_y = 0;
 	}
 	else {
 		sprite_index = Coelho_Jump_spr;
+		move_y = gravity_speed;
 	}
 
 	if (dir_x < 0) {
@@ -24,7 +24,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	
 		if (tile_x - 1 > 0) {
 			if (get_biome(World.height_map[tile_x - 1], World.world_sizey, World.temperature_map[tile_x - 1]) != 0) {
-				dir_x = 1;
+				dir_x = 10;
 			}
 			else {
 				dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0);
@@ -39,7 +39,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	
 		if (tile_x + 1 < World.world_sizex) {
 			if (get_biome(World.height_map[tile_x + 1], World.world_sizey, World.temperature_map[tile_x + 1]) != 0) {
-				dir_x = -1;
+				dir_x = -10;
 			}
 			else {
 				dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0);

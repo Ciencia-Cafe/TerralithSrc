@@ -80,9 +80,9 @@ else if (current_biome == 0) {
 }
 else {
 	// Trocar o sprite dos backgrounds
-	layer_background_sprite(background_1, NeveBack1_spr);
-	layer_background_sprite(background_2, NeveBack2_spr);
-	layer_background_sprite(background_3, NeveBack3_spr);
+	layer_background_sprite(background_1, NeveBack1_spr_1);
+	layer_background_sprite(background_2, NeveBack2_spr_1);
+	layer_background_sprite(background_3, NeveBack3_spr_1);
 }
 
 audio_listener_position(obj_Player.x, obj_Player.y, 0);

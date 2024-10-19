@@ -11,6 +11,8 @@ floor_tilemap = layer_tilemap_get_id("Tiles_1");
 
 current_bioma = 0;
 
+move_speed = 3;
+
 function on_floor() {
 	return place_meeting(x, y + 2.0, floor_tilemap);
 }

@@ -126,6 +126,7 @@ function add_npc(x_pos, y_pos) {
 	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 1, ObjNPC);
 }
 function add_peixe(x_pos, y_pos, index) {
+	if (y_pos < floor(world_sizey * 0.275) + 3) return;
 	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Kutulo_Peixe);
 	if (index == 1) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Redflin_Peixe);
 	if (index == 2) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 2, obj_Springuer_Peixe);
@@ -211,6 +212,7 @@ var snow_block_dark = ds_map_find_value(blocks, "snow_dark");
 
 if (generate_world) {
 	// Generating maps
+	water_height = floor(world_sizey * 0.275);
 	for (var i = 0; i < world_sizex; i++) {
 		current_height_tmp = map_value(perlin_noise(blocks_perlin_noise), -1, 1, 0, 20);
 		current_height_tmp2 = map_value(perlin_noise(blocks_perlin_noise2), -1, 1, 0, (world_sizey * 0.5) - 20);
@@ -234,8 +236,6 @@ if (generate_world) {
 		temperature_perlin_noise += inc2;
 	}
 
-	water_height = floor(world_sizey * 0.275);
-
 	for (var i = 0; i < world_sizex; i++) {
 		// ventos
 		if (irandom_range(0, 20) == 4) {
@@ -246,11 +246,11 @@ if (generate_world) {
 			add_passarin(i, irandom_range(0, 20));
 		}
 	
-		var bioma = get_biome(height_map[i], world_sizey, temperature_map[i]);
+		var bioma = get_biome(height_map[i], floor(world_sizey), temperature_map[i]);
 	
 		var chm = ceil(height_map[i]);
 		var pbhm = i > 0 ? ceil(height_map[i-1]) : 0;
-		var nbhm = i < world_sizex-1 ? ceil(height_map[i+1]) : 0;
+		var nbhm = i < floor(world_sizex-1) ? ceil(height_map[i+1]) : 0;
 	
 		// objetos
 		if (bioma == 0) {
@@ -291,21 +291,21 @@ if (generate_world) {
 		}
 	
 		// blocos
-		for (var i2 = height_map[i]; i2 < world_sizey; i2++) {
+		for (var i2 = floor(height_map[i]); i2 < world_sizey; i2++) {
 			if (bioma == 0) {
-				if (i2 == height_map[i]) add_block(i, i2 + 1, grass_block_mid, dirt_block);
+				if (i2 == floor(height_map[i])) add_block(i, i2 + 1, grass_block_mid, dirt_block);
 				else add_block(i, i2 + 1, dirt_block, grass_block_mid);
 			}
 			else if (bioma == 1) {
-				if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+				if (i2 == floor(height_map[i])) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
 				else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 			}
 			else if (bioma == 2) {
-				if (i2 == height_map[i]) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
+				if (i2 == floor(height_map[i])) add_block(i, i2 + 1, snow_block_mid, snow_block_dark);
 				else add_block(i, i2 + 1, snow_block_dark, snow_block_mid);
 			}
 			else {
-				if (i2 == height_map[i]) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
+				if (i2 == floor(height_map[i])) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
 				else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 			}
 		
@@ -314,7 +314,7 @@ if (generate_world) {
 		}
 	
 		// agua
-		for (var i2 = water_height; i2 < world_sizey && i2 < height_map[i]; i2++) {
+		for (var i2 = water_height; i2 < world_sizey && i2 < floor(height_map[i]); i2++) {
 			if (i2 == water_height) {
 				add_ocean(i, i2 + 1, 7);
 			}
