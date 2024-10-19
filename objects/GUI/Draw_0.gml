@@ -9,6 +9,8 @@ var current_selected = 0;
 var inv_x = (_cam_x + (view_w * 0.5) - 160) + 11;
 
 //spr da mira
+draw_sprite_stretched(HealthBar, -100, _cam_x + (view_w * 0.25) - 31, _cam_y + (view_h * 0.25) - 8, 64, 16);
+draw_sprite(OuterHealthBar, -101, _cam_x + (view_w * 0.25), _cam_y + (view_h * 0.25));
 draw_sprite(BlockBreakSelect, -100, floor(mouse_x / 16) * 16, floor(mouse_y / 16) * 16);
 draw_sprite(Gui_Inventario_spr, -100, _cam_x + ((view_w * 0.5) - 160), _cam_y + (view_h * 0.75));
 draw_sprite(Gui_Selected, -101, inv_x + (50 * obj_Player.current_inv_index), _cam_y + (view_h * 0.75));
