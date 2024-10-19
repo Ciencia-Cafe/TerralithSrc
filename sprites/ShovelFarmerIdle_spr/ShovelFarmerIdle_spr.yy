@@ -4,16 +4,16 @@
   "bboxMode":0,
   "bbox_bottom":28,
   "bbox_left":8,
-  "bbox_right":26,
-  "bbox_top":7,
+  "bbox_right":22,
+  "bbox_top":8,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"35b59275-53d5-4ac7-9d60-47cc0d0a6b1d","name":"35b59275-53d5-4ac7-9d60-47cc0d0a6b1d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"47c00983-2ed3-484c-9135-6ba876057bf1","name":"47c00983-2ed3-484c-9135-6ba876057bf1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b7bcd93d-5a11-4442-9368-eac4245895fd","name":"b7bcd93d-5a11-4442-9368-eac4245895fd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"61add910-d550-4c72-a601-2214f5a5c327","name":"61add910-d550-4c72-a601-2214f5a5c327","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -95,11 +95,11 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"35b59275-53d5-4ac7-9d60-47cc0d0a6b1d","path":"sprites/ShovelFarmerIdle_spr/ShovelFarmerIdle_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fd5754ba-ced3-4a7d-8cfb-cfa028438710","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b7bcd93d-5a11-4442-9368-eac4245895fd","path":"sprites/ShovelFarmerIdle_spr/ShovelFarmerIdle_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7c54fc67-3195-49ef-a572-cb017d34aa70","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"47c00983-2ed3-484c-9135-6ba876057bf1","path":"sprites/ShovelFarmerIdle_spr/ShovelFarmerIdle_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"516eb7ea-0f80-495c-818d-ded04cdfa982","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"61add910-d550-4c72-a601-2214f5a5c327","path":"sprites/ShovelFarmerIdle_spr/ShovelFarmerIdle_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3458b3e6-3400-4e4c-b538-6219b6130a78","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

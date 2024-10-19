@@ -3,7 +3,7 @@ move_y = 0.00;
 
 dir_x = 0.0;
 
-gravity_speed = 1.0;
+gravity_speed = 3.0;
 
 move_perlin_noise = random(3000);
 
@@ -16,8 +16,7 @@ function on_floor() {
 }
 
 function jump() {
-	move_y = 0;
-	move_y -= 30;
+	move_y = -30;
 }
 // Create Event da galinha (Object9)
 

@@ -17,7 +17,7 @@ function on_floor() {
 
 function jump() {
 	move_y = 0;
-	move_y -= 3;
+	move_y = -30;
 }
 // Create Event da galinha (Object9)
 

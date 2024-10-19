@@ -70,7 +70,7 @@ function load_up_sprites(current_weapon) {
 		floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr, SwordFarmerAttack_spr];
 	}
 	else if (current_weapon == "Axe") {
-		floor_sprites = [AxeFarmerIdle_spr, AxeFarmerRun_spr, AxeFarmerJump_spr, AxeFarmerFall_spr, SwordFarmerAttack_spr];
+		floor_sprites = [AxeFarmerIdle_spr, AxeFarmerRun_spr, AxeFarmerJump_spr, AxeFarmerFall_spr, AxeFarmerAttack_spr];
 	}
 	else if (current_weapon == "Sword") {
 		floor_sprites = [SwordFarmerIdle_spr, SwordFarmerRun_spr, SwordFarmerJump_spr, SwordFarmerFall_spr, SwordFarmerAttack_spr];
@@ -113,7 +113,10 @@ is_attacking = false;
 is_on_water = false;
 is_under_water = false;
 
-current_weapon = "Light";
+current_inv_index = 0;
+player_inventory = ["None", "Axe", "Sword", "Fork", "Shovel", "Rod"];
+
+current_weapon = "None";
 
 // Timing
 rand_time = 40;

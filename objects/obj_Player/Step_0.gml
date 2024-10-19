@@ -3,26 +3,25 @@ dir_y = key_down() - key_up();
 
 // Placeholder
 if (keyboard_check_pressed(ord("1"))) {
-	current_weapon = "Axe";
+	current_inv_index = 0;
 }
 else if (keyboard_check_pressed(ord("2"))) {
-	current_weapon = "Sword";
+	current_inv_index = 1;
 }
 else if (keyboard_check_pressed(ord("3"))) {
-	current_weapon = "Fork";
+	current_inv_index = 2;
 }
 else if (keyboard_check_pressed(ord("4"))) {
-	current_weapon = "Shovel";
+	current_inv_index = 3;
 }
 else if (keyboard_check_pressed(ord("5"))) {
-	current_weapon = "Rod";
+	current_inv_index = 4;
 }
 else if (keyboard_check_pressed(ord("6"))) {
-	current_weapon = "Light";
+	current_inv_index = 5;
 }
-else if (keyboard_check_pressed(ord("7"))) {
-	current_weapon = "None";
-}
+
+current_weapon = player_inventory[current_inv_index];
 
 if (keyboard_check_pressed(ord("E"))) {
 	is_attacking = true;
