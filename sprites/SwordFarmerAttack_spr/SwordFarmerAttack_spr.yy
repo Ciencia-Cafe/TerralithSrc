@@ -14,9 +14,9 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"1be98db4-d105-40bb-979a-85b1e98c6d30","name":"1be98db4-d105-40bb-979a-85b1e98c6d30","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"96d43a1c-f33f-43b1-96b6-814492a9e7c2","name":"96d43a1c-f33f-43b1-96b6-814492a9e7c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5fc63780-2be1-4ee8-951e-81ff8ddaae73","name":"5fc63780-2be1-4ee8-951e-81ff8ddaae73","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"7250c65a-6bbc-4013-be8b-fe4a55e46109","name":"7250c65a-6bbc-4013-be8b-fe4a55e46109","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"758713fa-7e7f-4801-8b42-226981b3b178","name":"758713fa-7e7f-4801-8b42-226981b3b178","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"a1466131-89ab-48ca-8b52-d541e4111fdd","name":"a1466131-89ab-48ca-8b52-d541e4111fdd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -85,14 +85,14 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"96d43a1c-f33f-43b1-96b6-814492a9e7c2","path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"b4501960-f497-4902-a282-fd6d26c496de","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5fc63780-2be1-4ee8-951e-81ff8ddaae73","path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"002545cd-59c4-44d8-88ee-c1fc5dd87c80","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7250c65a-6bbc-4013-be8b-fe4a55e46109","path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0c851f66-37b7-4689-afb4-e460fef09527","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"b045f6e8-e33d-4f3b-a676-caa1c85b4419","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"758713fa-7e7f-4801-8b42-226981b3b178","path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"07b6ccc3-7a91-40f7-9a70-387dd0782761","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a1466131-89ab-48ca-8b52-d541e4111fdd","path":"sprites/SwordFarmerAttack_spr/SwordFarmerAttack_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"809b5e5d-bac2-409e-843b-ff29bef64b5c","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"07b6ccc3-7a91-40f7-9a70-387dd0782761","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
