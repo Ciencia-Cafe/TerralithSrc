@@ -96,6 +96,7 @@
     {"name":"Dirt_Fall","order":2,"path":"sounds/Dirt_Fall/Dirt_Fall.yy",},
     {"name":"Dirt_Jump","order":3,"path":"sounds/Dirt_Jump/Dirt_Jump.yy",},
     {"name":"DoubleJump","order":4,"path":"sounds/DoubleJump/DoubleJump.yy",},
+    {"name":"InventoryInteract","order":3,"path":"sounds/InventoryInteract/InventoryInteract.yy",},
     {"name":"Musicar__1_","order":2,"path":"sounds/Musicar__1_/Musicar__1_.yy",},
     {"name":"Musicar__2_","order":3,"path":"sounds/Musicar__2_/Musicar__2_.yy",},
     {"name":"Musicar","order":1,"path":"sounds/Musicar/Musicar.yy",},

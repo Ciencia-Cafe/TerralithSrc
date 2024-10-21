@@ -15,7 +15,7 @@ if (instance_exists(obj_Player)) {
 	draw_sprite_stretched(HealthBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25));
 
-	draw_sprite_stretched(OxigenBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4 + 32,  bar_width * (obj_Player.OXIGEN_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
+	draw_sprite_stretched(OxigenBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4 + 32,  bar_width * (obj_Player.OXYGEN_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25) + 32);
 
 

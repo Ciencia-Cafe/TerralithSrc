@@ -133,6 +133,7 @@
     {"id":{"name":"Dirt_Jump","path":"sounds/Dirt_Jump/Dirt_Jump.yy",},},
     {"id":{"name":"DoubleJump","path":"sounds/DoubleJump/DoubleJump.yy",},},
     {"id":{"name":"GalinhaSFX","path":"sounds/GalinhaSFX/GalinhaSFX.yy",},},
+    {"id":{"name":"InventoryInteract","path":"sounds/InventoryInteract/InventoryInteract.yy",},},
     {"id":{"name":"Musicar__1_","path":"sounds/Musicar__1_/Musicar__1_.yy",},},
     {"id":{"name":"Musicar__2_","path":"sounds/Musicar__2_/Musicar__2_.yy",},},
     {"id":{"name":"Musicar","path":"sounds/Musicar/Musicar.yy",},},
