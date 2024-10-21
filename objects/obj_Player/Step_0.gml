@@ -1,36 +1,47 @@
 dir_x = key_right() - key_left();
 dir_y = key_down() - key_up();
 
+function reset_inv_pos() {
+	GUI.unlerped_inv_y_offset = 0.0;
+	GUI.elapsed_time = 0;
+}
+
 // Placeholder
 if (keyboard_check_pressed(ord("1"))) {
 	current_inv_index = 0;
 	audio_sound_pitch(InventoryInteract, random_range(0.5, 1.5));
 	audio_play_sound(InventoryInteract, 10, false);
+	reset_inv_pos();
 }
 else if (keyboard_check_pressed(ord("2"))) {
 	current_inv_index = 1;
 	audio_sound_pitch(InventoryInteract, random_range(0.5, 1.5));
 	audio_play_sound(InventoryInteract, 10, false);
+	reset_inv_pos();
 }
 else if (keyboard_check_pressed(ord("3"))) {
 	current_inv_index = 2;
 	audio_sound_pitch(InventoryInteract, random_range(0.5, 1.5));
 	audio_play_sound(InventoryInteract, 10, false);
+	reset_inv_pos();
 }
 else if (keyboard_check_pressed(ord("4"))) {
 	current_inv_index = 3;
 	audio_sound_pitch(InventoryInteract, random_range(0.5, 1.5));
 	audio_play_sound(InventoryInteract, 10, false);
+	reset_inv_pos();
 }
 else if (keyboard_check_pressed(ord("5"))) {
 	current_inv_index = 4;
 	audio_sound_pitch(InventoryInteract, random_range(0.5, 1.5));
 	audio_play_sound(InventoryInteract, 10, false);
+	reset_inv_pos();
 }
 else if (keyboard_check_pressed(ord("6"))) {
 	current_inv_index = 5;
 	audio_sound_pitch(InventoryInteract, random_range(0.5, 1.5));
 	audio_play_sound(InventoryInteract, 10, false);
+	reset_inv_pos();
 }
 
 current_weapon = player_inventory[current_inv_index];
