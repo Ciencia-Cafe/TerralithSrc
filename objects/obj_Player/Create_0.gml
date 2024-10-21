@@ -5,7 +5,7 @@ AIR_DRAGGING = 1.0; // Disabled when on floor
 JUMP_HEIGHT = 5;
 
 MAX_BAR_LEVEL = 100;
-OXIGEN_LEVEL = 100;
+OXYGEN_LEVEL = 100;
 HEALTH_LEVEL = 100;
 
 // Definitions
@@ -161,6 +161,11 @@ function die() {
 	kill_self();
 }
 
+function increase_oxygen(amount) {
+	if (OXYGEN_LEVEL + amount >= MAX_BAR_LEVEL) OXYGEN_LEVEL = MAX_BAR_LEVEL;
+	else OXYGEN_LEVEL += amount;
+}
+
 function decrease_health(amount) {
 	if (HEALTH_LEVEL > 0) HEALTH_LEVEL -= amount;
 	else {
@@ -168,22 +173,14 @@ function decrease_health(amount) {
 		
 		die();
 	}
-	
-	if (HEALTH_LEVEL > MAX_BAR_LEVEL) {
-		HEALTH_LEVEL = MAX_BAR_LEVEL;
-	}
 }
 
-function decrease_oxigen(amount) {
-	if (OXIGEN_LEVEL + amount >= 0) OXIGEN_LEVEL -= amount;
+function decrease_oxygen(amount) {
+	if (OXYGEN_LEVEL + amount >= 0) OXYGEN_LEVEL -= amount;
 	else {
-		OXIGEN_LEVEL = 0;
+		OXYGEN_LEVEL = 0;
 		
 		decrease_health(10);
-	}
-	
-	if (OXIGEN_LEVEL > MAX_BAR_LEVEL) {
-		OXIGEN_LEVEL = MAX_BAR_LEVEL
 	}
 }
 

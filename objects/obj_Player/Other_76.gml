@@ -15,10 +15,10 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 		case "Respira":
 			if (is_under_water) {
 				part_particles_burst(ps, x, y, WaterBubbles);
-				decrease_oxigen(10);
+				decrease_oxygen(10);
 			}
 			else {
-				decrease_oxigen(-10);
+				increase_oxygen(10);
 			}
 		break;
 		

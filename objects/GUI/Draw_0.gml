@@ -8,14 +8,15 @@ var current_selected = 0;
 
 var inv_x = (_cam_x + (view_w * 0.5) - 160) + 11;
 
-var bar_width = 64;
+var bar_width = 32;
+var bar_pos = _cam_x + (view_w * 0.1);
 
 if (instance_exists(obj_Player)) {
-	draw_sprite_stretched(HealthBar, -100, _cam_x + (view_w * 0.25) - 31, _cam_y + (view_h * 0.25) - 8, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 16);
-	draw_sprite(OuterBar, -101, _cam_x + (view_w * 0.25), _cam_y + (view_h * 0.25));
+	draw_sprite_stretched(HealthBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
+	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25));
 
-	draw_sprite_stretched(OxigenBar, -100, _cam_x + (view_w * 0.25) - 31, _cam_y + (view_h * 0.25) - 8 + 32,  bar_width * (obj_Player.OXIGEN_LEVEL / obj_Player.MAX_BAR_LEVEL), 16);
-	draw_sprite(OuterBar, -101, _cam_x + (view_w * 0.25), _cam_y + (view_h * 0.25) + 32);
+	draw_sprite_stretched(OxigenBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4 + 32,  bar_width * (obj_Player.OXIGEN_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
+	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25) + 32);
 
 
 	draw_sprite(BlockBreakSelect, -100, floor(mouse_x / 16) * 16, floor(mouse_y / 16) * 16);
