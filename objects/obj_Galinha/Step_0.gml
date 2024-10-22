@@ -1,21 +1,27 @@
 if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
-
+	
+	if (on_floor()) {
+		y_force_amount = 0;
+		move_y = 0;
+	}
 	// Modifica o fator de interpolação para algo mais perceptível
-	move_x = lerp(move_x, dir_x * alerta * 0.1, 0.1) * (room_speed / 60);  // Aqui aumentei o fator e o valor de interpolação
-
+	move_x = lerp(move_x, dir_x * speed_amount, 0.5) * (delta_time / 100000);  // Aqui aumentei o fator e o valor de interpolação
 	// Verifica colisão com o chão e executa pulo se estiver em movimento
-	if (place_meeting(x + 2.0, y, floor_tilemap) && move_x != 0 || place_meeting(x - 2.0, y, floor_tilemap) && move_x != 0) {
+	if (place_meeting(x + 8.0, y, floor_tilemap) && move_x != 0.0 || place_meeting(x - 8.0, y, floor_tilemap) && move_x != 0.0) {
 	    jump();
 	}
 
 	if (on_floor()) {
 		sprite_index = Galinha__spr;
-		move_y = 0;
 	}
 	else {
 		sprite_index = Galinha_Jump_spr;
-		move_y = gravity_speed;
+		y_force_amount = gravity_speed;
 	}
+	
+	dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0) * overlayed_direction;
+	
+	move_y += y_force_amount * (delta_time / 100000);
 
 	if (dir_x < 0) {
 		image_xscale = -1;
@@ -25,10 +31,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	
 		if (tile_x - 1 > 0) {
 			if (get_biome(World.height_map[tile_x - 1], World.world_sizey, World.temperature_map[tile_x - 1]) != 0) {
-				dir_x = 1;
-			}
-			else {
-				dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0);
+				overlayed_direction *= -1;
 			}
 		}
 	}
@@ -40,15 +43,9 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	
 		if (tile_x + 1 < World.world_sizex) {
 			if (get_biome(World.height_map[tile_x + 1], World.world_sizey, World.temperature_map[tile_x + 1]) != 0) {
-				dir_x = -1;
-			}
-			else {
-				dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0);
+				overlayed_direction *= -1;
 			}
 		}
-	}
-	else {
-		dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0);
 	}
 
 	if (move_x < -0.1) {
@@ -65,7 +62,6 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 
 	move_perlin_noise += 0.01 * vontade_de_explorar;
 
-	// Aplica o movimento e a colisão
 	move_and_collide(move_x, move_y, floor_tilemap);
 
 	// Step Event da galinha (Object9)

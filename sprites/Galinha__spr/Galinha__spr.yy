@@ -25,7 +25,7 @@
   ],
   "name":"Galinha__spr",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Animais da terra",
     "path":"folders/Sprites/Animais da terra.yy",
@@ -83,7 +83,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":10,
+    "xorigin":11,
     "yorigin":20,
   },
   "swatchColours":null,
