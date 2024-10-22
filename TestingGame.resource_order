@@ -133,6 +133,7 @@
     {"name":"FarmerJump_spr","order":2,"path":"sprites/FarmerJump_spr/FarmerJump_spr.yy",},
     {"name":"FarmerNadando_spr","order":3,"path":"sprites/FarmerNadando_spr/FarmerNadando_spr.yy",},
     {"name":"FarmerRun_spr","order":4,"path":"sprites/FarmerRun_spr/FarmerRun_spr.yy",},
+    {"name":"Folha","order":7,"path":"sprites/Folha/Folha.yy",},
     {"name":"ForkFarmerIdle_spr","order":1,"path":"sprites/ForkFarmerIdle_spr/ForkFarmerIdle_spr.yy",},
     {"name":"ForkFarmerJump_spr","order":2,"path":"sprites/ForkFarmerJump_spr/ForkFarmerJump_spr.yy",},
     {"name":"ForkFarmerNadando_spr","order":3,"path":"sprites/ForkFarmerNadando_spr/ForkFarmerNadando_spr.yy",},

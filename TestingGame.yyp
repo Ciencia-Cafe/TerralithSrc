@@ -180,6 +180,7 @@
     {"id":{"name":"FarmerJump_spr","path":"sprites/FarmerJump_spr/FarmerJump_spr.yy",},},
     {"id":{"name":"FarmerNadando_spr","path":"sprites/FarmerNadando_spr/FarmerNadando_spr.yy",},},
     {"id":{"name":"FarmerRun_spr","path":"sprites/FarmerRun_spr/FarmerRun_spr.yy",},},
+    {"id":{"name":"Folha","path":"sprites/Folha/Folha.yy",},},
     {"id":{"name":"ForkFarmerFall_spr","path":"sprites/ForkFarmerFall_spr/ForkFarmerFall_spr.yy",},},
     {"id":{"name":"ForkFarmerIdle_spr","path":"sprites/ForkFarmerIdle_spr/ForkFarmerIdle_spr.yy",},},
     {"id":{"name":"ForkFarmerJump_spr","path":"sprites/ForkFarmerJump_spr/ForkFarmerJump_spr.yy",},},
