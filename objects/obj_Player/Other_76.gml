@@ -23,7 +23,7 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 		break;
 		
 		case "Nadando":
-			audio_sound_pitch(Dirt_Jump, random_range(0.75, 1.25));
+			audio_sound_pitch(nadando_sounds[number], random_range(0.75, 1.25));
             audio_play_sound(nadando_sounds[number], 10, false);
 			if (number == 0) number = 1;
 			else number = 0;

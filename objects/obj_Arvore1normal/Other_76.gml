@@ -4,7 +4,7 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
     switch (event_data[? "message"])
     {
 		case "AxeAttack":
-			if (distance_to_object(obj_Player) < 10.0) {
+			if (distance_to_object(obj_Player) < 5.0) {
 				if (life <= 0) {
 					sprite_index = ArvoreBasicaToco_spr;
 				}
@@ -14,6 +14,9 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 					var madeira = instance_create_layer(x, y-32, 2, DropItem);
 					madeira.IMPULSO_X = random_range(-3, 3);
 					madeira.sprite_index = MadeiraBasica_spr;
+					
+					audio_sound_pitch(nadando_sounds[number], random_range(0.75, 1.25));
+					audio_play_sound(nadando_sounds[number], 10, false);
 				
 					life--;
 				}

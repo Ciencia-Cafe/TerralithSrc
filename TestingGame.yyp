@@ -127,6 +127,7 @@
     {"id":{"name":"waves_shader","path":"shaders/waves_shader/waves_shader.yy",},},
     {"id":{"name":"arvore_bird","path":"sounds/arvore_bird/arvore_bird.yy",},},
     {"id":{"name":"arvore_vento","path":"sounds/arvore_vento/arvore_vento.yy",},},
+    {"id":{"name":"Attack","path":"sounds/Attack/Attack.yy",},},
     {"id":{"name":"butt","path":"sounds/butt/butt.yy",},},
     {"id":{"name":"Dirt_01","path":"sounds/Dirt_01/Dirt_01.yy",},},
     {"id":{"name":"Dirt_02","path":"sounds/Dirt_02/Dirt_02.yy",},},
