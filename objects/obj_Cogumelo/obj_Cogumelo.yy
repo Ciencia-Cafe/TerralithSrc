@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Corvu",
+  "%Name":"obj_Cogumelo",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":76,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Corvu",
+  "name":"obj_Cogumelo",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemys",
@@ -31,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Corvo_Idle_Spr",
-    "path":"sprites/Corvo_Idle_Spr/Corvo_Idle_Spr.yy",
+    "name":"Gogumelo_Idle",
+    "path":"sprites/Gogumelo_Idle/Gogumelo_Idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

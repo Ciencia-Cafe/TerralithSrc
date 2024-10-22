@@ -10,8 +10,8 @@
   "name":"obj_Corvo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Animais voadores",
-    "path":"folders/Objects/Animais voadores.yy",
+    "name":"Enemys",
+    "path":"folders/Objects/Enemys.yy",
   },
   "parentObjectId":null,
   "persistent":false,

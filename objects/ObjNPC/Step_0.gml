@@ -9,7 +9,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	    jump();
 	}
 
-	if (on_floor()) {
+	if (on_floor(floor_tilemap)) {
 		sprite_index = NpcPescadorIdle_spr;
 	}
 	else {

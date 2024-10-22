@@ -75,7 +75,7 @@ else {
 	image_angle = 0;
 	
 	if (!is_attacking) {
-		if (on_floor()) {
+		if (on_floor_p()) {
 			if (dir_x != 0) {
 				sprite_index = floor_sprites[1];
 			}
@@ -98,7 +98,7 @@ else {
 		move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
 	}
 
-	if (on_floor()) {
+	if (on_floor_p()) {
 		AIR_DRAGGING = 1.0;
 		can_double_jump = false;
 	}
@@ -114,7 +114,7 @@ else {
 		jump();
 	}
 
-	if (on_floor() && move_y > 0.0) {
+	if (on_floor_p() && move_y > 0.0) {
 		move_y = 0.0;
 	}
 
@@ -129,7 +129,7 @@ else {
 		image_xscale = 1;
 	}
 
-	if (just_landed && on_floor()) {
+	if (just_landed && on_floor_p()) {
 		audio_sound_pitch(Dirt_Fall, random_range(0.5, 1.5));
 		audio_play_sound(Dirt_Fall, 10, false);
 		just_landed = false;

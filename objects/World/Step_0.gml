@@ -57,6 +57,16 @@ if (_fx_struct != -1)
     fx_set_parameters(_fx_struct, _params);
 }
 
+var _fx_screenshake = layer_get_fx("ScreenShake");
+
+if (_fx_screenshake != -1)
+{
+	var _params = fx_get_parameters(_fx_screenshake);
+	_params.g_ShakeSpeed = lerp(_params.g_ShakeSpeed, 0.0, 0.1);
+
+	fx_set_parameters(_fx_screenshake, _params);
+}
+
 zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
 
 var new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);

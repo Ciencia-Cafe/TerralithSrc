@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"MadeiraBasica_spr",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":9,
   "bbox_left":0,
   "bbox_right":16,

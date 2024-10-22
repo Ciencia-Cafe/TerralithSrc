@@ -128,10 +128,10 @@ elapsed_time = 0.0;
 image_speed = 1;
 number = 0;
 
-function on_floor() {
+function on_floor_p() {
 	if (on_floor_hm == false) just_landed = true;
 	on_floor_hm = true;
-	return place_meeting(x, y + 2.0, tilemap);
+	return on_floor(tilemap);
 }
 
 function on_ceiling() {
@@ -139,7 +139,7 @@ function on_ceiling() {
 }
 
 function jump() {
-	if (on_floor()) {
+	if (on_floor_p()) {
 		move_y = 0;
 		move_y -= JUMP_HEIGHT;
 		can_double_jump = true;

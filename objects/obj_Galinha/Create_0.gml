@@ -23,10 +23,6 @@ satisfacao = 50.0;
 
 vontade_de_explorar = 1;
 
-function on_floor() {
-	return place_meeting(x, y + 1.0, floor_tilemap);
-}
-
 function jump() {
 	y_force_amount = -25;
 }

@@ -1,5 +1,4 @@
 if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
-	
 	if (on_floor(floor_tilemap)) {
 		y_force_amount = 0;
 		move_y = 0;
@@ -12,10 +11,10 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	}
 
 	if (on_floor(floor_tilemap)) {
-		sprite_index = Galinha__spr;
+		sprite_index = Gogumelo_Idle;
 	}
 	else {
-		sprite_index = Galinha_Jump_spr;
+		sprite_index = Gogumelo_Run;
 		y_force_amount = gravity_speed;
 	}
 	
@@ -79,7 +78,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	}
 	
 	if (contador_tempo >= canto) {
-		audio_play_sound_at(GalinhaSFX, x, y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
+		//audio_play_sound_at(GalinhaSFX, x, y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
 		canto = random_range(70, 300);
 		
 		contador_tempo = 0;

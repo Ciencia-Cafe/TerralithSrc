@@ -1,6 +1,6 @@
 if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	
-	if (on_floor()) {
+	if (on_floor(floor_tilemap)) {
 		y_force_amount = 0;
 		move_y = 0;
 	}
@@ -11,7 +11,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	    jump();
 	}
 
-	if (on_floor()) {
+	if (on_floor(floor_tilemap)) {
 		sprite_index = Coelho_idle_spr;
 	}
 	else {
