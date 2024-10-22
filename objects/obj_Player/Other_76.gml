@@ -31,6 +31,8 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 		
 		case "Attack":
 			sprite_index = floor_sprites[4];
+			audio_sound_pitch(SwingSFX, random_range(0.75, 1.25));
+            audio_play_sound(SwingSFX, 10, false);
 		break;
 		
 		case "StopAttack":

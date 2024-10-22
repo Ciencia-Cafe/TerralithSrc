@@ -15,9 +15,9 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 					madeira.IMPULSO_X = random_range(-3, 3);
 					madeira.sprite_index = MadeiraBasica_spr;
 					
-					audio_sound_pitch(nadando_sounds[number], random_range(0.75, 1.25));
-					audio_play_sound(nadando_sounds[number], 10, false);
-				
+					audio_sound_pitch(WoodPunch, random_range(0.75, 1.25));
+					audio_play_sound(WoodPunch, 10, false);
+					
 					life--;
 				}
 			}
