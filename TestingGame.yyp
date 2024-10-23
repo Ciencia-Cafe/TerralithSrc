@@ -13,6 +13,7 @@
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Others","folderPath":"folders/Others.yy","name":"Others","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Animais terrenos","folderPath":"folders/Objects/Animais terrenos.yy","name":"Animais terrenos","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -71,7 +72,9 @@
     {"$GMFolder":"","%Name":"Blocks","folderPath":"folders/Tile Sets/Blocks.yy","name":"Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"ReloadBullet.mp4","CopyToMask":-1,"filePath":"datafiles","name":"ReloadBullet.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -109,6 +112,7 @@
     {"id":{"name":"SelectionObj","path":"objects/SelectionObj/SelectionObj.yy",},},
     {"id":{"name":"TesteDeObjDoGio","path":"objects/TesteDeObjDoGio/TesteDeObjDoGio.yy",},},
     {"id":{"name":"VentoObj","path":"objects/VentoObj/VentoObj.yy",},},
+    {"id":{"name":"Video","path":"objects/Video/Video.yy",},},
     {"id":{"name":"World","path":"objects/World/World.yy",},},
     {"id":{"name":"WorldShadow","path":"objects/WorldShadow/WorldShadow.yy",},},
     {"id":{"name":"DestroiArvore","path":"particles/DestroiArvore/DestroiArvore.yy",},},
