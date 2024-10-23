@@ -11,10 +11,10 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 	}
 
 	if (on_floor(floor_tilemap)) {
-		sprite_index = Gogumelo_Idle;
+		sprite_index = Gogumelo_Run;
 	}
 	else {
-		sprite_index = Gogumelo_Run;
+		sprite_index = Gogumelo_Idle;
 		y_force_amount = gravity_speed;
 	}
 	
