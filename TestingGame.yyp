@@ -194,6 +194,7 @@
     {"id":{"name":"Espinho__spr","path":"sprites/Espinho__spr/Espinho__spr.yy",},},
     {"id":{"name":"Esqueleto1Attack_spr","path":"sprites/Esqueleto1Attack_spr/Esqueleto1Attack_spr.yy",},},
     {"id":{"name":"Esqueleto1Idle_spr","path":"sprites/Esqueleto1Idle_spr/Esqueleto1Idle_spr.yy",},},
+    {"id":{"name":"Esqueleto1Run_spr","path":"sprites/Esqueleto1Run_spr/Esqueleto1Run_spr.yy",},},
     {"id":{"name":"FarmerFall_spr","path":"sprites/FarmerFall_spr/FarmerFall_spr.yy",},},
     {"id":{"name":"FarmerIdle_spr","path":"sprites/FarmerIdle_spr/FarmerIdle_spr.yy",},},
     {"id":{"name":"FarmerJump_spr","path":"sprites/FarmerJump_spr/FarmerJump_spr.yy",},},

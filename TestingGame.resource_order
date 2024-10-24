@@ -147,6 +147,7 @@
     {"name":"Espinho__spr","order":6,"path":"sprites/Espinho__spr/Espinho__spr.yy",},
     {"name":"Esqueleto1Attack_spr","order":6,"path":"sprites/Esqueleto1Attack_spr/Esqueleto1Attack_spr.yy",},
     {"name":"Esqueleto1Idle_spr","order":4,"path":"sprites/Esqueleto1Idle_spr/Esqueleto1Idle_spr.yy",},
+    {"name":"Esqueleto1Run_spr","order":7,"path":"sprites/Esqueleto1Run_spr/Esqueleto1Run_spr.yy",},
     {"name":"FarmerIdle_spr","order":1,"path":"sprites/FarmerIdle_spr/FarmerIdle_spr.yy",},
     {"name":"FarmerJump_spr","order":2,"path":"sprites/FarmerJump_spr/FarmerJump_spr.yy",},
     {"name":"FarmerNadando_spr","order":3,"path":"sprites/FarmerNadando_spr/FarmerNadando_spr.yy",},
