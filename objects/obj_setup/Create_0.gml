@@ -14,6 +14,5 @@ vertex_format_add_position_3d();
 vf = vertex_format_end();
 vb = vertex_create_buffer();
 
-
 //turn on Debug
 show_debug_overlay(1);

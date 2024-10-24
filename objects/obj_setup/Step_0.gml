@@ -1,6 +1,3 @@
-//x = _cam_x;
-//y = _cam_y;
-
 //Creates Quad with two triangles. Used to make the shadows. 
 //Z coordinate is used as a flag to determine if the vertex will be repositioned in the shader
 function Quad(_vb,_x1,_y1,_x2,_y2){
@@ -22,10 +19,16 @@ function Quad(_vb,_x1,_y1,_x2,_y2){
 vertex_begin(vb,vf);
 var _vb = vb;
 with(obj_wall){
-	Quad(_vb,x,y,x+sprite_width,y+sprite_height); //Negative Slope Diagonal Wall
-	Quad(_vb,x+sprite_width,y,x,y+sprite_height); //Positive Slope Diagonal Wall
+	//Quad(_vb, x + 10, y - 6, x + 26, y + 10); //Negative Slope Diagonal Wall
+	//Quad(_vb, x + 26, y - 6, x + 10, y + 10); //Positive Slope Diagonal Wall
+	
+	Quad(_vb, x + 26, y + 10, x + 10, y - 6); //Negative Slope Diagonal Wall
+	Quad(_vb, x + 10, y + 10, x + 26, y - 6); //Positive Slope Diagonal Wall
 }
 vertex_end(vb);
+
+
+
 
 //add lights by left clicking. For testing purposes
 if (mouse_check_button_pressed(mb_left)){

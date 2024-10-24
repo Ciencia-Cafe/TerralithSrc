@@ -14,7 +14,7 @@ var end_tile_y = floor((_cam_y + _view_height) / 16) + 5;
 elapsed_time += delta_time / 100000;
 
 // Loop through each tile in the visible area and draw a black rectangle
-for (var i = start_tile_x; i <= end_tile_x; i++) {
+/*for (var i = start_tile_x; i <= end_tile_x; i++) {
     for (var j = start_tile_y; j <= end_tile_y; j++) {
 		if (i > 1 && i < world_sizex - 2 && j > 0 && j < world_sizey) {
 			var current_water = World.water_map[i];
@@ -23,7 +23,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 			var current_light = World.light_map[i][j];
 			
 			if (current_light != 0) {
-				shader_set(sh_rect);
+				//shader_set(sh_rect);
 				if (last_light == 0) {
 					if (top_pos != 0) prev_top_pos = top_pos;
 					if (next_top_pos != 0) top_pos = next_top_pos;
@@ -44,8 +44,8 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				
 				shader_set_uniform_f(x_pos, (i - 1) * 16);
 				
-		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
-				shader_reset();
+		        //draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
+				//shader_reset();
 			}
 			
 			if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
@@ -63,7 +63,8 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_reset();
 			}
 			
-			/*if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
+			// this is really commented
+			if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
 				shader_set(reflection_shader);
 		        var tile_x = i * 16;
 		        var tile_y = j * 16;
@@ -76,7 +77,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				
 		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
 				shader_reset();
-			}*/
+			}
 			
 			if (current_water != 0 && j > current_water && current_water2 != 0) {
 				shader_set(water_ref);
@@ -97,4 +98,18 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 		}
     }
 }
+*/
 
+for (var i = 0; i <= floor(_view_width / 16); i++) {
+    for (var j = 0; j <= floor(_view_height / 16); j++) {
+		var current_light = World.light_map[max(0, i + floor(_cam_x / 16))][max(0, j + floor(_cam_y / 16))];
+		if (current_light != 0) {
+			walls[i][j].active = true;
+			walls[i][j].x = max(0, i + floor(_cam_x / 16)) * 16;
+			walls[i][j].y = max(0, j + floor(_cam_y / 16)) * 16;
+		}
+		else {
+			walls[i][j].active = false;
+		}
+	}
+}

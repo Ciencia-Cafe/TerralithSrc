@@ -294,10 +294,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
-    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
+    {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
     {"roomId":{"name":"VictorTest_1","path":"rooms/VictorTest_1/VictorTest_1.yy",},},
+    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
