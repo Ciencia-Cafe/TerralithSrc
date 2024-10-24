@@ -38,10 +38,10 @@ function BGend(){
 	gpu_set_colorwriteenable(1,1,1,1);
 }
 
-var _bg_layer = layer_get_id("Background");
+/*var _bg_layer = layer_get_id("Background");
 var _bg_layer2 = layer_get_id("Background");
 layer_script_begin(_bg_layer,BGbegin);
-layer_script_end(_bg_layer2,BGend);
+layer_script_end(_bg_layer2,BGend);*/
 
 
 

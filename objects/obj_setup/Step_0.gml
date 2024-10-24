@@ -20,8 +20,8 @@ vertex_begin(vb,vf);
 var _vb = vb;
 with(obj_wall){
 	if (active) {
-		Quad(_vb,x,y,x+sprite_width,y+sprite_height); //Negative Slope Diagonal Wall
-		Quad(_vb,x+sprite_width,y,x,y+sprite_height); //Positive Slope Diagonal Wall
+		Quad(_vb,x+5,y-11,x+21,y-11); //Negative Slope Diagonal Wall
+		Quad(_vb,x+5,y+5,x+21,y+5); //Positive Slope Diagonal Wall
 	}
 }
 vertex_end(vb);
