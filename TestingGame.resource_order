@@ -96,6 +96,8 @@
     {"name":"utility_functions","order":1,"path":"scripts/utility_functions/utility_functions.yy",},
     {"name":"reflection_shader","order":4,"path":"shaders/reflection_shader/reflection_shader.yy",},
     {"name":"sh_rect","order":1,"path":"shaders/sh_rect/sh_rect.yy",},
+    {"name":"shd_light","order":5,"path":"shaders/shd_light/shd_light.yy",},
+    {"name":"shd_shadow","order":6,"path":"shaders/shd_shadow/shd_shadow.yy",},
     {"name":"water_ref","order":2,"path":"shaders/water_ref/water_ref.yy",},
     {"name":"waves_shader","order":3,"path":"shaders/waves_shader/waves_shader.yy",},
     {"name":"arvore_bird","order":2,"path":"sounds/arvore_bird/arvore_bird.yy",},
