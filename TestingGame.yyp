@@ -135,6 +135,7 @@
     {"id":{"name":"reflection_shader","path":"shaders/reflection_shader/reflection_shader.yy",},},
     {"id":{"name":"sh_rect","path":"shaders/sh_rect/sh_rect.yy",},},
     {"id":{"name":"shd_light","path":"shaders/shd_light/shd_light.yy",},},
+    {"id":{"name":"shd_norm","path":"shaders/shd_norm/shd_norm.yy",},},
     {"id":{"name":"shd_shadow","path":"shaders/shd_shadow/shd_shadow.yy",},},
     {"id":{"name":"water_ref","path":"shaders/water_ref/water_ref.yy",},},
     {"id":{"name":"waves_shader","path":"shaders/waves_shader/waves_shader.yy",},},

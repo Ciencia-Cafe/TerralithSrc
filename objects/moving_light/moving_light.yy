@@ -11,7 +11,10 @@
     "name":"Prompts do mundo",
     "path":"folders/Objects/Prompts do mundo.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_light",
+    "path":"objects/obj_light/obj_light.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
