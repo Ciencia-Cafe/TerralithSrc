@@ -6,10 +6,12 @@ var view_w = camera_get_view_width(view_camera[0]);
 var view_h = camera_get_view_height(view_camera[0]);
 
 layer_x("Backgrounds_1", _cam_x * 0.75);
+layer_x("Backgrounds_4", _cam_x * 0.75);
 layer_x("Backgrounds_2", _cam_x * 0.5);
 layer_x("Backgrounds_3", _cam_x * 0.25);
 
 layer_y("Backgrounds_1", _cam_y * 0.75);
+layer_y("Backgrounds_4", _cam_y * 0.75);
 layer_y("Backgrounds_2", _cam_y * 0.5);
 layer_y("Backgrounds_3", _cam_y * 0.25);
 
