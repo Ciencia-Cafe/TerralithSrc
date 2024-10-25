@@ -1,12 +1,12 @@
 draw_set_font(MainMenuFont);
 
-padding_size = 20;
+padding_size = 18;
 
 menu_options = [
-	"Jogar",
-	"Config",
-	"Dar o cu",
-	"Sair"
+	"Teste de mundo",
+	"Bioma de Neve Teste",
+	"Bioma normal Teste",
+	"Tesde de mecanicas"
 ]
 
 selected = 0;
@@ -19,6 +19,26 @@ function change_selected(new_index) {
 	else {
 		selected = new_index;
 	}
+}
+
+function start_room() {
+	room_id = WorldTest;
+	
+	switch(selected) {
+		case 0:
+			room_id = WorldTest;
+			break;
+		case 1:
+			room_id = BiomaNeveTest_1;
+			break;
+		case 2:
+			room_id = BiomaNormalTest_2;
+			break;
+		case 3:
+			room_id = MechanicsTest;
+			break;
+	}
+	room_goto(room_id);
 }
 
 for (var i = 0; i < array_length(menu_options); i++) {
