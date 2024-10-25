@@ -310,8 +310,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
+    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"roomId":{"name":"BiomaNormalTest_2","path":"rooms/BiomaNormalTest_2/BiomaNormalTest_2.yy",},},
     {"roomId":{"name":"BiomaNeveTest_1","path":"rooms/BiomaNeveTest_1/BiomaNeveTest_1.yy",},},
     {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
