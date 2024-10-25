@@ -15,7 +15,7 @@ default_zoom_height = camera_get_view_height(view_camera[0]);
 current_col = [0.33, 0.33, 0.9, 1.0];
 
 time = 0.0;
-time_multiplier = 0.1;
+time_multiplier = 1.0;
 
 function lerp_col(col1, col2, amount) {
 	var ret_col = [col1[0], col1[1], col1[2], 1.0];
