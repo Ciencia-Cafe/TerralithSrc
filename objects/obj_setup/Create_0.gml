@@ -39,9 +39,9 @@ function BGend(){
 }
 
 /*var _bg_layer = layer_get_id("Background");
-var _bg_layer2 = layer_get_id("Background");
+var _bg_layer2 = layer_get_id("Instances");
 layer_script_begin(_bg_layer,BGbegin);
-layer_script_end(_bg_layer2,BGend);*/
+layer_script_end(_bg_layer2,BGend*/
 
 
 
