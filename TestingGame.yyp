@@ -25,6 +25,7 @@
     {"$GMFolder":"","%Name":"Drops de animais","folderPath":"folders/Objects/Drops de animais.yy","name":"Drops de animais","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemys","folderPath":"folders/Objects/Enemys.yy","name":"Enemys","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Equipamentos basicos","folderPath":"folders/Objects/Equipamentos basicos.yy","name":"Equipamentos basicos","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"GUI","folderPath":"folders/Objects/GUI.yy","name":"GUI","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Objects/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Prompts do mundo","folderPath":"folders/Objects/Prompts do mundo.yy","name":"Prompts do mundo","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Traps","folderPath":"folders/Objects/Traps.yy","name":"Traps","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -88,6 +89,7 @@
     {"id":{"name":"Cactos2","path":"objects/Cactos2/Cactos2.yy",},},
     {"id":{"name":"DropItem","path":"objects/DropItem/DropItem.yy",},},
     {"id":{"name":"GUI","path":"objects/GUI/GUI.yy",},},
+    {"id":{"name":"MainMenu","path":"objects/MainMenu/MainMenu.yy",},},
     {"id":{"name":"moving_light","path":"objects/moving_light/moving_light.yy",},},
     {"id":{"name":"obj_Arvneve1","path":"objects/obj_Arvneve1/obj_Arvneve1.yy",},},
     {"id":{"name":"obj_Arvneve2","path":"objects/obj_Arvneve2/obj_Arvneve2.yy",},},
@@ -302,10 +304,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"VictorTest_1","path":"rooms/VictorTest_1/VictorTest_1.yy",},},
     {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
-    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
