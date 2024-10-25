@@ -83,6 +83,7 @@
   },
   "name":"TestingGame",
   "resources":[
+    {"id":{"name":"MainMenuFont","path":"fonts/MainMenuFont/MainMenuFont.yy",},},
     {"id":{"name":"AttackObj","path":"objects/AttackObj/AttackObj.yy",},},
     {"id":{"name":"BrocuQuebra","path":"objects/BrocuQuebra/BrocuQuebra.yy",},},
     {"id":{"name":"Cactos","path":"objects/Cactos/Cactos.yy",},},
