@@ -1,101 +1,30 @@
-if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
-	if (on_floor(floor_tilemap)) {
-		y_force_amount = 0;
-		move_y = 0;
-	}
-	// Modifica o fator de interpolação para algo mais perceptível
-	move_x = lerp(move_x, dir_x * speed_amount, 0.5) * (delta_time / 100000);  // Aqui aumentei o fator e o valor de interpolação
-	// Verifica colisão com o chão e executa pulo se estiver em movimento
-	if (place_meeting(x + 8.0, y, floor_tilemap) && move_x != 0.0 || place_meeting(x - 8.0, y, floor_tilemap) && move_x != 0.0) {
-	    jump();
-	}
+// Step Event do obj_EsqueletoEs1
 
-	if (on_floor(floor_tilemap)) {
-		sprite_index = Esqueleto1Run_spr;
-	}
-	else {
-		sprite_index = Esqueleto1Idle_spr;
-		y_force_amount = gravity_speed;
-	}
-	
-	dir_x = map_value(perlin_noise(move_perlin_noise), -1.0, 1.0, -1.0, 1.0) * overlayed_direction;
-	
-	move_y += y_force_amount * (delta_time / 100000);
+// Reduz o cooldown a cada frame, até o mínimo de 0
+if (cooldown_arremesso > 0) {
+    cooldown_arremesso -= 1;
+}
 
-	if (dir_x < 0) {
-		image_xscale = -1;
-	
-		var tile_x = floor(x / 16);
-		var tile_y = floor(y / 16);
-	
-		if (tile_x - 1 > 0) {
-			if (get_biome(World.height_map[tile_x - 1], World.world_sizey, World.temperature_map[tile_x - 1]) != 0) {
-				overlayed_direction *= -1;
-			}
-		}
-	}
-	else if (dir_x > 0) {
-		image_xscale = 1;
-	
-		var tile_x = floor(x / 16);
-		var tile_y = floor(y / 16);
-	
-		if (tile_x + 1 < World.world_sizex) {
-			if (get_biome(World.height_map[tile_x + 1], World.world_sizey, World.temperature_map[tile_x + 1]) != 0) {
-				overlayed_direction *= -1;
-			}
-		}
-	}
+// Calcula a distância entre o esqueleto e o player
+var distancia_para_player = point_distance(x, y, obj_Player.x, obj_Player.y);
 
-	if (move_x < -0.1) {
-		image_speed = 0;
-		image_index = 0;
-	}
-	else if (move_x > 0.1) {
-		image_speed = 0;
-		image_index = 0;
-	}
-	else {
-		image_speed = 1;
-	}
+// Se o player estiver dentro do alcance e o cooldown permitir, inicia o ataque
+if (distancia_para_player <= distancia_ataque && cooldown_arremesso == 0 && !estado_atacando) {
+    sprite_index = Esqueleto1Attack_spr;  // Muda para a animação de ataque
+    estado_atacando = true;               // Define o estado de ataque
+    image_index = 0;                      // Reinicia a animação de ataque
+}
+// Continua no Step Event do obj_EsqueletoEs1
 
-	move_perlin_noise += 0.01 * vontade_de_explorar;
-
-	move_and_collide(move_x, move_y, floor_tilemap);
-
-	// Step Event da galinha (Object9)
-
-	// Incrementa o contador a cada frame
-	contador_tempo += 1 * (delta_time / 100000);
-
-	// Verifica se o tempo de espera foi atingido
-	if (contador_tempo >= tempo_espera) {
-	    // Soltar o ovo na posição da galinha
-	    instance_create_layer(x, y, layer, obj_ovo);  // Cria o ovo na mesma posição da galinha
+// Verifica se o esqueleto está atacando e se a animação terminou
+if (estado_atacando && image_index >= image_number - 1) {
+    // Arremessa o osso em direção ao player
+    var osso = instance_create_layer(x, y, "Instances", obj_OssoEsqueleto);  // Certifique-se de que o objeto do osso existe e está nomeado corretamente
+    osso.direction = point_direction(x, y, obj_Player.x, obj_Player.y);
+    osso.speed = 6;  // Define a velocidade do osso
     
-	    // Reseta o contador para o próximo ovo
-	    contador_tempo = 0;
-	}
-	
-	if (contador_tempo >= canto) {
-		//audio_play_sound_at(GalinhaSFX, x, y, 0, global.falloff_ref, global.falloff_max, 1, false, 0);
-		canto = random_range(70, 300);
-		
-		contador_tempo = 0;
-	}
-}
-
-fome = max(0, fome-1);
-alerta = min(100, alerta+1);
-
-if (alerta == 100) {
-	alerta = 0;
-}
-
-// coisas n dependentes do player:
-if (World.time > 18 && World.time < 24 || World.time > 0 && World.time < 5) {
-	sono = min(100, sono+1);
-}
-else {
-	sono = max(0, sono-1);
+    // Volta à animação de idle e inicia o cooldown
+    sprite_index = Esqueleto1Idle_spr;
+    estado_atacando = false;
+    cooldown_arremesso = tempo_cooldown;  // Reseta o cooldown do arremesso
 }
