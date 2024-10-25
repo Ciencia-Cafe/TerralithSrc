@@ -282,6 +282,7 @@
     {"id":{"name":"Sprite118","path":"sprites/Sprite118/Sprite118.yy",},},
     {"id":{"name":"Sprite119","path":"sprites/Sprite119/Sprite119.yy",},},
     {"id":{"name":"Sprite133","path":"sprites/Sprite133/Sprite133.yy",},},
+    {"id":{"name":"Sprite135","path":"sprites/Sprite135/Sprite135.yy",},},
     {"id":{"name":"Sprite29","path":"sprites/Sprite29/Sprite29.yy",},},
     {"id":{"name":"Sticks_spr","path":"sprites/Sticks_spr/Sticks_spr.yy",},},
     {"id":{"name":"Swing","path":"sprites/Swing/Swing.yy",},},
@@ -310,8 +311,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
+    {"roomId":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"roomId":{"name":"BiomaNormalTest_2","path":"rooms/BiomaNormalTest_2/BiomaNormalTest_2.yy",},},
     {"roomId":{"name":"BiomaNeveTest_1","path":"rooms/BiomaNeveTest_1/BiomaNeveTest_1.yy",},},
     {"roomId":{"name":"MechanicsTest","path":"rooms/MechanicsTest/MechanicsTest.yy",},},
