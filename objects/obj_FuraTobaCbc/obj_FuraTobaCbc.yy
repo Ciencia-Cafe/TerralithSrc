@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"FuraTobaCabecaum",
-    "path":"sprites/FuraTobaCabecaum/FuraTobaCabecaum.yy",
+    "name":"FuraTobaCorpo",
+    "path":"sprites/FuraTobaCorpo/FuraTobaCorpo.yy",
   },
   "spriteMaskId":null,
   "visible":true,
