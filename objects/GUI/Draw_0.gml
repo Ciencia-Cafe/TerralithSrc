@@ -15,6 +15,20 @@ var inv_y = current_inv_y;
 var bar_width = 32;
 var bar_pos = _cam_x + (view_w * 0.1);
 
+mouse_pos.x = window_mouse_get_delta_x();
+mouse_pos.y = window_mouse_get_delta_y();
+
+mouse_position.x = (floor(current_mouse_pos.x / 16) * 16) + 8;
+mouse_position.y = (floor(current_mouse_pos.y / 16) * 16) + 8;
+
+if (point_distance(current_mouse_pos.x + mouse_pos.x, current_mouse_pos.y + mouse_pos.y, obj_Player.x, obj_Player.y) < 100.0) {
+	current_mouse_pos.x += mouse_pos.x;
+	current_mouse_pos.y += mouse_pos.y;
+}
+else {
+	draw_circle(obj_Player.x, obj_Player.y, 100, true);
+}
+
 if (instance_exists(obj_Player)) {
 	draw_sprite_stretched(HealthBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25));
@@ -23,7 +37,8 @@ if (instance_exists(obj_Player)) {
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25) + 32);
 
 
-	draw_sprite(BlockBreakSelect, -100, floor(mouse_x / 16) * 16, floor(mouse_y / 16) * 16);
+	draw_sprite(Cursor, -100, mouse_position.x, mouse_position.y);
+	draw_sprite(RealCursor, -101, current_mouse_pos.x, current_mouse_pos.y);
 	draw_sprite(Gui_Inventario_spr, -100, _cam_x + ((view_w * 0.5) - 160), inv_y + inv_y_offset);
 	draw_sprite(Gui_Selected, -101, inv_x + (50 * obj_Player.current_inv_index), inv_y + inv_y_offset);
 }
