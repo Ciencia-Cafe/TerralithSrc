@@ -40,5 +40,5 @@ void main(){
 	
 	//render
 	vec4 frag = texture2D( gm_BaseTexture, v_vTexcoord );
-	gl_FragColor = col*vec4(vec3(str*norm_str),1.)*frag + ref*col*str;
+	gl_FragColor = col*vec4(vec3(str*1.0),1.)*frag + ref*col*str;
 }

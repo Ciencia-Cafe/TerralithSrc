@@ -71,8 +71,8 @@ if (_fx_screenshake != -1)
 
 zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
 
-var new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);
-var new_h = lerp(view_h, zoom_level * default_zoom_height, 0.2);
+new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);
+new_h = lerp(view_h, zoom_level * default_zoom_height, 0.2);
 
 camera_set_view_size(view_camera[0], new_w, new_h);
 

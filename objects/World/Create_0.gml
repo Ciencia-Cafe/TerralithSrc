@@ -17,6 +17,9 @@ current_col = [0.33, 0.33, 0.9, 1.0];
 time = 0.0;
 time_multiplier = 1.0;
 
+new_h = 640;
+new_w = 360;
+
 function lerp_col(col1, col2, amount) {
 	var ret_col = [col1[0], col1[1], col1[2], 1.0];
 	ret_col[0] = lerp(col1[0], col2[0], amount);
@@ -83,6 +86,7 @@ dec_tilemap = layer_tilemap_get_id("Tiles_2");
 shadow_tilemap = layer_tilemap_get_id("Tiles_3");
 shadown_tilemap = layer_tilemap_get_id("Tiles_4");
 water_tilemap = layer_tilemap_get_id("Tiles_5");
+normals_tilemap = layer_tilemap_get_id("Normal");
 
 function get_block(x_pos, y_pos) {
 	return tilemap_get(tilemap, x_pos, y_pos);
@@ -100,6 +104,7 @@ function add_block(x_pos, y_pos, block_ind, down_block_ind) {
 }
 
 function add_whole_block(x_pos, y_pos, block_ind) {
+	tilemap_set(normals_tilemap, 1, x_pos, y_pos);
 	tilemap_set(shadown_tilemap, block_ind, x_pos, y_pos);
 }
 

@@ -12,6 +12,8 @@ function Quad(_vb,_x1,_y1,_x2,_y2){
 	vertex_position_3d(_vb,_x2,_y2,3); //repositioned vertex
 }
 
+_view_width = camera_get_view_width(view_camera[0]);
+_view_height = camera_get_view_height(view_camera[0]);
 
 
 //Construct the vertex buffer with every wall
@@ -20,24 +22,21 @@ vertex_begin(vb,vf);
 var _vb = vb;
 with(obj_wall){
 	if (active) {
-		Quad(_vb,x+4,y-11,x+22,y-11); //Negative Slope Diagonal Wall
-		Quad(_vb,x+4,y+5,x+22,y+5); //Positive Slope Diagonal Wall
+		Quad(_vb,x-1,y,x+17,y); //Negative Slope Diagonal Wall
+		Quad(_vb,x+16,y-1,x+16,y+16); //Positive Slope Diagonal Wall
 		
-		Quad(_vb,x+5,y-12,x+5,y+5); //Negative Slope Diagonal Wall
-		Quad(_vb,x+21,y-12,x+21,y+5); //Positive Slope Diagonal Wall
+		Quad(_vb,x+16,y+16,x,y+16); //Negative Slope Diagonal Wall
+		Quad(_vb,x,y+16,x,y-1); //Positive Slope Diagonal Wall
 	}
 }
 vertex_end(vb);
 
+if (camera_get_view_width(view_camera[0]) != _view_width) {
+}
 
-//view movement controls
-vy += (keyboard_check(vk_down)-keyboard_check(vk_up))*4; 
+/*vy += (keyboard_check(vk_down)-keyboard_check(vk_up))*4; 
 vx += (keyboard_check(vk_right)-keyboard_check(vk_left))*4; 
-camera_set_view_pos(view_camera[0],vx,vy);
-global.vx = vx;
-global.vy = vy;
-
-
+camera_set_view_pos(view_camera[0],vx,vy);*/
 
 //add lights by left clicking. For testing purposes
 if (mouse_check_button_pressed(mb_left)){

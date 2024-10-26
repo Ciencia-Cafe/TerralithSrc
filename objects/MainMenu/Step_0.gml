@@ -17,3 +17,7 @@ if (keyboard_check_pressed(vk_up)) {
 else if (keyboard_check_pressed(vk_down)) {
 	change_selected(selected + 1);
 }
+
+else if (keyboard_check_pressed(vk_enter)) {
+	start_room();
+}

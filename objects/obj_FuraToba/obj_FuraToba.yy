@@ -1,15 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_wall",
+  "%Name":"obj_FuraToba",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_wall",
+  "name":"obj_FuraToba",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prompts do mundo",
-    "path":"folders/Objects/Prompts do mundo.yy",
+    "name":"Enemys",
+    "path":"folders/Objects/Enemys.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"FuraTobaCorpo",
+    "path":"sprites/FuraTobaCorpo/FuraTobaCorpo.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
