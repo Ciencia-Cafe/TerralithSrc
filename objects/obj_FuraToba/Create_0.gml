@@ -2,7 +2,7 @@ cabeca = instance_create_layer(x, y, 3, obj_FuraTobaCbc);
 
 velocity = 7;
 
-wait_time = 10;
+wait_time = 20;
 current_wait_time = 0;
 
 following = false;

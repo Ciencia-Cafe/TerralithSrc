@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"Selection",
-    "path":"sprites/Selection/Selection.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

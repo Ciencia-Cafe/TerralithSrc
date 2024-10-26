@@ -14,7 +14,7 @@ var end_tile_y = floor((_cam_y + _view_height) / 16) + 5;
 elapsed_time += delta_time / 100000;
 
 // Loop through each tile in the visible area and draw a black rectangle
-/*for (var i = start_tile_x; i <= end_tile_x; i++) {
+for (var i = start_tile_x; i <= end_tile_x; i++) {
     for (var j = start_tile_y; j <= end_tile_y; j++) {
 		if (i > 1 && i < world_sizex - 2 && j > 0 && j < world_sizey) {
 			var current_water = World.water_map[i];
@@ -98,15 +98,15 @@ elapsed_time += delta_time / 100000;
 		}
     }
 }
-*/
+
 
 for (var i = 0; i <= floor(_view_width / 16); i++) {
     for (var j = 0; j <= floor(_view_height / 16); j++) {
 		var current_light = World.light_map[max(0, i + floor(_cam_x / 16))][max(0, j + floor(_cam_y / 16))];
 		if (current_light != 0) {
 			walls[i][j].active = true;
-			walls[i][j].x = max(0, i + floor(_cam_x / 16)) * 16;
-			walls[i][j].y = max(0, j + floor(_cam_y / 16)) * 16;
+			walls[i][j].x = (max(0, i + floor(_cam_x / 16)) * 16);// + 10;
+			walls[i][j].y = (max(0, j + floor(_cam_y / 16)) * 16) + 1;// - 5;
 		}
 		else {
 			walls[i][j].active = false;
