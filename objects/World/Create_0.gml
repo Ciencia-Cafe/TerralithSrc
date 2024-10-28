@@ -35,6 +35,8 @@ height_map = array_create(world_sizex);
 humidity_map = array_create(world_sizex);
 temperature_map = array_create(world_sizex);
 
+rock_map = array_create(world_sizex);
+
 light_map = array_create(world_sizex);
 water_map = array_create(world_sizex);
 
