@@ -21,18 +21,20 @@ if (!surface_exists(shad_surf)){
 	shad_surf = surface_create(1366,768);
 }
 
+if (camera_get_view_width(view_camera[0]) != _view_width || camera_get_view_height(view_camera[0]) != _view_height) {
+	surface_resize(application_surface,_view_width,_view_height);
+	surface_resize(global.n_surf,_view_width,_view_height);
+	
+	if (!surface_exists(shad_surf)){
+		shad_surf = surface_create(_view_width,_view_height);
+	}
+	else {
+		surface_resize(shad_surf, _view_width, _view_height);
+	}
+}
+
 _view_width = camera_get_view_width(view_camera[0]);
 _view_height = camera_get_view_height(view_camera[0]);
-
-surface_resize(application_surface,_view_width,_view_height);
-surface_resize(global.n_surf,_view_width,_view_height);
-
-if (!surface_exists(shad_surf)){
-	shad_surf = surface_create(_view_width,_view_height);
-}
-else {
-	surface_resize(shad_surf, _view_width, _view_height);
-}
 
 display_set_gui_maximize();
 
