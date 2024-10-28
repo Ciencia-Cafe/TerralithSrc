@@ -70,8 +70,8 @@
     {"$GMFolder":"","%Name":"SemFerramentas","folderPath":"folders/Sprites/Player/SemFerramentas.yy","name":"SemFerramentas","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tiles Organizadas","folderPath":"folders/Sprites/Tiles Organizadas.yy","name":"Tiles Organizadas","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Blocks","folderPath":"folders/Tile Sets/Blocks.yy","name":"Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Arvore","folderPath":"folders/Tile Sets/Arvore.yy","name":"Arvore","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Blocks","folderPath":"folders/Tile Sets/Blocks.yy","name":"Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
@@ -119,7 +119,6 @@
     {"id":{"name":"obj_SpawnPoint","path":"objects/obj_SpawnPoint/obj_SpawnPoint.yy",},},
     {"id":{"name":"obj_Springuer_Peixe","path":"objects/obj_Springuer_Peixe/obj_Springuer_Peixe.yy",},},
     {"id":{"name":"obj_Thatanos_Peixe","path":"objects/obj_Thatanos_Peixe/obj_Thatanos_Peixe.yy",},},
-    {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"ObjNPC","path":"objects/ObjNPC/ObjNPC.yy",},},
     {"id":{"name":"SelectionObj","path":"objects/SelectionObj/SelectionObj.yy",},},
     {"id":{"name":"VentoObj","path":"objects/VentoObj/VentoObj.yy",},},

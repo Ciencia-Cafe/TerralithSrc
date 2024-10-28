@@ -59,8 +59,8 @@
     {"name":"SemFerramentas","order":1,"path":"folders/Sprites/Player/SemFerramentas.yy",},
     {"name":"Tiles Organizadas","order":47,"path":"folders/Sprites/Tiles Organizadas.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
-    {"name":"Blocks","order":1,"path":"folders/Tile Sets/Blocks.yy",},
     {"name":"Arvore","order":2,"path":"folders/Tile Sets/Arvore.yy",},
+    {"name":"Blocks","order":1,"path":"folders/Tile Sets/Blocks.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
@@ -86,7 +86,6 @@
     {"name":"obj_setup","order":9,"path":"objects/obj_setup/obj_setup.yy",},
     {"name":"obj_SpawnPoint","order":2,"path":"objects/obj_SpawnPoint/obj_SpawnPoint.yy",},
     {"name":"obj_Springuer_Peixe","order":3,"path":"objects/obj_Springuer_Peixe/obj_Springuer_Peixe.yy",},
-    {"name":"obj_wall","order":10,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"SelectionObj","order":1,"path":"objects/SelectionObj/SelectionObj.yy",},
     {"name":"VentoObj","order":4,"path":"objects/VentoObj/VentoObj.yy",},
     {"name":"Video","order":8,"path":"objects/Video/Video.yy",},

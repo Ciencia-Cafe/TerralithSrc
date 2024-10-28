@@ -90,6 +90,8 @@ shadown_tilemap = layer_tilemap_get_id("Tiles_4");
 water_tilemap = layer_tilemap_get_id("Tiles_5");
 normals_tilemap = layer_tilemap_get_id("Normal");
 
+arvores_tilemap = layer_tilemap_get_id("Arvores");
+
 function get_block(x_pos, y_pos) {
 	return tilemap_get(tilemap, x_pos, y_pos);
 }
@@ -160,7 +162,12 @@ function add_passarin(x_pos, y_pos) {
 }
 
 function add_arvore(x_pos, y_pos) {
-	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, obj_Arvore1normal);
+	//arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, obj_Arvore1normal);
+	tilemap_set(arvores_tilemap, irandom_range(56, 58), x_pos, y_pos - 1);
+	var tree_size = irandom_range(1, 5);
+	for (var i = 1; i < tree_size + 1; i++) {
+		tilemap_set(arvores_tilemap, (irandom_range(0, 5) * 8) + 2, x_pos, y_pos - 1 - i);
+	}
 }
 
 function add_neve_arvore(x_pos, y_pos) {
