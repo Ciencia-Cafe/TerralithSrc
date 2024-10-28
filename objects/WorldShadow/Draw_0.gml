@@ -17,10 +17,22 @@ elapsed_time += delta_time / 100000;
 for (var i = start_tile_x; i <= end_tile_x; i++) {
     for (var j = start_tile_y; j <= end_tile_y; j++) {
 		if (i > 1 && i < world_sizex - 2 && j > 0 && j < world_sizey) {
+			var r_i = i - start_tile_x;
+			var r_j = j - start_tile_y;
+			var current_light = World.light_map[max(0, r_i + floor(_cam_x / 16))][max(0, r_j + floor(_cam_y / 16))];
+			if (current_light != 0) {
+				walls[r_i][r_j].active = true;
+				walls[r_i][r_j].x = (max(0, r_i + floor(_cam_x / 16)) * 16);// + 10;
+				walls[r_i][r_j].y = (max(0, r_j + floor(_cam_y / 16)) * 16) + 1;// - 5;
+			}
+			else {
+				walls[r_i][r_j].active = false;
+			}
+			
 			var current_water = World.water_map[i];
 			var current_water2 = tilemap_get(World.water_tilemap, i, j);
 			
-			var current_light = World.light_map[i][j];
+			current_light = World.light_map[i][j];
 			
 			if (current_light != 0) {
 				//shader_set(sh_rect);
@@ -97,19 +109,4 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 			last_light = current_light;
 		}
     }
-}
-
-
-for (var i = 0; i <= floor(_view_width / 16); i++) {
-    for (var j = 0; j <= floor(_view_height / 16); j++) {
-		var current_light = World.light_map[max(0, i + floor(_cam_x / 16))][max(0, j + floor(_cam_y / 16))];
-		if (current_light != 0) {
-			walls[i][j].active = true;
-			walls[i][j].x = (max(0, i + floor(_cam_x / 16)) * 16);// + 10;
-			walls[i][j].y = (max(0, j + floor(_cam_y / 16)) * 16) + 1;// - 5;
-		}
-		else {
-			walls[i][j].active = false;
-		}
-	}
 }
