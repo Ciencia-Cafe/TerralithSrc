@@ -71,9 +71,9 @@ ds_map_add(blocks, "terra", 52); // dirt
 
 // bioma deserto
 ds_map_add(blocks, "areia_mid", 20); // grass
-ds_map_add(blocks, "areia_dark", 13); // grass
+ds_map_add(blocks, "areia_dark", 28); // grass
 
-ds_map_add(blocks, "snow_mid", 2); // snow
+ds_map_add(blocks, "snow_mid", 3); // snow
 ds_map_add(blocks, "snow_dark", 25); // snow
 
 randomize();
@@ -331,9 +331,6 @@ if (generate_world) {
 				if (i2 == floor(height_map[i])) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
 				else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 			}
-		
-			/*if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
-			else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);*/
 		}
 	
 		// agua
