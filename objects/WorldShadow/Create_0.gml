@@ -21,12 +21,3 @@ var start_tile_x = floor(_cam_x / 16) - 5;
 var end_tile_x = floor((_cam_x + _view_width) / 16) + 5;
 var start_tile_y = floor(_cam_y / 16) - 20;
 var end_tile_y = floor((_cam_y + _view_height) / 16) + 5;
-
-walls = [];
-
-for (var i = 0; i <= ceil(_view_width / 16); i++) {
-	walls[i] = [];
-    for (var j = 0; j <= ceil(_view_height / 16); j++) {
-		walls[i][j] = instance_create_layer(i * 16, j * 16, 3, obj_wall);
-	}
-}

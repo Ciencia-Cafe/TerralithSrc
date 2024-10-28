@@ -19,14 +19,6 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 			var r_i = i - start_tile_x;
 			var r_j = j - start_tile_y;
 			var current_light = World.light_map[max(0, r_i + floor(_cam_x / 16))][max(0, r_j + floor(_cam_y / 16))];
-			if (current_light != 0) {
-				walls[r_i][r_j].active = true;
-				walls[r_i][r_j].x = (max(0, r_i + floor(_cam_x / 16)) * 16);// + 10;
-				walls[r_i][r_j].y = (max(0, r_j + floor(_cam_y / 16)) * 16) + 1;// - 5;
-			}
-			else {
-				walls[r_i][r_j].active = false;
-			}
 			
 			var current_water = World.water_map[i];
 			var current_water2 = tilemap_get(World.water_tilemap, i, j);
