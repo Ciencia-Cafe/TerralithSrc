@@ -95,6 +95,10 @@ function get_block(x_pos, y_pos) {
 }
 
 function add_block(x_pos, y_pos, block_ind, down_block_ind) {
+	if (y_pos >= height_map[x_pos] + rock_map[x_pos]) {
+		tilemap_set(tilemap, 49, x_pos, y_pos);
+		return;
+	}
 	if (block_ind == 0) return;
 	var block = irandom_range(0, 2);
 	var past_block = get_block(x_pos-1, y_pos);
@@ -202,6 +206,8 @@ blocks_perlin_noise = random(3000);
 blocks_perlin_noise2 = random(3000);
 decoration_perlin_noise = random(3000);
 
+rocks_perlin_noise = random(3000);
+
 temperature_perlin_noise = random(3000);
 humidity_perlin_noise = random(3000);
 
@@ -245,6 +251,12 @@ if (generate_world) {
 	
 		humidity_perlin_noise += inc2;
 		temperature_perlin_noise += inc2;
+		
+		var current_rocks_tmp = map_value(perlin_noise(rocks_perlin_noise), -1, 1, 1, 10);
+		
+		rock_map[i] = current_rocks_tmp;
+		
+		rocks_perlin_noise += inc;
 	}
 
 	for (var i = 0; i < world_sizex; i++) {
