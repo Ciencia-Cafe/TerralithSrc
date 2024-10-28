@@ -35,6 +35,8 @@ height_map = array_create(world_sizex);
 humidity_map = array_create(world_sizex);
 temperature_map = array_create(world_sizex);
 
+rock_map = array_create(world_sizex);
+
 light_map = array_create(world_sizex);
 water_map = array_create(world_sizex);
 
@@ -69,9 +71,9 @@ ds_map_add(blocks, "terra", 52); // dirt
 
 // bioma deserto
 ds_map_add(blocks, "areia_mid", 20); // grass
-ds_map_add(blocks, "areia_dark", 13); // grass
+ds_map_add(blocks, "areia_dark", 28); // grass
 
-ds_map_add(blocks, "snow_mid", 2); // snow
+ds_map_add(blocks, "snow_mid", 3); // snow
 ds_map_add(blocks, "snow_dark", 25); // snow
 
 randomize();
@@ -93,6 +95,10 @@ function get_block(x_pos, y_pos) {
 }
 
 function add_block(x_pos, y_pos, block_ind, down_block_ind) {
+	if (y_pos >= height_map[x_pos] + rock_map[x_pos]) {
+		tilemap_set(tilemap, 49, x_pos, y_pos);
+		return;
+	}
 	if (block_ind == 0) return;
 	var block = irandom_range(0, 2);
 	var past_block = get_block(x_pos-1, y_pos);
@@ -200,6 +206,8 @@ blocks_perlin_noise = random(3000);
 blocks_perlin_noise2 = random(3000);
 decoration_perlin_noise = random(3000);
 
+rocks_perlin_noise = random(3000);
+
 temperature_perlin_noise = random(3000);
 humidity_perlin_noise = random(3000);
 
@@ -243,6 +251,12 @@ if (generate_world) {
 	
 		humidity_perlin_noise += inc2;
 		temperature_perlin_noise += inc2;
+		
+		var current_rocks_tmp = map_value(perlin_noise(rocks_perlin_noise), -1, 1, 1, 10);
+		
+		rock_map[i] = current_rocks_tmp;
+		
+		rocks_perlin_noise += inc;
 	}
 
 	for (var i = 0; i < world_sizex; i++) {
@@ -317,9 +331,6 @@ if (generate_world) {
 				if (i2 == floor(height_map[i])) add_block(i, i2 + 1, sand_block_mid, sand_block_dark);
 				else add_block(i, i2 + 1, sand_block_dark, sand_block_mid);
 			}
-		
-			/*if (i2 > height_map[i] + 1 && i2 < height_map[i] + 7) add_shadow(i, i2 + 1, 7 - (i2 - (height_map[i] + 3)));
-			else if (i2 > height_map[i] + 3) add_shadow(i, i2 + 1, 3);*/
 		}
 	
 		// agua

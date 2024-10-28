@@ -34,8 +34,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Gui inventario",
-    "path":"folders/Sprites/Gui inventario.yy",
+    "name":"Gui",
+    "path":"folders/Sprites/Gui.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

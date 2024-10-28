@@ -8,6 +8,8 @@ application_surface_draw_enable(false);
 _view_width = camera_get_view_width(view_camera[0]);
 _view_height = camera_get_view_height(view_camera[0]);
 
+light_map = [];
+
 //view coordinates
 vx = 0;
 vy = 0;
@@ -57,7 +59,6 @@ function Nbegin(){
 	if (!surface_exists(global.n_surf)){
 		global.n_surf = surface_create(_view_width,_view_height);
 	}
-	surface_resize(global.n_surf,_view_width,_view_height);
 	surface_set_target(global.n_surf);
 	matrix_set(matrix_world,matrix_build(-global.vx,-global.vy,0,0,0,0,1,1,1));
 	draw_clear_alpha(c_white,0);
