@@ -17,16 +17,15 @@ _view_height = camera_get_view_height(view_camera[0]);
 
 
 //Construct the vertex buffer with every wall
-//Instead of using the four edges as the walls, we use the diagonals instead (Optimization)
 vertex_begin(vb,vf);
 var _vb = vb;
 with(obj_wall){
 	if (active) {
-		Quad(_vb,x-1,y,x+17,y); //Negative Slope Diagonal Wall
-		Quad(_vb,x+16,y-1,x+16,y+16); //Positive Slope Diagonal Wall
+		Quad(_vb,x-1,y,x+17,y);
+		Quad(_vb,x+16,y-1,x+16,y+16);
 		
-		Quad(_vb,x+16,y+16,x,y+16); //Negative Slope Diagonal Wall
-		Quad(_vb,x,y+16,x,y-1); //Positive Slope Diagonal Wall
+		Quad(_vb,x+16,y+16,x,y+16);
+		Quad(_vb,x,y+16,x,y-1);
 	}
 }
 vertex_end(vb);
