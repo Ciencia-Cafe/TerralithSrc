@@ -161,6 +161,49 @@ function add_passarin(x_pos, y_pos) {
 	passarin_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Pomkuku_Passarinho);
 }
 
+function get_leave(left, right, up, down) {
+	if (up && left) current_tileid = 43;
+	else if (up && right) current_tileid = 45;
+	else if (up) current_tileid = 44;
+	else if (down && left) current_tileid = 59;
+	else if (down && right) current_tileid = 61;
+	else if (down) current_tileid = 60;
+	else if (left) current_tileid = 51;
+	else if (right) current_tileid = 53;
+	else current_tileid = 52;
+	
+	return current_tileid;
+}
+
+function add_leaves(x_pos, y_pos) {
+	var tree_sizex = irandom_range(2, 5);
+	var tree_sizey = irandom_range(1, 3);
+	
+	var middle_y = y_pos - tree_sizey;
+	
+	var left = false;
+	var right = false;
+	var up = false;
+	var down = false;
+	
+	var current_tileid = 52;
+	
+	for (var i = -tree_sizex; i <= tree_sizex; i++) {
+		for (var j = (-tree_sizey) - 1; j <= tree_sizey - 1; j++) {
+			if (i == -tree_sizex) left = true;
+			if (i == tree_sizex) right = true;
+			if (j == (-tree_sizey) - 1) up = true;
+			if (j == tree_sizey - 1) down = true;
+			
+			tilemap_set(arvores_tilemap, get_leave(left, right, up, down), x_pos + i, middle_y + j);
+			left = false;
+			right = false;
+			up = false;
+			down = false;
+		}
+	}
+}
+
 function add_arvore(x_pos, y_pos) {
 	//arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, obj_Arvore1normal);
 	tilemap_set(arvores_tilemap, irandom_range(56, 58), x_pos, y_pos - 1);
@@ -168,6 +211,8 @@ function add_arvore(x_pos, y_pos) {
 	for (var i = 1; i < tree_size + 1; i++) {
 		tilemap_set(arvores_tilemap, (irandom_range(0, 5) * 8) + 2, x_pos, y_pos - 1 - i);
 	}
+	
+	add_leaves(x_pos, y_pos - (tree_size + 1));
 }
 
 function add_neve_arvore(x_pos, y_pos) {
@@ -186,23 +231,11 @@ function remove_block(x_pos, y_pos) {
 	tilemap_set(tilemap, 0, x_pos, y_pos);
 }
 
-current_x_height = 0;
-
 function update_lightmap() {
 	for (ix = 0; ix < world_sizex - 1; ix++) {
-		current_x_height = 0;
+		var iy = floor(height_map[ix]) + 1;
 		
-		for (iy = 0; iy < world_sizey - 1; iy++) {
-			var current_block = tilemap_get(tilemap, ix, iy);
-			
-			if (current_block != 0) {
-				if (current_x_height == 0) current_x_height = iy;
-				light_map[ix][iy] = 1;
-			}
-			else {
-				light_map[ix][iy] = 0;
-			}
-		}
+		light_map[ix][iy] = 1;
 	}
 }
 

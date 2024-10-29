@@ -44,7 +44,7 @@ function BGend(){
 }
 
 var _bg_layer = layer_get_id("Effect_4");
-var _bg_layer2 = layer_get_id("Tiles_3");
+var _bg_layer2 = layer_get_id("Arvores");
 layer_script_begin(_bg_layer,BGbegin);
 layer_script_end(_bg_layer2,BGend);
 

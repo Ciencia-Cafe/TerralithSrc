@@ -16,14 +16,10 @@ elapsed_time += delta_time / 100000;
 for (var i = start_tile_x; i <= end_tile_x; i++) {
     for (var j = start_tile_y; j <= end_tile_y; j++) {
 		if (i > 1 && i < world_sizex - 2 && j > 0 && j < world_sizey) {
-			var r_i = i - start_tile_x;
-			var r_j = j - start_tile_y;
-			var current_light = World.light_map[max(0, r_i + floor(_cam_x / 16))][max(0, r_j + floor(_cam_y / 16))];
-			
 			var current_water = World.water_map[i];
 			var current_water2 = tilemap_get(World.water_tilemap, i, j);
 			
-			current_light = World.light_map[i][j];
+			var current_light = World.light_map[i][j];
 			
 			if (current_light != 0) {
 				shader_set(sh_rect);
@@ -62,6 +58,22 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_set_uniform_f(u_pos, elapsed_time * 0.1);
 				
 		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 3, false); // Draw the rectangle
+				shader_reset();
+			}
+			
+			// this is really commented
+			if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
+				shader_set(reflection_shader);
+		        var tile_x = i * 16;
+		        var tile_y = j * 16;
+				
+				var r_pos = shader_get_uniform(reflection_shader, "reflectionPos");
+				var r_size = shader_get_uniform(reflection_shader, "reflectionSize");
+				
+				shader_set_uniform_f(r_pos, tile_x, tile_y);
+				shader_set_uniform_f(r_size, 16, 16);
+				
+		        draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false); // Draw the rectangle
 				shader_reset();
 			}
 			
