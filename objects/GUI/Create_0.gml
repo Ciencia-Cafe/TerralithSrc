@@ -9,9 +9,16 @@ _cam_y = camera_get_view_y(view_camera[0]);
 view_w = camera_get_view_width(view_camera[0]);
 view_h = camera_get_view_height(view_camera[0]);
 
+function get_player_pos() {
+	if (instance_exists(obj_Player)) {
+		return new vector(obj_Player.x, obj_Player.y);
+	}
+	return new vector(0, 0);
+}
+
 elapsed_time = 0;
 
-current_mouse_pos = new vector(obj_Player.x, obj_Player.y);
+current_mouse_pos = new vector(get_player_pos().x, get_player_pos().y);
 
 mouse_position = new vector((floor(current_mouse_pos.x / 16) * 16) - 8, (floor(current_mouse_pos.y / 16) * 16) - 8);
 
