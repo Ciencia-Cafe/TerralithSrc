@@ -12,18 +12,18 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f38f3c2b-48a2-4f26-8056-2305b053bdfd","name":"f38f3c2b-48a2-4f26-8056-2305b053bdfd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f45dd3ff-f4a0-494f-bdc7-03af7358cc91","name":"f45dd3ff-f4a0-494f-bdc7-03af7358cc91","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"81d1a9f9-c897-4307-b5e2-a512c337e907","name":"81d1a9f9-c897-4307-b5e2-a512c337e907","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"df4cf972-1ae8-43db-bbed-5ed762d4fcab","name":"df4cf972-1ae8-43db-bbed-5ed762d4fcab","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f0d515e2-4e89-4c73-bfd1-99e1f1df2ef9","name":"f0d515e2-4e89-4c73-bfd1-99e1f1df2ef9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"0ce9e8bd-45ff-48e0-a95c-f76f4bdfed14","name":"0ce9e8bd-45ff-48e0-a95c-f76f4bdfed14","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6716b9ff-7023-4b77-986e-741517ceb7cc","name":"6716b9ff-7023-4b77-986e-741517ceb7cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"7f3f2985-061f-40c4-8e76-b45285c6b2db","name":"7f3f2985-061f-40c4-8e76-b45285c6b2db","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9ef65e59-3872-4c1d-98a2-5899892b121f","name":"9ef65e59-3872-4c1d-98a2-5899892b121f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"84f35d3f-5832-4393-9224-0d85156b2d12","name":"84f35d3f-5832-4393-9224-0d85156b2d12","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":24,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"de1fe03b-a447-4b47-a74e-caa531a00d32","blendMode":0,"displayName":"default","isLocked":false,"name":"de1fe03b-a447-4b47-a74e-caa531a00d32","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"62b7b13e-f88e-462a-8217-cd1375060e61","blendMode":0,"displayName":"default","isLocked":false,"name":"62b7b13e-f88e-462a-8217-cd1375060e61","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"NpcPescador_Walk_spr",
   "nineSlice":null,
@@ -73,20 +73,20 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f38f3c2b-48a2-4f26-8056-2305b053bdfd","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"20e76996-be7a-47ed-b065-1b6ae81842e3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0ce9e8bd-45ff-48e0-a95c-f76f4bdfed14","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"da0b589d-6f5d-462a-a02b-1e4dda28997f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f45dd3ff-f4a0-494f-bdc7-03af7358cc91","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e7cdff70-57a1-4ed1-b0fb-f70c180e3b6b","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6716b9ff-7023-4b77-986e-741517ceb7cc","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"eee45186-73cf-49be-afa8-087ab29dfa94","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"81d1a9f9-c897-4307-b5e2-a512c337e907","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"618b1894-b6ef-47ec-9bef-fa256f7296b0","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7f3f2985-061f-40c4-8e76-b45285c6b2db","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1d8cbdea-15c6-400f-b5f6-4bbb343212f0","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"df4cf972-1ae8-43db-bbed-5ed762d4fcab","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"be487096-e522-4b21-961b-eee810677d17","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9ef65e59-3872-4c1d-98a2-5899892b121f","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3efb951d-7b69-4641-9dfc-e7f7ead3bb0e","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f0d515e2-4e89-4c73-bfd1-99e1f1df2ef9","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b324c6c9-bb9d-4105-b4bd-04bb0ab60a24","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"84f35d3f-5832-4393-9224-0d85156b2d12","path":"sprites/NpcPescador_Walk_spr/NpcPescador_Walk_spr.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d1b30f6e-dfff-44dd-93e4-548c0669917e","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
