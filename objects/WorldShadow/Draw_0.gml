@@ -63,7 +63,6 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				shader_reset();
 				
 			}
-			last_light = current_light;
 		}
     }
 }

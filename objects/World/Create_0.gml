@@ -176,7 +176,7 @@ function get_leave(left, right, up, down) {
 }
 
 function add_leaves(x_pos, y_pos) {
-	var tree_sizex = irandom_range(2, 5);
+	var tree_sizex = irandom_range(1, 3);
 	var tree_sizey = irandom_range(1, 3);
 	
 	var middle_y = y_pos - tree_sizey;
@@ -195,7 +195,12 @@ function add_leaves(x_pos, y_pos) {
 			if (j == (-tree_sizey) - 1) up = true;
 			if (j == tree_sizey - 1) down = true;
 			
-			tilemap_set(arvores_tilemap, get_leave(left, right, up, down), x_pos + i, middle_y + j);
+			if (tilemap_get(arvores_tilemap, x_pos + i, middle_y + j) == 0) {
+				tilemap_set(arvores_tilemap, get_leave(left, right, up, down), x_pos + i, middle_y + j);
+			}
+			else {
+				tilemap_set(arvores_tilemap, 52, x_pos + i, middle_y + j);
+			}
 			left = false;
 			right = false;
 			up = false;
@@ -204,15 +209,31 @@ function add_leaves(x_pos, y_pos) {
 	}
 }
 
+function add_galhos(x_pos, y_pos, tree_size) {
+	for (var i = 0; i < tree_size; i++) {
+		var has_galho_left = irandom_range(1, 4) == 1;
+		var has_galho_right = irandom_range(1, 4) == 1;
+		if (has_galho_left) {
+			tilemap_set(arvores_tilemap, 32, x_pos-1, y_pos - i);
+			tilemap_set(arvores_tilemap, 33, x_pos, y_pos - i);
+		}
+		else if (has_galho_right) {
+			tilemap_set(arvores_tilemap, 41, x_pos+1, y_pos - i);
+			tilemap_set(arvores_tilemap, 40, x_pos, y_pos - i);
+		}
+	}
+}
+
 function add_arvore(x_pos, y_pos) {
 	//arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, obj_Arvore1normal);
 	tilemap_set(arvores_tilemap, irandom_range(56, 58), x_pos, y_pos - 1);
-	var tree_size = irandom_range(1, 5);
+	var tree_size = irandom_range(1, 10);
 	for (var i = 1; i < tree_size + 1; i++) {
 		tilemap_set(arvores_tilemap, (irandom_range(0, 5) * 8) + 2, x_pos, y_pos - 1 - i);
 	}
 	
 	add_leaves(x_pos, y_pos - (tree_size + 1));
+	add_galhos(x_pos, y_pos, tree_size);
 }
 
 function add_neve_arvore(x_pos, y_pos) {
