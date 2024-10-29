@@ -249,6 +249,7 @@
     {"name":"TileDesign_spr","order":1,"path":"sprites/TileDesign_spr/TileDesign_spr.yy",},
     {"name":"TilesBlocos1Basicos_spr","order":2,"path":"sprites/TilesBlocos1Basicos_spr/TilesBlocos1Basicos_spr.yy",},
     {"name":"TilesNormal","order":6,"path":"sprites/TilesNormal/TilesNormal.yy",},
+    {"name":"Vagalumes_spr","order":57,"path":"sprites/Vagalumes_spr/Vagalumes_spr.yy",},
     {"name":"VentoSpr","order":5,"path":"sprites/VentoSpr/VentoSpr.yy",},
     {"name":"BlockShadown_spr","order":1,"path":"tilesets/BlockShadown_spr/BlockShadown_spr.yy",},
     {"name":"BlocksNiggaShadow_spr","order":3,"path":"tilesets/BlocksNiggaShadow_spr/BlocksNiggaShadow_spr.yy",},
