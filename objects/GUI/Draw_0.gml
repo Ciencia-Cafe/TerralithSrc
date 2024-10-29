@@ -21,15 +21,20 @@ mouse_pos.y = window_mouse_get_delta_y();
 mouse_position.x = (floor(current_mouse_pos.x / 16) * 16) + 8;
 mouse_position.y = (floor(current_mouse_pos.y / 16) * 16) + 8;
 
-if (point_distance(current_mouse_pos.x + mouse_pos.x, current_mouse_pos.y + mouse_pos.y, obj_Player.x, obj_Player.y) < 100.0) {
-	current_mouse_pos.x += mouse_pos.x;
-	current_mouse_pos.y += mouse_pos.y;
-}
-else {
-	draw_circle(obj_Player.x, obj_Player.y, 100, true);
-}
-
 if (instance_exists(obj_Player)) {
+	if (keyboard_check_pressed(ord("E"))) {
+		current_mouse_pos.x = obj_Player.x;
+		current_mouse_pos.y = obj_Player.y;
+	}
+	
+	if (point_distance(current_mouse_pos.x + mouse_pos.x, current_mouse_pos.y + mouse_pos.y, obj_Player.x, obj_Player.y) < 100.0) {
+		current_mouse_pos.x += mouse_pos.x;
+		current_mouse_pos.y += mouse_pos.y;
+	}
+	else {
+		draw_circle(obj_Player.x, obj_Player.y, 100, true);
+	}
+	
 	draw_sprite_stretched(HealthBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25));
 
@@ -41,27 +46,26 @@ if (instance_exists(obj_Player)) {
 	draw_sprite(RealCursor, -101, current_mouse_pos.x, current_mouse_pos.y);
 	draw_sprite(Gui_Inventario_spr, -100, _cam_x + ((view_w * 0.5) - 160), inv_y + inv_y_offset);
 	draw_sprite(Gui_Selected, -101, inv_x + (50 * obj_Player.current_inv_index), inv_y + inv_y_offset);
-}
-
-
-for (var i = 0; i < 6; i++) {
-	var item_x = inv_x + (50 * i) + 24;
-	var item_y = inv_y + 26 + inv_y_offset;
 	
-	if (obj_Player.player_inventory[i] == "Axe") {
-		draw_sprite(Machado_spr, -102, item_x, item_y);
-	}
-	else if (obj_Player.player_inventory[i] == "Sword") {
-		draw_sprite(Espada_spr, -102, item_x, item_y);
-	}
-	else if (obj_Player.player_inventory[i] == "Fork") {
-		draw_sprite(Garfo_spr, -102, item_x, item_y);
-	}
-	else if (obj_Player.player_inventory[i] == "Shovel") {
-		draw_sprite(Pa_spr, -102, item_x, item_y);
-	}
-	else if (obj_Player.player_inventory[i] == "Rod") {
-		draw_sprite(Vara_spr, -102, item_x, item_y);
+	for (var i = 0; i < 6; i++) {
+		var item_x = inv_x + (50 * i) + 24;
+		var item_y = inv_y + 26 + inv_y_offset;
+	
+		if (obj_Player.player_inventory[i] == "Axe") {
+			draw_sprite(Machado_spr, -102, item_x, item_y);
+		}
+		else if (obj_Player.player_inventory[i] == "Sword") {
+			draw_sprite(Espada_spr, -102, item_x, item_y);
+		}
+		else if (obj_Player.player_inventory[i] == "Fork") {
+			draw_sprite(Garfo_spr, -102, item_x, item_y);
+		}
+		else if (obj_Player.player_inventory[i] == "Shovel") {
+			draw_sprite(Pa_spr, -102, item_x, item_y);
+		}
+		else if (obj_Player.player_inventory[i] == "Rod") {
+			draw_sprite(Vara_spr, -102, item_x, item_y);
+		}
 	}
 }
 
