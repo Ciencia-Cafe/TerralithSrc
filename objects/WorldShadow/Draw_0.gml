@@ -23,11 +23,7 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 			
 			if (current_light != 0) {
 				shader_set(sh_rect);
-				if (last_light == 0) {
-					if (top_pos != 0) prev_top_pos = top_pos;
-					if (next_top_pos != 0) top_pos = next_top_pos;
-					next_top_pos = j;
-				}
+				
 		        var tile_x = (i - 1) * 16;  // Calculate the x position of the tile
 		        var tile_y = j * 16;  // Calculate the y position of the tile
 				
@@ -37,11 +33,11 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 				
 				var x_pos = shader_get_uniform(sh_rect, "x_position");
 				
-				shader_set_uniform_f(c_pos, top_pos * 16);
-				shader_set_uniform_f(p_pos, prev_top_pos * 16);
-				shader_set_uniform_f(n_pos, next_top_pos * 16);
+				shader_set_uniform_f(c_pos, World.height_map[i]);
+				shader_set_uniform_f(p_pos, World.height_map[i-1]);
+				shader_set_uniform_f(n_pos, World.height_map[i+1]);
 				
-				shader_set_uniform_f(x_pos, (i - 1) * 16);
+				shader_set_uniform_f(x_pos, i * 16);
 				
 				draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false);
 				
