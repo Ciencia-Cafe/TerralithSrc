@@ -233,7 +233,7 @@ function add_arvore(x_pos, y_pos) {
 	}
 	
 	add_leaves(x_pos, y_pos - (tree_size + 1));
-	add_galhos(x_pos, y_pos, tree_size);
+	add_galhos(x_pos, y_pos - 1, tree_size);
 }
 
 function add_neve_arvore(x_pos, y_pos) {
