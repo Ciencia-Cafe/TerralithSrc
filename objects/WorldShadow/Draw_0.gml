@@ -19,31 +19,6 @@ for (var i = start_tile_x; i <= end_tile_x; i++) {
 			var current_water = World.water_map[i];
 			var current_water2 = tilemap_get(World.water_tilemap, i, j);
 			
-			var current_light = World.light_map[i][j];
-			
-			if (current_light != 0) {
-				shader_set(sh_rect);
-				
-		        var tile_x = (i - 1) * 16;  // Calculate the x position of the tile
-		        var tile_y = j * 16;  // Calculate the y position of the tile
-				
-				var c_pos = shader_get_uniform(sh_rect, "start_position");
-				var p_pos = shader_get_uniform(sh_rect, "prev_position");
-				var n_pos = shader_get_uniform(sh_rect, "next_position");
-				
-				var x_pos = shader_get_uniform(sh_rect, "x_position");
-				
-				shader_set_uniform_f(c_pos, World.height_map[i]);
-				shader_set_uniform_f(p_pos, World.height_map[i-1]);
-				shader_set_uniform_f(n_pos, World.height_map[i+1]);
-				
-				shader_set_uniform_f(x_pos, i * 16);
-				
-				draw_rectangle(tile_x, tile_y, tile_x + 15, tile_y + 15, false);
-				
-				shader_reset();
-			}
-			
 			if (current_water != 0 && j > current_water && j < current_water + 2 && current_water2 != 0) {
 				shader_set(waves_shader);
 		        var tile_x = i * 16;  // Calculate the x position of the tile
