@@ -10,7 +10,7 @@ inv_y_offset = lerp(inv_y_offset, unlerped_inv_y_offset, 0.1);
 
 var inv_x = (_cam_x + (view_w * 0.5) - 160) + 11;
 var current_inv_y = _cam_y + (view_h * 0.75);
-var inv_y = current_inv_y;
+var inv_y = current_inv_y; // a
 
 var bar_width = 32;
 var bar_pos = _cam_x + (view_w * 0.1);
