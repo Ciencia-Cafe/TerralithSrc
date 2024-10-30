@@ -221,6 +221,7 @@
     {"name":"RodFarmerJump_spr","order":2,"path":"sprites/RodFarmerJump_spr/RodFarmerJump_spr.yy",},
     {"name":"RodFarmerNadando_spr","order":3,"path":"sprites/RodFarmerNadando_spr/RodFarmerNadando_spr.yy",},
     {"name":"RodFarmerRun_spr","order":4,"path":"sprites/RodFarmerRun_spr/RodFarmerRun_spr.yy",},
+    {"name":"Selection_1","order":9,"path":"sprites/Selection_1/Selection_1.yy",},
     {"name":"ShovelFarmerIdle_spr","order":5,"path":"sprites/ShovelFarmerIdle_spr/ShovelFarmerIdle_spr.yy",},
     {"name":"ShovelFarmerJump_spr","order":2,"path":"sprites/ShovelFarmerJump_spr/ShovelFarmerJump_spr.yy",},
     {"name":"ShovelFarmerNadando_spr","order":3,"path":"sprites/ShovelFarmerNadando_spr/ShovelFarmerNadando_spr.yy",},

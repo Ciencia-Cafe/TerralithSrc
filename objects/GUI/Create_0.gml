@@ -17,6 +17,7 @@ function get_player_pos() {
 }
 
 elapsed_time = 0;
+show_inventory = false;
 
 current_mouse_pos = new vector(get_player_pos().x, get_player_pos().y);
 
@@ -25,3 +26,36 @@ mouse_position = new vector((floor(current_mouse_pos.x / 16) * 16) - 8, (floor(c
 old_mouse_pos = new vector(mouse_x, mouse_y);
 
 mouse_pos = new vector(window_mouse_get_delta_x(), window_mouse_get_delta_y());
+
+function get_inventory_sprites(player_inventory) {
+	var inventory_sprites = [];
+	for (var i = 0; i < 6; i++) {
+		for (var j = 0; j < 3; j++) {
+			if (j == 0) {
+				if (player_inventory[i] == "Axe") {
+					inventory_sprites[j][i] = Machado_spr;
+				}
+				else if (player_inventory[i] == "Sword") {
+					inventory_sprites[j][i] = Espada_spr;
+				}
+				else if (player_inventory[i] == "Fork") {
+					inventory_sprites[j][i] = Garfo_spr;
+				}
+				else if (player_inventory[i] == "Shovel") {
+					inventory_sprites[j][i] = Pa_spr;
+				}
+				else if (player_inventory[i] == "Rod") {
+					inventory_sprites[j][i] = Vara_spr;
+				}
+				else {
+					inventory_sprites[j][i] = noone;
+				}
+			}
+			else {
+				inventory_sprites[j][i] = noone;
+			}
+		}
+	}
+	
+	return inventory_sprites;
+}
