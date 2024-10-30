@@ -142,6 +142,7 @@
     {"name":"ArvoreDaNeve2_spr","order":1,"path":"sprites/ArvoreDaNeve2_spr/ArvoreDaNeve2_spr.yy",},
     {"name":"ArvoreDaNeve3_spr","order":3,"path":"sprites/ArvoreDaNeve3_spr/ArvoreDaNeve3_spr.yy",},
     {"name":"ArvoreDaNeve4_spr","order":2,"path":"sprites/ArvoreDaNeve4_spr/ArvoreDaNeve4_spr.yy",},
+    {"name":"ArvoreneveTileset_spr","order":8,"path":"sprites/ArvoreneveTileset_spr/ArvoreneveTileset_spr.yy",},
     {"name":"ArvoreNormal_spr","order":9,"path":"sprites/ArvoreNormal_spr/ArvoreNormal_spr.yy",},
     {"name":"ArvorenormalTileset_spr","order":7,"path":"sprites/ArvorenormalTileset_spr/ArvorenormalTileset_spr.yy",},
     {"name":"AxeFarmerAttack_spr","order":5,"path":"sprites/AxeFarmerAttack_spr/AxeFarmerAttack_spr.yy",},

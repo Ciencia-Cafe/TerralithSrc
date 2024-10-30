@@ -186,6 +186,7 @@
     {"id":{"name":"ArvoreDaNeve2_spr","path":"sprites/ArvoreDaNeve2_spr/ArvoreDaNeve2_spr.yy",},},
     {"id":{"name":"ArvoreDaNeve3_spr","path":"sprites/ArvoreDaNeve3_spr/ArvoreDaNeve3_spr.yy",},},
     {"id":{"name":"ArvoreDaNeve4_spr","path":"sprites/ArvoreDaNeve4_spr/ArvoreDaNeve4_spr.yy",},},
+    {"id":{"name":"ArvoreneveTileset_spr","path":"sprites/ArvoreneveTileset_spr/ArvoreneveTileset_spr.yy",},},
     {"id":{"name":"ArvoreNormal_spr","path":"sprites/ArvoreNormal_spr/ArvoreNormal_spr.yy",},},
     {"id":{"name":"ArvorenormalTileset_spr","path":"sprites/ArvorenormalTileset_spr/ArvorenormalTileset_spr.yy",},},
     {"id":{"name":"AxeFarmerAttack_spr","path":"sprites/AxeFarmerAttack_spr/AxeFarmerAttack_spr.yy",},},
