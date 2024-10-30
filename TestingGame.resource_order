@@ -193,6 +193,7 @@
     {"name":"Gui_Selected","order":3,"path":"sprites/Gui_Selected/Gui_Selected.yy",},
     {"name":"Gui_Vestimentas_spr","order":1,"path":"sprites/Gui_Vestimentas_spr/Gui_Vestimentas_spr.yy",},
     {"name":"HealthBar","order":9,"path":"sprites/HealthBar/HealthBar.yy",},
+    {"name":"InventoryBlueprint_spr","order":6,"path":"sprites/InventoryBlueprint_spr/InventoryBlueprint_spr.yy",},
     {"name":"Kutulo_Walk_spr","order":3,"path":"sprites/Kutulo_Walk_spr/Kutulo_Walk_spr.yy",},
     {"name":"Lamparina_spr","order":1,"path":"sprites/Lamparina_spr/Lamparina_spr.yy",},
     {"name":"LightFarmerIdle_spr","order":1,"path":"sprites/LightFarmerIdle_spr/LightFarmerIdle_spr.yy",},

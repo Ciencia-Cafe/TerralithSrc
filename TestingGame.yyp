@@ -246,6 +246,7 @@
     {"id":{"name":"Gui_Selected","path":"sprites/Gui_Selected/Gui_Selected.yy",},},
     {"id":{"name":"Gui_Vestimentas_spr","path":"sprites/Gui_Vestimentas_spr/Gui_Vestimentas_spr.yy",},},
     {"id":{"name":"HealthBar","path":"sprites/HealthBar/HealthBar.yy",},},
+    {"id":{"name":"InventoryBlueprint_spr","path":"sprites/InventoryBlueprint_spr/InventoryBlueprint_spr.yy",},},
     {"id":{"name":"Kutulo_Walk_spr","path":"sprites/Kutulo_Walk_spr/Kutulo_Walk_spr.yy",},},
     {"id":{"name":"Lamparina_spr","path":"sprites/Lamparina_spr/Lamparina_spr.yy",},},
     {"id":{"name":"LightFarmerFall_spr","path":"sprites/LightFarmerFall_spr/LightFarmerFall_spr.yy",},},
