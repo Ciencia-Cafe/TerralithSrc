@@ -35,6 +35,9 @@ if (instance_exists(obj_Player)) {
 		draw_circle(obj_Player.x, obj_Player.y, 100, true);
 	}
 	
+	current_mouse_pos.x += obj_Player.move_x;
+	current_mouse_pos.y += obj_Player.move_y;
+	
 	draw_sprite_stretched(HealthBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25));
 

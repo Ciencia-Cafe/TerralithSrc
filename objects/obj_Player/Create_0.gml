@@ -13,7 +13,10 @@ HEALTH_LEVEL = 100;
 // SFX
 footstep_sounds = [Dirt_01, Dirt_02];
 nadando_sounds = [Nadando1, Nadando2];
-musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_];
+musicas = [Musicar, Musicartrister, butt, Musicar__1_, Musicar__2_, Project_15];
+
+forest_ambients = [forest_all, forest_morning, forest_late, forest_night];
+current_ambients = [forest_all, forest_morning];
 
 // Sprites
 floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr, SwordFarmerAttack_spr];
@@ -203,7 +206,7 @@ function look_at(target_x, target_y) {
 randomize();
 
 function play_music() {
-	audio_play_sound(musicas[irandom_range(0, 4)], 0, false);
+	audio_play_sound(musicas[irandom_range(0, array_length(musicas) - 1)], 0, false);
 }
 
 window_set_cursor(cr_none);

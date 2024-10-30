@@ -146,6 +146,30 @@ if (elapsed_time >= rand_time) {
 	rand_time = random_range(150, 200);
 }
 
+function get_supposed_ambient() {
+	var supposed_ambient = forest_morning;
+	
+	if (World.time > 5 && World.time < 11) {
+		supposed_ambient = forest_morning;
+	}
+	else if (World.time > 12 && World.time < 17) {
+		supposed_ambient = forest_late;
+	}
+	else if (World.time > 19 && World.time < 24 || World.time > 0 && World.time < 4) {
+		supposed_ambient = forest_night;
+	}
+	
+	return supposed_ambient;
+}
+
+if (get_supposed_ambient() != current_ambients[1]) {
+	audio_stop_sound(current_ambients[1]);
+	audio_stop_sound(current_ambients[0]);
+	current_ambients[1] = get_supposed_ambient();
+	audio_play_sound(current_ambients[0], 2, true);
+	audio_play_sound(current_ambients[1], 1, true);
+}
+
 elapsed_time += delta_time / 1000000;
 
 
