@@ -19,7 +19,10 @@ function get_player_pos() {
 elapsed_time = 0;
 show_inventory = false;
 
+currently_selected = noone;
+
 current_mouse_pos = new vector(get_player_pos().x, get_player_pos().y);
+mouse_clicked = false;
 
 mouse_position = new vector((floor(current_mouse_pos.x / 16) * 16) - 8, (floor(current_mouse_pos.y / 16) * 16) - 8);
 

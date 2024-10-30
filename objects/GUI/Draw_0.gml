@@ -54,7 +54,6 @@ if (instance_exists(obj_Player)) {
 		draw_rectangle_color((floor((middle_screen_x - (inv_size_x * 0.5)) / 16) * 16) + 8, (floor((middle_screen_y - (inv_size_y * 0.5)) / 16) * 16) + 8, (floor((middle_screen_x + (inv_size_x * 0.5)) / 16) * 16) + 8, (floor((middle_screen_y + (inv_size_y * 0.5)) / 16) * 16) + 8, c_black, c_black, c_black, c_black, false);
 		
 		var inventory = obj_Player.player_inventory;
-		
 		var inventory_sprites = get_inventory_sprites(inventory);
 		
 		for (var i = 0; i < 6; i++) {
@@ -62,13 +61,22 @@ if (instance_exists(obj_Player)) {
 				var slot_pos = new vector(middle_screen_x - (inv_size_x * 0.5) + (i * 16), middle_screen_y - (inv_size_y * 0.5) + (j * 16));
 				if (mouse_position.x == (floor(slot_pos.x / 16) * 16) + 8 && mouse_position.y == (floor(slot_pos.y / 16) * 16) + 8) {
 					draw_sprite(Selection, -102, (floor(slot_pos.x / 16) * 16) + 8, (floor(slot_pos.y / 16) * 16) + 8);
+					if (mouse_clicked) {
+						currently_selected = inventory_sprites[j][i];
+						obj_Player.player_inventory[i] = "None";
+						
+						mouse_clicked = false;
+					}
 				}
 				else {
 					draw_sprite(Selection_1, -102, (floor(slot_pos.x / 16) * 16) + 8, (floor(slot_pos.y / 16) * 16) + 8);
 				}
 				
 				if (inventory_sprites[j][i] != noone) {
-					draw_sprite(inventory_sprites[j][i], -103, (floor(slot_pos.x / 16) * 16) + 16, (floor(slot_pos.y / 16) * 16) + 16);
+					draw_sprite(inventory_sprites[j][i], -103, (floor(slot_pos.x / 16) * 16) + 16, (floor(slot_pos.y / 16) * 16) + 17);
+				}
+				if (currently_selected != noone) {
+					draw_sprite(currently_selected, -104, mouse_position.x, mouse_position.y);
 				}
 			}
 		}
@@ -108,6 +116,10 @@ if (elapsed_time >= 3.0) {
 
 if (keyboard_check_pressed(ord("I"))) {
 	show_inventory = !show_inventory;
+}
+
+if (mouse_check_button_pressed(mb_left)) {
+	mouse_clicked = true;
 }
 
 elapsed_time += delta_time / 1000000;
