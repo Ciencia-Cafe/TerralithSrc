@@ -43,10 +43,39 @@ if (instance_exists(obj_Player)) {
 
 	draw_sprite_stretched(OxigenBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4 + 32,  bar_width * (obj_Player.OXYGEN_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25) + 32);
+	
+	var middle_screen_x = _cam_x + (view_w * 0.5);
+	var middle_screen_y = _cam_y + (view_h * 0.5);
+	
+	var inv_size_x = 16 * 6;
+	var inv_size_y = 16 * 3;
+	
+	if (show_inventory) {
+		draw_rectangle_color((floor((middle_screen_x - (inv_size_x * 0.5)) / 16) * 16) + 8, (floor((middle_screen_y - (inv_size_y * 0.5)) / 16) * 16) + 8, (floor((middle_screen_x + (inv_size_x * 0.5)) / 16) * 16) + 8, (floor((middle_screen_y + (inv_size_y * 0.5)) / 16) * 16) + 8, c_black, c_black, c_black, c_black, false);
+		
+		var inventory = obj_Player.player_inventory;
+		
+		var inventory_sprites = get_inventory_sprites(inventory);
+		
+		for (var i = 0; i < 6; i++) {
+			for (var j = 0; j < 3; j++) {
+				var slot_pos = new vector(middle_screen_x - (inv_size_x * 0.5) + (i * 16), middle_screen_y - (inv_size_y * 0.5) + (j * 16));
+				if (mouse_position.x == (floor(slot_pos.x / 16) * 16) + 8 && mouse_position.y == (floor(slot_pos.y / 16) * 16) + 8) {
+					draw_sprite(Selection, -102, (floor(slot_pos.x / 16) * 16) + 8, (floor(slot_pos.y / 16) * 16) + 8);
+				}
+				else {
+					draw_sprite(Selection_1, -102, (floor(slot_pos.x / 16) * 16) + 8, (floor(slot_pos.y / 16) * 16) + 8);
+				}
+				
+				if (inventory_sprites[j][i] != noone) {
+					draw_sprite(inventory_sprites[j][i], -103, (floor(slot_pos.x / 16) * 16) + 16, (floor(slot_pos.y / 16) * 16) + 16);
+				}
+			}
+		}
+	}
 
-
-	draw_sprite(Cursor, -100, mouse_position.x, mouse_position.y);
-	draw_sprite(RealCursor, -101, current_mouse_pos.x, current_mouse_pos.y);
+	draw_sprite(Cursor, -103, mouse_position.x, mouse_position.y);
+	draw_sprite(RealCursor, -103, current_mouse_pos.x, current_mouse_pos.y);
 	draw_sprite(Gui_Inventario_spr, -100, _cam_x + ((view_w * 0.5) - 160), inv_y + inv_y_offset);
 	draw_sprite(Gui_Selected, -101, inv_x + (50 * obj_Player.current_inv_index), inv_y + inv_y_offset);
 	
@@ -75,6 +104,10 @@ if (instance_exists(obj_Player)) {
 if (elapsed_time >= 3.0) {
 	unlerped_inv_y_offset = 128;
 	elapsed_time = 0;
+}
+
+if (keyboard_check_pressed(ord("I"))) {
+	show_inventory = !show_inventory;
 }
 
 elapsed_time += delta_time / 1000000;
