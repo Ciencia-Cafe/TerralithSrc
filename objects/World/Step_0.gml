@@ -82,7 +82,7 @@ if (current_biome == 1 || current_biome == 3) {
 	// Trocar o sprite dos backgrounds
 	layer_background_sprite(background_1, AreiaBack3_spr);
 	layer_background_sprite(background_2, AreiaBack2_spr);
-	layer_background_sprite(background_3, AreiaBack1_spr);
+	layer_background_sprite(background_3, AreiaBack3_spr);
 }
 else if (current_biome == 0) {
 	// Trocar o sprite dos backgrounds
