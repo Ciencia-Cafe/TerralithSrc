@@ -97,15 +97,15 @@ function get_block(x_pos, y_pos) {
 }
 
 function add_block(x_pos, y_pos, block_ind) {
-	tilemap_set(tilemap, block_ind, x_pos, y_pos);
-}
-
-function resolve_block(x_pos, y_pos, block_ind) {
 	if (y_pos >= height_map[x_pos] + rock_map[x_pos]) {
 		tilemap_set(tilemap, 49, x_pos, y_pos);
 		return;
 	}
 	
+	tilemap_set(tilemap, block_ind, x_pos, y_pos);
+}
+
+function resolve_block(x_pos, y_pos, block_ind) {
 	/*if (block_ind == 0) return;
 	var block = irandom_range(0, 2);
 	var past_block = get_block(x_pos-1, y_pos);
@@ -114,8 +114,7 @@ function resolve_block(x_pos, y_pos, block_ind) {
 	if (past_block != block_ind && past_block != 0 && past_block != down_block_ind && block == 1) block_ind = get_block(x_pos-1, y_pos);
 	else if (next_block != block_ind && next_block != 0 && next_block != down_block_ind && block == 1) block_ind = get_block(x_pos+1, y_pos);*/
 	
-	if (block_ind == 52) block_ind = get_grass_block(x_pos, y_pos);
-	tilemap_set(tilemap, block_ind, x_pos, y_pos);
+	tilemap_set(tilemap, get_grass_block(x_pos, y_pos), x_pos, y_pos);
 }
 
 function get_grass_block(x_pos, y_pos) {
@@ -126,6 +125,8 @@ function get_grass_block(x_pos, y_pos) {
 	if (air_left && air_up) return 40;
 	else if (air_right && air_up) return 42;
 	else if (air_up) return 41;
+	else if (air_left) return 51;
+	else if (air_right) return 53;
 	else return 52;
 }
 
@@ -409,7 +410,7 @@ if (generate_world) {
 		}
 		
 		// block resolve
-		for (var i2 = floor(height_map[i]); i2 < world_sizey; i2++) {
+		/*for (var i2 = floor(height_map[i]); i2 < world_sizey; i2++) {
 			if (bioma == 0) {
 				resolve_block(i, i2 + 1, dirt_block);
 			}
@@ -422,7 +423,7 @@ if (generate_world) {
 			else {
 				resolve_block(i, i2 + 1, sand_block_dark);
 			}
-		}
+		}*/
 	
 		// agua
 		for (var i2 = water_height; i2 < world_sizey && i2 < floor(height_map[i]); i2++) {
