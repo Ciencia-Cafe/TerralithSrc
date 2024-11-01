@@ -125,7 +125,7 @@ function resolve_block(x_pos, y_pos) {
 	else if (current_block == 28) {
 		tilemap_set(tilemap, get_sand_block(x_pos, y_pos), x_pos, y_pos);
 	}
-	else if (current_block == 6) {
+	else if (current_block == 25) {
 		tilemap_set(tilemap, get_snow_block(x_pos, y_pos), x_pos, y_pos);
 	}
 }
