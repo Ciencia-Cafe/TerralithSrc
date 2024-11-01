@@ -150,6 +150,17 @@ function update_block_pos() {
 	return [0, 0];
 }
 
+// block resolve
+if (!blocks_resolved) {
+	for (var i = 0; i < world_sizex; i++) {
+		for (var i2 = floor(height_map[i]); i2 < world_sizey; i2++) {
+			resolve_block(i, i2 + 1);
+		}
+	}
+	
+	blocks_resolved = true;
+}
+
 block_put_x = update_block_pos()[0];
 block_put_y = update_block_pos()[1];
 

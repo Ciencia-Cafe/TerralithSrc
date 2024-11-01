@@ -11,6 +11,8 @@ zoom_level = 1;
 default_zoom_width = camera_get_view_width(view_camera[0]);
 default_zoom_height = camera_get_view_height(view_camera[0]);
 
+blocks_resolved = false;
+
 
 current_col = [0.33, 0.33, 0.9, 1.0];
 
@@ -105,28 +107,31 @@ function add_block(x_pos, y_pos, block_ind) {
 	tilemap_set(tilemap, block_ind, x_pos, y_pos);
 }
 
-function resolve_block(x_pos, y_pos, block_ind) {
-	/*if (block_ind == 0) return;
-	var block = irandom_range(0, 2);
-	var past_block = get_block(x_pos-1, y_pos);
-	var next_block = get_block(x_pos+1, y_pos);
-	
-	if (past_block != block_ind && past_block != 0 && past_block != down_block_ind && block == 1) block_ind = get_block(x_pos-1, y_pos);
-	else if (next_block != block_ind && next_block != 0 && next_block != down_block_ind && block == 1) block_ind = get_block(x_pos+1, y_pos);*/
-	
-	tilemap_set(tilemap, get_grass_block(x_pos, y_pos), x_pos, y_pos);
-}
-
-function get_grass_block(x_pos, y_pos) {
+function get_sides(x_pos, y_pos) {
 	var air_left = tilemap_get(tilemap, x_pos-1, y_pos) == 0;
 	var air_right = tilemap_get(tilemap, x_pos+1, y_pos) == 0;
 	var air_up = tilemap_get(tilemap, x_pos, y_pos-1) == 0;
+	var air_down = tilemap_get(tilemap, x_pos, y_pos+1) == 0;
 	
-	if (air_left && air_up) return 40;
-	else if (air_right && air_up) return 42;
-	else if (air_up) return 41;
-	else if (air_left) return 51;
-	else if (air_right) return 53;
+	return [air_left, air_right, air_up, air_down];
+}
+
+function resolve_block(x_pos, y_pos) {
+	var current_block = tilemap_get(tilemap, x_pos, y_pos);
+	
+	if (current_block == 52) {
+		tilemap_set(tilemap, get_grass_block(x_pos, y_pos), x_pos, y_pos);
+	}
+}
+
+function get_grass_block(x_pos, y_pos) {
+	var sides = get_sides(x_pos, y_pos);
+	
+	if (sides[0] && sides[2]) return 40;
+	else if (sides[1] && sides[2]) return 42;
+	else if (sides[2]) return 41;
+	else if (sides[0]) return 51;
+	else if (sides[1]) return 53;
 	else return 52;
 }
 
@@ -408,22 +413,6 @@ if (generate_world) {
 				add_block(i, i2 + 1, sand_block_dark);
 			}
 		}
-		
-		// block resolve
-		/*for (var i2 = floor(height_map[i]); i2 < world_sizey; i2++) {
-			if (bioma == 0) {
-				resolve_block(i, i2 + 1, dirt_block);
-			}
-			else if (bioma == 1) {
-				resolve_block(i, i2 + 1, sand_block_dark);
-			}
-			else if (bioma == 2) {
-				resolve_block(i, i2 + 1, snow_block_dark);
-			}
-			else {
-				resolve_block(i, i2 + 1, sand_block_dark);
-			}
-		}*/
 	
 		// agua
 		for (var i2 = water_height; i2 < world_sizey && i2 < floor(height_map[i]); i2++) {
