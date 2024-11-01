@@ -326,8 +326,8 @@ humidity_perlin_noise = random(3000);
 
 ps = part_system_create_layer("Effects", false);
 
-inc = 0.075;
-inc2 = 0.015;
+inc = 0.015;
+inc2 = 0.005;
 
 var air_block = ds_map_find_value(blocks, "ar");
 	
@@ -394,7 +394,7 @@ if (generate_world) {
 				obj[i] = 1;
 			}
 			else {
-				dec[i] = irandom_range(1, 3);
+				dec[i] = irandom_range(1, 10);
 			}
 		}
 		else if (bioma == 1) {
@@ -402,7 +402,7 @@ if (generate_world) {
 				obj[i] = 2;
 			}
 			else {
-				dec[i] = irandom_range(4, 5);
+				dec[i] = irandom_range(11, 20);
 			}
 		}
 		else if (bioma == 2) {
@@ -418,7 +418,7 @@ if (generate_world) {
 		else if(bioma == 3) {
 			obj[i] = 6;
 		
-			dec[i] = irandom_range(6, 7);
+			dec[i] = irandom_range(21, 30);
 		}
 	
 		// decorações
@@ -458,7 +458,7 @@ if (generate_world) {
 		else if (obj[i] == 3) add_neve_arvore(i, ceil(height_map[i]));
 	
 		// flores
-		if (dec[i] == 1) {
+		if (dec[i] >= 1 && dec[i] <= 2) {
 			var dec2 = irandom_range(1, 4);
 			if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(48, 51));
 			else if (dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(56, 59));
@@ -466,12 +466,14 @@ if (generate_world) {
 			else if (dec2 == 4) add_decoration(i, floor(height_map[i]), 43);
 		}
 		// matos
-		else if (dec[i] == 2) {
-			 add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
+		else if (dec[i] >= 3 && dec[i] <= 9) {
+			var dec2 = irandom_range(1, 3);
+			if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(44, 47));
+			else add_decoration(i, floor(height_map[i]), irandom_range(52, 54));
 		}
 	
 		// animais terrestres
-		else if(dec[i] == 3) {
+		else if(dec[i] == 10) {
 			var animal = irandom_range(0, 5); // 5 variações
 		
 			if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
@@ -482,12 +484,12 @@ if (generate_world) {
 		}
 	
 		// desert
-		else if (dec[i] == 4) {
+		else if (dec[i] >= 11 && dec[i] <= 18) {
 			add_decoration(i, floor(height_map[i]), 32);
 		}
 	
 		// oceano
-		else if (dec[i] == 6) {
+		else if (dec[i] >= 21 && dec[i] <= 30) {
 			var dec2 = irandom_range(1, 3);
 			if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
 			else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
