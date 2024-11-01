@@ -122,6 +122,12 @@ function resolve_block(x_pos, y_pos) {
 	if (current_block == 52) {
 		tilemap_set(tilemap, get_grass_block(x_pos, y_pos), x_pos, y_pos);
 	}
+	else if (current_block == 28) {
+		tilemap_set(tilemap, get_sand_block(x_pos, y_pos), x_pos, y_pos);
+	}
+	else if (current_block == 6) {
+		tilemap_set(tilemap, get_snow_block(x_pos, y_pos), x_pos, y_pos);
+	}
 }
 
 function get_grass_block(x_pos, y_pos) {
@@ -133,6 +139,28 @@ function get_grass_block(x_pos, y_pos) {
 	else if (sides[0]) return 51;
 	else if (sides[1]) return 53;
 	else return 52;
+}
+
+function get_sand_block(x_pos, y_pos) {
+	var sides = get_sides(x_pos, y_pos);
+	
+	if (sides[0] && sides[2]) return 19;
+	else if (sides[1] && sides[2]) return 21;
+	else if (sides[2]) return 20;
+	else if (sides[0]) return 27;
+	else if (sides[1]) return 29;
+	else return 28;
+}
+
+function get_snow_block(x_pos, y_pos) {
+	var sides = get_sides(x_pos, y_pos);
+	
+	if (sides[0] && sides[2]) return 2;
+	else if (sides[1] && sides[2]) return 4;
+	else if (sides[2]) return 3;
+	else if (sides[0]) return 5;
+	else if (sides[1]) return 7;
+	else return 6;
 }
 
 function add_whole_block(x_pos, y_pos, block_ind) {
