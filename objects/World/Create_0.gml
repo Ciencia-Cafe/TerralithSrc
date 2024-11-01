@@ -97,15 +97,15 @@ function get_block(x_pos, y_pos) {
 }
 
 function add_block(x_pos, y_pos, block_ind) {
-	tilemap_set(tilemap, block_ind, x_pos, y_pos);
-}
-
-function resolve_block(x_pos, y_pos, block_ind) {
 	if (y_pos >= height_map[x_pos] + rock_map[x_pos]) {
 		tilemap_set(tilemap, 49, x_pos, y_pos);
 		return;
 	}
 	
+	tilemap_set(tilemap, block_ind, x_pos, y_pos);
+}
+
+function resolve_block(x_pos, y_pos, block_ind) {
 	/*if (block_ind == 0) return;
 	var block = irandom_range(0, 2);
 	var past_block = get_block(x_pos-1, y_pos);
