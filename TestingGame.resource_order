@@ -264,6 +264,7 @@
     {"name":"Thatanos_Idle_spr","order":1,"path":"sprites/Thatanos_Idle_spr/Thatanos_Idle_spr.yy",},
     {"name":"TibumSpr","order":4,"path":"sprites/TibumSpr/TibumSpr.yy",},
     {"name":"TileDesign_spr","order":1,"path":"sprites/TileDesign_spr/TileDesign_spr.yy",},
+    {"name":"TilesBlocos1Basicos_spr_1","order":9,"path":"sprites/TilesBlocos1Basicos_spr_1/TilesBlocos1Basicos_spr_1.yy",},
     {"name":"TilesBlocos1Basicos_spr","order":2,"path":"sprites/TilesBlocos1Basicos_spr/TilesBlocos1Basicos_spr.yy",},
     {"name":"TilesNormal","order":6,"path":"sprites/TilesNormal/TilesNormal.yy",},
     {"name":"Vagalumes_spr","order":57,"path":"sprites/Vagalumes_spr/Vagalumes_spr.yy",},
