@@ -49,8 +49,6 @@ background_1 = layer_background_get_id("Backgrounds_1");
 background_2 = layer_background_get_id("Backgrounds_2");
 background_3 = layer_background_get_id("Backgrounds_3");
 
-var blocks = ds_map_create();
-
 block_mining_time = 15;
 elapsed_mining_time = 0.0;
 
@@ -64,19 +62,6 @@ global.falloff_ref = 100;
 global.falloff_max = 300;
 
 audio_falloff_set_model(audio_falloff_linear_distance);
-
-ds_map_add(blocks, "ar", 0); // air
-
-// bioma floresta
-ds_map_add(blocks, "grama_mid", 41); // grass
-ds_map_add(blocks, "terra", 52); // dirt
-
-// bioma deserto
-ds_map_add(blocks, "areia_mid", 20); // grass
-ds_map_add(blocks, "areia_dark", 28); // grass
-
-ds_map_add(blocks, "snow_mid", 3); // snow
-ds_map_add(blocks, "snow_dark", 25); // snow
 
 randomize();
 
@@ -329,17 +314,6 @@ ps = part_system_create_layer("Effects", false);
 inc = 0.015;
 inc2 = 0.005;
 
-var air_block = ds_map_find_value(blocks, "ar");
-	
-var grass_block_mid = ds_map_find_value(blocks, "grama_mid");
-var dirt_block = ds_map_find_value(blocks, "terra");
-	
-var sand_block_mid = ds_map_find_value(blocks, "areia_mid");
-var sand_block_dark = ds_map_find_value(blocks, "areia_dark");
-
-var snow_block_mid = ds_map_find_value(blocks, "snow_mid");
-var snow_block_dark = ds_map_find_value(blocks, "snow_dark");
-
 if (generate_world) {
 	// Generating maps
 	water_height = floor(world_sizey * 0.275);
@@ -358,8 +332,9 @@ if (generate_world) {
 		current_temperature_tmp = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 100);
 	
 		var temperature_height_influence = map_value(current_height, 0, world_sizey, 0, 30);
-	
-		humidity_map[i] = current_humidity_tmp;
+		
+		if (current_height >= water_height) humidity_map[i] = 100;
+		else humidity_map[i] = current_humidity_tmp;
 		temperature_map[i] = current_temperature_tmp - temperature_height_influence;
 	
 		humidity_perlin_noise += inc2;
@@ -382,14 +357,14 @@ if (generate_world) {
 			add_passarin(i, irandom_range(0, 20));
 		}
 	
-		var bioma = get_biome(height_map[i], floor(world_sizey), temperature_map[i]);
+		var bioma = get_biome(temperature_map[i], humidity_map[i]);
 	
 		var chm = ceil(height_map[i]);
 		var pbhm = i > 0 ? ceil(height_map[i-1]) : 0;
 		var nbhm = i < floor(world_sizex-1) ? ceil(height_map[i+1]) : 0;
 	
 		// objetos
-		if (bioma == 0) {
+		if (bioma >= -0.5 && bioma <= 0.5) {
 			if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 				obj[i] = 1;
 			}
@@ -397,7 +372,7 @@ if (generate_world) {
 				dec[i] = irandom_range(1, 10);
 			}
 		}
-		else if (bioma == 1) {
+		else if (bioma >= 0.5 && bioma <= 1.5) {
 			if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 				obj[i] = 2;
 			}
@@ -405,7 +380,7 @@ if (generate_world) {
 				dec[i] = irandom_range(11, 20);
 			}
 		}
-		else if (bioma == 2) {
+		else if (bioma >= 1.5 && bioma <= 2.5) {
 			if (i % 2 == 1 && irandom_range(1, 2) == 1 && chm == pbhm && chm == nbhm) {
 				obj[i] = 3;
 			}
@@ -415,7 +390,7 @@ if (generate_world) {
 			}
 		}
 		// bioma oceano
-		else if(bioma == 3) {
+		else if(bioma >= 2.5) {
 			obj[i] = 6;
 		
 			dec[i] = irandom_range(21, 30);
@@ -428,17 +403,18 @@ if (generate_world) {
 	
 		// blocos
 		for (var i2 = floor(height_map[i]); i2 < world_sizey; i2++) {
-			if (bioma == 0) {
-				add_block(i, i2 + 1, dirt_block);
+			bioma = get_biome(temperature_map[i], humidity_map[i]) + random_range(-0.25, 0.25);
+			if (bioma >= -0.5 && bioma <= 0.5) {
+				add_block(i, i2 + 1, 52);
 			}
-			else if (bioma == 1) {
-				add_block(i, i2 + 1, sand_block_dark);
+			else if (bioma >= 0.5 && bioma <= 1.5) {
+				add_block(i, i2 + 1, 28);
 			}
-			else if (bioma == 2) {
-				add_block(i, i2 + 1, snow_block_dark);
+			else if (bioma >= 1.5 && bioma <= 2.5) {
+				add_block(i, i2 + 1, 25);
 			}
 			else {
-				add_block(i, i2 + 1, sand_block_dark);
+				add_block(i, i2 + 1, 28);
 			}
 		}
 	
