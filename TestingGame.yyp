@@ -285,6 +285,7 @@
     {"id":{"name":"PicaretaFarmerRun_spr","path":"sprites/PicaretaFarmerRun_spr/PicaretaFarmerRun_spr.yy",},},
     {"id":{"name":"PlayerArmadilhaOmg","path":"sprites/PlayerArmadilhaOmg/PlayerArmadilhaOmg.yy",},},
     {"id":{"name":"PlayerCol","path":"sprites/PlayerCol/PlayerCol.yy",},},
+    {"id":{"name":"PlayerDamage_spr","path":"sprites/PlayerDamage_spr/PlayerDamage_spr.yy",},},
     {"id":{"name":"PlayerMorte_spr","path":"sprites/PlayerMorte_spr/PlayerMorte_spr.yy",},},
     {"id":{"name":"Pomkuku_Flyspr","path":"sprites/Pomkuku_Flyspr/Pomkuku_Flyspr.yy",},},
     {"id":{"name":"Pomkuku_Idle_spr","path":"sprites/Pomkuku_Idle_spr/Pomkuku_Idle_spr.yy",},},
