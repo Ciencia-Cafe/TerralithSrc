@@ -103,6 +103,7 @@
     {"name":"Menu","order":4,"path":"rooms/Menu/Menu.yy",},
     {"name":"WorldTest","order":1,"path":"rooms/WorldTest/WorldTest.yy",},
     {"name":"get_biome","order":3,"path":"scripts/get_biome/get_biome.yy",},
+    {"name":"get_effects_layer","order":7,"path":"scripts/get_effects_layer/get_effects_layer.yy",},
     {"name":"get_player_pos","order":6,"path":"scripts/get_player_pos/get_player_pos.yy",},
     {"name":"on_floor","order":4,"path":"scripts/on_floor/on_floor.yy",},
     {"name":"raycast","order":2,"path":"scripts/raycast/raycast.yy",},

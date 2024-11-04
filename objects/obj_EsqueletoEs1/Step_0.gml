@@ -1,5 +1,31 @@
 // Step Event do obj_EsqueletoEs1
 
+function die() {
+	instance_destroy(self);
+}
+
+function decrease_health(amount) {
+	if (HEALTH_LEVEL > 0) HEALTH_LEVEL -= amount;
+	else {
+		HEALTH_LEVEL = 0;
+		
+		die();
+	}
+}
+
+function damage() {
+	if (damage_cooldown > 5) {
+		sprite_index = Esqueleto1DamageHit_spr;
+		part_particles_burst(ps, x, y, Damage);
+		// colocar um som melhor dps
+		audio_sound_pitch(DamageSFX, random_range(0.75, 1.25));
+	    audio_play_sound(DamageSFX, 10, false);
+			
+		decrease_health(20);
+		damage_cooldown = 0.0;
+	}
+}
+
 // Reduz o cooldown a cada frame, até o mínimo de 0
 if (cooldown_arremesso > 0) {
     cooldown_arremesso -= 1;
@@ -28,3 +54,5 @@ if (estado_atacando && image_index >= image_number - 1) {
     estado_atacando = false;
     cooldown_arremesso = tempo_cooldown;  // Reseta o cooldown do arremesso
 }
+
+damage_cooldown += delta_time / 100000;

@@ -38,15 +38,6 @@ function get_floor_layer() {
 function get_decoration_layer() {
 }
 
-function get_effects_layer() {
-	if (layer_exists("Effects")) {
-		return part_system_create_layer("Effects", false);
-	}
-	else {
-		return part_system_create_layer("Instances", false);
-	}
-}
-
 function get_spawn_point() {
 	if (instance_exists(obj_SpawnPoint)) {
 		return instance_find(obj_SpawnPoint, 0);
