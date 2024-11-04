@@ -119,6 +119,8 @@ if (elapsed_time >= 3.0) {
 
 if (keyboard_check_pressed(ord("I"))) {
 	show_inventory = !show_inventory;
+	audio_sound_pitch(OpenInv, random_range(0.75, 1.25));
+    audio_play_sound(OpenInv, 10, false);
 }
 
 if (mouse_check_button_pressed(mb_left)) {
