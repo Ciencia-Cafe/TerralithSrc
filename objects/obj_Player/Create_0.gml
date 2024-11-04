@@ -188,13 +188,7 @@ function decrease_oxygen(amount) {
 }
 
 function kill_self() {
-    if (spawn_point != noone) {
-        with (spawn_point) {
-            spawn_player();
-        }
-        
-        instance_destroy();
-    }
+    game_restart();
 }
 
 function look_at(target_x, target_y) {
