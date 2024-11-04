@@ -20,6 +20,10 @@ if (current_wait_time >= wait_time) {
 	current_wait_time = 0; // reset
 }
 
+if (distance_to_object(obj_Player) < 10.0) {
+	obj_Player.damage();
+}
+
 cabeca.x = x;
 cabeca.y = y;
 

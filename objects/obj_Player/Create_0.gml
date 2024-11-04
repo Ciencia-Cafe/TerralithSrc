@@ -23,6 +23,8 @@ floor_sprites = [FarmerIdle_spr, FarmerRun_spr, FarmerJump_spr, FarmerFall_spr, 
 water_sprites = [FarmerNadando_spr];
 attack_obj = instance_create_layer(x, y, 0, AttackObj);
 
+damage_cooldown = 0.0;
+
 // Helper functions
 function get_floor_layer() {
 	if (layer_exists("FloorTile")) {

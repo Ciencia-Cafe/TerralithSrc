@@ -147,6 +147,7 @@ if (elapsed_time >= rand_time) {
 }
 
 function get_supposed_ambient() {
+	if (!instance_exists(World)) return forest_morning;
 	var supposed_ambient = forest_morning;
 	
 	if (World.time > 5 && World.time < 11) {
@@ -169,6 +170,20 @@ if (get_supposed_ambient() != current_ambients[1]) {
 	audio_play_sound(current_ambients[0], 2, true);
 	audio_play_sound(current_ambients[1], 1, true);
 }
+
+function damage() {
+	if (damage_cooldown > 10) {
+		sprite_index = PlayerDamage_spr;
+		part_particles_burst(ps, x, y, Damage);
+		audio_sound_pitch(DamageSFX, random_range(0.75, 1.25));
+	    audio_play_sound(DamageSFX, 10, false);
+			
+		decrease_health(20);
+		damage_cooldown = 0.0;
+	}
+}
+
+damage_cooldown += delta_time / 100000;
 
 elapsed_time += delta_time / 1000000;
 

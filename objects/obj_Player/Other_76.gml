@@ -22,13 +22,8 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 			}
 		break;
 		
-		case "Dano":
-			sprite_index = PlayerDamage_spr;
-			part_particles_burst(ps, x, y, Damage);
-			audio_sound_pitch(DamageSFX, random_range(0.75, 1.25));
-            audio_play_sound(DamageSFX, 10, false);
-			
-			decrease_health(20);
+		case "Damage":
+			//damage();
 		break;
 		
 		case "Nadando":
