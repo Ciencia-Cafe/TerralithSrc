@@ -107,6 +107,7 @@
     {"name":"raycast","order":2,"path":"scripts/raycast/raycast.yy",},
     {"name":"utility_functions","order":1,"path":"scripts/utility_functions/utility_functions.yy",},
     {"name":"vector_operations","order":5,"path":"scripts/vector_operations/vector_operations.yy",},
+    {"name":"background_transition","order":8,"path":"shaders/background_transition/background_transition.yy",},
     {"name":"reflection_shader","order":4,"path":"shaders/reflection_shader/reflection_shader.yy",},
     {"name":"sh_rect","order":1,"path":"shaders/sh_rect/sh_rect.yy",},
     {"name":"shd_light","order":5,"path":"shaders/shd_light/shd_light.yy",},

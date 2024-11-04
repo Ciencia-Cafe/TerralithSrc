@@ -76,26 +76,54 @@ new_h = lerp(view_h, zoom_level * default_zoom_height, 0.2);
 
 camera_set_view_size(view_camera[0], new_w, new_h);
 
-current_biome = get_biome(height_map[floor(get_player_pos().x / 16)], world_sizey, temperature_map[floor(get_player_pos().x / 16)]);
+current_biome = get_biome(temperature_map[floor(get_player_pos().x / 16)], humidity_map[floor(get_player_pos().x / 16)]);
 
-if (current_biome == 1 || current_biome == 3) {
-	// Trocar o sprite dos backgrounds
-	layer_background_sprite(background_1, AreiaBack3_spr);
-	layer_background_sprite(background_2, AreiaBack2_spr);
-	layer_background_sprite(background_3, AreiaBack3_spr);
-}
-else if (current_biome == 0) {
-	// Trocar o sprite dos backgrounds
+if (current_biome >= -0.5 && current_biome < 0.5) {
 	layer_background_sprite(background_1, TerraBack3_spr);
 	layer_background_sprite(background_2, TerraBack2_spr);
 	layer_background_sprite(background_3, TerraBack1_spr);
 }
-else {
-	// Trocar o sprite dos backgrounds
+else if (current_biome >= 0.5 && current_biome <= 1.5) {
+	layer_background_sprite(background_1, AreiaBack3_spr);
+	layer_background_sprite(background_2, AreiaBack2_spr);
+	layer_background_sprite(background_3, AreiaBack3_spr);
+}
+else if (current_biome > 1.5 && current_biome <= 2.5) {
 	layer_background_sprite(background_1, NeveBack1_spr_1);
 	layer_background_sprite(background_2, NeveBack2_spr_1);
 	layer_background_sprite(background_3, NeveBack3_spr_1);
 }
+else {
+	layer_background_sprite(background_1, AreiaBack3_spr);
+	layer_background_sprite(background_2, AreiaBack2_spr);
+	layer_background_sprite(background_3, AreiaBack3_spr);
+}
+
+var next_biome = round(current_biome);
+
+var opacity_bg = (1 / abs(next_biome - current_biome)) / 5.0;
+
+if (keyboard_check_pressed(ord("T"))) {
+	show_message(opacity_bg);
+	show_message(next_biome);
+	show_message(current_biome);
+}
+
+shader_set(background_transition);
+
+layer_shader("Backgrounds_1", background_transition);
+shader_set_uniform_f(shader_get_uniform(background_transition, "opacity"), opacity_bg);
+
+layer_shader("Backgrounds_4", background_transition);
+shader_set_uniform_f(shader_get_uniform(background_transition, "opacity"), opacity_bg);
+
+layer_shader("Backgrounds_2", background_transition);
+shader_set_uniform_f(shader_get_uniform(background_transition, "opacity"), opacity_bg);
+
+layer_shader("Backgrounds_3", background_transition);
+shader_set_uniform_f(shader_get_uniform(background_transition, "opacity"), opacity_bg);
+
+shader_reset();
 
 audio_listener_position(get_player_pos().x, get_player_pos().y, 0);
 audio_listener_orientation(0, 0, 1000, 0, -1, 0);
@@ -166,7 +194,7 @@ block_put_y = update_block_pos()[1];
 
 if (mouse_check_button_pressed(mb_right)) {
 	var block_pos = update_block_pos();
-	add_block(block_pos[0], block_pos[1], 5, 5); 
+	add_block(block_pos[0], block_pos[1], 5); 
 }
 
 

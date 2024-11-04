@@ -143,6 +143,7 @@
     {"id":{"name":"raycast","path":"scripts/raycast/raycast.yy",},},
     {"id":{"name":"utility_functions","path":"scripts/utility_functions/utility_functions.yy",},},
     {"id":{"name":"vector_operations","path":"scripts/vector_operations/vector_operations.yy",},},
+    {"id":{"name":"background_transition","path":"shaders/background_transition/background_transition.yy",},},
     {"id":{"name":"reflection_shader","path":"shaders/reflection_shader/reflection_shader.yy",},},
     {"id":{"name":"sh_rect","path":"shaders/sh_rect/sh_rect.yy",},},
     {"id":{"name":"shd_light","path":"shaders/shd_light/shd_light.yy",},},
