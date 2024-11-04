@@ -31,6 +31,12 @@ satisfacao = 50.0;
 
 vontade_de_explorar = 1;
 
+HEALTH_LEVEL = 100;
+
+damage_cooldown = 0.0;
+
+ps = get_effects_layer();
+
 function jump() {
 	y_force_amount = -25;
 }

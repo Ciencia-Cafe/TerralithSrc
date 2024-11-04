@@ -138,6 +138,7 @@
     {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"id":{"name":"WorldTest","path":"rooms/WorldTest/WorldTest.yy",},},
     {"id":{"name":"get_biome","path":"scripts/get_biome/get_biome.yy",},},
+    {"id":{"name":"get_effects_layer","path":"scripts/get_effects_layer/get_effects_layer.yy",},},
     {"id":{"name":"get_player_pos","path":"scripts/get_player_pos/get_player_pos.yy",},},
     {"id":{"name":"on_floor","path":"scripts/on_floor/on_floor.yy",},},
     {"id":{"name":"perlin_noise","path":"scripts/perlin_noise/perlin_noise.yy",},},
