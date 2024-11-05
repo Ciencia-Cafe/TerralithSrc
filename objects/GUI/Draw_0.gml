@@ -53,6 +53,7 @@ if (instance_exists(obj_Player)) {
 	var inv_size_y = inv_grid_size * 3;
 	
 	if (show_inventory) {
+		current_cursor = Rato_spr;
 		draw_sprite(InventoryBlueprint_spr, -101, (floor((middle_screen_x - (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y - (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5));
 		//draw_rectangle_color((floor((middle_screen_x - (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y - (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_x + (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y + (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), c_black, c_black, c_black, c_black, false);
 		
@@ -84,9 +85,12 @@ if (instance_exists(obj_Player)) {
 			}
 		}
 	}
-
+	else {
+		current_cursor = RealCursor;
+	}
+	
 	draw_sprite(Cursor, -103, mouse_position.x, mouse_position.y);
-	draw_sprite(RealCursor, -103, current_mouse_pos.x, current_mouse_pos.y);
+
 	draw_sprite(Gui_Inventario_spr, -100, _cam_x + ((view_w * 0.5) - 160), inv_y + inv_y_offset);
 	draw_sprite(Gui_Selected, -101, inv_x + (50 * obj_Player.current_inv_index), inv_y + inv_y_offset);
 	
@@ -111,6 +115,25 @@ if (instance_exists(obj_Player)) {
 		}
 	}
 }
+else {
+	current_mouse_pos.x = mouse_x;
+	current_mouse_pos.y = mouse_y;
+}
+
+if (show_pause_menu) {
+	instance_deactivate_layer("Instances");
+	instance_deactivate_layer("Instances_1");
+		
+	current_cursor = Rato_spr;
+	window_mouse_set_locked(false);
+}
+else {
+	instance_activate_layer("Instances");
+	
+	window_mouse_set_locked(true);
+}
+
+draw_sprite(current_cursor, -103, current_mouse_pos.x, current_mouse_pos.y);
 
 if (elapsed_time >= 3.0) {
 	unlerped_inv_y_offset = 128;
@@ -121,6 +144,10 @@ if (keyboard_check_pressed(ord("I"))) {
 	show_inventory = !show_inventory;
 	audio_sound_pitch(OpenInv, random_range(0.75, 1.25));
     audio_play_sound(OpenInv, 10, false);
+}
+
+if (keyboard_check_pressed(vk_escape)) {
+	show_pause_menu = !show_pause_menu;
 }
 
 if (mouse_check_button_pressed(mb_left)) {

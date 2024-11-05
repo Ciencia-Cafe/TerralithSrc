@@ -11,8 +11,11 @@ if (current_wait_time >= wait_time) {
 	following = true;
 	old_pos.x = x;
 	old_pos.y = y;
-	pos_to_follow.x = obj_Player.x;
-	pos_to_follow.y = obj_Player.y;
+	
+	if (instance_exists(obj_Player)) {
+		pos_to_follow.x = obj_Player.x;
+		pos_to_follow.y = obj_Player.y;
+	}
 	
 	dir_vect = new vector(pos_to_follow.x - x, pos_to_follow.y - y);
 	dir_vect.normalize();
@@ -20,7 +23,7 @@ if (current_wait_time >= wait_time) {
 	current_wait_time = 0; // reset
 }
 
-if (distance_to_object(obj_Player) < 10.0) {
+if (instance_exists(obj_Player) && distance_to_object(obj_Player) < 10.0) {
 	obj_Player.damage();
 }
 

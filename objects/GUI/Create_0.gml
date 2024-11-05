@@ -18,8 +18,12 @@ function get_player_pos() {
 
 elapsed_time = 0;
 show_inventory = false;
+show_pause_menu = false;
 
 currently_selected = noone;
+current_cursor = Rato_spr;
+
+pause_instance = noone;
 
 current_mouse_pos = new vector(get_player_pos().x, get_player_pos().y);
 mouse_clicked = false;
