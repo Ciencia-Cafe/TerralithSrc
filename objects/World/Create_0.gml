@@ -22,6 +22,8 @@ time_multiplier = 1.0;
 new_h = 640;
 new_w = 360;
 
+current_part_sprite = Folha;
+
 function lerp_col(col1, col2, amount) {
 	var ret_col = [col1[0], col1[1], col1[2], 1.0];
 	ret_col[0] = lerp(col1[0], col2[0], amount);

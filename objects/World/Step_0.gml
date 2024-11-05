@@ -69,6 +69,16 @@ if (_fx_screenshake != -1)
 	fx_set_parameters(_fx_screenshake, _params);
 }
 
+var _fx_particles = layer_get_fx("Effect_7");
+
+if (_fx_particles != -1)
+{
+	var _params = fx_get_parameters(_fx_particles);
+	_params.param_sprite = current_part_sprite;
+	
+	fx_set_parameters(_fx_particles, _params);
+}
+
 zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
 
 new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);
@@ -82,21 +92,29 @@ if (current_biome >= -0.5 && current_biome < 0.5) {
 	layer_background_sprite(background_1, TerraBack3_spr);
 	layer_background_sprite(background_2, TerraBack2_spr);
 	layer_background_sprite(background_3, TerraBack1_spr);
+	
+	current_part_sprite = Folha;
 }
 else if (current_biome >= 0.5 && current_biome <= 1.5) {
 	layer_background_sprite(background_1, AreiaBack3_spr);
 	layer_background_sprite(background_2, AreiaBack2_spr);
 	layer_background_sprite(background_3, AreiaBack3_spr);
+	
+	current_part_sprite = PartDeserto;
 }
 else if (current_biome > 1.5 && current_biome <= 2.5) {
 	layer_background_sprite(background_1, NeveBack1_spr_1);
 	layer_background_sprite(background_2, NeveBack2_spr_1);
 	layer_background_sprite(background_3, NeveBack3_spr_1);
+	
+	current_part_sprite = FlocosdNeve;
 }
 else {
 	layer_background_sprite(background_1, AreiaBack3_spr);
 	layer_background_sprite(background_2, AreiaBack2_spr);
 	layer_background_sprite(background_3, AreiaBack3_spr);
+	
+	current_part_sprite = PartDeserto;
 }
 
 var next_biome = round(current_biome);
