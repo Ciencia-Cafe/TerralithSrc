@@ -170,32 +170,32 @@ function add_ocean(x_pos, y_pos, dec_ind) {
 }
 
 function add_galinha(x_pos, y_pos) {
-	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Galinha);
+	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Galinha);
 }
 function add_npc(x_pos, y_pos) {
-	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, ObjNPC);
+	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", ObjNPC);
 }
 function add_peixe(x_pos, y_pos, index) {
 	if (y_pos < floor(world_sizey * 0.275) + 3) return;
-	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Kutulo_Peixe);
-	if (index == 1) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Redflin_Peixe);
-	if (index == 2) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Springuer_Peixe);
-	if (index == 3) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Thatanos_Peixe);
+	if (index == 0) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Kutulo_Peixe);
+	if (index == 1) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Redflin_Peixe);
+	if (index == 2) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Springuer_Peixe);
+	if (index == 3) peixe_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Thatanos_Peixe);
 }
 function add_corvu(x_pos, y_pos) {
-	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Corvo);
+	corvu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Corvo);
 }
 
 function add_cuei(x_pos, y_pos) {
-	cuei_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Coelho);
+	cuei_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Coelho);
 }
 
 function add_gogu(x_pos, y_pos) {
-	gogu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Cogumelo);
+	gogu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Cogumelo);
 }
 
 function add_passarin(x_pos, y_pos) {
-	passarin_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 3, obj_Pomkuku_Passarinho);
+	passarin_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Pomkuku_Passarinho);
 }
 
 function get_leave(left, right, up, down) {
