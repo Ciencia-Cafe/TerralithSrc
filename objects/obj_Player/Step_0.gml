@@ -52,7 +52,16 @@ if (keyboard_check_pressed(ord("E"))) {
 
 load_up_sprites(current_weapon);
 
-if (is_under_water) {
+if (is_dead) {
+	image_angle = 0;
+	sprite_index = PlayerMorte_spr;
+}
+else if (taking_damage) {
+	image_angle = 0;
+	sprite_index = PlayerDamage_spr;
+	move_and_collide(move_x, move_y, tilemap);
+}
+else if (is_under_water) {
 	image_angle = 0;
 	if (move_and_collide(move_x, move_y, tilemap) != undefined) {
 		move_y = lerp(move_y, dir_y * MOVE_SPEED, AIR_DRAGGING);
@@ -177,6 +186,8 @@ function damage() {
 		part_particles_burst(ps, x, y, Damage);
 		audio_sound_pitch(DamageSFX, random_range(0.75, 1.25));
 	    audio_play_sound(DamageSFX, 10, false);
+		
+		taking_damage = true;
 			
 		decrease_health(20);
 		damage_cooldown = 0.0;

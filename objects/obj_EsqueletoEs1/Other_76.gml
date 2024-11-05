@@ -10,6 +10,14 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 				damage();
 			}
 		break;
+		
+		case "EsqMorre":
+			instance_destroy(self);
+		break;
+		
+		case "EsqEscape":
+			taking_damage = false;
+		break;
 
         case "destroy":
             sequence_destroy(event_data[? "element_id"]);

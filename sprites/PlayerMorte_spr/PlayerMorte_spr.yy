@@ -28,7 +28,7 @@
   ],
   "name":"PlayerMorte_spr",
   "nineSlice":null,
-  "origin":0,
+  "origin":9,
   "parent":{
     "name":"SemFerramentas",
     "path":"folders/Sprites/Player/SemFerramentas.yy",
@@ -48,7 +48,13 @@
     "backdropYOffset":0.0,
     "events":{
       "$KeyframeStore<MessageEventKeyframe>":"",
-      "Keyframes":[],
+      "Keyframes":[
+        {"$Keyframe<MessageEventKeyframe>":"","Channels":{
+            "0":{"$MessageEventKeyframe":"","Events":[
+                "IMorreu",
+              ],"resourceType":"MessageEventKeyframe","resourceVersion":"2.0",},
+          },"Disabled":false,"id":"ecd69758-c534-4ff1-8216-f64b583f651b","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
+      ],
       "resourceType":"KeyframeStore<MessageEventKeyframe>",
       "resourceVersion":"2.0",
     },
@@ -64,7 +70,7 @@
     },
     "name":"PlayerMorte_spr",
     "playback":1,
-    "playbackSpeed":7.0,
+    "playbackSpeed":5.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -95,8 +101,8 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
-    "yorigin":0,
+    "xorigin":16,
+    "yorigin":21,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

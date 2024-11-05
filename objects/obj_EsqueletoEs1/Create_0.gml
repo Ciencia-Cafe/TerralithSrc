@@ -34,6 +34,7 @@ vontade_de_explorar = 1;
 HEALTH_LEVEL = 100;
 
 damage_cooldown = 0.0;
+taking_damage = false;
 
 ps = get_effects_layer();
 
