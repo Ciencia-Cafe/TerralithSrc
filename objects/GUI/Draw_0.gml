@@ -22,6 +22,13 @@ mouse_position.x = (floor(current_mouse_pos.x / 16) * 16) + 8;
 mouse_position.y = (floor(current_mouse_pos.y / 16) * 16) + 8;
 
 if (instance_exists(obj_Player)) {
+	player_oldpos.x = player_pos.x;
+	player_oldpos.y = player_pos.y;
+	player_pos.x = obj_Player.x;
+	player_pos.y = obj_Player.y;
+	
+	player_vel = vector_subtract(player_pos, player_oldpos);
+	
 	if (keyboard_check_pressed(ord("E"))) {
 		current_mouse_pos.x = obj_Player.x;
 		current_mouse_pos.y = obj_Player.y;
@@ -35,8 +42,8 @@ if (instance_exists(obj_Player)) {
 		draw_circle(obj_Player.x, obj_Player.y, 100, true);
 	}
 	
-	current_mouse_pos.x += obj_Player.move_x;
-	current_mouse_pos.y += obj_Player.move_y;
+	current_mouse_pos.x += player_vel.x;
+	current_mouse_pos.y += player_vel.y;
 	
 	draw_sprite_stretched(HealthBar, -100, bar_pos - 15, _cam_y + (view_h * 0.25) - 4, bar_width * (obj_Player.HEALTH_LEVEL / obj_Player.MAX_BAR_LEVEL), 8);
 	draw_sprite(OuterBar, -101, bar_pos, _cam_y + (view_h * 0.25));

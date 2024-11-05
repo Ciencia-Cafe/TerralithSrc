@@ -25,6 +25,10 @@ current_cursor = Rato_spr;
 
 pause_instance = noone;
 
+player_vel = new vector(0.0, 0.0);
+player_pos = new vector(0.0, 0.0);
+player_oldpos = new vector(0.0, 0.0);
+
 current_mouse_pos = new vector(get_player_pos().x, get_player_pos().y);
 mouse_clicked = false;
 
