@@ -44,6 +44,10 @@ else if (keyboard_check_pressed(ord("6"))) {
 	reset_inv_pos();
 }
 
+if (keyboard_check_pressed(ord("Q"))) {
+	drop_item(current_inv_index);
+}
+
 current_weapon = player_inventory[current_inv_index];
 
 if (keyboard_check_pressed(ord("E"))) {

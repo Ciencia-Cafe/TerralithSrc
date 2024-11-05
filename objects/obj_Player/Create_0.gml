@@ -126,6 +126,38 @@ elapsed_time = 0.0;
 image_speed = 1;
 number = 0;
 
+function get_inventory_sprite(i) {
+	var inventory_sprite = noone;
+	if (player_inventory[i] == "Axe") {
+		inventory_sprite = Machado_spr;
+	}
+	else if (player_inventory[i] == "Sword") {
+		inventory_sprite = Espada_spr;
+	}
+	else if (player_inventory[i] == "Fork") {
+		inventory_sprite = Garfo_spr;
+	}
+	else if (player_inventory[i] == "Shovel") {
+		inventory_sprite = Pa_spr;
+	}
+	else if (player_inventory[i] == "Rod") {
+		inventory_sprite = Vara_spr;
+	}
+	else {
+		inventory_sprite = noone;
+	}
+	
+	return inventory_sprite;
+}
+
+function drop_item(index) {
+	var item_dropped = instance_create_layer(x, y, "Instances", DropItem);
+	var item_sprite = get_inventory_sprite(index);
+	
+	item_dropped.current_sprite = item_sprite;
+	player_inventory[index] = "None";
+}
+
 function on_floor_p() {
 	if (on_floor_hm == false) just_landed = true;
 	on_floor_hm = true;

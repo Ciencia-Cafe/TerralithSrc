@@ -67,7 +67,7 @@ if (instance_exists(obj_Player)) {
 					draw_sprite(Selection, -102, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
 					if (mouse_clicked) {
 						currently_selected = inventory_sprites[j][i];
-						obj_Player.player_inventory[i] = "None";
+						obj_Player.drop_item(i);
 						
 						mouse_clicked = false;
 					}
