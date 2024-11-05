@@ -22,8 +22,12 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
 			}
 		break;
 		
-		case "Damage":
-			//damage();
+		case "IMorreu":
+			game_restart();
+		break;
+		
+		case "StopTakingDamage":
+			taking_damage = false;
 		break;
 		
 		case "Nadando":

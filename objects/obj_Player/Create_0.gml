@@ -109,6 +109,8 @@ is_dead = false;
 on_floor_hm = false;
 just_landed = false;
 is_attacking = false;
+is_dead = false;
+taking_damage = false;
 
 is_on_water = false;
 is_under_water = false;
@@ -154,7 +156,7 @@ function jump() {
 }
 
 function die() {
-	kill_self();
+	is_dead = true;
 }
 
 function increase_oxygen(amount) {

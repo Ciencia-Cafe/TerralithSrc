@@ -48,9 +48,9 @@
       "Keyframes":[
         {"$Keyframe<MessageEventKeyframe>":"","Channels":{
             "0":{"$MessageEventKeyframe":"","Events":[
-                "Damage",
+                "StopTakingDamage",
               ],"resourceType":"MessageEventKeyframe","resourceVersion":"2.0",},
-          },"Disabled":false,"id":"f6f773a6-2a3d-420b-8c36-81eae2e26c95","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
+          },"Disabled":false,"id":"79808a90-9d51-4a0f-bdac-3636e37a3a43","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<MessageEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
       ],
       "resourceType":"KeyframeStore<MessageEventKeyframe>",
       "resourceVersion":"2.0",
