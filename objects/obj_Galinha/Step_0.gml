@@ -31,7 +31,7 @@ if (instance_exists(obj_Player)) {
 			var tile_y = floor(y / 16);
 	
 			if (tile_x - 1 > 0) {
-				if (get_biome(World.height_map[tile_x - 1], World.world_sizey, World.temperature_map[tile_x - 1]) != 0) {
+				if (round(get_biome(World.temperature_map[tile_x - 1], World.humidity_map[tile_x-1])) != 0) {
 					overlayed_direction *= -1;
 				}
 			}
@@ -43,7 +43,7 @@ if (instance_exists(obj_Player)) {
 			var tile_y = floor(y / 16);
 	
 			if (tile_x + 1 < World.world_sizex) {
-				if (get_biome(World.height_map[tile_x + 1], World.world_sizey, World.temperature_map[tile_x + 1]) != 0) {
+				if (round(get_biome(World.temperature_map[tile_x+1], World.humidity_map[tile_x+1])) != 0) {
 					overlayed_direction *= -1;
 				}
 			}

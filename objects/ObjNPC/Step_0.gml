@@ -23,7 +23,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 		var tile_y = floor(y / 16);
 	
 		if (tile_x - 1 > 0) {
-			if (get_biome(World.height_map[tile_x - 1], World.world_sizey, World.temperature_map[tile_x - 1]) != 0) {
+			if (round(get_biome(World.temperature_map[tile_x - 1], World.humidity_map[tile_x-1])) != 0) {
 				dir_x = 3.0;
 			}
 			else {
@@ -38,7 +38,7 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 		var tile_y = floor(y / 16);
 	
 		if (tile_x + 1 < World.world_sizex) {
-			if (get_biome(World.height_map[tile_x + 1], World.world_sizey, World.temperature_map[tile_x + 1]) != 0) {
+			if (round(get_biome(World.temperature_map[tile_x+1], World.humidity_map[tile_x+1])) != 0) {
 				dir_x = -3.0;
 			}
 			else {

@@ -330,8 +330,8 @@ if (generate_world) {
 		blocks_perlin_noise += inc;
 		blocks_perlin_noise2 += inc2;
 	
-		current_humidity_tmp = map_value(perlin_noise(humidity_perlin_noise), -1, 1, 0, 100);
-		current_temperature_tmp = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 100);
+		current_humidity_tmp = map_value(perlin_noise(humidity_perlin_noise), -1, 1, 0, 80);
+		current_temperature_tmp = map_value(perlin_noise(temperature_perlin_noise), -1, 1, 0, 80);
 	
 		var temperature_height_influence = map_value(current_height, 0, world_sizey, 0, 30);
 		
