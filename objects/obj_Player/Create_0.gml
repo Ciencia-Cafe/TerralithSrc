@@ -150,12 +150,30 @@ function get_inventory_sprite(i) {
 	return inventory_sprite;
 }
 
+function find_inv_empty_index() {
+	for (var i = 0; i < array_length(player_inventory)-1; i++) {
+		if (player_inventory[i] == "None") return i;
+	}
+	return -1;
+}
+
 function drop_item(index) {
 	var item_dropped = instance_create_layer(x, y, "Instances", DropItem);
 	var item_sprite = get_inventory_sprite(index);
 	
 	item_dropped.current_sprite = item_sprite;
+	item_dropped.item_name = player_inventory[index];
 	player_inventory[index] = "None";
+}
+
+function collect_item(name) {
+	var empty_slot = find_inv_empty_index();
+	if (empty_slot == -1) return -1;
+	
+	player_inventory[empty_slot] = name;
+	current_inv_index = empty_slot;
+	
+	return 0;
 }
 
 function on_floor_p() {
