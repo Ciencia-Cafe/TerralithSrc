@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite139",
-    "path":"sprites/Sprite139/Sprite139.yy",
+    "name":"FuraTobaCorpo",
+    "path":"sprites/FuraTobaCorpo/FuraTobaCorpo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

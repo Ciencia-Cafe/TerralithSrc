@@ -1,4 +1,4 @@
-cabeca = instance_create_layer(x, y, 3, obj_FuraTobaCbc);
+cabeca = instance_create_layer(x, y, "Instances", obj_FuraTobaCbc);
 
 velocity = 7;
 

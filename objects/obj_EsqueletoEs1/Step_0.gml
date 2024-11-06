@@ -14,7 +14,7 @@ function decrease_health(amount) {
 }
 
 function damage() {
-	if (damage_cooldown > 5) {
+	if (!taking_damage) {
 		sprite_index = Esqueleto1DamageHit_spr;
 		part_particles_burst(ps, x, y, Damage);
 		// colocar um som melhor dps
@@ -57,5 +57,8 @@ else {
 	    cooldown_arremesso = tempo_cooldown; 
 	}
 }
-
+if (damage_cooldown > 5) {
+	taking_damage = false;
+	damage_cooldown = 0.0;
+}
 damage_cooldown += delta_time / 100000;
