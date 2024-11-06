@@ -16,6 +16,8 @@ function get_player_pos() {
 	return new vector(0, 0);
 }
 
+instance_deactivate_object(PauseMenu);
+
 elapsed_time = 0;
 show_inventory = false;
 show_pause_menu = false;

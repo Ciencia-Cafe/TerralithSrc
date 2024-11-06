@@ -130,12 +130,16 @@ else {
 if (show_pause_menu) {
 	instance_deactivate_layer("Instances");
 	instance_deactivate_layer("Instances_1");
+	
+	instance_activate_object(PauseMenu);
 		
 	current_cursor = Rato_spr;
 	window_mouse_set_locked(false);
 }
 else {
 	instance_activate_layer("Instances");
+	
+	if (instance_exists(PauseMenu)) instance_deactivate_object(PauseMenu);
 	
 	window_mouse_set_locked(true);
 }
