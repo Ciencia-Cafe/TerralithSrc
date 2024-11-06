@@ -276,11 +276,11 @@ function add_arvore(x_pos, y_pos) {
 }
 
 function add_neve_arvore(x_pos, y_pos) {
-	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, obj_Arvneve1);
+	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Arvneve1);
 }
 
 function add_cactus(x_pos, y_pos) {
-	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, Cactos);
+	cactus_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", Cactos);
 }
 
 function add_vento(x_pos, y_pos) {
