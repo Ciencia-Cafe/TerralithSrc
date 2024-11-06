@@ -6,7 +6,8 @@ if event_data[? "event_type"] == "sprite event" // or you can check "sprite even
     switch (event_data[? "message"])
     {
         case "StopAttack":
-            instance_destroy(self);
+			obj_Player.is_attacking = false;
+            //instance_destroy(self);
         break;
     }
 }
