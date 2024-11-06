@@ -122,6 +122,7 @@
     {"id":{"name":"obj_Springuer_Peixe","path":"objects/obj_Springuer_Peixe/obj_Springuer_Peixe.yy",},},
     {"id":{"name":"obj_Thatanos_Peixe","path":"objects/obj_Thatanos_Peixe/obj_Thatanos_Peixe.yy",},},
     {"id":{"name":"ObjNPC","path":"objects/ObjNPC/ObjNPC.yy",},},
+    {"id":{"name":"PauseMenu","path":"objects/PauseMenu/PauseMenu.yy",},},
     {"id":{"name":"SelectionObj","path":"objects/SelectionObj/SelectionObj.yy",},},
     {"id":{"name":"VentoObj","path":"objects/VentoObj/VentoObj.yy",},},
     {"id":{"name":"Video","path":"objects/Video/Video.yy",},},
