@@ -1,7 +1,7 @@
 // Step Event do obj_EsqueletoEs1
 
 function die() {
-	instance_destroy(self);
+	is_dead = true;
 }
 
 function decrease_health(amount) {
@@ -28,7 +28,10 @@ function damage() {
 	}
 }
 
-if (taking_damage) {
+if (is_dead) {
+	sprite_index = EsqueletoDeath_spr;
+}
+else if (taking_damage) {
 	sprite_index = Esqueleto1DamageHit_spr;
 }
 else {
@@ -53,6 +56,6 @@ else {
 	    estado_atacando = false;
 	    cooldown_arremesso = tempo_cooldown; 
 	}
-
-	damage_cooldown += delta_time / 100000;
 }
+
+damage_cooldown += delta_time / 100000;

@@ -36,6 +36,8 @@ HEALTH_LEVEL = 100;
 damage_cooldown = 0.0;
 taking_damage = false;
 
+is_dead = false;
+
 ps = get_effects_layer();
 
 function jump() {
