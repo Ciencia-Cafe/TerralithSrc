@@ -64,20 +64,13 @@ if (distance_to_object(obj_Player) < World.ANIMALS_DISTANCE_TO_ACTIVE) {
 
 	move_perlin_noise += 0.01;
 
-	// Aplica o movimento e a colisão
 	move_and_collide(move_x, move_y, floor_tilemap);
 
-	// Step Event da galinha (Object9)
-
-	// Incrementa o contador a cada frame
 	contador_tempo += 1;
 
-	// Verifica se o tempo de espera foi atingido
 	if (contador_tempo >= tempo_espera) {
-	    // Soltar o ovo na posição da galinha
-	    instance_create_layer(x, y, layer, obj_ovo);  // Cria o ovo na mesma posição da galinha
+	    instance_create_layer(x, y, layer, obj_ovo);
     
-	    // Reseta o contador para o próximo ovo
 	    contador_tempo = 0;
 	}
 }

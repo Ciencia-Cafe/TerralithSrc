@@ -87,6 +87,9 @@ function load_up_sprites(current_weapon) {
 	else if (current_weapon == "Light") {
 		floor_sprites = [LightFarmerIdle_spr, LightFarmerRun_spr, LightFarmerJump_spr, LightFarmerFall_spr, SwordFarmerAttack_spr];
 	}
+	else if (current_weapon == "Wood") {
+		floor_sprites = [FarmerItemIdle_spr, FarmerItemRun_spr, FarmerItemJump_spr, FarmerItemFall_spr, SwordFarmerAttack_spr];
+	}
 }
 
 tilemap = get_floor_layer();
@@ -142,6 +145,9 @@ function get_inventory_sprite(i) {
 	}
 	else if (player_inventory[i] == "Rod") {
 		inventory_sprite = Vara_spr;
+	}
+	else if (player_inventory[i] == "Wood") {
+		inventory_sprite = MadeiraBasica_spr;
 	}
 	else {
 		inventory_sprite = noone;
