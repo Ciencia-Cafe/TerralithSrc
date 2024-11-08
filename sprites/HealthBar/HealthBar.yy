@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"HealthBar",
   "bboxMode":0,
-  "bbox_bottom":1,
+  "bbox_bottom":3,
   "bbox_left":0,
   "bbox_right":15,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":2,
+  "height":4,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"1e4e2e97-eece-4c1d-bba5-5f4ada5cce6a","blendMode":0,"displayName":"default","isLocked":false,"name":"1e4e2e97-eece-4c1d-bba5-5f4ada5cce6a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
