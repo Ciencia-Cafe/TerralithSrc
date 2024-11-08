@@ -60,6 +60,9 @@ function get_inventory_sprites(player_inventory) {
 				else if (player_inventory[i] == "Rod") {
 					inventory_sprites[j][i] = Vara_spr;
 				}
+				else if (player_inventory[i] == "Wood") {
+					inventory_sprites[j][i] = MadeiraBasica_spr;
+				}
 				else {
 					inventory_sprites[j][i] = noone;
 				}

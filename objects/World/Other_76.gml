@@ -9,6 +9,7 @@ if event_data[? "event_type"] == "sprite event"
 				var madeira = instance_create_layer(obj_Player.x + obj_Player.dir_x, obj_Player.y-32, 3, DropItem);
 				madeira.IMPULSO_X = random_range(-3, 3);
 				madeira.current_sprite = MadeiraBasica_spr;
+				madeira.item_name = "Wood";
 					
 				audio_sound_pitch(WoodPunch, random_range(0.75, 1.25));
 				audio_play_sound(WoodPunch, 10, false);
