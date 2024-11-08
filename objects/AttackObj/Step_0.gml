@@ -3,8 +3,13 @@ if (instance_exists(obj_Player)) {
 	y = obj_Player.y;
 
 	if (obj_Player.is_attacking) {
-		image_speed = 1;
-		image_xscale = obj_Player.image_xscale;
+		if (obj_Player.current_weapon == "Sword" || obj_Player.current_weapon == "Axe") {
+			image_speed = 1;
+			image_xscale = obj_Player.image_xscale;
+		}
+		else {
+			obj_Player.is_attacking = false;
+		}
 	}
 	else {
 		image_speed = 0;

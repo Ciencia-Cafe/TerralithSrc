@@ -83,33 +83,31 @@ else if (is_on_water) {
 	}
 	sprite_index = water_sprites[0];
 }
+else if (is_attacking) {
+}
 else {
 	
 	image_angle = 0;
 	
-	if (!is_attacking) {
-		if (on_floor_p()) {
-			if (dir_x != 0) {
-				sprite_index = floor_sprites[1];
-			}
+	if (on_floor_p()) {
+		if (dir_x != 0) {
+			sprite_index = floor_sprites[1];
+		}
 
-			else {
-				sprite_index = floor_sprites[0];
-			}
+		else {
+			sprite_index = floor_sprites[0];
+		}
+	}
+	else {
+		if (move_y > 0) {
+			sprite_index = floor_sprites[3];
 		}
 		else {
-			if (move_y > 0) {
-				sprite_index = floor_sprites[3];
-			}
-			else {
-				sprite_index = floor_sprites[2];
-			}
+			sprite_index = floor_sprites[2];
 		}
 	}
 	
-	if (!is_attacking) {
-		move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
-	}
+	move_x = lerp(move_x, dir_x * MOVE_SPEED, AIR_DRAGGING);
 
 	if (on_floor_p()) {
 		AIR_DRAGGING = 1.0;
@@ -123,7 +121,7 @@ else {
 		on_floor_hm = false;
 	}
 
-	if (key_up_pressed() && !is_attacking) {
+	if (key_up_pressed()) {
 		jump();
 	}
 
