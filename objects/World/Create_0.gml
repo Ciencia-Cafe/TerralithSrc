@@ -175,7 +175,7 @@ function add_galinha(x_pos, y_pos) {
 	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Galinha);
 }
 function add_npc(x_pos, y_pos) {
-	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", ObjNPC);
+	npc_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16) - 16, "Instances", ObjNPC);
 }
 function add_peixe(x_pos, y_pos, index) {
 	if (y_pos < floor(world_sizey * 0.275) + 3) return;
