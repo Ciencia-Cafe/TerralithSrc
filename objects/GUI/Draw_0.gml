@@ -74,7 +74,7 @@ if (instance_exists(obj_Player)) {
 			for (var j = 0; j < 3; j++) {
 				var slot_pos = new vector(middle_screen_x - (inv_size_x * 0.5) + (i * inv_grid_size), middle_screen_y - (inv_size_y * 0.5) + (j * inv_grid_size));
 				if (mouse_position.x == ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) && mouse_position.y == ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5))) {
-					draw_sprite(Selection, -101, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
+					draw_sprite(Selection, -105, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
 					if (mouse_clicked) {
 						if (currently_selected == noone) {
 							currently_selected = inventory_sprites[j][i];
@@ -112,7 +112,7 @@ if (instance_exists(obj_Player)) {
 		mouse_position.y = (floor(current_mouse_pos.y / 16) * 16) + 8;
 	}
 	
-	draw_sprite(Cursor, -103, mouse_position.x, mouse_position.y);
+	if (!show_inventory) draw_sprite(Cursor, -103, mouse_position.x, mouse_position.y);
 
 	draw_sprite(Gui_Inventario_spr, -100, _cam_x + ((view_w * 0.5) - 160), inv_y + inv_y_offset);
 	draw_sprite(Gui_Selected, -101, inv_x + (50 * obj_Player.current_inv_index), inv_y + inv_y_offset);
