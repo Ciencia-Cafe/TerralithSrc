@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Inimigos spr",
-    "path":"folders/Sprites/Inimigos spr.yy",
+    "name":"Esqueletos",
+    "path":"folders/Sprites/Inimigos spr/Esqueletos.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

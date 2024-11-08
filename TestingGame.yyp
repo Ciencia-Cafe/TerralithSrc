@@ -56,6 +56,7 @@
     {"$GMFolder":"","%Name":"Funcionais","folderPath":"folders/Sprites/Funcionais.yy","name":"Funcionais","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Gui","folderPath":"folders/Sprites/Gui.yy","name":"Gui","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Inimigos spr","folderPath":"folders/Sprites/Inimigos spr.yy","name":"Inimigos spr","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Esqueletos","folderPath":"folders/Sprites/Inimigos spr/Esqueletos.yy","name":"Esqueletos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Npcs","folderPath":"folders/Sprites/Npcs.yy","name":"Npcs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Oceano","folderPath":"folders/Sprites/Oceano.yy","name":"Oceano","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Sprites/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
