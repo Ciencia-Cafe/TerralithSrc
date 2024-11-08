@@ -23,6 +23,8 @@ show_inventory = false;
 show_pause_menu = false;
 
 currently_selected = noone;
+selected_index = 0;
+selected_name = "None";
 current_cursor = Rato_spr;
 
 pause_instance = noone;

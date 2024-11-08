@@ -18,8 +18,9 @@ var bar_pos = _cam_x + (view_w * 0.1);
 mouse_pos.x = window_mouse_get_delta_x();
 mouse_pos.y = window_mouse_get_delta_y();
 
-mouse_position.x = (floor(current_mouse_pos.x / 16) * 16) + 8;
-mouse_position.y = (floor(current_mouse_pos.y / 16) * 16) + 8;
+function point_inside_square(point_x, point_y, square_x, square_y, square_size) {
+	
+}
 
 if (instance_exists(obj_Player)) {
 	player_oldpos.x = player_pos.x;
@@ -62,19 +63,32 @@ if (instance_exists(obj_Player)) {
 	if (show_inventory) {
 		current_cursor = Rato_spr;
 		draw_sprite(InventoryBlueprint_spr, -101, (floor((middle_screen_x - (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y - (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5));
-		//draw_rectangle_color((floor((middle_screen_x - (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y - (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_x + (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y + (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), c_black, c_black, c_black, c_black, false);
 		
 		var inventory = obj_Player.player_inventory;
 		var inventory_sprites = get_inventory_sprites(inventory);
 		
+		mouse_position.x = (floor(current_mouse_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5);
+		mouse_position.y = (floor(current_mouse_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5);
+		
 		for (var i = 0; i < 6; i++) {
 			for (var j = 0; j < 3; j++) {
 				var slot_pos = new vector(middle_screen_x - (inv_size_x * 0.5) + (i * inv_grid_size), middle_screen_y - (inv_size_y * 0.5) + (j * inv_grid_size));
-				if (mouse_position.x == ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i && mouse_position.y == ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j) {
-					draw_sprite(Selection, -102, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
+				if (mouse_position.x == ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) && mouse_position.y == ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5))) {
+					draw_sprite(Selection, -101, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
 					if (mouse_clicked) {
-						currently_selected = inventory_sprites[j][i];
-						obj_Player.drop_item(i);
+						if (currently_selected == noone) {
+							currently_selected = inventory_sprites[j][i];
+							selected_index = i;
+							selected_name = obj_Player.player_inventory[i];
+							obj_Player.player_inventory[i] = "None";
+						}
+						else {
+							obj_Player.player_inventory[i] = selected_name;
+							//obj_Player.drop_item(selected_index);
+							currently_selected = noone;
+							selected_index = 0;
+							selected_name = "None";
+						}
 						
 						mouse_clicked = false;
 					}
@@ -94,6 +108,8 @@ if (instance_exists(obj_Player)) {
 	}
 	else {
 		current_cursor = RealCursor;
+		mouse_position.x = (floor(current_mouse_pos.x / 16) * 16) + 8;
+		mouse_position.y = (floor(current_mouse_pos.y / 16) * 16) + 8;
 	}
 	
 	draw_sprite(Cursor, -103, mouse_position.x, mouse_position.y);

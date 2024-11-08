@@ -10,8 +10,8 @@
   "name":"GUI",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prompts do mundo",
-    "path":"folders/Objects/Prompts do mundo.yy",
+    "name":"GUI",
+    "path":"folders/Objects/GUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,
