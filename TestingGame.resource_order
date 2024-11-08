@@ -282,6 +282,7 @@
     {"name":"TerraBack2_spr","order":4,"path":"sprites/TerraBack2_spr/TerraBack2_spr.yy",},
     {"name":"TerraBack3_spr","order":5,"path":"sprites/TerraBack3_spr/TerraBack3_spr.yy",},
     {"name":"TestBug","order":50,"path":"sprites/TestBug/TestBug.yy",},
+    {"name":"Testdegm","order":59,"path":"sprites/Testdegm/Testdegm.yy",},
     {"name":"Thatanos_Idle_spr","order":1,"path":"sprites/Thatanos_Idle_spr/Thatanos_Idle_spr.yy",},
     {"name":"TibumSpr","order":4,"path":"sprites/TibumSpr/TibumSpr.yy",},
     {"name":"TileDesign_spr","order":1,"path":"sprites/TileDesign_spr/TileDesign_spr.yy",},

@@ -346,6 +346,7 @@
     {"id":{"name":"TerraBack2_spr","path":"sprites/TerraBack2_spr/TerraBack2_spr.yy",},},
     {"id":{"name":"TerraBack3_spr","path":"sprites/TerraBack3_spr/TerraBack3_spr.yy",},},
     {"id":{"name":"TestBug","path":"sprites/TestBug/TestBug.yy",},},
+    {"id":{"name":"Testdegm","path":"sprites/Testdegm/Testdegm.yy",},},
     {"id":{"name":"Thatanos_Idle_spr","path":"sprites/Thatanos_Idle_spr/Thatanos_Idle_spr.yy",},},
     {"id":{"name":"Thatanos_Walk_spr","path":"sprites/Thatanos_Walk_spr/Thatanos_Walk_spr.yy",},},
     {"id":{"name":"TibumSpr","path":"sprites/TibumSpr/TibumSpr.yy",},},
