@@ -137,7 +137,7 @@ if (instance_exists(obj_Player)) {
 			draw_sprite(Vara_spr, -102, item_x, item_y);
 		}
 		else if (obj_Player.player_inventory[i] == "Wood") {
-			draw_sprite(MadeiraBasica_spr, -102, item_x, item_y);
+			draw_sprite(MadeiraBasica_spr, -102, item_x - 8, item_y - 8);
 		}
 	}
 }

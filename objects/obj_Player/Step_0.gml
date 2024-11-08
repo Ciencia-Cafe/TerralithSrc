@@ -54,6 +54,10 @@ if (keyboard_check_pressed(ord("E"))) {
 	is_attacking = true;
 }
 
+if (keyboard_check(ord("M"))) {
+	
+}
+
 load_up_sprites(current_weapon);
 
 if (is_dead) {

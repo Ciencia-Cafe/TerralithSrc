@@ -17,7 +17,7 @@ blocks_resolved = false;
 current_col = [0.33, 0.33, 0.9, 1.0];
 
 time = 0.0;
-time_multiplier = 1.0;
+time_multiplier = 0.25;
 
 new_h = 640;
 new_w = 360;
@@ -455,7 +455,7 @@ if (generate_world) {
 			var animal = irandom_range(0, 5); // 5 variações
 		
 			if (animal == 1) add_galinha(i, floor(height_map[i]) - 1);
-			else if (animal == 2) add_npc(i, floor(height_map[i]) - 1);
+			else if (animal == 2) add_npc(i, floor(height_map[i]) - 3);
 			else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
 			else if (animal == 4) add_cuei(i, floor(height_map[i]) - 1);
 			else if (animal == 5) add_gogu(i, floor(height_map[i]) - 1);
@@ -468,13 +468,14 @@ if (generate_world) {
 	
 		// oceano
 		else if (dec[i] >= 21 && dec[i] <= 30) {
-			var dec2 = irandom_range(1, 3);
+			var dec2 = irandom_range(1, 4);
 			if (dec2 == 1) add_decoration(i, floor(height_map[i]), irandom_range(1, 4));
 			else if(dec2 == 2) add_decoration(i, floor(height_map[i]), irandom_range(8, 11));
 			else if(dec2 == 3) add_decoration(i, floor(height_map[i]), irandom_range(16, 19));
-		
-			var animal = irandom_range(0, 4); // 5 variações
-			add_peixe(i, floor(height_map[i]) - 1, animal);
+			else {
+				var animal = irandom_range(0, 4); // 5 variações
+				add_peixe(i, floor(height_map[i]) - 1, animal);
+			}
 		}
 	}
 

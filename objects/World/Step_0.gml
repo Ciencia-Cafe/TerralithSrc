@@ -79,7 +79,12 @@ if (_fx_particles != -1)
 	fx_set_parameters(_fx_particles, _params);
 }
 
-zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
+if (keyboard_check(ord("M"))) {
+	zoom_level = 20.0;
+}
+else {
+	zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2);
+}
 
 new_w = lerp(view_w, zoom_level * default_zoom_width, 0.2);
 new_h = lerp(view_h, zoom_level * default_zoom_height, 0.2);
