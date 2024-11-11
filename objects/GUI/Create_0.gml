@@ -46,28 +46,23 @@ function get_inventory_sprites(player_inventory) {
 	var inventory_sprites = [];
 	for (var i = 0; i < 6; i++) {
 		for (var j = 0; j < 3; j++) {
-			if (j == 0) {
-				if (player_inventory[i] == "Axe") {
-					inventory_sprites[j][i] = Machado_spr;
-				}
-				else if (player_inventory[i] == "Sword") {
-					inventory_sprites[j][i] = Espada_spr;
-				}
-				else if (player_inventory[i] == "Fork") {
-					inventory_sprites[j][i] = Garfo_spr;
-				}
-				else if (player_inventory[i] == "Shovel") {
-					inventory_sprites[j][i] = Pa_spr;
-				}
-				else if (player_inventory[i] == "Rod") {
-					inventory_sprites[j][i] = Vara_spr;
-				}
-				else if (player_inventory[i] == "Wood") {
-					inventory_sprites[j][i] = MadeiraBasica_spr;
-				}
-				else {
-					inventory_sprites[j][i] = noone;
-				}
+			if (player_inventory[j][i] == "Axe") {
+				inventory_sprites[j][i] = Machado_spr;
+			}
+			else if (player_inventory[j][i] == "Sword") {
+				inventory_sprites[j][i] = Espada_spr;
+			}
+			else if (player_inventory[j][i] == "Fork") {
+				inventory_sprites[j][i] = Garfo_spr;
+			}
+			else if (player_inventory[j][i] == "Shovel") {
+				inventory_sprites[j][i] = Pa_spr;
+			}
+			else if (player_inventory[j][i] == "Rod") {
+				inventory_sprites[j][i] = Vara_spr;
+			}
+			else if (player_inventory[j][i] == "Wood") {
+				inventory_sprites[j][i] = MadeiraBasica_spr;
 			}
 			else {
 				inventory_sprites[j][i] = noone;

@@ -79,11 +79,11 @@ if (instance_exists(obj_Player)) {
 						if (currently_selected == noone) {
 							currently_selected = inventory_sprites[j][i];
 							selected_index = i;
-							selected_name = obj_Player.player_inventory[i];
-							obj_Player.player_inventory[i] = "None";
+							selected_name = obj_Player.player_inventory[j][i];
+							obj_Player.player_inventory[j][i] = "None";
 						}
 						else {
-							obj_Player.player_inventory[i] = selected_name;
+							obj_Player.player_inventory[j][i] = selected_name;
 							//obj_Player.drop_item(selected_index);
 							currently_selected = noone;
 							selected_index = 0;
@@ -121,22 +121,22 @@ if (instance_exists(obj_Player)) {
 		var item_x = inv_x + (50 * i) + 24;
 		var item_y = inv_y + 26 + inv_y_offset;
 	
-		if (obj_Player.player_inventory[i] == "Axe") {
+		if (obj_Player.player_inventory[0][i] == "Axe") {
 			draw_sprite(Machado_spr, -102, item_x, item_y);
 		}
-		else if (obj_Player.player_inventory[i] == "Sword") {
+		else if (obj_Player.player_inventory[0][i] == "Sword") {
 			draw_sprite(Espada_spr, -102, item_x, item_y);
 		}
-		else if (obj_Player.player_inventory[i] == "Fork") {
+		else if (obj_Player.player_inventory[0][i] == "Fork") {
 			draw_sprite(Garfo_spr, -102, item_x, item_y);
 		}
-		else if (obj_Player.player_inventory[i] == "Shovel") {
+		else if (obj_Player.player_inventory[0][i] == "Shovel") {
 			draw_sprite(Pa_spr, -102, item_x, item_y);
 		}
-		else if (obj_Player.player_inventory[i] == "Rod") {
+		else if (obj_Player.player_inventory[0][i] == "Rod") {
 			draw_sprite(Vara_spr, -102, item_x, item_y);
 		}
-		else if (obj_Player.player_inventory[i] == "Wood") {
+		else if (obj_Player.player_inventory[0][i] == "Wood") {
 			draw_sprite(MadeiraBasica_spr, -102, item_x - 8, item_y - 8);
 		}
 	}

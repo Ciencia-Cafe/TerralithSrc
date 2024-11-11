@@ -119,7 +119,11 @@ is_on_water = false;
 is_under_water = false;
 
 current_inv_index = 0;
-player_inventory = ["None", "Axe", "Sword", "Fork", "Shovel", "Rod"];
+
+player_inventory = array_create(3, []);
+player_inventory[0] = ["None", "Axe", "Sword", "Fork", "Shovel", "Rod"];
+player_inventory[1] = ["None", "None", "None", "None", "None", "None"];
+player_inventory[2] = ["None", "None", "None", "None", "None", "None"];
 
 current_weapon = "None";
 
