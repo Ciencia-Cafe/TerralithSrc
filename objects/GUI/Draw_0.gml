@@ -73,7 +73,9 @@ if (instance_exists(obj_Player)) {
 		for (var i = 0; i < 6; i++) {
 			for (var j = 0; j < 3; j++) {
 				var slot_pos = new vector(middle_screen_x - (inv_size_x * 0.5) + (i * inv_grid_size), middle_screen_y - (inv_size_y * 0.5) + (j * inv_grid_size));
-				if (mouse_position.x == ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) && mouse_position.y == ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5))) {
+				if (!(mouse_position.x == ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) && mouse_position.y == ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)))) {
+				}
+				else {
 					draw_sprite(Selection, -105, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
 					if (mouse_clicked) {
 						if (currently_selected == noone) {
@@ -92,9 +94,6 @@ if (instance_exists(obj_Player)) {
 						
 						mouse_clicked = false;
 					}
-				}
-				else {
-					draw_sprite(Selection_1, -102, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
 				}
 				
 				if (inventory_sprites[j][i] != noone) {
