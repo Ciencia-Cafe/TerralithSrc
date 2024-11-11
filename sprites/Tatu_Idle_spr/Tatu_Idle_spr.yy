@@ -39,8 +39,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Animais da terra",
-    "path":"folders/Sprites/Animais da terra.yy",
+    "name":"Tatu bola",
+    "path":"folders/Sprites/Animais da terra/Tatu bola.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

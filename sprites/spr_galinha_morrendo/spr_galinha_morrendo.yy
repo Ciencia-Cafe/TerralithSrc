@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Animais da terra",
-    "path":"folders/Sprites/Animais da terra.yy",
+    "name":"Galinha",
+    "path":"folders/Sprites/Animais da terra/Galinha.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

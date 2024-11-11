@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Animais da terra",
-    "path":"folders/Sprites/Animais da terra.yy",
+    "name":"Pinguim",
+    "path":"folders/Sprites/Animais da terra/Pinguim.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
