@@ -133,24 +133,24 @@ elapsed_time = 0.0;
 image_speed = 1;
 number = 0;
 
-function get_inventory_sprite(i) {
+function get_inventory_sprite(i, j) {
 	var inventory_sprite = noone;
-	if (player_inventory[i] == "Axe") {
+	if (player_inventory[j][i] == "Axe") {
 		inventory_sprite = Machado_spr;
 	}
-	else if (player_inventory[i] == "Sword") {
+	else if (player_inventory[j][i] == "Sword") {
 		inventory_sprite = Espada_spr;
 	}
-	else if (player_inventory[i] == "Fork") {
+	else if (player_inventory[j][i] == "Fork") {
 		inventory_sprite = Garfo_spr;
 	}
-	else if (player_inventory[i] == "Shovel") {
+	else if (player_inventory[j][i] == "Shovel") {
 		inventory_sprite = Pa_spr;
 	}
-	else if (player_inventory[i] == "Rod") {
+	else if (player_inventory[j][i] == "Rod") {
 		inventory_sprite = Vara_spr;
 	}
-	else if (player_inventory[i] == "Wood") {
+	else if (player_inventory[j][i] == "Wood") {
 		inventory_sprite = MadeiraBasica_spr;
 	}
 	else {
@@ -161,27 +161,27 @@ function get_inventory_sprite(i) {
 }
 
 function find_inv_empty_index() {
-	for (var i = 0; i < array_length(player_inventory)-1; i++) {
-		if (player_inventory[i] == "None") return i;
+	for (var j = 0; j < array_length(player_inventory)-1; j++) {
+		for (var i = 0; i < array_length(player_inventory[j])-1; i++) {
+			if (player_inventory[j][i] == "None") return new vector(i, j);
+		}
 	}
-	return -1;
+	return new vector(-1, -1);
 }
 
-function drop_item(index) {
+function drop_item(i, j, sprite, name) {
 	var item_dropped = instance_create_layer(x, y, "Instances", DropItem);
-	var item_sprite = get_inventory_sprite(index);
 	
-	item_dropped.current_sprite = item_sprite;
-	item_dropped.item_name = player_inventory[index];
-	player_inventory[index] = "None";
+	item_dropped.current_sprite = sprite;
+	item_dropped.item_name = name;
 }
 
 function collect_item(name) {
 	var empty_slot = find_inv_empty_index();
-	if (empty_slot == -1) return -1;
+	if (empty_slot.x == -1) return -1;
 	
-	player_inventory[empty_slot] = name;
-	current_inv_index = empty_slot;
+	player_inventory[empty_slot.y][empty_slot.x] = name;
+	current_inv_index = empty_slot.x;
 	
 	return 0;
 }
