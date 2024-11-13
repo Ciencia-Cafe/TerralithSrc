@@ -29,7 +29,7 @@
   "origin":0,
   "parent":{
     "name":"Drops de animais",
-    "path":"folders/Sprites/Drops de animais.yy",
+    "path":"folders/Sprites/Itens de craft geral/Drops de animais.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

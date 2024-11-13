@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Craft básico spr",
-    "path":"folders/Sprites/Craft básico spr.yy",
+    "name":"Madeiras Geral",
+    "path":"folders/Sprites/Itens de craft geral/Criados a mão/Madeiras Geral.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
