@@ -70,6 +70,16 @@ if (instance_exists(obj_Player)) {
 		mouse_position.x = (floor(current_mouse_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5);
 		mouse_position.y = (floor(current_mouse_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5);
 		
+		if (mouse_clicked && currently_selected != noone) {
+			if (mouse_position.x < middle_screen_x - (inv_size_x * 0.6) || mouse_position.x > middle_screen_x + (inv_size_x * 0.5)) {
+				obj_Player.drop_item(held_pos.x, held_pos.y, currently_selected, selected_name);
+				currently_selected = noone;
+				selected_name = "None";
+						
+				mouse_clicked = false;
+			}
+		}
+		
 		for (var i = 0; i < 6; i++) {
 			for (var j = 0; j < 3; j++) {
 				var slot_pos = new vector(middle_screen_x - (inv_size_x * 0.5) + (i * inv_grid_size), middle_screen_y - (inv_size_y * 0.5) + (j * inv_grid_size));
@@ -80,16 +90,24 @@ if (instance_exists(obj_Player)) {
 					if (mouse_clicked) {
 						if (currently_selected == noone) {
 							currently_selected = inventory_sprites[j][i];
-							selected_index = i;
 							selected_name = obj_Player.player_inventory[j][i];
+							held_pos.x = i;
+							held_pos.y = j;
 							obj_Player.player_inventory[j][i] = "None";
 						}
 						else {
-							obj_Player.player_inventory[j][i] = selected_name;
-							//obj_Player.drop_item(selected_index);
-							currently_selected = noone;
-							selected_index = 0;
-							selected_name = "None";
+							if (obj_Player.player_inventory[j][i] == "None") {
+								obj_Player.player_inventory[j][i] = selected_name;
+								currently_selected = noone;
+								selected_name = "None";
+							}
+							else { // Item Swap
+								obj_Player.player_inventory[held_pos.y, held_pos.x] = obj_Player.player_inventory[j][i];
+								obj_Player.player_inventory[j][i] = selected_name;
+								//obj_Player.drop_item(selected_index);
+								currently_selected = noone;
+								selected_name = "None";
+							}
 						}
 						
 						mouse_clicked = false;

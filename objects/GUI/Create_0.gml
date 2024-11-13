@@ -22,6 +22,8 @@ elapsed_time = 0;
 show_inventory = false;
 show_pause_menu = false;
 
+held_pos = new vector(0, 0);
+
 currently_selected = noone;
 selected_index = 0;
 selected_name = "None";

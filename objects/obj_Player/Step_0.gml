@@ -48,7 +48,7 @@ if (keyboard_check_pressed(ord("Q"))) {
 	drop_item(current_inv_index);
 }
 
-current_weapon = player_inventory[current_inv_index];
+current_weapon = player_inventory[0][current_inv_index];
 
 if (keyboard_check_pressed(ord("E"))) {
 	is_attacking = true;
