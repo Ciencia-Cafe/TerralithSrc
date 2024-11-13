@@ -172,6 +172,20 @@ function add_ocean(x_pos, y_pos, dec_ind) {
 	tilemap_set(water_tilemap, dec_ind, x_pos, y_pos);
 }
 
+function add_tatu(x_pos, y_pos) {
+	tatu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Tatu);
+}
+function add_dragon(x_pos, y_pos) {
+	dragon_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Dragon);
+}
+
+function add_lobo(x_pos, y_pos) {
+	lobo_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Lobo);
+}
+function add_pinguim(x_pos, y_pos) {
+	pinguim_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Pinguim);
+}
+
 function add_galinha(x_pos, y_pos) {
 	galinha_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Galinha);
 }
@@ -508,6 +522,16 @@ if (generate_world) {
 			//else if (animal == 2) add_npc(i, floor(height_map[i]) - 3);
 			else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
 			else if (animal == 4) add_dragon(i, floor(height_map[i]) - 1);
+			else if (animal == 5) add_gogu(i, floor(height_map[i]) - 1);
+		}
+		
+		else if(dec[i] == 30) {
+			var animal = irandom_range(0, 5); // 5 variações
+		
+			if (animal == 1) add_lobo(i, floor(height_map[i]) - 1);
+			//else if (animal == 2) add_npc(i, floor(height_map[i]) - 3);
+			else if (animal == 3) add_corvu(i, floor(height_map[i]) - 1);
+			else if (animal == 4) add_pinguim(i, floor(height_map[i]) - 1);
 			else if (animal == 5) add_gogu(i, floor(height_map[i]) - 1);
 		}
 		
