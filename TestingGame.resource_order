@@ -315,5 +315,6 @@
     {"name":"BlocksNiggaShadow_spr","order":3,"path":"tilesets/BlocksNiggaShadow_spr/BlocksNiggaShadow_spr.yy",},
     {"name":"Decoration_spr","order":2,"path":"tilesets/Decoration_spr/Decoration_spr.yy",},
     {"name":"NormalsTilemap","order":4,"path":"tilesets/NormalsTilemap/NormalsTilemap.yy",},
+    {"name":"TileSet_ArvoreNeve","order":1,"path":"tilesets/TileSet_ArvoreNeve/TileSet_ArvoreNeve.yy",},
   ],
 }
