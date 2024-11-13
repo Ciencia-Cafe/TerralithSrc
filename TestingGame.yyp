@@ -400,6 +400,7 @@
     {"id":{"name":"BlocksNiggaShadow_spr","path":"tilesets/BlocksNiggaShadow_spr/BlocksNiggaShadow_spr.yy",},},
     {"id":{"name":"Decoration_spr","path":"tilesets/Decoration_spr/Decoration_spr.yy",},},
     {"id":{"name":"NormalsTilemap","path":"tilesets/NormalsTilemap/NormalsTilemap.yy",},},
+    {"id":{"name":"TileSet_ArvoreNeve","path":"tilesets/TileSet_ArvoreNeve/TileSet_ArvoreNeve.yy",},},
     {"id":{"name":"TileSet_ArvoreNormal","path":"tilesets/TileSet_ArvoreNormal/TileSet_ArvoreNormal.yy",},},
   ],
   "resourceType":"GMProject",

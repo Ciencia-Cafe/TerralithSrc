@@ -80,6 +80,7 @@ water_tilemap = layer_tilemap_get_id("Tiles_5");
 normals_tilemap = layer_tilemap_get_id("Normal");
 
 arvores_tilemap = layer_tilemap_get_id("Arvores");
+arvores_neve_tilemap = layer_tilemap_get_id("ArvoresNeve");
 
 function get_block(x_pos, y_pos) {
 	return tilemap_get(tilemap, x_pos, y_pos);
@@ -248,6 +249,22 @@ function add_leaves(x_pos, y_pos) {
 	}
 }
 
+function add_neve_leaves(x_pos, y_pos) {
+	tilemap_set(arvores_neve_tilemap, 46, x_pos, y_pos);
+	tilemap_set(arvores_neve_tilemap, 45, x_pos-1, y_pos);
+	tilemap_set(arvores_neve_tilemap, 47, x_pos+1, y_pos);
+	
+	tilemap_set(arvores_neve_tilemap, 38, x_pos, y_pos-1);
+	tilemap_set(arvores_neve_tilemap, 37, x_pos-1, y_pos-1);
+	tilemap_set(arvores_neve_tilemap, 39, x_pos+1, y_pos-1);
+	
+	tilemap_set(arvores_neve_tilemap, 30, x_pos, y_pos-2);
+	tilemap_set(arvores_neve_tilemap, 29, x_pos-1, y_pos-2);
+	tilemap_set(arvores_neve_tilemap, 31, x_pos+1, y_pos-2);
+	
+	tilemap_set(arvores_neve_tilemap, 22, x_pos, y_pos-3);
+}
+
 function add_galhos(x_pos, y_pos, tree_size) {
 	for (var i = 0; i < tree_size; i++) {
 		var has_galho_left = irandom_range(1, 4) == 1;
@@ -259,6 +276,21 @@ function add_galhos(x_pos, y_pos, tree_size) {
 		else if (has_galho_right) {
 			tilemap_set(arvores_tilemap, 41, x_pos+1, y_pos - i);
 			tilemap_set(arvores_tilemap, 40, x_pos, y_pos - i);
+		}
+	}
+}
+
+function add_neve_galhos(x_pos, y_pos, tree_size) {
+	for (var i = 0; i < tree_size; i++) {
+		var has_galho_left = irandom_range(1, 4) == 1;
+		var has_galho_right = irandom_range(1, 4) == 1;
+		if (has_galho_left) {
+			tilemap_set(arvores_neve_tilemap, 40, x_pos-1, y_pos - i);
+			tilemap_set(arvores_neve_tilemap, 41, x_pos, y_pos - i);
+		}
+		else if (has_galho_right) {
+			tilemap_set(arvores_neve_tilemap, 35, x_pos+1, y_pos - i);
+			tilemap_set(arvores_neve_tilemap, 34, x_pos, y_pos - i);
 		}
 	}
 }
@@ -276,7 +308,15 @@ function add_arvore(x_pos, y_pos) {
 }
 
 function add_neve_arvore(x_pos, y_pos) {
-	arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Arvneve1);
+	//arvore_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), 4, obj_Arvore1normal);
+	tilemap_set(arvores_neve_tilemap, irandom_range(57, 59), x_pos, y_pos - 1);
+	var tree_size = irandom_range(1, 10);
+	for (var i = 1; i < tree_size + 1; i++) {
+		tilemap_set(arvores_neve_tilemap, (irandom_range(0, 5) * 8) + 4, x_pos, y_pos - 1 - i);
+	}
+	
+	add_neve_leaves(x_pos, y_pos - (tree_size + 1));
+	add_neve_galhos(x_pos, y_pos - 1, tree_size);
 }
 
 function add_cactus(x_pos, y_pos) {
