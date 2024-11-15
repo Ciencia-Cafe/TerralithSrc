@@ -25,6 +25,13 @@ attack_obj = instance_create_layer(x, y, 0, AttackObj);
 
 damage_cooldown = 0.0;
 
+elapsed_mining = 0.0;
+block_mining_time = 5.0;
+
+block_mining = "Dirt";
+
+current_block = 0;
+
 // Helper functions
 function get_floor_layer() {
 	if (layer_exists("FloorTile")) {

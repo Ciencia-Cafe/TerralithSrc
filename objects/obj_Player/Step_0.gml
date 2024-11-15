@@ -54,8 +54,60 @@ if (keyboard_check_pressed(ord("E"))) {
 	is_attacking = true;
 }
 
-if (keyboard_check(ord("M"))) {
-	
+current_block = tilemap_get(tilemap, GUI.mouse_position.x / 16, GUI.mouse_position.y / 16);
+
+switch (current_block) {
+	case 40:
+	case 41:
+	case 42:
+	case 52:
+	case 2:
+	case 3:
+	case 4:
+	case 6:
+	case 19:
+	case 20:
+	case 21:
+	case 28:
+		block_mining = "Dirt";
+		break;
+	case 49:
+	case 50:
+	case 57:
+	case 58:
+	case 30:
+	case 31:
+		block_mining = "Rock";
+		break;
+	case 38:
+	case 39:
+		block_mining = "Wood";
+		break;
+}
+
+if (mouse_check_button(mb_left)) {
+	switch (block_mining) {
+		case "Dirt":
+			if (current_weapon == "Shovel") block_mining_time = 2.0;
+			else block_mining_time = 8.0;
+			break;
+		case "Rock":
+			if (current_weapon == "Pick") block_mining_time = 8.0;
+			else block_mining_time = 20.0;
+			break;
+		case "Wood":
+			if (current_weapon == "Axe") block_mining_time = 8.0;
+			else block_mining_time = 20.0;
+			break;
+	}
+	if (elapsed_mining > block_mining_time) {
+		tilemap_set(tilemap, 0, GUI.mouse_position.x / 16, GUI.mouse_position.y / 16);
+		elapsed_mining = 0.0;
+	}
+	elapsed_mining += (delta_time / 600000);
+}
+else {
+	elapsed_mining = 0.0;
 }
 
 load_up_sprites(current_weapon);
