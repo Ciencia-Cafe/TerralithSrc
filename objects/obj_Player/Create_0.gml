@@ -161,8 +161,8 @@ function get_inventory_sprite(i, j) {
 }
 
 function find_inv_empty_index() {
-	for (var j = 0; j < array_length(player_inventory)-1; j++) {
-		for (var i = 0; i < array_length(player_inventory[j])-1; i++) {
+	for (var j = 0; j < array_length(player_inventory); j++) {
+		for (var i = 0; i < array_length(player_inventory[j]); i++) {
 			if (player_inventory[j][i] == "None") return new vector(i, j);
 		}
 	}

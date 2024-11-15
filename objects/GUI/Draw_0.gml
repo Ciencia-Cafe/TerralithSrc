@@ -115,7 +115,8 @@ if (instance_exists(obj_Player)) {
 				}
 				
 				if (inventory_sprites[j][i] != noone) {
-					draw_sprite(inventory_sprites[j][i], -103, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j);
+					if (inventory_sprites[j][i] == MadeiraBasica_spr) draw_sprite(inventory_sprites[j][i], -103, (((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i) - 8, (((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j) - 8);
+					else draw_sprite(inventory_sprites[j][i], -103, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j);
 				}
 				if (currently_selected != noone) {
 					draw_sprite(currently_selected, -104, mouse_position.x, mouse_position.y);

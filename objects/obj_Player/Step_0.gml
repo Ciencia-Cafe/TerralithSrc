@@ -45,7 +45,7 @@ else if (keyboard_check_pressed(ord("6"))) {
 }
 
 if (keyboard_check_pressed(ord("Q"))) {
-	drop_item(current_inv_index);
+	drop_item(current_inv_index, 0, get_inventory_sprite(current_inv_index, 0), current_weapon);
 }
 
 current_weapon = player_inventory[0][current_inv_index];
