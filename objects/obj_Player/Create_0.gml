@@ -127,10 +127,21 @@ is_under_water = false;
 
 current_inv_index = 0;
 
+item_map = ds_map_create();
+ds_map_add(item_map, "None", ["None", noone, 1]);
+ds_map_add(item_map, "Axe", ["Axe", Machado_spr, 1]);
+ds_map_add(item_map, "Sword", ["Sword", Espada_spr, 1]);
+ds_map_add(item_map, "Fork", ["Fork", Garfo_spr, 1]);
+ds_map_add(item_map, "Shovel", ["Shovel", Pa_spr, 1]);
+ds_map_add(item_map, "Rod", ["Rod", Vara_spr, 1]);
+ds_map_add(item_map, "Wood", ["Wood", MadeiraBasica_spr, 16]);
+
+item = ["None", noone, 1];
+
 player_inventory = array_create(3, []);
-player_inventory[0] = ["None", "Axe", "Sword", "Fork", "Shovel", "Rod"];
-player_inventory[1] = ["None", "None", "None", "None", "None", "None"];
-player_inventory[2] = ["None", "None", "None", "None", "None", "None"];
+player_inventory[0] = [["None", noone, 1], ["Axe", Machado_spr, 1], ["Sword", Espada_spr, 1], ["Fork", Garfo_spr, 1], ["Shovel", Pa_spr, 1], ["Rod", Vara_spr, 1]];
+player_inventory[1] = [["None", noone, 1], ["None", noone, 1], ["None", noone, 1], ["None", noone, 1], ["None", noone, 1], ["None", noone, 1]];
+player_inventory[2] = [["None", noone, 1], ["None", noone, 1], ["None", noone, 1], ["None", noone, 1], ["None", noone, 1], ["None", noone, 1]];
 
 current_weapon = "None";
 
@@ -140,37 +151,19 @@ elapsed_time = 0.0;
 image_speed = 1;
 number = 0;
 
-function get_inventory_sprite(i, j) {
-	var inventory_sprite = noone;
-	if (player_inventory[j][i] == "Axe") {
-		inventory_sprite = Machado_spr;
-	}
-	else if (player_inventory[j][i] == "Sword") {
-		inventory_sprite = Espada_spr;
-	}
-	else if (player_inventory[j][i] == "Fork") {
-		inventory_sprite = Garfo_spr;
-	}
-	else if (player_inventory[j][i] == "Shovel") {
-		inventory_sprite = Pa_spr;
-	}
-	else if (player_inventory[j][i] == "Rod") {
-		inventory_sprite = Vara_spr;
-	}
-	else if (player_inventory[j][i] == "Wood") {
-		inventory_sprite = MadeiraBasica_spr;
-	}
-	else {
-		inventory_sprite = noone;
-	}
-	
-	return inventory_sprite;
-}
-
 function find_inv_empty_index() {
 	for (var j = 0; j < array_length(player_inventory); j++) {
 		for (var i = 0; i < array_length(player_inventory[j]); i++) {
-			if (player_inventory[j][i] == "None") return new vector(i, j);
+			if (player_inventory[j][i][0] == "None") return new vector(i, j);
+		}
+	}
+	return new vector(-1, -1);
+}
+
+function find_existing_item_in_inventory(name) {
+	for (var j = 0; j < array_length(player_inventory); j++) {
+		for (var i = 0; i < array_length(player_inventory[j]); i++) {
+			if (player_inventory[j][i][0] == name && player_inventory[j][i][2] < ds_map_find_value(item_map, player_inventory[j][i][0])[2]) return new vector(i, j);
 		}
 	}
 	return new vector(-1, -1);
@@ -184,11 +177,22 @@ function drop_item(i, j, sprite, name) {
 }
 
 function collect_item(name) {
-	var empty_slot = find_inv_empty_index();
-	if (empty_slot.x == -1) return -1;
+	player_inventory = obj_Player.player_inventory;
+	var current_item = ds_map_find_value(item_map, name);
+	var item_slot_support = current_item[2];
+	var existing_item = find_existing_item_in_inventory(name);
+	if (existing_item.x == -1) {
+		existing_item = find_inv_empty_index();
+	}
 	
-	player_inventory[empty_slot.y][empty_slot.x] = name;
-	current_inv_index = empty_slot.x;
+	if (existing_item.x == -1) return -1;
+	
+	if (player_inventory[existing_item.y][existing_item.x][0] == name) player_inventory[existing_item.y][existing_item.x][2] += 1;
+	else {
+		player_inventory[existing_item.y][existing_item.x][0] = name;
+		player_inventory[existing_item.y][existing_item.x][1] = current_item[1];
+		player_inventory[existing_item.y][existing_item.x][2] = 1;
+	}
 	
 	return 0;
 }

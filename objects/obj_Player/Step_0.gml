@@ -45,10 +45,10 @@ else if (keyboard_check_pressed(ord("6"))) {
 }
 
 if (keyboard_check_pressed(ord("Q"))) {
-	drop_item(current_inv_index, 0, get_inventory_sprite(current_inv_index, 0), current_weapon);
+	drop_item(current_inv_index, 0, ds_map_find_value(item_map, player_inventory[0][current_inv_index][0])[1], current_weapon);
 }
 
-current_weapon = player_inventory[0][current_inv_index];
+current_weapon = player_inventory[0][current_inv_index][0];
 
 if (keyboard_check_pressed(ord("E"))) {
 	is_attacking = true;

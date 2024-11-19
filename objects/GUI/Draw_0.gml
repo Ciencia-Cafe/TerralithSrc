@@ -65,16 +65,14 @@ if (instance_exists(obj_Player)) {
 		draw_sprite(InventoryBlueprint_spr, -101, (floor((middle_screen_x - (inv_size_x * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5), (floor((middle_screen_y - (inv_size_y * 0.5)) / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5));
 		
 		var inventory = obj_Player.player_inventory;
-		var inventory_sprites = get_inventory_sprites(inventory);
 		
 		mouse_position.x = (floor(current_mouse_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5);
 		mouse_position.y = (floor(current_mouse_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5);
 		
-		if (mouse_clicked && currently_selected != noone) {
+		if (mouse_clicked && held_item[1] != noone) {
 			if (mouse_position.x < middle_screen_x - (inv_size_x * 0.6) || mouse_position.x > middle_screen_x + (inv_size_x * 0.5)) {
 				obj_Player.drop_item(held_pos.x, held_pos.y, currently_selected, selected_name);
-				currently_selected = noone;
-				selected_name = "None";
+				held_item = ["None", noone, 1];
 						
 				mouse_clicked = false;
 			}
@@ -88,25 +86,21 @@ if (instance_exists(obj_Player)) {
 				else {
 					draw_sprite(Selection, -105, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size * 0.5)) - j);
 					if (mouse_clicked) {
-						if (currently_selected == noone) {
-							currently_selected = inventory_sprites[j][i];
-							selected_name = obj_Player.player_inventory[j][i];
+						if (held_item[1] == noone) {
+							held_item = obj_Player.player_inventory[j][i];
 							held_pos.x = i;
 							held_pos.y = j;
-							obj_Player.player_inventory[j][i] = "None";
+							obj_Player.player_inventory[j][i] = ["None", noone, 1];
 						}
 						else {
-							if (obj_Player.player_inventory[j][i] == "None") {
-								obj_Player.player_inventory[j][i] = selected_name;
-								currently_selected = noone;
-								selected_name = "None";
+							if (obj_Player.player_inventory[j][i][0] == "None") {
+								obj_Player.player_inventory[j][i] = held_item;
+								held_item = ["None", noone, 1];
 							}
 							else { // Item Swap
 								obj_Player.player_inventory[held_pos.y, held_pos.x] = obj_Player.player_inventory[j][i];
-								obj_Player.player_inventory[j][i] = selected_name;
-								//obj_Player.drop_item(selected_index);
-								currently_selected = noone;
-								selected_name = "None";
+								obj_Player.player_inventory[j][i] = held_item;
+								held_item = ["None", noone, 1];
 							}
 						}
 						
@@ -114,12 +108,16 @@ if (instance_exists(obj_Player)) {
 					}
 				}
 				
-				if (inventory_sprites[j][i] != noone) {
-					if (inventory_sprites[j][i] == MadeiraBasica_spr) draw_sprite(inventory_sprites[j][i], -103, (((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i) - 8, (((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j) - 8);
-					else draw_sprite(inventory_sprites[j][i], -103, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j);
+				if (inventory[j][i][0] != "None") {
+					if (inventory[j][i][1] == MadeiraBasica_spr) draw_sprite(inventory[j][i][1], -103, (((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i) - 8, (((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j) - 8);
+					else draw_sprite(inventory[j][i][1], -103, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j);
+					
+					draw_set_font(InvFont);
+					draw_text(((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j, inventory[j][i][2]);
+					draw_set_font(MainMenuFont);
 				}
-				if (currently_selected != noone) {
-					draw_sprite(currently_selected, -104, mouse_position.x, mouse_position.y);
+				if (held_item[1] != noone) {
+					draw_sprite(held_item[1], -104, mouse_position.x, mouse_position.y);
 				}
 			}
 		}
@@ -138,25 +136,10 @@ if (instance_exists(obj_Player)) {
 	for (var i = 0; i < 6; i++) {
 		var item_x = inv_x + (50 * i) + 24;
 		var item_y = inv_y + 26 + inv_y_offset;
-	
-		if (obj_Player.player_inventory[0][i] == "Axe") {
-			draw_sprite(Machado_spr, -102, item_x, item_y);
-		}
-		else if (obj_Player.player_inventory[0][i] == "Sword") {
-			draw_sprite(Espada_spr, -102, item_x, item_y);
-		}
-		else if (obj_Player.player_inventory[0][i] == "Fork") {
-			draw_sprite(Garfo_spr, -102, item_x, item_y);
-		}
-		else if (obj_Player.player_inventory[0][i] == "Shovel") {
-			draw_sprite(Pa_spr, -102, item_x, item_y);
-		}
-		else if (obj_Player.player_inventory[0][i] == "Rod") {
-			draw_sprite(Vara_spr, -102, item_x, item_y);
-		}
-		else if (obj_Player.player_inventory[0][i] == "Wood") {
-			draw_sprite(MadeiraBasica_spr, -102, item_x - 8, item_y - 8);
-		}
+		
+		var current_sprite = obj_Player.player_inventory[0][i][1];
+		
+		if (current_sprite != noone) draw_sprite(current_sprite, -102, item_x, item_y);
 	}
 }
 else {
