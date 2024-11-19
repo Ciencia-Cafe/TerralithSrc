@@ -9,6 +9,14 @@ _cam_y = camera_get_view_y(view_camera[0]);
 view_w = camera_get_view_width(view_camera[0]);
 view_h = camera_get_view_height(view_camera[0]);
 
+zoom_level = 1;
+
+default_zoom_width = camera_get_view_width(view_camera[0]);
+default_zoom_height = camera_get_view_height(view_camera[0]);
+
+new_h = 640;
+new_w = 360;
+
 function get_player_pos() {
 	if (instance_exists(obj_Player)) {
 		return new vector(obj_Player.x, obj_Player.y);
@@ -23,10 +31,8 @@ show_inventory = false;
 show_pause_menu = false;
 
 held_pos = new vector(0, 0);
+held_item = ["None", noone, 1];
 
-currently_selected = noone;
-selected_index = 0;
-selected_name = "None";
 current_cursor = Rato_spr;
 
 pause_instance = noone;
@@ -43,34 +49,3 @@ mouse_position = new vector((floor(current_mouse_pos.x / 16) * 16) - 8, (floor(c
 old_mouse_pos = new vector(mouse_x, mouse_y);
 
 mouse_pos = new vector(window_mouse_get_delta_x(), window_mouse_get_delta_y());
-
-function get_inventory_sprites(player_inventory) {
-	var inventory_sprites = [];
-	for (var i = 0; i < 6; i++) {
-		for (var j = 0; j < 3; j++) {
-			if (player_inventory[j][i] == "Axe") {
-				inventory_sprites[j][i] = Machado_spr;
-			}
-			else if (player_inventory[j][i] == "Sword") {
-				inventory_sprites[j][i] = Espada_spr;
-			}
-			else if (player_inventory[j][i] == "Fork") {
-				inventory_sprites[j][i] = Garfo_spr;
-			}
-			else if (player_inventory[j][i] == "Shovel") {
-				inventory_sprites[j][i] = Pa_spr;
-			}
-			else if (player_inventory[j][i] == "Rod") {
-				inventory_sprites[j][i] = Vara_spr;
-			}
-			else if (player_inventory[j][i] == "Wood") {
-				inventory_sprites[j][i] = MadeiraBasica_spr;
-			}
-			else {
-				inventory_sprites[j][i] = noone;
-			}
-		}
-	}
-	
-	return inventory_sprites;
-}
