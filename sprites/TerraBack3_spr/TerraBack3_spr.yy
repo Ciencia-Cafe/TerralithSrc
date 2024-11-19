@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"TerraBack3_spr",
   "bboxMode":0,
-  "bbox_bottom":399,
+  "bbox_bottom":398,
   "bbox_left":58,
   "bbox_right":761,
   "bbox_top":0,
@@ -19,7 +19,8 @@
   "height":400,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"f3d00086-fb8c-49bb-8252-75103772a735","blendMode":0,"displayName":"default","isLocked":false,"name":"f3d00086-fb8c-49bb-8252-75103772a735","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"53d9133f-a2ea-4b56-8686-86f02bbf6b9d","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"53d9133f-a2ea-4b56-8686-86f02bbf6b9d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f3d00086-fb8c-49bb-8252-75103772a735","blendMode":0,"displayName":"default","isLocked":false,"name":"f3d00086-fb8c-49bb-8252-75103772a735","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"TerraBack3_spr",
   "nineSlice":null,

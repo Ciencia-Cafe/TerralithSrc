@@ -19,6 +19,7 @@
   "height":400,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"60f7e1ed-4870-4fb5-b8f5-1ea654644c53","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"60f7e1ed-4870-4fb5-b8f5-1ea654644c53","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"e5f33171-0479-4013-a7e1-c7c98665d931","blendMode":0,"displayName":"default","isLocked":false,"name":"e5f33171-0479-4013-a7e1-c7c98665d931","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"TerraBack2_spr",
