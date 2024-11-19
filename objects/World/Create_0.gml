@@ -208,7 +208,7 @@ function add_cuei(x_pos, y_pos) {
 }
 
 function add_gogu(x_pos, y_pos) {
-	gogu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_Cogumelo);
+	gogu_object = instance_create_layer(floor(x_pos * 16), floor(y_pos * 16), "Instances", obj_SlimeVerde);
 }
 
 function add_passarin(x_pos, y_pos) {
