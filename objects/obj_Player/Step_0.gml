@@ -85,6 +85,13 @@ switch (current_block) {
 		break;
 }
 
+function mine_block(tilemap_id, pos_x, pos_y, sprite, name) {
+	tilemap_set(tilemap, 0, pos_x, pos_x);
+	elapsed_mining = 0.0;
+	
+	drop_item(pos_x * 16, pos_y * 16, sprite, name);
+}
+
 if (mouse_check_button(mb_left)) {
 	switch (block_mining) {
 		case "Dirt":
@@ -101,8 +108,7 @@ if (mouse_check_button(mb_left)) {
 			break;
 	}
 	if (elapsed_mining > block_mining_time) {
-		tilemap_set(tilemap, 0, GUI.mouse_position.x / 16, GUI.mouse_position.y / 16);
-		elapsed_mining = 0.0;
+		mine_block(tilemap, GUI.mouse_position.x / 16, GUI.mouse_position.y / 16, BlocoGramaGui_spr, block_mining); 
 	}
 	elapsed_mining += (delta_time / 600000);
 }
