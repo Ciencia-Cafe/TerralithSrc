@@ -49,3 +49,5 @@ mouse_position = new vector((floor(current_mouse_pos.x / 16) * 16) - 8, (floor(c
 old_mouse_pos = new vector(mouse_x, mouse_y);
 
 mouse_pos = new vector(window_mouse_get_delta_x(), window_mouse_get_delta_y());
+
+inside_player = false;

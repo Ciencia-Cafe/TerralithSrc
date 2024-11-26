@@ -30,7 +30,7 @@ if (instance_exists(obj_Player)) {
 	
 	player_vel = vector_subtract(player_pos, player_oldpos);
 	
-	if (keyboard_check_pressed(ord("E"))) {
+	if (keyboard_check_pressed(ord("L"))) {
 		current_mouse_pos.x = obj_Player.x;
 		current_mouse_pos.y = obj_Player.y;
 	}
