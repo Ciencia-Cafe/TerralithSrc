@@ -135,6 +135,7 @@ ds_map_add(item_map, "Fork", ["Fork", Garfo_spr, 1]);
 ds_map_add(item_map, "Shovel", ["Shovel", Pa_spr, 1]);
 ds_map_add(item_map, "Rod", ["Rod", Vara_spr, 1]);
 ds_map_add(item_map, "Wood", ["Wood", MadeiraBasica_spr, 16]);
+ds_map_add(item_map, "Dirt", ["Dirt", BlocoGramaGui_spr, 16]);
 
 item = ["None", noone, 1];
 
