@@ -12,10 +12,10 @@ if (instance_exists(obj_Player)) {
 		}
 
 		if (on_floor(floor_tilemap)) {
-			sprite_index = Gogumelo_Run;
+			sprite_index = SlimeVerde_spr;
 		}
 		else {
-			sprite_index = Gogumelo_Idle;
+			sprite_index = SlimeVerde_spr;
 			y_force_amount = gravity_speed;
 		}
 	

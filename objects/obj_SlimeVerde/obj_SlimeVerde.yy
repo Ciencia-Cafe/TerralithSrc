@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_Cogumelo",
+  "%Name":"obj_SlimeVerde",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":76,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_Cogumelo",
+  "name":"obj_SlimeVerde",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemys",
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Gogumelo_Idle",
-    "path":"sprites/Gogumelo_Idle/Gogumelo_Idle.yy",
+    "name":"SlimeVerde_spr",
+    "path":"sprites/SlimeVerde_spr/SlimeVerde_spr.yy",
   },
   "spriteMaskId":null,
   "visible":true,
