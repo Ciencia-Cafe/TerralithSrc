@@ -128,15 +128,15 @@ is_under_water = false;
 current_inv_index = 0;
 
 item_map = ds_map_create();
-ds_map_add(item_map, "None", ["None", noone, 1]);
-ds_map_add(item_map, "Axe", ["Axe", Machado_spr, 1]);
-ds_map_add(item_map, "Sword", ["Sword", Espada_spr, 1]);
-ds_map_add(item_map, "Fork", ["Fork", Garfo_spr, 1]);
-ds_map_add(item_map, "Shovel", ["Shovel", Pa_spr, 1]);
-ds_map_add(item_map, "Rod", ["Rod", Vara_spr, 1]);
-ds_map_add(item_map, "Wood", ["Wood", MadeiraBasica_spr, 16]);
-ds_map_add(item_map, "Dirt", ["Dirt", BlocoGramaGui_spr, 16]);
-ds_map_add(item_map, "Rock", ["Rock", BlocoPedraGui_spr, 16]);
+ds_map_add(item_map, "None", ["None", noone, 1, 0, 0]);
+ds_map_add(item_map, "Axe", ["Axe", Machado_spr, 1, 0, 0]);
+ds_map_add(item_map, "Sword", ["Sword", Espada_spr, 1, 0, 0]);
+ds_map_add(item_map, "Fork", ["Fork", Garfo_spr, 1, 0, 0]);
+ds_map_add(item_map, "Shovel", ["Shovel", Pa_spr, 1, 0, 0]);
+ds_map_add(item_map, "Rod", ["Rod", Vara_spr, 1, 0, 0]);
+ds_map_add(item_map, "Wood", ["Wood", MadeiraBasica_spr, 16, -8, -8]);
+ds_map_add(item_map, "Dirt", ["Dirt", BlocoGramaGui_spr, 16, -8, -8]);
+ds_map_add(item_map, "Rock", ["Rock", BlocoPedraGui_spr, 16, -8, -8]);
 
 item = ["None", noone, 1];
 

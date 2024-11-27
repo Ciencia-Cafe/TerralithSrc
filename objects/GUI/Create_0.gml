@@ -17,6 +17,8 @@ default_zoom_height = camera_get_view_height(view_camera[0]);
 new_h = 640;
 new_w = 360;
 
+item_offset = new vector(0, 0);
+
 function get_player_pos() {
 	if (instance_exists(obj_Player)) {
 		return new vector(obj_Player.x, obj_Player.y);

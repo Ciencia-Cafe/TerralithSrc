@@ -109,12 +109,18 @@ if (instance_exists(obj_Player)) {
 				}
 				
 				if (inventory[j][i][0] != "None") {
+					item_offset.x = ds_map_find_value(obj_Player.item_map, inventory[j][i][0])[3];
+					item_offset.y = ds_map_find_value(obj_Player.item_map, inventory[j][i][0])[4];
 					if (inventory[j][i][1] == MadeiraBasica_spr) draw_sprite(inventory[j][i][1], -103, (((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i) - 8, (((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j) - 8);
-					else draw_sprite(inventory[j][i][1], -103, ((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j);
+					else draw_sprite(inventory[j][i][1], -103, (((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i) + item_offset.x, (((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j) + item_offset.y);
 					
 					draw_set_font(InvFont);
 					draw_text(((floor(slot_pos.x / inv_grid_size) * inv_grid_size) + inv_grid_size) - i, ((floor(slot_pos.y / inv_grid_size) * inv_grid_size) + (inv_grid_size + 1)) - j, inventory[j][i][2]);
 					draw_set_font(MainMenuFont);
+				}
+				else {
+					item_offset.x = 0;
+					item_offset.y = 0;
 				}
 				if (held_item[1] != noone) {
 					draw_sprite(held_item[1], -104, mouse_position.x, mouse_position.y);
@@ -139,7 +145,10 @@ if (instance_exists(obj_Player)) {
 		
 		var current_sprite = obj_Player.player_inventory[0][i][1];
 		
-		if (current_sprite != noone) draw_sprite(current_sprite, -102, item_x, item_y);
+		item_offset.x = ds_map_find_value(obj_Player.item_map,obj_Player.player_inventory[0][i][0])[3];
+		item_offset.y = ds_map_find_value(obj_Player.item_map, obj_Player.player_inventory[0][i][0])[4];
+		
+		if (current_sprite != noone) draw_sprite(current_sprite, -102, item_x + item_offset.x, item_y + item_offset.y);
 	}
 }
 else {
