@@ -86,29 +86,33 @@ switch (current_block) {
 }
 
 function mine_block(tilemap_id, pos_x, pos_y, sprite, name) {
-	tilemap_set(tilemap, 0, pos_x, pos_x);
+	tilemap_set(tilemap, 0, pos_x, pos_y);
 	elapsed_mining = 0.0;
 	
 	drop_item(pos_x * 16, pos_y * 16, sprite, name);
 }
 
 if (mouse_check_button(mb_left)) {
+	var sprite = BlocoGramaGui_spr;
 	switch (block_mining) {
 		case "Dirt":
 			if (current_weapon == "Shovel") block_mining_time = 2.0;
 			else block_mining_time = 8.0;
+			sprite = BlocoGramaGui_spr;
 			break;
 		case "Rock":
 			if (current_weapon == "Pick") block_mining_time = 8.0;
 			else block_mining_time = 20.0;
+			sprite = BlocoPedraGui_spr;
 			break;
 		case "Wood":
 			if (current_weapon == "Axe") block_mining_time = 8.0;
 			else block_mining_time = 20.0;
+			sprite = BlocoMadeiraNormal_spr;
 			break;
 	}
 	if (elapsed_mining > block_mining_time) {
-		mine_block(tilemap, GUI.mouse_position.x / 16, GUI.mouse_position.y / 16, BlocoGramaGui_spr, block_mining); 
+		mine_block(tilemap, GUI.mouse_position.x / 16, GUI.mouse_position.y / 16, sprite, block_mining); 
 	}
 	elapsed_mining += (delta_time / 600000);
 }

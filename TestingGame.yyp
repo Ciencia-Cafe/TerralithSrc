@@ -102,6 +102,7 @@
   },
   "name":"TestingGame",
   "resources":[
+    {"id":{"name":"InvFont","path":"fonts/InvFont/InvFont.yy",},},
     {"id":{"name":"MainMenuFont","path":"fonts/MainMenuFont/MainMenuFont.yy",},},
     {"id":{"name":"AttackObj","path":"objects/AttackObj/AttackObj.yy",},},
     {"id":{"name":"BrocuQuebra","path":"objects/BrocuQuebra/BrocuQuebra.yy",},},

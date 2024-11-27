@@ -81,6 +81,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"InvFont","order":1,"path":"fonts/InvFont/InvFont.yy",},
     {"name":"AttackObj","order":3,"path":"objects/AttackObj/AttackObj.yy",},
     {"name":"BrocuQuebra","order":5,"path":"objects/BrocuQuebra/BrocuQuebra.yy",},
     {"name":"Cactos2","order":1,"path":"objects/Cactos2/Cactos2.yy",},
