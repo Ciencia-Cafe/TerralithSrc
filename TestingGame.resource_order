@@ -182,6 +182,7 @@
     {"name":"Bau","order":1,"path":"sprites/Bau/Bau.yy",},
     {"name":"BlockBreakSelect","order":6,"path":"sprites/BlockBreakSelect/BlockBreakSelect.yy",},
     {"name":"Bloco1_Sombra_spr","order":4,"path":"sprites/Bloco1_Sombra_spr/Bloco1_Sombra_spr.yy",},
+    {"name":"BlocoAreia_Gui_spr","order":5,"path":"sprites/BlocoAreia_Gui_spr/BlocoAreia_Gui_spr.yy",},
     {"name":"BlocoMadeiraNeve_spr","order":4,"path":"sprites/BlocoMadeiraNeve_spr/BlocoMadeiraNeve_spr.yy",},
     {"name":"BlocoMadeiraNormal_spr","order":3,"path":"sprites/BlocoMadeiraNormal_spr/BlocoMadeiraNormal_spr.yy",},
     {"name":"BlocoPedraGui_spr","order":2,"path":"sprites/BlocoPedraGui_spr/BlocoPedraGui_spr.yy",},

@@ -230,6 +230,7 @@
     {"id":{"name":"Bau","path":"sprites/Bau/Bau.yy",},},
     {"id":{"name":"BlockBreakSelect","path":"sprites/BlockBreakSelect/BlockBreakSelect.yy",},},
     {"id":{"name":"Bloco1_Sombra_spr","path":"sprites/Bloco1_Sombra_spr/Bloco1_Sombra_spr.yy",},},
+    {"id":{"name":"BlocoAreia_Gui_spr","path":"sprites/BlocoAreia_Gui_spr/BlocoAreia_Gui_spr.yy",},},
     {"id":{"name":"BlocoGramaGui_spr","path":"sprites/BlocoGramaGui_spr/BlocoGramaGui_spr.yy",},},
     {"id":{"name":"BlocoMadeiraNeve_spr","path":"sprites/BlocoMadeiraNeve_spr/BlocoMadeiraNeve_spr.yy",},},
     {"id":{"name":"BlocoMadeiraNormal_spr","path":"sprites/BlocoMadeiraNormal_spr/BlocoMadeiraNormal_spr.yy",},},
