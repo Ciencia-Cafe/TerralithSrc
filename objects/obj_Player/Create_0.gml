@@ -136,6 +136,7 @@ ds_map_add(item_map, "Shovel", ["Shovel", Pa_spr, 1, 0, 0]);
 ds_map_add(item_map, "Rod", ["Rod", Vara_spr, 1, 0, 0]);
 ds_map_add(item_map, "Wood", ["Wood", MadeiraBasica_spr, 16, -8, -8]);
 ds_map_add(item_map, "Dirt", ["Dirt", BlocoGramaGui_spr, 16, -8, -8]);
+ds_map_add(item_map, "Sand", ["Sand", BlocoAreia_Gui_spr, 16, -8, -8]);
 ds_map_add(item_map, "Rock", ["Rock", BlocoPedraGui_spr, 16, -8, -8]);
 
 item = ["None", noone, 1];

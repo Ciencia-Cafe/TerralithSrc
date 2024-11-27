@@ -65,11 +65,13 @@ switch (current_block) {
 	case 3:
 	case 4:
 	case 6:
+		block_mining = "Dirt";
+		break;
 	case 19:
 	case 20:
 	case 21:
 	case 28:
-		block_mining = "Dirt";
+		block_mining = "Sand";
 		break;
 	case 49:
 	case 50:
@@ -99,6 +101,11 @@ if (mouse_check_button(mb_left)) {
 			if (current_weapon == "Shovel") block_mining_time = 2.0;
 			else block_mining_time = 8.0;
 			sprite = BlocoGramaGui_spr;
+			break;
+		case "Sand":
+			if (current_weapon == "Shovel") block_mining_time = 2.0;
+			else block_mining_time = 8.0;
+			sprite = BlocoAreia_Gui_spr;
 			break;
 		case "Rock":
 			if (current_weapon == "Pick") block_mining_time = 8.0;
